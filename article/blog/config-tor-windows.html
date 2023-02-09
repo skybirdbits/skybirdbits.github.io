@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
     <meta content="نصب tor، کانفیگ tor، نصب تور در ویندوز، دیپ وب، دارک وب، فیلترشکن" name="keywords"/>
@@ -63,11 +63,12 @@
                 <h3>دانلود تور</h3>
 
                 <p>
-                    برای دانلود تور به لینک زیر مراجعه کنید و متناسب با معماری کامپیوترتون (اغلب x86_64) نسخه ی expert-bundle
+                    برای دانلود تور به لینک
+                    <a href="https://www.torproject.org/download/tor/">tor</a>
+
+                    برید و متناسب با معماری کامپیوترتون (اغلب x86_64) نسخه ی expert-bundle
                     برای ویندوز رو دانلود کنید
                 </p>
-
-                <a href="https://www.torproject.org/download/tor/">دانلود tor</a>
 
             </div>
 
@@ -116,12 +117,11 @@ GeoIPv6File C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip6
 UseBridges 1
 ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy
 
-bridge obfs4 167.88.182.244:24679 21CFB6528C072D4F2365ECDA0AF515C7A3E5AF72
-cert=1ZUb64xwNvHXvRvl8Q/vYg7S7EbSITvhYOdQndB3xF5TLniuLD1FGGTnrnMWKEDWFWI8Gw iat-mode=0
-bridge obfs4 109.14.168.159:5082 BFE1416DEFFE969581F016A4A319A87FFB26BA91
-cert=n3X1CDdKBPXPIzfKh83p3ydfMzb0AD9gKC+/gIpHb7+xjjAnYO9x3LT+T/MvOIfAXxYySg iat-mode=0
-bridge obfs4 45.150.172.16:80 82849E69CBB25EA7F479155F7DCD89D85717FF47
-cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-mode=0
+bridge obfs4 167.88.182.244:24679 21CFB6528C072D4F2365ECDA0AF515C7A3E5AF72 cert=1ZUb64xwNvHXvRvl8Q/vYg7S7EbSITvhYOdQndB3xF5TLniuLD1FGGTnrnMWKEDWFWI8Gw iat-mode=0
+
+bridge obfs4 109.14.168.159:5082 BFE1416DEFFE969581F016A4A319A87FFB26BA91 cert=n3X1CDdKBPXPIzfKh83p3ydfMzb0AD9gKC+/gIpHb7+xjjAnYO9x3LT+T/MvOIfAXxYySg iat-mode=0
+
+bridge obfs4 45.150.172.16:80 82849E69CBB25EA7F479155F7DCD89D85717FF47 cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-mode=0
                 </div>
 
                 <p>فایل رو ذخیره کنید</p>
@@ -132,12 +132,12 @@ cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-
 
                 <p>در ویندوز cmd روباز کنید و به مسیر ایجاد شده برید</p>
                 <div class="code-container">
-                    cd C:\Users\&lt;user&gt;\AppData\Roaming\tor\
+cd C:\Users\&lt;user&gt;\AppData\Roaming\tor\
                 </div>
 
                 <p>سپس با دستور زیر tor رو اجرا کنید</p>
                 <div class="code-container">
-                    tor.exe -f torrc
+tor.exe -f torrc
                 </div>
 
                 <p>اگر خروجی 100 درصد گرفتید یعنی شما به مدار وصل شدید و میتونید از طریق socks5 به ادرس localhost:9050
