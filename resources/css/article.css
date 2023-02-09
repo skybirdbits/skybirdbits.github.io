@@ -1,0 +1,146 @@
+.article-head{
+    word-wrap: break-word;
+    padding: 8px;
+    direction: rtl;
+}
+
+.page-wrap{
+    max-width: 732px;
+    margin: 0 auto;
+}
+
+.author{
+    color: #f5f5f5;
+    font-family: Samim;
+    direction: rtl;
+    margin-right: 16px;
+}
+
+
+.subsection{
+    margin: 32px 0 32px 0;
+    padding: 4px 6px 4px 6px;
+}
+
+.article-foot{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 150px;
+    background-color: #eeeeee;
+    margin: 30px auto;
+    padding: 8px;
+    direction: rtl;
+}
+
+
+.code-container{
+    border-radius: 4px;
+    background: #eeeeee;
+    margin-bottom: 16px;
+    font-family: "JetBrains Mono";
+    margin: 16px 4px;
+}
+
+.code-container .code-wrap{
+     padding-bottom: 12px;
+     overflow-x: auto;
+     overflow-y: hidden;
+}
+
+
+.code-container .code-wrap .code-body{
+    border-bottom: 2px solid #0277bd;
+    background: white;
+}
+
+.code-container .code-wrap .code-body .code{
+   width: 100%;
+   height: auto;
+   white-space: pre;
+   position:relative;
+   padding-right: 10px;
+   padding-left: 10px;
+   line-height: 20px;
+   vertical-align: top;
+   word-wrap: anywhere;
+   font-size: 0.9em;
+}
+
+
+.code-container .code-wrap .code-body .code-line-number{
+    background: #eeeeee;
+    width: 1%;
+    min-width: 50px;
+    font-size: 0.9em;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: top;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    user-select: none;
+    text-align: right;
+}
+
+.code-container .code-head{
+    position: relative;
+    padding: 8px;
+    background: #004c8c;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    justify-content: end;
+}
+
+ .copy-message{
+    width: 100%;
+    height: 48px;
+    background-color: #212121;
+    padding: 16px;
+    position: fixed;
+    justify-content: end;
+    display: flex;
+    bottom: -128px;
+    z-index: 2;
+}
+
+.copy-message .copy-message-text{
+    color: #fafafa;
+    direction:rtl;
+}
+
+.toc .list-group{
+    border: none !important;
+    border-radius: 0px;
+}
+
+.toc .list-group-item{
+    border: none !important;
+    border-top: 1px solid #bcbcbc !important;
+
+}
+
+.toc{
+    margin-top: 64px;
+    margin-bottom: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 8px;
+}
+
+.scroll-top-container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bcbcbc;
+    width: 36px;
+    height: 36px;
+    right: 32px;
+    bottom: 64px;
+    background: white;
+    border-radius: 18px;
+    visibility: hidden;
+}
+
+.scroll-top-container:hover{
+    background: #eeeeee;
+}

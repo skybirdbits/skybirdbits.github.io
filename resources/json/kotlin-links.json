@@ -1,0 +1,14 @@
+{
+  "title": "کاتلین",
+  "id": "kotlin_chapters",
+  "links": [
+    {
+      "subject": "تابع اکستنشن در کاتلین",
+      "href": "https://skybirdbits.github.io/article/kotlin/extension-function.html"
+    },
+    {
+      "subject": "عبارت لامبدا و توابع بی نام در کاتلین",
+      "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
+    }
+  ]
+}

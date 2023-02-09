@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+    <meta content="برنامه نویسی جاوا ، کلید واژه ی استاتیک ، متد استاتیک ، فیلد استاتیک ، inner class، کلاس های داخلی"
+          name="keywords"/>
+    <meta content="بررسی کلید واژه ی استاتیک (static) و تعریف فیلد، متد و کلاس استاتیک در جاوا" name="description"/>
+    <meta charset="UTF-8"/>
+    <meta content="width:device-width, initial-scale=1" name="viewport"/>
+    <title>کلید واژه ی استاتیک (static) در جاوا</title>
+
+    <meta content="کلید واژه ی استاتیک (static) در جاوا" property="og:title"/>
+    <meta content="بررسی کلید واژه ی استاتیک (static) و تعریف فیلد، متد و کلاس استاتیک در جاوا"
+          property="og:description"/>
+    <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
+    <meta content="https://skybirdbits.github.io/article/java/static-keyword.html" property="og:url"/>
+    <meta content="article" property="og:type">
+
+    <link href="/resources/css/main.css" rel="stylesheet">
+    <link href="/resources/favicon.png" rel="icon" type="image/x-icon">
+    <script src="/resources/js/main.js" type="module"></script>
+
+
+</head>
+
+<body>
+
+<header></header>
+
+<main>
+    <div class="page-wrap">
+        <div class="article-head">
+            <h1>کلید واژه ی استاتیک (static) در جاوا</h1>
+            <address>
+                <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+            </address>
+
+            <figure class="figure figure-wrapper">
+                <img alt="کلید واژه ی static در جاوا"
+                     class="rounded figure-img" src="/resources/image/java/static_keyword_java_cover.png"/>
+
+            </figure>
+
+            <div class="toc">
+                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#sub0">متغیر (فیلد) های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">متد های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">مثال از متد و فیلد استاتیک در
+                        جاوا</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">کلاس های استاتیک (static)</a>
+
+                </div>
+            </div>
+
+        </div>
+        <article>
+            <blockquote>کاربرد: هنگامی که این کلید واژه برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
+                و ربطی به نمونه های کلاس نداره و در طی زمان اجرای برنامه بدون نیاز به نمونه سازی در دسترسه
+            </blockquote>
+
+
+            <p>از کلید واژه static برای تعریف Inner class ، فیلد و متد ها استفاده میشه</p>
+
+
+            <div class="subsection" id="sub0">
+                <h3>متغیر (فیلد) های استاتیک (static)</h3>
+                <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام نمونه های
+                    ایجاد شده از کلاس به اشتراک گذاشته بشه</p>
+
+
+                <p><strong>فرم کلی:</strong></p>
+
+                <div class="code-container">
+public class ClassName{
+
+    ...
+
+    public static Type variableName = ...
+
+    ...
+}
+                </div>
+
+                <p>صدا زدن متغیر:</p>
+
+                <div class="code-container">
+                    Type type = ClassName.variableName;
+                </div>
+
+                <p><strong> نکته: با در نظر گرفتن Modifier سطح دسترسی متغیر (public , protected , private) میشه متغیر رو
+                    در
+                    کلاس های دیگه نیز صدا زد </strong></p>
+
+            </div>
+
+            <div class="subsection" id="sub1">
+                <h3>متد های استاتیک (static)</h3>
+
+                <p>این متد ها مانند فیلد های استاتیک وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم
+                    کلاس
+                    صداشون می زنیم</p>
+
+                <p><strong> فرم کلی: </strong></p>
+
+                <div class="code-container">
+public class ClassName {
+
+    public static void methodName(Type0 p0, Type1 p1, … , TypeN pN){
+    ...
+    }
+
+}
+                </div>
+
+                <p><strong> صدا زدن متد:</strong></p>
+
+                <div class="code-container">
+Type0 type0 = new Type0();
+Type1 type1 = new Type1();
+...
+TypeN typeN = new TypeN();
+ClassName.methodName(type0, type1, … , typeN)
+                </div>
+
+
+                <p><strong>نکته: تمام اعضای کلاس Math در جاوا استاتیکن Math.PI، Math.sin(p0, p1) و ...</strong></p>
+
+            </div>
+
+            <div class="subsection" id="sub2">
+                <h3>مثال از متد و فیلد استاتیک در جاوا</h3>
+                <p><strong> Circle.java </strong></p>
+                <div class="code-container">
+public class Circle {
+    double radius;
+
+    private static int numberOfObjects = 0;
+
+    public Circle(){
+        this.radius = 1;
+        numberOfObjects ++;
+    }
+
+    public Circle(double radius){
+        this.radius = radius;
+        numberOfObjects++;
+    }
+
+    public double getArea(){
+        return radius * radius * Math.PI;
+    }
+
+    public static int getNumberOfObjects(){
+        return Circle.numberOfObjects;
+    }
+
+}
+                </div>
+
+                <p><strong> TestCircle.java </strong></p>
+
+                <div class="code-container">
+public class TestCircle {
+
+    public static void main(String[] args){
+        System.out.println("Before creating new instance from Circle number of objects are " +
+        Circle.getNumberOfObjects());
+
+        Circle c0 = new Circle(4);
+        System.out.println("After creating c0: (radius: " + c0.radius + ", " + "area: " + c0.getArea() + ")"
+        + " number of objects are " + Circle.getNumberOfObjects());
+
+        Circle c1 = new Circle();
+
+        System.out.println("After creating c1: (radius: " + c1.radius + ", " + "area: " + c1.getArea() + ")"
+        + " number of objects are " + Circle.getNumberOfObjects());
+    }
+}
+                </div>
+
+
+                <p>در مثال بالا یک فیلد استاتیک داریم به اسم numberOfObjects که تعداد نمونه های ایجاد شده از کلاس Circle
+                    رو
+                    میشماره و با متد استاتیک getNumberOfObjects این فیلد رو صدا میزنیم نمونه ها ی ساخته شده از کلاس
+                    Circle
+                    هرکدوم خصوصیات و ویژگی های مختص به خودشونو دارن اما متغیر numberOfObjects دارای مقداریست که بین هر
+                    دو
+                    نمونه از کلاس Circle به اشتراک وجود داره</p>
+
+            </div>
+
+            <div class="subsection" id="sub3">
+                <h3>کلاس های استاتیک (static)</h3>
+
+                <p> میشه از کلید واژه ی استاتیک برای inner class ها نیز استفاده کرد </p>
+
+                <p><strong> نکته: فقط کلاس های داخلی در جاوا یا همون Inner Class ها رو میشه به صورت استاتیک تعریف
+                    کرد </strong></p>
+
+                <p><strong> فرم کلی: </strong></p>
+
+
+                <div class="code-container">
+public class ClassName {
+...
+
+    public static class InnerClassName {
+        ...
+    }
+
+}
+                </div>
+
+
+                <p>هنگامی که بخوایم از InnerClassName نمونه ی جدید درست کنیم به صورت زیر عمل می کنیم:</p>
+
+                <div class="code-container">
+ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
+                </div>
+
+            </div>
+
+            <h3>خلاصه:</h3>
+            <p>-کلید واژه ی استاتیک در جاوا برای اعضای داخل کلاس استفاده میشه</p>
+
+            <p>- اعضای استاتیک وابسته به نمونه های ساخته شده از کلاس نیستن و در طول زمان اجرای برنامه در دسترسن</p>
+
+            <p>- فیلدها ، متد ها و کلاس های داخل کلاس رو میتونیم به صورت استاتیک تعریف کنیم</p>
+
+            <p>- مقدار یک فیلد استاتیک میتونه بین تمام کلاس های پروژه تا زمان اجرای برنامه به اشتراک گذاشته بشه</p>
+
+            <p>- برای صدا زدن فیلد ها و متد های کلاس نام کلاس رو مینویسیم ، نقطه میزاریم و اسم متد یا فیلد رو می
+                نویسیم</p>
+
+            <p>- برای نمونه سازی از کلاس های استاتیک new رو می نویسیم نام کلاس اصلی رو می نویسیم نقطه میزاریم و نام کلاس
+                استاتیک داخل کلاس اصلی رو مینویسیم و مانند سایر کلاس ها نمونه سازی یا همون شی سازی می کنیم</p>
+
+
+            <p>موفق باشید</p>
+
+        </article>
+    </div>
+</main>
+
+<div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#top">
+        arrow_drop_up
+    </a>
+</div>
+
+<footer></footer>
+
+<div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+</div>
+
+
+</body>
+</html>

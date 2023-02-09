@@ -1,0 +1,22 @@
+{
+  "id": "java_chapters",
+  "title": "جاوا",
+  "links": [
+    {
+      "subject": "دستورهای شرطی در جاوا",
+      "href": "https://skybirdbits.github.io/article/java/selectors.html"
+    },
+    {
+      "subject": "تغییرات switch تا jdk-17",
+      "href": "https://skybirdbits.github.io/article/java/switch-statement-jdk-17.html"
+    },
+    {
+      "subject": "حلقه ها در جاوا",
+      "href": "https://skybirdbits.github.io/article/java/loops.html"
+    },
+    {
+      "subject": "کلیدواژه ی استاتیک در جاوا",
+      "href": "https://skybirdbits.github.io/article/java/static-keyword.html"
+    }
+  ]
+}

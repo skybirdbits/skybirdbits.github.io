@@ -1,0 +1,43 @@
+button, a, p, h1, h2,h3 ,h4, h5, h6, blockquote, strong {
+    font-family: Samim;
+    direction: rtl;
+    padding: 4px 0 4px 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+ p{
+ font-weight: normal;
+ margin: 8px;
+ text-align: justify;
+}
+
+.keyword{
+    color: #0033b3;
+}
+
+.string{
+    color: #067d17;
+}
+
+.class-name{
+    color: #ad1457;
+}
+
+.digit{
+    color: #1750eb;
+}
+
+.annotation{
+    color: #9e880d;
+}
+
+.comment{
+    color: #8c8c8c;
+}
