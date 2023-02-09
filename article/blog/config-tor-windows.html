@@ -9,7 +9,7 @@
     <title>نصب و کانفیگ tor در ویندوز</title>
 
     <meta content="حلقه (Loop) ها در جاوا" property="og:title"/>
-    <meta content="آموزش نصب و کانفیگ تور و پراکسی کردن برنامه ها از طریق تور در ویندوز"
+    <meta content="آموزش نصب و کانفیگ تور و پراکسی کردن برنامه ها در ویندوز"
           property="og:description"/>
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
     <meta content="https://skybirdbits.github.io/article/blog/config-tor-windows.html" property="og:url"/>
@@ -61,9 +61,11 @@
                 <h3>دانلود تور</h3>
 
                 <p>
-                    برای دانلود تور به لینک زیر مراجعه کنید و متناسب با معماری کامپیوترتون (اغلب x86_64) نسخه ی مناسب
+                    برای دانلود تور به لینک زیر مراجعه کنید و متناسب با معماری کامپیوترتون (اغلب x86_64) نسخه ی expert-bundle
                     برای ویندوز رو دانلود کنید
                 </p>
+
+                <a href="https://torproject.org/download/tor"></a>
 
             </div>
 
@@ -138,11 +140,19 @@ cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-
                     برید در فایل notice.log از عملکرد برنامه با خبر بشید
                 </p>
 
-                <strong>توجه: میتونید خط
-                    ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy
-                    رو پاک کنید و در سایت bridges.torproject.org هنگام Get Bridges گزینه ی obf4 رو به none تغییر بدبد و
-                    بدون transport plugin به پل هاتون وصل بشید
-                </strong>
+
+
+                <p>توجه: میتونید در torrc خط</p>
+
+
+                <div class="code-container">
+ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy
+                </div>
+
+                <p>
+رو پاک کنید و در سایت bridges.torproject.org هنگام Get Bridges گزینه ی obf4 رو به none تغییر بدبد و بدون transport plugin به پل هاتون وصل بشید
+                </p>
+
             </div>
 
             <div class="subsection" id="sub4">
