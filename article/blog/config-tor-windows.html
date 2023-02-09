@@ -78,8 +78,14 @@
                 <p>یک پوشه به اسم tor در مسیر زیر اجاد میشه:</p>
 
                 <div class="code-container">
-                    C:\Users\&lt;user&gt;\AppData\Roaming\tor\
+C:\Users\&lt;user&gt;\AppData\Roaming\tor\
                 </div>
+
+                <strong>
+                    نام کاربری خود در ویندوز رو بنویسید &lt;user&gt;  توجه: بجای
+                </strong>
+
+
 
                 <p>اکنون فایل های tor.exe، tor-gencert.exe و تمام فایل های .dll ایجاد شده رو به مسیر منتقل کنید</p>
                 <p>فایل های geoip و geoip6 در داخل پوشه ی data در پوشه ی اکسترکت شده رو به مسیر منتقل کنید</p>
@@ -144,13 +150,10 @@ cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-
 
                 <p>توجه: میتونید در torrc خط</p>
 
-
-                <div class="code-container">
-ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy
-                </div>
+                <p>ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy</p>
 
                 <p>
-رو پاک کنید و در سایت bridges.torproject.org هنگام Get Bridges گزینه ی obf4 رو به none تغییر بدبد و بدون transport plugin به پل هاتون وصل بشید
+رو پاک کنید و در سایت bridges.torproject.org هنگام Get Bridges گزینه ی obf4 رو به none تغییر بدید و بدون transport plugin به پل هاتون وصل بشید
                 </p>
 
             </div>
