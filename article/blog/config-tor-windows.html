@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="نصب tor، کانفیگ tor، نصب تور در ویندوز، دیپ وب، دارک وب " name="keywords"/>
-    <meta content="" name="description"/>
+    <meta content="نصب tor، کانفیگ tor، نصب تور در ویندوز، دیپ وب، دارک وب، فیلترشکن" name="keywords"/>
+    <meta content="در این مقاله به چگونگی نصب، کانفیگ و استفاده از فیلترشکن tor در ویندوز می پردازیم" name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
     <title>نصب و کانفیگ tor در ویندوز</title>
 
-    <meta content="حلقه (Loop) ها در جاوا" property="og:title"/>
+    <meta content="نصب و کانفیگ فیلترشکن tor در ویندوز" property="og:title"/>
     <meta content="آموزش نصب و کانفیگ تور و پراکسی کردن برنامه ها در ویندوز"
           property="og:description"/>
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
@@ -28,6 +28,10 @@
     <div class="page-wrap">
 
         <div class="article-head">
+
+            <h1>نصب و کانفیگ تور در ویندوز</h1>
+
+
             <address>
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
             </address>
@@ -51,8 +55,6 @@
         <article>
 
             <p>
-                تور یک نرم‌افزار اپن سورس برای ارتباط به صورت ناشناسه و کاربر ها رو قادر میکنه تا در سطح اینترنت به صورت
-                ناشناس به گشت و گذار بپردازند
                 در این مطلب با نصب و کانفیگ tor در ویندوز آشنا خواهیم شد
             </p>
 
@@ -65,7 +67,7 @@
                     برای ویندوز رو دانلود کنید
                 </p>
 
-                <a href="https://torproject.org/download/tor"></a>
+                <a href="https://www.torproject.org/download/tor/">دانلود tor</a>
 
             </div>
 
@@ -82,15 +84,14 @@ C:\Users\&lt;user&gt;\AppData\Roaming\tor\
                 </div>
 
                 <strong>
-                    نام کاربری خود در ویندوز رو بنویسید &lt;user&gt;  توجه: بجای
+نام کاربری خود در ویندوز رو بنویسید &lt;user&gt;توجه: بجای
                 </strong>
 
-
-
-                <p>اکنون فایل های tor.exe، tor-gencert.exe و تمام فایل های .dll ایجاد شده رو به مسیر منتقل کنید</p>
+                <p>اکنون تمام فایل های .exe فایل های .dll ایجاد شده در همین پوشه رو به مسیر منتقل کنید</p>
                 <p>فایل های geoip و geoip6 در داخل پوشه ی data در پوشه ی اکسترکت شده رو به مسیر منتقل کنید</p>
                 <p>داخل پوشه ی pluggable_transports فایل obfs4proxy.exe رو به مسیر منتقل کنید</p>
                 <p>به مسیر برید و یک فایل torrc بدون پسوند ایجاد کنید و داخلش اینا رو بنویسید</p>
+
                 <div class="code-container">
 Log notice file C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
 GeoIPFile C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip
@@ -166,7 +167,18 @@ cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-
                 </p>
 
                 <p>
+                    یکبار تور رو بدون cmd اجرا میکنیم تا فایل های .dll مورد نیاز رو بسازه
+                </p>
+                <p>
                     در فایل torrc کانفیگ های مورد نیاز tor رو انجام میدیم
+                </p>
+
+                <p>
+                    پس از کانفیگ و نصب با cmd به محل نصب میریم و برنامه رو اجرا میکینم
+                </p>
+
+                <p>
+                    یکبار تور رو اجرا میکنیم تا فایل های
                 </p>
             </div>
 
