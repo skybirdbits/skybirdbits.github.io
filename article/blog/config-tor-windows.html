@@ -80,7 +80,7 @@
 
                 <p>فایل دانلودی رو در جایی اکسترکت کنید و وارد پوشه ی اکسترکت شده بشید</p>
                 <p>فایل tor.exe رو اجرا کنید بعد از اجرا و اتصال برنامه رو ببندید</p>
-                <p>یک پوشه به اسم tor در مسیر زیر اجاد میشه:</p>
+                <p>یک پوشه به اسم tor در مسیر زیر ایجاد میشه:</p>
 
                 <div class="code-container">
 C:\Users\&lt;user&gt;\AppData\Roaming\tor\
@@ -116,12 +116,11 @@ GeoIPv6File C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip6
 
                 <p>در صفحه ی بعد باز گزینه ی Get Bridges رو بزنید پس از پر کردن عبارت امنیتی پل ها رو مشاهده میکنید پل
                     ها رو کپی کنید</p>
-                <p>فایل torrc رو دوباره باز کنید و در اخرش متن زیر رو وارد کنید و سپس به فرمت زیر پل ها رو اضافه
-                    کنید</p>
+                <p>فایل torrc رو دوباره باز کنید و در اخرش متن زیر رو وارد و پل ها رو به فرمت نمونه ی زیر (یعنی یک bridge قبل از هرکدوم بنویسید) و به torrc اضافه کنید</p>
 
                 <div class="code-container">
 UseBridges 1
-ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy
+ClientTransportPlugin obfs4 exec C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy managed
 
 bridge obfs4 167.88.182.244:24679 21CFB6528C072D4F2365ECDA0AF515C7A3E5AF72 cert=1ZUb64xwNvHXvRvl8Q/vYg7S7EbSITvhYOdQndB3xF5TLniuLD1FGGTnrnMWKEDWFWI8Gw iat-mode=0
 
@@ -129,6 +128,8 @@ bridge obfs4 109.14.168.159:5082 BFE1416DEFFE969581F016A4A319A87FFB26BA91 cert=n
 
 bridge obfs4 45.150.172.16:80 82849E69CBB25EA7F479155F7DCD89D85717FF47 cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-mode=0
                 </div>
+
+                <strong>توجه: هرچندتا پل داشتید میتونید اضافه کنید</strong>
 
                 <p>فایل رو ذخیره کنید</p>
             </div>
@@ -148,21 +149,15 @@ tor.exe -f torrc
 
                 <p>اگر خروجی 100 درصد گرفتید یعنی شما به مدار وصل شدید و میتونید از طریق socks5 به ادرس localhost:9050
                     برنامه هاتونو پروکسی کنید</p>
-                <p>برای بررسی روند اتصال و مشکلات احتمالی میتونید به مسیر
-                    C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
-                    برید در فایل notice.log از عملکرد برنامه با خبر بشید
-                </p>
-
-
-
-                <p>توجه: میتونید در torrc خط</p>
-
-                <p>ClientTransportPlugin obfs4 exec -f C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy</p>
-
                 <p>
-رو پاک کنید و در سایت bridges.torproject.org هنگام Get Bridges گزینه ی obf4 رو به none تغییر بدید و بدون transport plugin به پل هاتون وصل بشید
+                    برای بررسی روند اتصال و مشکلات احتمالی میتونید در مسیر فایل notice.log روباز کنید و از عملکرد برنامه باخبر بشید
                 </p>
 
+                <div class="code-container">
+C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
+                </div>
+
+                <strong>توجه: میتونید در torrc خط ClientTransportPlugin... رو پاک یا کامنت کنید و هنگام گرفتن پل ها به‌جای obfs4 گزینه ی none رو انخاب کنید و به پل هاتون بدون TransportPlugin وصل بشید </strong>
             </div>
 
             <div class="subsection" id="sub4">
