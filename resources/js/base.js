@@ -2,7 +2,8 @@ const linkCoursesRepo = [
    "https://skybirdbits.github.io/resources/json/java-links.json",
    "https://skybirdbits.github.io/resources/json/kotlin-links.json",
    "https://skybirdbits.github.io/resources/json/android-links.json",
-   "https://skybirdbits.github.io/resources/json/web-links.json"
+   "https://skybirdbits.github.io/resources/json/web-links.json",
+   "https://skybirdbits.github.io/resources/json/blog-links.json",
 ]
 
 function initSidebar(){

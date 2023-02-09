@@ -1,0 +1,10 @@
+{
+  "id": "blogs",
+  "title": "بلاگ",
+  "links": [
+    {
+      "subject": "آموزش نصب تور در ویندوز",
+      "href": "https://skybirdbits.github.io/article/blog/config-tor-windows.html"
+    }
+  ]
+}
