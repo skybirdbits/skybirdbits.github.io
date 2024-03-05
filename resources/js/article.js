@@ -118,6 +118,7 @@ function collectTextCodes(codeViewContents){
     text = text.replaceAll(/\&gt;/g, ">");
     text = text.replaceAll(/<\/span>/g, "");
     text = text.replaceAll(/<span class="(keyword|string)">/g, "")
+    text = text.replaceAll(/<span class="(class-name|digit|annotation|comment)">/g,"")
 
     return text;
 }
