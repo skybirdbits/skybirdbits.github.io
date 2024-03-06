@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <meta
+    content="دستورات شرطی در کاتلین، دستور شرطی if-else در کاتلین ، دستور when در کاتلین، استفاده از in در کاتلین ، دستور if در کاتلین "
+    name="keywords" />
+  <meta content="بررسی دستورات شرطی if else و when و استفاده از in در کاتلین" name="description" />
+  <meta charset="UTF-8" />
+  <meta content="width:device-width, initial-scale=1" name="viewport" />
+
+  <title>دستورات شرطی (selector) ها در کاتلین</title>
+
+  <meta property="og:title" content="بررسی selector ها در کاتلین" />
+  <meta property="og:description" content="بررسی دستورات شرطی if else when و استفاده از in در کاتلین" />
+  <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
+  <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/selectors.html" />
+  <meta property="og:type" content="article">
+
+  <link href="/resources/css/main.css" rel="stylesheet">
+  <link href="/resources/favicon.png" rel="icon" type="image/x-icon">
+  <script type="module" src="/resources/js/main.js"></script>
+
+</head>
+
+<body>
+
+  <header></header>
+
+
+  <main>
+
+    <div class="page-wrap">
+
+      <div class="article-head">
+
+        <h1>دستورات شرطی (selecor) ها در کاتلین</h1>
+
+        <address><a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a></address>
+
+        <figure class="figure figure-wrapper">
+          <img alt="kotlin_selectors_cover" class="rounded figure-img"
+            src="/resources/image/kotlin/kotlin_selectors_cover.png" />
+        </figure>
+
+
+        <div class="toc">
+          <p class="p-2 mx-2 h5">دسترسی سریع</p>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action" href="#sub0">پیشنیاز</a>
+            <a class="list-group-item list-group-item-action" href="#sub1">دستور شرطی if–else در کاتلین</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">عملگر های منطقی در کاتلین</a>
+
+            <a class="list-group-item list-group-i      tem-action" href="#sub3">استفاده از in در کاتلین</a>
+            <a class="list-group-item list-group-i            tem-action" href="#sub4">استفاده از is در کاتلین</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub5">دستور when در کاتلین</a>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <article>
+
+        <div class="subsection" id="sub0">
+
+          <p class="h3">پیشنیاز</p>
+
+          <p class="h5">متغیر های بولین (boolean) در کاتلین</p>
+
+          <p>متغیر boolean در کاتلین دارای دو مقدار true یا false است و به صورت زیر تعریف میشه:</p>
+
+
+          <div class="code-container">
+            var v0 = true
+            var v1 = false
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub1">
+
+          <p class="h3">۱- دستور شرطی if–else در کاتلین</p>
+          <blockquote>
+            تعریف: با دستور شرطی if-else در کاتلین به بررسی true یا false بودن یک عبارت می پردازیم if یعنی اگر.
+          </blockquote>
+
+
+          <p><strong> فرم کلی: </strong></p>
+
+          <div class="code-container">
+if(condition == true){
+
+  ...
+
+}else {
+
+  ...
+
+}
+          </div>
+
+
+          <p>در عبارت بالا اگر شرط داخل پرانتز برابر با true بود کد های داخل بدنه ی if رو اجرا میکنه </p>
+
+          <p>کلید واژه ی else به معنی در غیر این صورت، یعنی در غیر اینصورت کد های داخل بدنه ی else رو اجرا کن</p>
+
+          <p> برای کوتاهی میتونیم شرط داخل پرانتز رو به صورت زیر بنویسیم</p>
+
+          <div class="code-container">
+if(condition){
+
+  ...
+
+}else{
+
+  ...
+
+}
+          </div>
+
+
+          <p>هچنین میتونیم چند شرط رو بررسی کنیم:</p>
+
+          <div class="code-container">
+if(condition0){
+
+  ...
+
+}else if(condition1){
+
+  ...
+
+}else if(condition2){
+
+  ...
+
+}else if(condition3){
+
+  ...
+
+}else{
+
+  ...
+
+}
+          </div>
+
+          <p><strong>مثال</strong></p>
+          <div class="code-container">
+val input = Scanner(System.in)
+
+println("Enter Weight in kg: ")
+val weight = input.nextDouble()
+
+println("Enter height in meter: ")
+
+val height = input.nextDouble()
+
+val bmi = weight / (height * height)
+
+if(bmi &lt; 18.5){
+
+  println("Underweight")
+
+}else if(bmi &lt; 25 ){
+
+  println("Normal")
+
+}else if(bmi &lt; 35){
+
+  println("Overweight")
+
+}else {
+
+  println("Obese")
+
+}
+
+          </div>
+
+
+          <p>میتونیم داخل هر if یا else یک if دیگه بیان کنیم که به if های تو در تو یا nested if معروفن:
+          </p>
+
+          <div class="code-container">
+if(condition0){
+
+  if(condition1){
+    ...
+  }
+
+}else{
+
+  if(condition2){
+    ...
+  }
+
+}
+          </div>
+
+          <p>میتونیم if-else در کاتلین به صورت یک عبارت بیان کنیم تا مقداری رو برگردونه</p>
+
+          <p><strong>مثال:</strong></p>
+
+          <div class="code-container">
+val input = Scanner(System.in)
+
+println("Enter first number: ")
+
+val v0 = input.nextInt()
+
+println("Enter second number: ")
+var v1 = input.nextInt()
+
+var max = if(v0 &gt; v1) v0 else v1
+
+println("Maximum is: $max")
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub2">
+          <p class="h3">عملگر های منطقی در کاتلین</p>
+
+          <p>عملگر های منطقی برای تغییر مقدار boolean است</p>
+
+
+          <p class="h5">۱- عملگر ! :</p>
+          <p>مقدار عبارت boolean رو معکوس میکنه مثلا اگ مقدار یک عبارت true باشه با این عملگر false میشه </p>
+
+          <div class="code-container">
+val condition = true
+
+if(!condition){
+  ...
+}
+          </div>
+
+
+          <p class="h5">۲- عملگر && :</p>
+          <p>معنی and (و) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه همه true بودن عبارت داخل بدنه ی if
+            اجرا بشه به صورت زیر عمل میکنیم:</p>
+
+          <div class="code-container">
+if(condition0 && condition1 && ... && conditionN) {
+  ...
+}
+          </div>
+
+          <p class="h5">۳- عملگر || :</p>
+          <p>معنی or (یا) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه یکیشون true بود کد های داخل {}
+            مربوط به if اجرا بشه به صورت زیر عمل میکنیم:</p>
+
+
+          <div class="code-container">
+if(condition0 || condition1 || ... || conditionN){
+...
+}
+          </div>
+
+          <p class="h5">۴- عملگر ^ :</p>
+          <p>معنی or اختصاصی میده فرض کنید دو عبارت شرطی داریم میخوایم بررسی کنیم فقط یکیش درست باشه و هردو نباید
+            درست
+            باشه :</p>
+
+          <div class="code-container">
+            if(condition0 ^ condition1){
+            ...
+            }
+          </div>
+
+          <p><strong> مثال: </strong></p>
+          <div class="code-container">
+val input = Scanner(System.in);
+
+println("Enter a number: ");
+val num = input.nextInt();
+
+if (num % 2 == 0 && num % 3 == 0)
+  println("Number is divisible by 2 and 3");
+
+if (num % 2 == 0 || num % 3 == 0)
+  println("Number is divisible by 2 or 3");
+
+if (num % 2 == 0 ^ num % 3 == 0)
+  println("Number is divisible by 2 or 3 but not both");
+          </div>
+
+        </div>
+
+
+
+        <div class="subsection" id="sub3">
+          <p class="h3">استفاده از in در کاتلین</p>
+
+          <blockquote>
+
+            از in در کاتلین استفاده میکنیم تا بررسی کنیم متغیر عددی در محدوده ی موردنطر وجود داره یا خیر
+
+          </blockquote>
+
+          <p>
+            به عنوان مثال میخوایم بدونیم مقدار v در محدوده ی 0 تا 10 وجود داره یا خیر:
+          </p>
+
+
+          <div class="code-container">
+
+            val v = 6
+
+            val isNumberInRange = v in 0..10
+
+            println("$v is between 0 to 10? $isNumberInRange")
+
+          </div>
+
+          <p>مقدار عبارت بالا برابر با true چون مقدار v برابر با 7 و بین 0 تا 10 قرار داره</p>
+
+          <p><strong>نکته: برای بررسی وجود یک عدد در یک محدوده اگه بخوایم اخرین عدد محدودمون تو بررسی نباشه از until
+              بجای .. استفاده میکنیم</strong></p>
+
+          <div class="code-container">
+            val isNumberInRange = v in 0 until 10
+          </div>
+
+
+          <div class="subsection" id="sub4">
+            <p class="h3">استفاده از is در کاتلین</p>
+            <p>با استفاده از is در کاتلین میتونیم بررسی کنیم یک متغیر از جنس چه آبجکتی هست
+            </p>
+
+            <p><strong>مثال</strong></p>
+
+            <div class="code-container">
+val v = "Hello Condition!"
+val isString = v is String
+val isChar = v is Char
+
+println("Is v String? $isString")
+println("Is v Char? $isChar")
+            </div>
+
+          </div>
+
+
+          <div class="subsection" id="sub5">
+
+            <p class="h3">کلید واژه ی when در کاتلین:</p>
+
+            <p>با استفاده از when میتونیم چند موردو به عنوان شرط بررسی کنیم</p>
+
+            <p><strong>مثال</strong></p>
+
+            <div class="code-container">
+val input = Scanner(System.in)
+println("Enter a day in week (between 1 to 7): ")
+val day = input.nextInt()
+when(day){
+  1 -&gt; println("Satuarday")
+  2 -&gt; println("Sunday")
+  3 -&gt; println("Monday")
+  4 -&gt; println("Tuesday")
+  5 -&gt; println("Wednsday")
+  6 -&gt; println("Thursday")
+  7 -&gt; println("Friday")
+  else -&gt; println("Out of days not defined")
+}
+            </div>
+
+            <p>
+              کاربر یک عدد بین 1 تا 7 رو وارد میکنه با استفاده از when بررسی میکنیم که عدد به کدوم از روز های هفته
+              میخوره به هرکدوم که بخوره برنامه اسم روز تو هفته رو نمایش میده اگر عدد خارج از روز های تعریف شده باشه
+              عبارت مربوط به else اجرا میشه
+            </p>
+
+            <p>میتونیم دوتا مقدارو به صورت or داخل when بررسی کنیم:</p>
+
+            <div class="code-container">
+val v = 0
+when(v){
+  0 , 1 -&gt; println("Is a binary number")
+  else -&gt; println("Not a binary number")
+}
+            </div>
+
+            <p>
+              مثال بالا اگه مقدار v برابر با 0 یا 1 باشه عبارت مربوط به 0,1 اجرا میشه در غیر اینصورت عبارت مربوط به else
+              اجرا میشه
+            </p>
+
+            <p>
+              میتونیم متغیر رو هنگام استفاده از when مقداردهی کنیم
+            </p>
+            <div class="code-container">
+val input = Scanner(System.in)
+
+when(val v = input.nextInt()){
+  0 -&gt; println("value is $v and equals to false")
+  1 -&gt; println("value is $v and equals to true")
+              else -&gt; println("value is $v and not anounced in binary")
+              }
+
+            </div>
+
+            <p>
+              میتونیم از when به عنوان جایگزین if-else استفاده کنیم
+            </p>
+
+            <div class="code-container">
+
+val input = Scanner(System.in)
+
+println("Enter weight in kg)
+
+val weight = input.nextDouble()
+
+println("Enter height in meter")
+
+val height = input.nextDouble()
+
+val bmi = weight / (height * height)
+
+when{
+  bmi &lt; 18.5 -&gt; println("Underweight")
+  bmi &lt; 25 -&gt; println("Normal")
+  bmi &lt; 35 -&gt; println("Overweight")
+  else -&gt; println("obese")
+ }
+            </div>
+
+            <p><strong>مثال استفاده از in در when</strong></p>
+
+            <div class="code-container">
+val v = Scanner(System.in).nextInt()
+
+when(v){
+  in 0 until 10 -&gt; println("One digit number")
+  in 10 until 100 -&gt; println("Two digits number")
+  in 100 until 1000 -&gt; println("Three digits number")
+  else -&gt; println("More than three digits number or negative")
+}
+
+        </div>
+
+        <p>در مثال بالا یک عدد کاربر وارد میکنه و برنامه بررسی میکنه که این عدد چند رقمیه اگه عدد بیشتر از سه رقم
+          باشه یا منفی عبارت مربوط به else اجرا میشه</p>
+
+        <p><strong>مثال استفاده از is در when</strong></p>
+            <div class="code-container">
+              val v = "This is an is example"
+
+              when(v){
+              is String -&gt; println("it's string type")
+              is Int -&gt; println("v is type of Integer and its value is $v")
+              }
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+      <div class="article-foot">
+        <div class="d-block">
+          <h5>مطالب مرتبط:</h5>
+          <div class="d-flex flex-wrap">
+            <span>
+              <a class="text-decoration-none" href="/article/java/selectors.html">سلکتور ها
+                در جاوا</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#">
+      arrow_drop_up
+    </a>
+  </div>
+
+  <footer></footer>
+
+  <div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+  </div>
+
+</body>
+
+</html>
