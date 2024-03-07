@@ -5,7 +5,7 @@
 
   <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <meta
-    content="دستورات شرطی در کاتلین، دستور شرطی if-else در کاتلین ، دستور when در کاتلین، استفاده از in در کاتلین ، دستور if در کاتلین "
+    content="دستورات شرطی در کاتلین، دستور شرطی if-else در کاتلین ، دستور when در کاتلین، استفاده از in در کاتلین ، دستور if در کاتلین، استفاده از in و is در کاتلین ، عملگر های منطقی در کاتلین"
     name="keywords" />
   <meta content="بررسی دستورات شرطی if else و when و استفاده از in در کاتلین" name="description" />
   <meta charset="UTF-8" />
@@ -36,7 +36,7 @@
 
       <div class="article-head">
 
-        <h1>دستورات شرطی (selecor) ها در کاتلین</h1>
+        <h1>دستورات شرطی (selector) ها در کاتلین</h1>
 
         <address><a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a></address>
 
@@ -317,7 +317,7 @@ println("$v is between 0 to 10? $isNumberInRange")
               بجای .. استفاده میکنیم</strong></p>
 
           <div class="code-container">
-            val isNumberInRange = v in 0 until 10
+val isNumberInRange = v in 0 until 10
           </div>
 
 
@@ -431,12 +431,11 @@ when{
 val v = Scanner(System.in).nextInt()
 
 when(v){
-  in 0 until 10 -&gt; println("One digit number")
-  in 10 until 100 -&gt; println("Two digits number")
-  in 100 until 1000 -&gt; println("Three digits number")
-  else -&gt; println("More than three digits number or negative")
+  in 0 until 10 -&gt; println("Number has one digit")
+  in 10 until 100 -&gt; println("Number has two digits")
+  in 100 until 1000 -&gt; println("Number has three digits")
+  else -&gt; println("Number has more than three digits or it's negative")
 }
-
         </div>
 
         <p>در مثال بالا یک عدد کاربر وارد میکنه و برنامه بررسی میکنه که این عدد چند رقمیه اگه عدد بیشتر از سه رقم
@@ -473,8 +472,7 @@ when(v){
           <h5>مطالب مرتبط:</h5>
           <div class="d-flex flex-wrap">
             <span>
-              <a class="text-decoration-none" href="/article/java/selectors.html">سلکتور ها
-                در جاوا</a>
+              <a class="text-decoration-none" href="/article/java/selectors.html">استفاده از عبارات شرطی (selector) ها در جاوا</a>
             </span>
           </div>
         </div>
