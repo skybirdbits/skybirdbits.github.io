@@ -77,8 +77,8 @@
 
 
           <div class="code-container">
-            var v0 = true
-            var v1 = false
+var v0 = true
+var v1 = false
           </div>
 
         </div>
@@ -181,7 +181,6 @@ if(bmi &lt; 18.5){
   println("Obese")
 
 }
-
           </div>
 
 
@@ -270,9 +269,9 @@ if(condition0 || condition1 || ... || conditionN){
             باشه :</p>
 
           <div class="code-container">
-            if(condition0 ^ condition1){
-            ...
-            }
+if(condition0 ^ condition1){
+  ...
+}
           </div>
 
           <p><strong> مثال: </strong></p>
@@ -294,33 +293,25 @@ if (num % 2 == 0 ^ num % 3 == 0)
 
         </div>
 
-
-
         <div class="subsection" id="sub3">
           <p class="h3">استفاده از in در کاتلین</p>
 
           <blockquote>
-
-            از in در کاتلین استفاده میکنیم تا بررسی کنیم متغیر عددی در محدوده ی موردنطر وجود داره یا خیر
-
+            با استفاده از in میتونیم بررسی کنیم یک متغیر عددی در چه محدوده ای قرار داره
           </blockquote>
 
           <p>
-            به عنوان مثال میخوایم بدونیم مقدار v در محدوده ی 0 تا 10 وجود داره یا خیر:
+            به عنوان مثال میخوایم بدونیم مقدار v در محدوده ی 0 تا 10 وجود داره یا خیر
           </p>
 
 
           <div class="code-container">
+val v = 6
 
-            val v = 6
+val isNumberInRange = v in 0..10
 
-            val isNumberInRange = v in 0..10
-
-            println("$v is between 0 to 10? $isNumberInRange")
-
+println("$v is between 0 to 10? $isNumberInRange")
           </div>
-
-          <p>مقدار عبارت بالا برابر با true چون مقدار v برابر با 7 و بین 0 تا 10 قرار داره</p>
 
           <p><strong>نکته: برای بررسی وجود یک عدد در یک محدوده اگه بخوایم اخرین عدد محدودمون تو بررسی نباشه از until
               بجای .. استفاده میکنیم</strong></p>
@@ -332,7 +323,7 @@ if (num % 2 == 0 ^ num % 3 == 0)
 
           <div class="subsection" id="sub4">
             <p class="h3">استفاده از is در کاتلین</p>
-            <p>با استفاده از is در کاتلین میتونیم بررسی کنیم یک متغیر از جنس چه آبجکتی هست
+            <p>با استفاده از is در کاتلین میتونیم بررسی کنیم یک متغیر از نوع کدوم object هست
             </p>
 
             <p><strong>مثال</strong></p>
@@ -397,6 +388,7 @@ when(v){
             <p>
               میتونیم متغیر رو هنگام استفاده از when مقداردهی کنیم
             </p>
+
             <div class="code-container">
 val input = Scanner(System.in)
 
@@ -405,7 +397,6 @@ when(val v = input.nextInt()){
   1 -&gt; println("value is $v and equals to true")
               else -&gt; println("value is $v and not anounced in binary")
               }
-
             </div>
 
             <p>
@@ -413,7 +404,6 @@ when(val v = input.nextInt()){
             </p>
 
             <div class="code-container">
-
 val input = Scanner(System.in)
 
 println("Enter weight in kg)
@@ -434,7 +424,8 @@ when{
  }
             </div>
 
-            <p><strong>مثال استفاده از in در when</strong></p>
+            <p><strong>مثال</strong></p>
+            <p>استفاده از in در when</p>
 
             <div class="code-container">
 val v = Scanner(System.in).nextInt()
@@ -451,20 +442,29 @@ when(v){
         <p>در مثال بالا یک عدد کاربر وارد میکنه و برنامه بررسی میکنه که این عدد چند رقمیه اگه عدد بیشتر از سه رقم
           باشه یا منفی عبارت مربوط به else اجرا میشه</p>
 
-        <p><strong>مثال استفاده از is در when</strong></p>
-            <div class="code-container">
-              val v = "This is an is example"
+        <p><strong>مثال</strong></p>
 
-              when(v){
-              is String -&gt; println("it's string type")
-              is Int -&gt; println("v is type of Integer and its value is $v")
-              }
+        <p>استفاده از is در when</p>
+
+            <div class="code-container">
+val v = "This is an is example"
+
+when(v){
+  is String -&gt; println("it's string type")
+  is Int -&gt; println("v is type of Integer and its value is $v")
+}
             </div>
 
           </div>
 
 
         </div>
+
+        <p class="h3">خلاصه</p>
+
+        <p>در این مقاله دو عبارت شرطی if-else و when رو بررسی کردیم و به تولید مقادیر boolean با روش های مختلف پرداختیم اینکه چطور و کجا ازشون استفاده کنید بستگی به خودتون و نیازتون داره</p>
+
+        <p>موفق باشید</p>
 
       </article>
 
