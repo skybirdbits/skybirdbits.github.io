@@ -9,6 +9,10 @@
     {
       "subject": "عبارت لامبدا و توابع بی نام در کاتلین",
       "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
+    },
+    {
+      "subject": "استفاده از selector ها در کاتلین",
+      "href": "https://skybirdbits.github.io/article/kotlin/selectors.html"
     }
   ]
 }
