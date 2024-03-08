@@ -41,7 +41,7 @@
             </figure>
 
             <div class="toc">
-                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">پیشنیاز</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">دستور شرطی if–else در جاوا</a>
@@ -49,14 +49,14 @@
                     <a class="list-group-item list-group-item-action" href="#sub3">دستور switch در جاوا</a>
                     <a class="list-group-item list-group-item-action" href="#sub4">عبارت شرطی</a>
                 </div>
-            </div>
 
+             </div>
         </div>
 
         <article>
 
             <div class="subsection" id="sub0">
-                <h3>پیشنیاز</h3>
+                <p class="h3">پیشنیاز</p>
 
                 <h5>متغیر های بولین (boolean) در جاوا : </h5>
                 <p>متغیر boolean در جاوا دارای دو مقدار true یا false است و به صورت زیر تعریف میشه:</p>
@@ -137,7 +137,7 @@ if(condition0){
                 </div>
 
 
-                <p><strong> مثال: </strong></p>
+                <p>مثال:</p>
                 <p>در این مثال میخوایم نسبت قد به وزن رو حساب کنیم و بررسی کنیم که کاربر اضافه وزن داره یا کاهش وزن یا
                     وزنش متعادله</p>
 
@@ -167,7 +167,7 @@ System.out.println("Obese");
                 </div>
 
 
-                <h5>if های تو در تو :</h5>
+                <p class="h5">if های تو در تو :</p>
                 <p> میتونیم داخل هر if یک if دیگه بیان کنیم</p>
                 <div class="code-container">
 if(condition0){
@@ -180,18 +180,18 @@ if(condition0){
     }
 
 }else {
-...
+  ...
 }
                 </div>
 
             </div>
 
             <div class="subsection" id="sub2">
-                <h3>عملگر های منطقی در جاوا</h3>
+                <p class="h3">عملگر های منطقی در جاوا</p>
                 <p>عملگر های منطقی برای تغییر مقدار boolean است</p>
 
 
-                <h5>۱- عملگر ! :</h5>
+                <p class="h5">۱- عملگر ! :</p>
                 <p>مقدار عبارت boolean رو معکوس میکنه مثلا اگ مقدار یک عبارت true باشه با این عملگر false میشه </p>
 
                 <div class="code-container">
@@ -203,28 +203,28 @@ if(!condition0){
                 </div>
 
 
-                <h5>۲- عملگر && :</h5>
+                <p class="h5">۲- عملگر && :</p>
                 <p>معنی and (و) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه همه true بودن عبارت داخل بدنه ی if
                     اجرا بشه به صورت زیر عمل میکنیم:</p>
 
                 <div class="code-container">
-                    if(condition0 && condition1 && ... && conditionN) {
-                    ...
-                    }
+if(condition0 && condition1 && ... && conditionN) {
+          ...
+}
                 </div>
 
-                <h5>۳- عملگر || :</h5>
+                <p class="h5">۳- عملگر || :</p>
                 <p>معنی or (یا) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه یکیشون true بود کد های داخل {}
                     مربوط به if اجرا بشه به صورت زیر عمل میکنیم:</p>
 
 
                 <div class="code-container">
-                    if(condition0 || condition1 || ... || conditionN){
-                    ...
-                    }
+if(condition0 || condition1 || ... || conditionN){
+      ...
+}
                 </div>
 
-                <h5>۴- عملگر ^ :</h5>
+                <p class="h5">۴- عملگر ^ :</p>
                 <p>معنی or اختصاصی میده فرض کنید دو عبارت شرطی داریم میخوایم بررسی کنیم فقط یکیش درست باشه و هردو نباید
                     درست
                     باشه :</p>
@@ -235,7 +235,7 @@ if(condition0 ^ condition1){
 }
                 </div>
 
-                <p><strong> مثال: </strong></p>
+                <p>مثال: </p>
                 <div class="code-container">
 Scanner input = new Scanner(System.in);
 
@@ -257,11 +257,11 @@ if (num % 2 == 0 ^ num % 3 == 0)
 
             <div class="subsection" id="sub3">
 
-                <h3>دستور switch در جاوا</h3>
+                <p class="h3">دستور switch در جاوا</p>
                 <p>اگه چندین مورد برای بررسی داشته باشیم به‌جای استفاده از چندین if-else میتونیم از کلید واژه ی
                     سوییچ (switch) در جاوا استفاده کنیم</p>
 
-                <p><strong> مثال: </strong></p>
+                <p>مثال:</p>
                 <div class="code-container">
 Scanner input = new Scanner(System.in);
 System.out.println("Enter number of day week (between 1 - 7");
@@ -291,8 +291,9 @@ switch (dayNumber){
 
             <div class="subsection" id="sub4">
 
-                <h3>عبارت شرطی</h3>
-                <p><strong>مثال:</strong></p>
+                <p class="h3">عبارت شرطی</p>
+                <p>مثال:</p>
+
                 <div class="code-container">
 Scanner input = new Scanner(System.in);
 System.out.println("Enter number1: ");
@@ -310,7 +311,7 @@ System.out.println("number 1 is " + num1 + " number 2 is " + num2 + " maximum is
 
             </div>
 
-            <h3>خلاصه</h3>
+            <p class="h3">خلاصه</p>
 
             <p>در این مقاله با دستور شرطی if-else, switch و عبارت شرطی در جاوا اشنا شدیم اینکه از کدوم باید کجا استفاده
                 کنید
@@ -321,10 +322,13 @@ System.out.println("number 1 is " + num1 + " number 2 is " + num2 + " maximum is
 
         <div class="article-foot">
             <div class="d-block">
-                <h5>مطالب مرتبط:</h5>
+                <p class="h5">مطالب مرتبط:</p>
                 <div class="d-flex flex-wrap">
                     <span>
                         <a class="text-decoration-none" href="loops.html">حلقه ها در جاوا</a>
+                    </span>
+                    <span>
+                      <a class="text-decoration-none" href="/article/java/switch-statement-jdk-17.html">تغییرات دستور سوییچ تا jdk 17</a>
                     </span>
                 </div>
             </div>
