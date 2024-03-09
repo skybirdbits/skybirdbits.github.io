@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+
+      <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+
+      <meta content="حلقه ها در کاتلین ، حلقه ی for در کاتلین ، حلقه ی while در کاتلین ، حلقه ی do while در کاتلین ، کلید واژه ی break در کاتلین ، کلید واژه ی continue در کاتلین" name="keywords"/>
+
+      <meta content="بررسی حلقه ی for ، while و do while در کاتلین و استفاده از کلید واژه های break و continue در حلقه ها" name="description"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حلقه (Loop) ها در کاتلین</title>
+
+      <meta content="حلقه (Loop) ها در کاتلین" property="og:title"/>
+    <meta content="بررسی حلقه ی for ، while و do while در کاتلین و استفاده از کلید واژه های break و continue در حلقه ها" property="og:description"/>
+
+    <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
+    
+    <meta content="https://skybirdbits.github.io/article/kotlin/loops.html" property="og:url"/>
+
+    <meta content="article" property="og:type">
+
+    <link href="/resources/css/main.css" rel="stylesheet">
+
+    <link href="/resources/favicon.png" rel="icon" type="image/x-icon">
+
+    <script src="/resources/js/main.js" type="module"></script>
+
+</head>
+<body>
+  <main>
+    <div class="page-wrap">
+      <div class="article-head">
+        <h1>حلقه (loop) ها در کاتلین</h1>
+
+                    <address>
+                <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+            </address>
+
+            <figure class="figure figure-wrapper">
+                <img alt="حلقه ها در کاتلین"
+                     class="rounded figure-img" src="/resources/image/java/java_loops_cover.png"/>
+            </figure>
+
+            <div class="toc">
+              <p class="p-2 mx-2 h5">دسترسی سریع</p>
+                              <div class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#sub0">حلقه ی for</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">کلید واژه ی break و continue</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">حلقه ی while</a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">حلقه ی do-while</a>
+                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+                </div>
+            </div>
+      </div>
+
+      <article>
+
+
+       <blockquote>تعریف: برای تکرار یک عمل از حلقه استفاده میکنیم</blockquote>
+
+       <p>به طور کلی سه نوع حلقه داریم.  حلقه (loop) ها در کاتلین شامل for loop ، while loop و do-while loop هسند.</p>
+
+        <div class="subsection" id="sub0">
+
+
+          <p class="h3">حلقه ی for</p>
+
+          <p>در کاتلین به دو روش میشه از حلقه ی for استفاده کرد.</p>
+
+
+          <p class="h5">روش foreach :</p>
+
+          <p>
+          در کاتلین همه چیز object است دونستن این موضوع میتونه به درک بهتر حلقه ی for در کاتلین کمک کنه.
+          </p>
+
+          <p>
+          همین طور که گفتیم حلقه برای تکرار یک عمل مورد استفاده قرار میگیره حلقه ی for برای هر ابجکتی که تابع iterator براش تعریف شده باشه قابل استفاده است.
+          </p>
+
+          <p>این روش در جاوا به foreach loop معروفه.</p>
+
+          <p>فرم کلی:</p>
+
+          <div class="code-container">
+val myClass = MyClass(...)
+for(element in myClass){
+
+    //do some works with element
+    ...
+
+}
+          </div>
+          <p>
+          element عضو MyClass است.
+          با for دونه دونه element هایی که MyClassداره رو به ترتیب صدا میزنیم.
+          </p>
+
+          <p><strong>نکته: element یک اسم دلخواهه و هر اسمی میتونه باشه</strong></p>
+
+          <p>مثال:</p>
+
+          <p>خوندن اعضای یک ارایه با استفاده از روش foreach.</p>
+
+          <div class="code-container">
+val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43,       55, 92}
+for(element in myArray)
+    println(element)
+          </div>
+
+
+          <p>
+          مثال:
+          </p>
+
+          <div class="code-container">
+val list = listOf&lt;String&gt;("Mary" ,"Peter", "Aida", "John")
+
+for(e in list){
+    println(e)
+}
+
+          </div>
+
+          <p>در مثال بالا یک لیست داریم با چهارتا عضو. با استفاده از for اعضای list رو دونه دونه صدا میکنیم و در println نمایش میدیم.</p>
+
+          <p class="h5">روش index-based :</p>
+
+          <p>
+اگه با for بخوایم عمل تکرارو در محددوه ای از اعداد انجام بدیم به این روش index-based گفته میشه
+          </p>
+
+          <p>مثال:</p>
+
+          <div class="code-container">
+for(index in 0 until 100){
+    println(index)
+}
+          </div>
+
+          <p>در مثال بالا برنامه اعداد 0 تا 99 رو نمایش میده. با هر تکرار یک واحد به index اضافه میشه تا به 100 برسه و حلقه متوقف بشه</p>
+
+          <p>حالا اگه بخوایم خود عدد 100 هم تو محدوده وجود داشته باشه مینویسیم:</p>
+
+          <div class="code-container">
+for(index in 0..100){
+     println(index)
+}
+          </div>
+
+          <p>
+          حالا اگه بخوایم با هر تکرار بجای یک واحد دو یا چند واحد به index اضافه بشه مینویسیم:
+          </p>
+
+          <div class="code-container">
+for(index in 0 until 100 step 4)
+    println(index)
+          </div>
+
+          <p>در مثال بالا با هر تکرار 4 واحد به index اضافه میشه و به ترتیب اعداد 0، 4، 8 و... رو تا رسیدن به 100  و متوقف شدن حلقه نمایش میده.</p>
+
+          <p>اگه بخوایم index از بیشترین اعدد شروع بشه تا به کمترین عدد محدوده برسه مینویسیم:</p>
+
+          <div class="code-container">
+for(index in 100 downTo 0)
+    println(index)
+          </div>
+
+          <p>مثال بالا حلقه از 100 شروع میکنه و تا رسیدن index به 0 عمل تکرار رو انجام میده.نتیجه در نمونه ی بالا میشه نمایش اعداد از 100 تا 0.</p>
+
+
+          <p>
+          مثال:
+          </p>
+
+          <p>حاصل جمع اعداد از 0 تا 100.</p>
+
+
+          <div class="code-container">
+var sum = 0;
+for (num in 0..100){
+    sum += num;
+}
+
+println("Sum of 0 to 100 is $sum");
+          </div>
+
+          <p>
+          مثال:
+          </p>
+
+          <p>
+          مثال زیر یک عدد رو از کاربر میگیره و فاکتوریل آن را حساب کرده و نمایش میده.
+          </p>
+
+          <div class="code-container">
+
+Scanner input = new Scanner(System.in);
+
+System.out.print("Enter a number to compute factorial: ");
+
+var fact = input.nextInt();
+
+print("$fact! is ");
+
+var result: Int = 1;
+
+for (index in fact downTo 1) {
+
+    if (index &gt; 1)
+        print("$index * ");
+    else
+        System.out.print("$index = ");
+
+    result *= index;
+
+}
+
+println(result);                
+          </div>
+
+          <p>مثال:</p>
+
+          <p>استفاده از روش index-based برای خوندن اعضای یک آرایه با for-loop</p>
+
+          <div class="code-container">
+val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43, 55, 92}
+
+for(i in myArray.indices)
+    println(myArray[i]
+          </div>
+
+          <p>
+          میتونید با کمک تابع withIndex() در آرایه اعضای ارایه رو صدا بزنید و همزمان index هر عضو در ارایه هم داشته باشید.
+          </p>
+
+          <div class="code-container">
+val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43,       55, 92}
+for((index, element) in myArray.withIndex())
+    println("The element at $index is $element")
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub1">
+          <p class="h3">کلید واژه ی break و continue</p>
+
+          <p>
+          این کلید واژه ها داخل حلقه مورد استفاده قرار میگیرن.
+          </p>
+
+          <p class="h5">
+          ۱- کلید واژه ی break:
+          </p>
+
+          <p>
+          برای شکستن حلقه و جلو گیری از ادامه ی تکرار استفاده میشه
+          </p>
+
+          <p>
+          مثال
+          </p>
+
+          <div class="code-container">
+var sum = 0
+var lastNumber = 0
+for(number in 1..20){
+  sum += number
+  lastNumber = number
+  if(sum &gt;= 100) break
+}
+
+println("Last Number in iteration is $lastNumber")
+println("Sum is $sum")
+          </div>
+
+          <p class="h5">
+          ۲-کلید واژه ی continue:
+          </p>
+
+          <p>
+          برای جلو گیری از اجرای بقیه کد ها در داخل حلقه استفاده میشه
+          </p>
+
+          <p>مثال:</p>
+
+          <div class="code-container">
+var sum = 0
+for(number in 1..20){
+  if(number % 2 != 0) continue
+
+  sum+=number
+}
+
+println("Sum of even numbers to 20 is $sum)
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub2">
+          <p class="h3">حلقه ی while</p>
+
+          <p>حلقه ی while در کاتلین دارای دو بخشه:</p>
+
+                          <figure class="figure figure-wrapper">
+                    <img alt="ساختار حلقه ی while در جاوا" class="rounded figure-img"
+                         src="/resources/image/generic/while_loop_structure.png">
+                </figure>
+
+                <p>
+                ۱- بررسی شرط (condition) برای تکرار حلقه
+                </p>
+
+                <p>
+                ۲- بدنه ی حلقه و اجرای کد های داخل آن پس از برقرار بودن شرط در هر تکرار
+                </p>
+
+                <p>مثال:</p>
+
+                <p>
+                در مثال زیر برنامه یک عدد بین 0 تا 10 به صورت تصادفی ایجاد میکنه و کاربر باید عدد رو حدس بزنه در این مثال از کلید واژه ی break استفاده شده.
+                </p>
+
+                <div class="code-container">
+val input = Scanner(System.in);
+
+val num: Int = (0..10).random().toInt();
+
+var answer = -1;
+
+
+println("Guess the number generated by random:");
+
+while (answer != num){
+
+    answer = input.nextInt();
+
+    if (answer == num)
+        break;
+    else if (answer &gt; num)
+        println("Your answer $answer is too high guess again");
+    else
+        println("Your answer $answer is too low guess again");
+}
+
+println("Congratulations! you guessed correct");
+                </div>
+
+                <p>
+                در داخل حلقه به بررسی جواب میپردازیم اگر جواب برابر با عدد ساخته شده بود تکرار رو متوقف میکنه و از حلقه خارج میشه.
+                اگه جواب بزرگتر از عدد ساخته شده بود پیغام بزرگ بودن مقدار پاسخ نمایش میده و کاربر دوباره باید پاسخ بده.
+                گه جواب کوچیکتر بود پیغام کوچیکتر بودن مقدار پاسخ میده و کاربر باید دوباره پاسخ بده.
+                </p>
+
+        </div>
+
+        <div class="subsection" id="sub3">
+          <p class="code-container">حلقه ی do while</p>
+
+          <p>حلقه ی do while در کاتلین مثل while  است با این تفاوت که ابتدا کد های داخل بدنه ی حلقه اجرا میشن بعد شرط ادامه ی حلقه بررسی میشه.
+          </p>
+
+          <p>مثال:</p>
+
+          <p>
+          در برنامه ی زیر کاربر عدد رو وارد میکنه و پس از وارد کردن اعداد دلخواه با صفر از حلقه خارج میشه و برنامه حاصل جمع اعداد وارد شده رو نشون میده.
+          </p>
+
+          <div class="code-container">
+var data;
+var sum = 0;
+
+val input = Scanner(System.in);
+
+do {
+
+    print("Enter a number (the input ends with 0): ");
+    data = input.nextInt();
+    sum += data;
+
+}while (data != 0);
+
+println("The sum is $sum");
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub4">
+          <p class="h3">خلاصه</p>
+
+          <p> سه نوع حلقه داریم for، while، do while</p>
+
+
+
+          <p>تمام حلقه ها برای متوقف شدن نیاز به شرط دارن اما حلقه ی for در کاتلین شرط به صورت اشکار تعریف نمیشه</p>
+
+          <p>حلقه ی for در کاتلین به دو روش foreach و index-based میتونه پیاده سازی بشه</p>
+
+          <p>برای متوقف شدن حلقه ی while و do-while آشکارا باید شرط تعریف کنیم</p>
+
+          <p>حلقه ی do-while در کاتلین ابتدا کد های داخل بدنه اجرا میشه سپس شرط ادامه ی حلقه بررسی میشه</p>
+
+        </div>
+
+        <p>خب اینم از بحث حلقه ها در کاتلین!</p>
+
+        <p>بد نیست یه سری به وبسایت رسمی کاتلین درباره این موضوع بزنید. لینکش تو مطالب مرتبط هست.</p>
+        <p>موفق باشید.</p>
+
+      </article>
+
+         <div class="article-foot">
+            <div class="d-block">
+                <p class="h5">مطالب مرتبط:</p>
+                <div class="d-flex flex-wrap">
+                    <span class="p-2">
+                        <a class="text-decoration-none" href="/article/kotlin/selectors.html">دستورات شرطی در کاتلین</a>
+                    </span>
+
+                    <span class="p-2">
+                      <a class="text-decoration-none" href="/article/kotlin/anonymous-function-and-lambda.html">توابع بی نام و عبارت لامبدا در کاتلین</a>
+                    </span>
+
+                    <span class="p-2">
+                      <a class="text-decoration-none" href="/article/kotlin/extension-function.html">توابع اکستنشن در کاتلین</a>
+                    </span>
+
+                    <span class="p-2">
+                      <a class="text-decoration-none" href="https://kotlinlang.org/docs/control-flow.html">مطالعه در وبسایت رسمی کاتلین</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </main>
+</body>
+</html>
