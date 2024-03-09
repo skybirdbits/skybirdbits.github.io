@@ -65,14 +65,14 @@
 
        <blockquote>تعریف: برای تکرار یک عمل از حلقه استفاده میکنیم</blockquote>
 
-       <p>به طور کلی سه نوع حلقه داریم.  حلقه (loop) ها در کاتلین شامل for loop ، while loop و do-while loop هسند.</p>
+       <p>به طور کلی سه نوع حلقه داریم.  حلقه (loop) ها در کاتلین شامل for loop ، while loop و do-while loop است.</p>
 
         <div class="subsection" id="sub0">
 
 
           <p class="h3">حلقه ی for</p>
 
-          <p>در کاتلین به دو روش میشه از حلقه ی for استفاده کرد.</p>
+          <p>به طور کلی به دو روش میشه از حلقه ی for استفاده کرد.</p>
 
 
           <p class="h5">روش foreach :</p>
@@ -82,10 +82,8 @@
           </p>
 
           <p>
-          همین طور که گفتیم حلقه برای تکرار یک عمل مورد استفاده قرار میگیره حلقه ی for برای هر ابجکتی که تابع iterator براش تعریف شده باشه قابل استفاده است.
+          همین طور که گفتیم حلقه برای تکرار یک عمل مورد استفاده قرار میگیره روش foreachبرای هر ابجکتی که تابع iterator براش تعریف شده باشه قابل استفاده است.
           </p>
-
-          <p>این روش در جاوا به foreach loop معروفه.</p>
 
           <p>فرم کلی:</p>
 
@@ -99,15 +97,14 @@ for(element in myClass){
 }
           </div>
           <p>
-          element عضو MyClass است.
-          با for دونه دونه element هایی که MyClassداره رو به ترتیب صدا میزنیم.
+           عضو MyClass است. با for به ترتیب element هایی که myClass داره رو صدا میزنیم.
           </p>
 
           <p><strong>نکته: element یک اسم دلخواهه و هر اسمی میتونه باشه</strong></p>
 
           <p>مثال:</p>
 
-          <p>خوندن اعضای یک ارایه با استفاده از روش foreach.</p>
+          <p>خوندن اعضای ارایه با استفاده از روش foreach.</p>
 
           <div class="code-container">
 val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43, 55, 92}
@@ -119,6 +116,9 @@ for(element in myArray)
           <p>
           مثال:
           </p>
+
+
+          <p>خوندن اعضای لیست با استفاده از روش foreach</p>
 
           <div class="code-container">
 val list = listOf&lt;String&gt;("Mary" ,"Peter", "Aida", "John")
