@@ -3,16 +3,20 @@
   "id": "kotlin_chapters",
   "links": [
     {
-      "subject": "تابع اکستنشن در کاتلین",
+      "subject": "تابع اکستنشن",
       "href": "https://skybirdbits.github.io/article/kotlin/extension-function.html"
     },
     {
-      "subject": "عبارت لامبدا و توابع بی نام در کاتلین",
+      "subject": "عبارت لامبدا و توابع بی نام",
       "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
     },
     {
-      "subject": "استفاده از selector ها در کاتلین",
+      "subject": "دستورات شرطی",
       "href": "https://skybirdbits.github.io/article/kotlin/selectors.html"
+    },
+    {
+      "subject": "حلقه (loop) ها",
+      "href":"https://skybirdbits.github.io/article/kotlin/loops.html"
     }
   ]
 }
