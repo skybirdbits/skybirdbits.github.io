@@ -55,7 +55,8 @@
                     <a class="list-group-item list-group-item-action" href="#sub1">کلید واژه ی break و continue</a>
                     <a class="list-group-item list-group-item-action" href="#sub2">حلقه ی while</a>
                     <a class="list-group-item list-group-item-action" href="#sub3">حلقه ی do-while</a>
-                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+                    <a class="list-group-item list      -group-item-action" href="#sub4">حلقه های تو در تو</a>
+                    <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
                 </div>
             </div>
       </div>
@@ -393,6 +394,26 @@ println("The sum is $sum");
         </div>
 
         <div class="subsection" id="sub4">
+          <p class="h3">حلقه های تو در تو (nested loop)</p>
+          <p>اگه بخوایم داخل یک حلقه حلقه ی دیگه ای استفاده کنیم ازش به عنوان حلقه های تو در تو یاد میکنیم.</p>
+
+          <p>مثال:</p>
+
+          <div class="code-container">
+for(i in 0 until 100){
+  print("for i $i printing j: ")
+  for(j in 0 until 100){
+    print("$j ")
+  }
+  println()
+}                
+          </div>
+
+          <p>با هر تکرار حلقه ی بیرونی (i) حلقه ی داخلی (j) یک بار کامل از 0 تا 99 اجرا میشه و این موضوع درباره ی تمام حلقه ها صدق میکنه. میتونیم بجای for از هر حلقه ای که خواستیم استفاده کنیم.</p>
+         
+        </div>
+
+        <div class="subsection" id="sub5">
           <p class="h3">خلاصه</p>
 
           <p> سه نوع حلقه داریم for، while، do while</p>
@@ -408,6 +429,8 @@ println("The sum is $sum");
           <p>حلقه ی do-while در کاتلین ابتدا کد های داخل بدنه اجرا میشه سپس شرط ادامه ی حلقه بررسی میشه</p>
 
         </div>
+
+        
 
         <p>خب اینم از بحث حلقه ها در کاتلین!</p>
 
