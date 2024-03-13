@@ -126,6 +126,13 @@
     border-radius: 8px;
 }
 
+.note{
+  direction: rtl;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background:#FFFDE7;
+}
+
 .scroll-top-container{
     position: fixed;
     display: flex;
