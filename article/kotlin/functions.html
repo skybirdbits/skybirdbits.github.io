@@ -6,16 +6,16 @@
 
   <meta charset="UTF-8">
 
-  <meta name="keywords" content="توابع، تابع، فانکشن، تابع void، تابع infix، تابع tail recursion، تابع داخلی، تابع لوکال، لوکال فانکشن، تابع در کاتلین، متد، پارامتر، برنامه نویسی تابعی، Functional Programming، vararg، Member Function، Local Function، Top Level Function" />
+  <meta name="keywords" content="توابع، تابع، فانکشن، تابع void، تابع infix، تابع tail recursion، تابع داخلی، تابع لوکال، لوکال فانکشن، تابع در کاتلین، متد، پارامتر، برنامه نویسی تابعی، کلید واژه های سطح دسترسی، Functional Programming، vararg، Member Function، Local Function، Top Level Function" />
 
-  <meta name="description" content="بررسی مفصل توابع در کاتلین به همراه مثال">
+  <meta name="description" content="بررسی مفصل و جامع توابع در کاتلین به همراه مثال">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بررسی توابع در کاتلین</title>
+  <title>بررسی جامع توابع در کاتلین</title>
 
-  <meta property="og:title" content="بررسی توابع در کاتلین" />
+  <meta property="og:title" content="بررسی جامع توابع در کاتلین" />
 
-  <meta property="og:description" content="بررسی مفصل توابع در کاتلین به همراه مثال" />
+  <meta property="og:description" content="بررسی مفصل و جامع توابع در کاتلین به همراه مثال" />
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
 
@@ -61,7 +61,7 @@
 
             <a class="list-group-item list-group-item-action" href="#sub1">ساختار تابع</a>
 
-            <a class="list-group-item list-group-item-action" href="sub2">ویژگی پارامترهای توابع</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">ویژگی پارامترها در توابع</a>
 
             <a class="list-group-item list-group-item-action" href="#sub3">تابع تک عبارتی</a>
 
@@ -69,11 +69,13 @@
 
             <a class="list-group-item list-group-item-action" href="#sub5">تابع infix</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub6">تابع tail recursion</a>
+            <a class="list-group-item list-group-item-action" href="#sub6">تابع Generic</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub7">محدوده ی تعریف توابع</a>
-۷
-            <a class="list-group-item list-group-item-action" href="#sub8">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub7">تابع tail recursion</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub8">محدوده ی تعریف توابع</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub9">خلاصه</a>
           </div>
         </div>
 
@@ -96,11 +98,11 @@
 
           <p>برای مطالعه ی موارد ذکر شده میتونید به لینک های زیر مراجعه کنید:</p>
 
-          <div class="p-2">
+          <div class="p-2 rtl">
             <a href="/article/kotlin/extension-function.html" class="text-decoration-none">تابع اکستنشن</a>
           </div>
 
-          <div class="p-2">
+          <div class="p-2 rtl">
             <a href="/article/kotlin/anonymous-function-and-lambda.html" class="text-decoration-none">توابع بی نام و عبارت لامبدا</a>
           </div>
 
@@ -553,7 +555,7 @@ for(i in 100 downUntil 0) println(i)
 
           <p>مثلا وقتی عمل ریاضی به عنوان پارامتر برای تابع تعریف میکنیم ابتدا عمل ریاضی اتفاق میفته بعد به عنوان پارامتر به تابع پاس داده میشه.</p>
 
-          <p><strong>p until 8 + 5</strong> همون <strong>p until (8 + 5)</strong>است. ابتدا 8 با 5 جمع میشه بعد به تابع until پاس داده میشه.</p>
+          <p><strong>p until 8 + 5</strong> همون <strong>p until (8 + 5)</strong> است. ابتدا 8 با 5 جمع میشه بعد به تابع until پاس داده میشه.</p>
 
           <p class="h6">توجه:</p>
           
@@ -610,7 +612,10 @@ val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
 
           <p>با استفاده از کلیدواژه ی tailrec میتونید به صورت native تابع tail recursion در کاتلین تعریف کنید. tail recursion نوع خاصی از توابع بازگشتی است که صدا زدن تابع داخل خودش باید اخرین عبارت داخل تابع باشه.</p>
 
-          <p><p class="h6">توجه:</p> در تابع tail recursion پس از صدا کردن تابع در داخل خود تابع، هیچ کدی نباید نوشته بشه در غیر این صورت دچار خطای کامپایل میشیم.</p>
+          <p class="h6">توجه:</p>
+
+          <p>
+          در تابع tail recursion پس از صدا کردن تابع در داخل خود تابع، هیچ کدی نباید نوشته بشه در غیر این صورت دچار خطای کامپایل میشیم.</p>
 
           <p>مثال:</p>
 
@@ -639,9 +644,9 @@ tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(
           <p>فرض کنید میخوایم 5! حساب کنیم در اینصورت n=5 و result=5*4*3*2*1.</p>
         </div>
 
-        <div class="subsection">
+        <div class="subsection" id="sub8">
 
-          <p class="h3">محدوده های تعریف توابع:</p>
+          <p class="h3">محدوده ی تعریف توابع:</p>
 
           <p>یک تابع رو میتونیم:</p>
 
@@ -746,7 +751,7 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
 
         </div>
 
-        <div class="subsection" id="sub8">
+        <div class="subsection" id="sub9">
           <p class="h3">خلاصه</p>
 
           <p>از توابع برای جلوگیری از دوباره نویسی استفاده میشه. همونطور به مرتب و خوانا کردن کد ها کمک میکنه.</p>
@@ -780,6 +785,15 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
                         <div class="d-block">
                             <p class="h5">مطالب مرتبط:</p>
                             <div class="d-flex flex-wrap">
+
+                                <span class="p-2">
+                                    <a class="text-decoration-none" href="/article/kotlin/extension-function.html">تابع اکستنشن در کاتلین</a>
+                                </span>
+
+                                <span class="p-2">
+                                    <a class="text-decoration-none" href="/article/kotlin/anonymous-function-and-lambda.html">توابع بی نام و عبارت لامبدا در کاتلین</a>
+                                </span>
+
                                 <span class="p-2">
                                     <a class="text-decoration-none" href="/article/kotlin/selectors.html">دستورات شرطی در کاتلین</a>
                                 </span>
