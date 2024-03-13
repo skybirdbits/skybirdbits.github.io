@@ -3,20 +3,24 @@
   "id": "kotlin_chapters",
   "links": [
     {
-      "subject": "تابع اکستنشن",
-      "href": "https://skybirdbits.github.io/article/kotlin/extension-function.html"
-    },
-    {
-      "subject": "عبارت لامبدا و توابع بی نام",
-      "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
-    },
-    {
       "subject": "دستورات شرطی",
       "href": "https://skybirdbits.github.io/article/kotlin/selectors.html"
     },
     {
       "subject": "حلقه (loop) ها",
       "href":"https://skybirdbits.github.io/article/kotlin/loops.html"
-    }
+    },
+    {
+      "subject": "توابع",
+      "href": "https://skybirdbits.github.io/article/kotlin/functions.html"
+    },
+    {
+      "subject": "تابع اکستنشن",
+      "href": "https://skybirdbits.github.io/article/kotlin/extension-function.html"
+    },
+    {
+      "subject": "عبارت لامبدا و توابع بی نام",
+      "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
+    } 
   ]
 }
