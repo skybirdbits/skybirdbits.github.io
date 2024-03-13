@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="keywords" content="توابع، تابع، فانکشن، تابع void، تابع infix، تابع tail recursion، تابع داخلی، تابع لوکال، لوکال فانکشن، تابع در کاتلین، متد، پارامتر، برنامه نویسی تابعی، Functional Programming، vararg، Member Function، Local Function، Top Level Function" />
+  <meta name="keywords" content="توابع، تابع، فانکشن، تابع void، تابع infix، تابع tail recursion، تابع داخلی، لوکال فانکشن، تابع در کاتلین، متد، پارامتر، برنامه نویسی تابعی، کلیدواژه ی vararg، توابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع single expression" />
 
   <meta name="description" content="بررسی مفصل و جامع توابع در کاتلین به همراه مثال">
 
@@ -133,9 +133,13 @@
 
           <p>۴- برای تابع میتونیم پارامتر هایی تعریف کنیم تا هنگام صدا زدن تابع مقادیری به داخل تابع پاس بدیم. مثلا t0: T0 رو در نظر بگیرید t0 اسم دلخواه برای پارامتر و T0 کلاسی از نوع  دلخواه برای پارامتر است سپس با یک ویرگول میتونیم پارامتر بعدی که در اینجا t1: T1 است رو برای فانکشن تعریف کنیم. به همین ترتیب هرچندتا پارامتر خواستید میتونید برای تابع تعریف کنید.</p>
 
-          <p class="h6">توجه:</p>
+          <div class="bg-light">
 
-          <p>هنگام استفاده از پارامتر داخل فانکشن در کاتلین، پارامتر val است.</p>
+            <p class="h6">توجه:</p>
+
+            <p>هنگام استفاده از پارامتر داخل فانکشن در کاتلین، پارامتر val است.</p>
+
+          </div>
 
           <p>۵- R کلاسیه که تابع بر میگردونه و هر نوعی میتونه باشه</p>
 
@@ -341,7 +345,7 @@ println("ASCII code $asciiCode has occurances")
 
           <p class="h3">تابع تک عبارتی (single expression function)</p>
 
-          <p>اگه داخل تابع فقط یک عبارت داشته باشیم و اون عبارتو میخوایم برگردونیم، به این تابع تک عبارتی یا single expression function در کاتلین میگیم.</p>
+          <p>اگه داخل تابع فقط یک عبارت داشته باشیم و اون عبارتو میخوایم برگردونیم، به این تابع تک عبارتی یا تابع single expression در کاتلین میگیم.</p>
 
 
           <p>هنگام تعریف تابع میتونیم از نوشتن بدنه ی تابع <strong>{}</strong> صرف نظر کنیم و در جلوی تابع علامت <strong>=</strong> میزاریم.</p>
@@ -458,7 +462,7 @@ fun printGrade(score: Double){
 
           <p>برای تعریف تابع infix در کاتلین باید قوانین زیر رعایت بشه:</p>
 
-          <p>۱- باید عضو  کلاس (Member Function) یا <a class="text-decoration-none" href="/article/kotlin/extension-function.html">تابع اکستنشن</a> باشه.</p>
+          <p>۱-تابع باید عضو  کلاس (Member Function) یا <a class="text-decoration-none" href="/article/kotlin/extension-function.html">تابع اکستنشن</a> باشه.</p>
 
           <p>۲-تابع نباید بیشتر از یک پارامتر داشته باشه.</p>
 
