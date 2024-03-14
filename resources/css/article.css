@@ -129,12 +129,12 @@
 .note{
   width: 100%;
   height: fit-content;
-  display: flex;
   direction: rtl;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
   background:#E1F5FE;
+  border-radius: 8px;
 }
 
 .scroll-top-container{
