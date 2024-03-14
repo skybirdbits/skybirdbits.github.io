@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="keywords" content="توابع، تابع، فانکشن، تابع void، تابع infix، تابع tail recursion، تابع داخلی، لوکال فانکشن، تابع در کاتلین، متد، پارامتر، برنامه نویسی تابعی، کلیدواژه ی vararg، توابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع single expression" />
+  <meta name="keywords" content="توابع، فانکشن، متد، تابع، تابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع infix، لوکال فانکشن، تابع جنریک، تابع void، کلیدواژه ی vararg، تابع tail recursion، تابع داخلی" />
 
   <meta name="description" content="بررسی مفصل و جامع توابع در کاتلین به همراه مثال">
 
@@ -110,7 +110,7 @@
 
         <div class="subsection" id="sub1">
 
-          <p class="h3">ساختار تابع:</p>
+          <p class="title">ساختار تابع</p>
 
           <p>فرم کلی:</p>
 
@@ -216,7 +216,7 @@ fun max(a: Int, b: Int): Int {
 
         <div class="subsection" id="sub2">
 
-          <p class="h3">ویژگی پارامتر ها در توابع:</p>
+          <p class="title">ویژگی پارامتر ها در توابع:</p>
 
           <p class="h5">۱- اختصاص دادن مقدار پیشفرض به پارامتر:</p>
 
@@ -356,7 +356,7 @@ println("ASCII code $asciiCode has occurances")
 
         <div class="subsection" id="sub3">
 
-          <p class="h3">تابع تک عبارتی (single expression function)</p>
+          <p class="title">تابع تک عبارتی (single expression function)</p>
 
           <p>اگه داخل تابع فقط یک عبارت داشته باشیم و اون عبارتو میخوایم برگردونیم، به این تابع تک عبارتی یا تابع single expression در کاتلین میگیم.</p>
 
@@ -387,7 +387,7 @@ fun max(a: Double, b: Double) = if(a &gt; b) a else b
 
         <div class="subsection" id="sub4">
           
-          <p class="h3">تابع void</p>
+          <p class="title">تابع void</p>
 
           <p>اگه نوع کلاسی که تابع برمیگردونه Unit باشه تابع void محسوب میشه ، به این توابع در کاتاین Unit Type نیز گفته میشه.</p>
 
@@ -467,7 +467,7 @@ fun printGrade(score: Double){
 
         <div class="subsection" id="sub5">
           
-          <p class="h3">تابع infix</p>
+          <p class="title">تابع infix</p>
 
           <blockquote>توابع until، downTo و step که در حلقه ی for به کار میبریم به صورت infix تعریف شدن.</blockquote>
 
@@ -598,7 +598,7 @@ for(i in 100 downUntil 0) println(i)
         </div>
 
         <div class="subsection" id="sub6">
-          <p class="h3">تابع جنریک (Generic):</p>
+          <p class="title">تابع جنریک (Generic):</p>
 
           <p>توابع میتونن پارامتر های Generic داشته باشن</p>
 
@@ -639,7 +639,7 @@ val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
 
         <div class="subsection" id="sub7">
 
-          <p class="h3">تابع tail recursion:</p>
+          <p class="title">تابع tail recursion:</p>
 
           <p>با استفاده از کلیدواژه ی tailrec میتونید به صورت native تابع tail recursion در کاتلین تعریف کنید. tail recursion نوع خاصی از توابع بازگشتی است که صدا زدن تابع داخل خودش باید اخرین عبارت داخل تابع باشه.</p>
 
@@ -679,7 +679,7 @@ tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(
 
         <div class="subsection" id="sub8">
 
-          <p class="h3">محدوده ی تعریف توابع:</p>
+          <p class="title">محدوده ی تعریف توابع:</p>
 
           <p>یک تابع رو میتونیم:</p>
 
@@ -785,7 +785,7 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
         </div>
 
         <div class="subsection" id="sub9">
-          <p class="h3">خلاصه</p>
+          <p class="title">خلاصه</p>
 
           <p>از توابع برای جلوگیری از دوباره نویسی استفاده میشه. همونطور به مرتب و خوانا کردن کد ها کمک میکنه.</p>
 
