@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="برنامه نویسی کاتلین، اکستنشن فانکشن ، extension function ، extension property ، اکشتنشن پروپرتی ، برنامه نویسی تابعی"
+    <meta content="برنامه نویسی کاتلین، اکستنشن فانکشن ، extension function ، extension property ، اکشتنشن پروپرتی ، برنامه نویسی تابعی، تابع اکستنشن، توابع اکستنشن"
           name="keywords"/>
     <meta content="بررسی اکستنشن ها، توابع اکستنشن، اکستنشن property و companion object extension در کاتلین" name="description"/>
     <meta charset="UTF-8"/>
@@ -66,7 +66,7 @@
             </p>
 
             <p>
-                <strong>در این مطلب فرض شده با شی گرایی و توابع (متدها) در کاتلین آشنایی دارید</strong>
+                <blockquote>در این مطلب فرض شده با شی گرایی و توابع (متدها) در کاتلین آشنایی دارید</blockquote>
             </p>
 
             <p>
@@ -83,14 +83,14 @@
             </div>
 
                 <div id="sub1" class="subsection">
-            <p class="h3">
+            <p class="title">
               تابع اکستنشن
             </p>
 
-            <blockquote>
-                به توابعی گفته میشه که اضافه بر توابع خود کلاس، در خارج از کلاس تعریف میکنیم و برای صدا زدنشون مثل توابع
-                داخل کلاس صداشون می‌زنیم.
-            </blockquote>
+            <p>
+            به توابعی گفته میشه که برای یک کلاس خارج از خود کلاس تعریف میکنیم.
+            </p>
+            <p>تابع اکستنشن رو مثل توابع داخل کلاس (ممبر فانکشن ها) صدا میزنیم.</p>
 
             <p>
                 فرم کلی:
@@ -115,7 +115,7 @@ fun &lt;T&gt; MyClass&lt;T&gt;.myFunction(...){
             </p>
 
             <p>
-                برای صدا زدن Extension Function ها مثل توابع معمولی عمل میکنیم.
+                توابع اکستنشن رو مثل توابع عضو کلاس (ممبر فانکشن ها) صدا میزنیم.
             </p>
 
             <div class="code-container">
@@ -126,6 +126,7 @@ myClass.myFunction(...)
             <p>
                     مثال:
             </p>
+            <p>یک function به کلاس String اضافه کردیم که بررسی میکنه یک String متقارن است یا خیر</p>
 
             <div class="code-container">
 fun String.isPalindrome(): Boolean{
@@ -147,34 +148,66 @@ fun main(){
 }
             </div>
 
-            <p>
-                در مثال بالا یک function به کلاس String اضافه کردیم که بررسی میکنه یک String متقارن است یا خیر
-            </p>
 
             <p>
-                <strong>
-                    نکته ها:
-                </strong>
+                 داخل تابع اکستنشن با کلید واژه ی this میتونیم به نمونه کلاس و اعضای کلاس دسترسی داشته باشیم.
             </p>
 
+            <p>مثال:</p>
 
-            <p>
-                ۱- این توابع کلاس رو دستکاری نمیکنن و با تعریف کردنشون عضوی به اعضای داخل کلاس اضافه نمیشه.
-            </p>
+            <p>تابع swap رو برای MutableList هایی از نوع Int تعریف میکنیم.</p>
+            
+            <div class="code-container">
+fun MutableList&lt;Int&gt;.swap(index1: Int, index2: Int) {
+    val tmp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
+            </div>
 
-            <p>
-                ۲- داخل این توابع با کلید واژه ی this میتونیم به نمونه کلاس و اعضای کلاس دسترسی داشته باشیم.
-            </p>
+            <p>این تابع برای هر MutableList که نوعش Int باشه قابل استفاده است.</p>
 
-            <p>
-                ۳- اگه این توابع با یکی از توابع داخل کلاس از نظر پارامتر و اسم یکی باشن هنگام صدا زدن، تابع داخل کلاس
-                به اجرا در میاد
-            </p>
+            <div class="note">
+
+              <p class="h6">نکته:</p>
+
+              <p>
+                 این توابع کلاس رو دستکاری نمیکنن و با تعریف کردنشون عضوی به اعضای داخل کلاس اضافه نمیشه.
+              </p>
+
+            </div>
+
+            <div class="note">
+
+              <p class="h6">
+            نکته:
+              </p>
+              <p>
+                 اگه تابع اکستنشن با یکی از توابع داخل کلاس از نظر پارامتر و اسم یکی باشه هنگام صدا زدن، تابع داخل کلاس به اجرا در میاد.
+              </p>
+
+            </div>
+
+            <p>میتونیم توابع اکستنشن رو به صورت تعریف کنیم.</p>
+
+            <p>مثال:</p>
+
+            <p>در زیر تابع swap رو به صورت جنریک تعریف کردیم تا برای هر نوعی قابل استفاده باشه.</p>
+
+
+            <div class="code-container">
+fun &lt;T&gt; MutableList&lt;T&gt;.swap(index1: Int, index2: Int) {
+    val tmp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
+            </div>
+
 
             </div>
 
             <div id="sub2" class="subsection">
-            <p class="h3">
+            <p class="title">
                  Extension Property در کاتلین
             </p>
 
@@ -191,11 +224,11 @@ val &lt;T&gt; MyClass&lt;T&gt;.myProperty: Int
             کاملا شبیه extension function هاست
             </p>
             <p>
-            اکستنشن پروپرتی ها نمی‌تونن دارای مقدار اولیه باشن
+            اکستنشن پروپرتی ها نمیتونن دارای مقدار اولیه باشن.
             </p>
 
             <p>
-            همون‌طور که بالا گفتیم extension ها ربطی به کلاس ندارن پس مقدار اولیه ای برای extension property ها وجود نداره
+            همونطور که گفتیم extension ها ربطی به کلاس ندارن پس مقدار اولیه ای برای extension property ها وجود نداره
             </p>
 
             <p>
@@ -223,7 +256,7 @@ fun main(){
 
 
             <div id="sub3" class="subsection">
-            <p class="h3">
+            <p class="title">
                 Companion Object Extension
             </p>
 
@@ -258,12 +291,12 @@ MyClass.myFunction()
               <p class="h3">خلاصه</p>
 
             <p>
-                در کاتلین Extension ها تاثیری روی کلاس ندارن وقتی برای یک کلاس extension تعریف میکنیم فقط بیان میکنیم که
+                -در کاتلین Extension ها تاثیری روی کلاس ندارن وقتی برای یک کلاس extension تعریف میکنیم فقط بیان میکنیم که
                 function یا property تعریف شده رو باید با استفاده از متغیر کلاس صدا بزنیم.
             </p>
 
             <p>
-            برای صدا زدن extension ها مانند اعضای داخل کلاس باید اسم متغیر کلاس نقطه و اسم function یا property تعریف شده رو بنویسیم.
+            -برای صدا زدن extension ها مانند اعضای داخل کلاس باید اسم متغیر کلاس نقطه و اسم function یا property تعریف شده رو بنویسیم.
             </p>
 
 
