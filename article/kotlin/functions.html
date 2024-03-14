@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="keywords" content="توابع، فانکشن، متد، تابع، تابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع infix، لوکال فانکشن، تابع جنریک، تابع void، کلیدواژه ی vararg، تابع tail recursion، تابع داخلی، تاپ لول فانکشن، ممبر فانکشن، برنامه نویسی تابعی، تابع single expression، تابع Generic" />
+  <meta name="keywords" content="توابع، فانکشن، متد، تابع، تابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع infix، لوکال فانکشن، تابع جنریک، تابع void، کلیدواژه ی vararg، تابع tail recursive، تابع داخلی، تاپ لول فانکشن، ممبر فانکشن، برنامه نویسی تابعی، تابع single expression، تابع Generic، تابع Unit Type، کلیدواژه ی infix، کلیدواژه ی return" />
 
   <meta name="description" content="بررسی کامل انواع توابع با مثال در کاتلین">
 
@@ -65,13 +65,13 @@
 
             <a class="list-group-item list-group-item-action" href="#sub3">تابع تک عبارتی</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub4">تابع void</a>
+            <a class="list-group-item list-group-item-action" href="#sub4">تابع Void</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub5">تابع infix</a>
+            <a class="list-group-item list-group-item-action" href="#sub5">تابع Infix</a>
 
             <a class="list-group-item list-group-item-action" href="#sub6">تابع Generic</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub7">تابع tail recursion</a>
+            <a class="list-group-item list-group-item-action" href="#sub7">تابع Tail Recursive</a>
 
             <a class="list-group-item list-group-item-action" href="#sub8">محدوده ی تعریف توابع</a>
 
@@ -147,11 +147,17 @@
 
           <p>۶- r مقداری از جنس R است که بعد از اجرای کد های داخل تابع با استفاده از کلیدواژه ی return برگردونده میشه.</p>
 
+          <div class="note">
+
             <p class="h6">توجه:</p>
 
-          <p>
- تابع حتما باید مقداری از جنس R برگردونه در غیر این صورت دچار خطای کامپایل میشیم، مگه اینکه R از نوع Unit باشه، در اینصورت نیاری نیست چیزی برگردونده بشه.
-          </p>
+            <p>
+   تابع حتما باید مقداری از جنس R برگردونه در غیر این صورت دچار خطای کامپایل میشیم، مگه اینکه R از نوع Unit باشه، در اینصورت نیاری نیست چیزی برگردونده بشه.
+            </p>
+
+          </div>
+
+
 
           <div class="note">
 
@@ -387,12 +393,13 @@ fun max(a: Double, b: Double) = if(a &gt; b) a else b
 
         <div class="subsection" id="sub4">
           
-          <p class="title">تابع void</p>
+          <p class="title">تابع Void</p>
 
-          <p>اگه نوع کلاسی که تابع برمیگردونه Unit باشه تابع void محسوب میشه ، به این توابع در کاتاین Unit Type نیز گفته میشه.</p>
+          <blockquote>تابع main که برای run کردن پروژه تعریف میکنیم void است.</blockquote>
 
+          <p>اگه نوع کلاسی که تابع برمیگردونه Unit باشه تابع void محسوب میشه ، به این توابع در کاتاین تابع  Unit Type نیز گفته میشه.</p>
 
-          <p><strong>تابع main که برای run کردن پروژه تعریف میکنیم Unit است.</strong></p>
+          <p>Unit در کاتلین بدون مقدار در نظر گرفته شده ، یک کلاس بدون هیچ عضوی.</p>
 
           <p>مثال:</p>
 
@@ -404,8 +411,6 @@ fun hello(): Unit{
   return Unit
 }
           </div>
-
-          <p>Unit در کاتلین بدون مقدار در نظر گرفته شده ، یک کلاس بدون هیچ عضوی.</p>
 
           <p>برای تعریف تابع void در کاتلین میتونیم از نوشتن Unit صرف نظر کنیم.
           کامپایلر به صورت خودکار تشخیص میده تابع Unit است.
@@ -467,7 +472,7 @@ fun printGrade(score: Double){
 
         <div class="subsection" id="sub5">
           
-          <p class="title">تابع infix</p>
+          <p class="title">تابع Infix</p>
 
           <blockquote>توابع until، downTo و step که در حلقه ی for به کار میبریم به صورت infix تعریف شدن.</blockquote>
 
@@ -479,7 +484,11 @@ fun printGrade(score: Double){
 
           <p>۲-تابع نباید بیشتر از یک پارامتر داشته باشه.</p>
 
-          <p>۳- در پارامتر نباید از vararg استفاده کنیم و به پارامتر نباید مقدار پیشفرض اختصاص بدیم.</p>
+          <p>۳- در پارامتر نباید از vararg استفاده کنیم.</p>
+
+          <p>
+          ۴- به پارامتر نباید مقدار پیشفرض اختصاص بدیم.
+          </p>
 
           <p>فرم کلی:</p>
 
@@ -598,9 +607,9 @@ for(i in 100 downUntil 0) println(i)
         </div>
 
         <div class="subsection" id="sub6">
-          <p class="title">تابع جنریک (Generic)</p>
+          <p class="title">تابع Generic</p>
 
-          <p>به توابعی که پارامتر های جنریک دارن تابع Generic میگیم.</p>
+          <p>به توابعی که پارامتر های جنریک دارن تابع جنریک میگیم.</p>
 
           <p>فرم کلی:</p>
           
@@ -639,15 +648,15 @@ val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
 
         <div class="subsection" id="sub7">
 
-          <p class="title">تابع tail recursion</p>
+          <p class="title">تابع Tail Recursive</p>
 
-          <p>با استفاده از کلیدواژه ی tailrec میتونید به صورت native تابع tail recursion در کاتلین تعریف کنید. tail recursion نوع خاصی از توابع بازگشتی است که صدا زدن تابع داخل خودش باید اخرین عبارت داخل تابع باشه.</p>
+          <p>با استفاده از کلیدواژه ی tailrec میتونید به صورت native تابع tail recursive در کاتلین تعریف کنید. tail recursion نوع خاصی از توابع بازگشتی است که صدا زدن تابع داخل خودش باید اخرین عبارت داخل تابع باشه.</p>
 
           <div class="note">
               <p class="h6">توجه:</p>
 
               <p>
-              در تابع tail recursion پس از صدا کردن تابع در داخل خود تابع، هیچ کدی نباید نوشته بشه در غیر این صورت دچار خطای کامپایل میشیم.</p>
+              در تابع tail recursive پس از صدا کردن تابع در داخل خود تابع، هیچ کدی نباید نوشته بشه در غیر این صورت دچار خطای کامپایل میشیم.</p>
           </div>
 
           <p>مثال:</p>
@@ -790,7 +799,8 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
           <p>از توابع برای جلوگیری از دوباره نویسی استفاده میشه. همونطور به مرتب و خوانا کردن کد ها کمک میکنه.</p>
 
 
-          <p> در حالت نرمال توابع از 6 قسمت تشکیل شدن: modifier سطح دسترسی، کلیدواژه ی fun، اسم تابع ، پارامتر های تابع، نوعی که تابع بر میگردونه و کلیدواژه ی return برای برگردوندن مقداری از جنس این نوع.</p>
+          <p> در حالت نرمال توابع از 6 قسمت تشکیل شدن: ۱- modifier سطح دسترسی، ۲- کلیدواژه ی fun،
+          ۳- اسم تابع ، ۴- پارامتر های تابع، ۵- نوعی که تابع بر میگردونه ۶- کلیدواژه ی return برای برگردوندن.</p>
 
           <p>هرجای تابع که خواستیم میتونیم از return استفاده کنیم. پس از اجرای return تابع متوقف شده و کد های بعد از return اجرا نمیشن.</p>
 
@@ -800,9 +810,9 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
 
           <p>توابع infix چهارتا قانون دارن که هنگام تعریف باید رعایت بشه: ۱-تابع باید ممبر فانکشن یا اکستنشن باشه. ۲-باید فقط یک پارامتر داشته باشه. ۳-برای پارامتر نباید vararg تعریف کنیم. ۴-به پارامتر نباید مقدار پیشفرض اختصاص بدیم.</p>
 
-          <p>کاتلین به صورت native از تابع tail recursion پشتیبانی میکنه. برای تعریف این تابع کافیه از کلیدواژه ی tailrec استفاده کنیم.</p>
+          <p>کاتلین به صورت native از تابع tail recursive پشتیبانی میکنه. برای تعریف این تابع کافیه از کلیدواژه ی tailrec استفاده کنیم.</p>
 
-          <p>در توابع tail recursion اخرین عبارت باید صدا زدن تابع داخل خودش باشه و بعدش هیچ کدی نباید نوشته بشه.</p>
+          <p>در توابع tail recursive اخرین عبارت باید صدا زدن تابع داخل خودش باشه و بعدش هیچ کدی نباید نوشته بشه.</p>
 
           <p>میتونیم توابع رو در سه جا تعریف کنیم: ۱-داخل فایل کاتلین. ۲-داخل کلاس. ۳ داخل یک تابع دیگه.</p>
 
