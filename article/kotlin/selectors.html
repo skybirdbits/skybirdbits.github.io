@@ -5,8 +5,7 @@
 
   <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <meta
-    content="دستورات شرطی در کاتلین، دستور شرطی if-else در کاتلین ، دستور when در کاتلین، استفاده از in در کاتلین ، دستور if در کاتلین، استفاده از in و is در کاتلین ، عملگر های منطقی در کاتلین"
-    name="keywords" />
+    content="دستورات شرطی، دستور شرطی if else، دستور شرطی if-else، عملگر های منطقی، کلیدواژه ی when, کلیدواژه ی in، کلیدواژه ی is, متغیر های بولین" name="keywords" />
   <meta content="بررسی دستورات شرطی if else و when و استفاده از in در کاتلین" name="description" />
   <meta charset="UTF-8" />
   <meta content="width:device-width, initial-scale=1" name="viewport" />
@@ -71,7 +70,7 @@
 
         <div class="subsection" id="sub0">
 
-          <p class="h3">پیشنیاز</p>
+          <p class="title">پیشنیاز</p>
 
           <p class="h5">متغیر های بولین (boolean) در کاتلین</p>
 
@@ -87,9 +86,9 @@ var v1 = false
 
         <div class="subsection" id="sub1">
 
-          <p class="h3">۱- دستور شرطی if–else در کاتلین</p>
+          <p class="title">۱- دستور شرطی if–else در کاتلین</p>
           <blockquote>
-            تعریف: با دستور شرطی if-else در کاتلین به بررسی true یا false بودن یک عبارت می پردازیم if یعنی اگر.
+            تعریف: با دستور شرطی if else در کاتلین به بررسی true یا false بودن یک عبارت می پردازیم if یعنی اگر.
           </blockquote>
 
 
@@ -153,7 +152,7 @@ if(condition0){
 }
           </div>
 
-          <p><strong>مثال</strong></p>
+          <p>مثال:</p>
           <div class="code-container">
 val input = Scanner(System.in)
 
@@ -207,7 +206,7 @@ if(condition0){
 
           <p>میتونیم if-else در کاتلین به صورت یک عبارت بیان کنیم تا مقداری رو برگردونه</p>
 
-          <p><strong>مثال:</strong></p>
+          <p>مثال:</p>
 
           <div class="code-container">
 val input = Scanner(System.in)
@@ -227,7 +226,7 @@ println("Maximum is: $max")
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="h3">عملگر های منطقی در کاتلین</p>
+          <p class="title">عملگر های منطقی در کاتلین</p>
 
           <p>عملگر های منطقی برای تغییر مقدار boolean است</p>
 
@@ -265,18 +264,25 @@ if(condition0 || condition1 || ... || conditionN){
 }
           </div>
 
-          <p class="h5">۴- عملگر ^ :</p>
+          <p class="h5">۴- عملگر xor:</p>
           <p>معنی or اختصاصی میده فرض کنید دو عبارت شرطی داریم میخوایم بررسی کنیم فقط یکیش درست باشه و هردو نباید
             درست
             باشه :</p>
 
           <div class="code-container">
-if(condition0 ^ condition1){
+if(condition0 xor condition1){
   ...
 }
           </div>
 
-          <p><strong> مثال: </strong></p>
+          <div class="note">
+            <p class="h6">توجه:</p>
+            <p>عملگر xor در کاتلین یک تابع است.</p>
+
+          </div>
+
+          <p>مثال:</p>
+
           <div class="code-container">
 val input = Scanner(System.in);
 
@@ -296,10 +302,10 @@ if (num % 2 == 0 ^ num % 3 == 0)
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="h3">استفاده از in در کاتلین</p>
+          <p class="title">کلیدواژه ی in</p>
 
           <blockquote>
-            با استفاده از in میتونیم بررسی کنیم یک متغیر عددی در چه محدوده ای قرار داره
+            با استفاده از کلیدواژه ی in در کاتلین میتونیم بررسی کنیم یک متغیر عددی در چه محدوده ای قرار داره
           </blockquote>
 
           <p>
@@ -315,7 +321,12 @@ val isNumberInRange = v in 0..10
 println("$v is between 0 to 10? $isNumberInRange")
           </div>
 
-          <p><strong>نکته: اگه بخوایم اخرین عدد تو محدوده نباشه از until استفاده میکنیم</strong></p>
+          <div class="note">
+            <p class="h6">نکته:</p>
+            <p>
+اگه بخوایم اخرین عدد تو محدوده نباشه از تابع until استفاده میکنیم.
+            </p>
+          </div>
 
           <div class="code-container">
 val isNumberInRange = v in 0 until 10
@@ -323,11 +334,12 @@ val isNumberInRange = v in 0 until 10
 
 
           <div class="subsection" id="sub4">
-            <p class="h3">استفاده از is در کاتلین</p>
-            <p>با استفاده از is در کاتلین میتونیم بررسی کنیم یک متغیر از نوع کدوم object هست
+            <p class="title">کلیدواژه ی is</p>
+
+            <p>با استفاده از کلیدواژه ی is در کاتلین میتونیم بررسی کنیم یک متغیر از نوع کدوم کلاس است.
             </p>
 
-            <p><strong>مثال</strong></p>
+            <p>مثال:</p>
 
             <div class="code-container">
 val v = "Hello Condition!"
@@ -343,11 +355,11 @@ println("Is v Char? $isChar")
 
           <div class="subsection" id="sub5">
 
-            <p class="h3">کلید واژه ی when در کاتلین</p>
+            <p class="title">کلید واژه ی when</p>
 
-            <p>با استفاده از when میتونیم چند موردو به عنوان شرط بررسی کنیم</p>
+            <p>با استفاده از when در کاتلین میتونیم چند موردو به عنوان شرط بررسی کنیم</p>
 
-            <p><strong>مثال</strong></p>
+            <p>مثال:</p>
 
             <div class="code-container">
 val input = Scanner(System.in)
@@ -444,7 +456,7 @@ when(v){
         <p>در مثال بالا یک عدد کاربر وارد میکنه و برنامه بررسی میکنه که این عدد چند رقمیه اگه عدد بیشتر از سه رقم
           باشه یا منفی عبارت مربوط به else اجرا میشه</p>
 
-        <p><strong>مثال</strong></p>
+        <p>مثال:</p>
 
         <p>استفاده از is در when</p>
 
@@ -461,6 +473,8 @@ when(v){
 
 
         </div>
+
+        <div class="subsection" id="sub6"></div>
 
         <p class="h3">خلاصه</p>
 
