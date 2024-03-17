@@ -150,8 +150,8 @@ function showPageLastModified(){
   var lmd = document.lastModified;
   var date = new Date(lmd).toLocaleDateString('fa-IR-u-nu-latn');
 
-  var lut = document.querySelector(".page-last-update")
-  lut += (" " + date);
+  var lut = document.querySelector(".page-last-update");
+  lut.innerHTML = lut.innerHTML + " " + date;
 
 
 }
