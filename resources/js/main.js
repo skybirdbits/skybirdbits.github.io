@@ -22,14 +22,14 @@ fileloader.loadJavaScript(
 
 window.onload = function(){
 
-    document.getElementById('lastUpdate').innerHTML = getLastUpdate();
 
     $('header').load('/ui-components/header-contents.html', function(){
         initSidebar();
         loadAllArticleLinks();
     });
     $('footer').load('/ui-components/footer-contents.html');
-
+    
+    document.getElementById('lastUpdate').innerHTML = getLastUpdate();
     createCodeViews();
 }
 
