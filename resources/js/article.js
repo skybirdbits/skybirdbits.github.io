@@ -145,4 +145,12 @@ var scrollTopVisibility = function(){
     currentScrollY = window.scrollY;
 }
 
-export {createCodeViews, scrollTopVisibility};
+function getLastUpdate(){
+  
+  var lmd = document.lastModified;
+  var date = new Date(lmd).toLocaleDateString('fa-IR-u-nu-latn');
+
+  return date
+}
+
+export {createCodeViews, scrollTopVisibility, getLastUpdate};

@@ -1,4 +1,4 @@
-import {createCodeViews, scrollTopVisibility} from './article.js';
+import {createCodeViews, scrollTopVisibility, getLastUpdate} from './article.js';
 import {initSidebar , loadAllArticleLinks} from './base.js';
 import * as fileloader from './fileloader.js';
 
@@ -21,6 +21,9 @@ fileloader.loadJavaScript(
 );
 
 window.onload = function(){
+
+    document.getElementById('lastUpdate').innerHTML = getLastUpdate();
+
     $('header').load('/ui-components/header-contents.html', function(){
         initSidebar();
         loadAllArticleLinks();
