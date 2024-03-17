@@ -147,12 +147,13 @@ var scrollTopVisibility = function(){
 
 function showPageLastModified(){
   
-  var lmd = document.lastModified;
-  var date = new Date(lmd).toLocaleDateString('fa-IR-u-nu-latn');
+  var lastModified = document.lastModified;
+  var date = new Date(lastModified).toLocaleDateString('fa-IR-u-nu-latn');
 
-  var lut = document.querySelector(".page-last-update");
-  lut.innerHTML = lut.innerHTML + " " + date;
+  var ltu = document.querySelector(".page-last-update");
 
+  if(ltu != null)
+    ltu.innerHTML = lut.innerHTML + " " + date;
 
 }
 
