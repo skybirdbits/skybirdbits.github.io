@@ -165,3 +165,11 @@
 .scroll-top-container:hover{
     background: #eeeeee;
 }
+
+.page-last-update{
+  margin-right: 16px;
+  padding: 8px;
+  font-weight: 500;
+  color: #eeeeee;
+}
+
