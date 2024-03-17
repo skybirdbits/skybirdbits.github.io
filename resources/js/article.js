@@ -153,7 +153,7 @@ function showPageLastModified(){
   var ltu = document.querySelector(".page-last-update");
 
   if(ltu != null)
-    ltu.innerHTML = lut.innerHTML + " " + date;
+    ltu.innerHTML = ltu.innerHTML + " " + date;
 
 }
 
