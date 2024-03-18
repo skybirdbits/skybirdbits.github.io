@@ -2,16 +2,18 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="برنامه نویسی کاتلین، اکستنشن فانکشن ، extension function ، extension property ، اکشتنشن پروپرتی ، برنامه نویسی تابعی، تابع اکستنشن، توابع اکستنشن، اکستنشن ها در کاتلین، توابع، توابع در کاتلین"
+    <meta content="برنامه نویسی کاتلین، اکستنشن فانکشن ، extension function ، extension property ، اکشتنشن پروپرتی ، برنامه نویسی تابعی، تابع اکستنشن، توابع اکستنشن، اکستنشن ها در کاتلین، توابع، توابع در کاتلین، اکستنشن پراپرتی"
           name="keywords"/>
-    <meta content="بررسی اکستنشن ها، توابع اکستنشن، اکستنشن property و companion object extension در کاتلین" name="description"/>
+
+    <meta content="در این مطلب به بررسی اکستنشن ها در کاتلین می پردازیم و با انوع اکستنشن از جمله تابع اکستنشن، اکستنشن پراپرتی، اکستنشن های Companion Object اشنا شده و تعریف اکستنشن ها در داخل کلاس رو بررسی میکنیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
 
     <title>اکستنشن ها در کاتلین</title>
 
     <meta property="og:title" content="اکستنشن ها در کاتلین"/>
-    <meta property="og:description" content="بررسی اکستنشن ها، توابع اکستنشن، اکستنشن propery و companion object extension در کاتلین"/>
+    <meta property="og:description" content="در این مطلب به بررسی اکستنشن ها در کاتلین می پردازیم و با انوع اکستنشن از جمله تابع اکستنشن، اکستنشن پراپرتی، اکستنشن های Companion Object اشنا شده و تعریف اکستنشن ها در داخل کلاس رو بررسی میکنیم."/>
+
     <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
     <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/extension-function.html" />
     <meta property="og:type" content="article">
@@ -44,14 +46,19 @@
                      src="/resources/image/kotlin/cover_extensions.png">
             </figure>
 
+            <div class="page-last-update">آخرین بروزرسانی:</div>
+
             <div class="toc">
                 <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">تعریف Extension در کاتلین</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">تابع اکستنشن</a>
                     <a class="list-group-item list-group-item-action" href="#sub2">Extension Property در کاتلین</a>
-                    <a class="list-group-item list-group-item-action" href="#sub3">Companion Object Extension</a>
-                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">اکستنشن های Companion Object</a>
+                    
+                    <a class="list-group-item list-group-item-action" href="#sub4">تعریف اکستنشن به عنوان عضو یک کلاس</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
                 </div>
             </div>
 
@@ -69,19 +76,21 @@
                 <blockquote>در این مطلب فرض شده با شی گرایی و توابع (متدها) در کاتلین آشنایی دارید. اگه با توابع در کاتلین اشنایی ندارید میتونید به مطلب <a class="text-decoration-none" href="/article/kotlin/functions.html">بررسی توابع در کاتلین</a> مراجعه کنید.</blockquote>
             </p>
 
-            <p></p>
+            <p>اکستنشن ها در کاتلین توابع و متغیر هایی هستن که میتونیم بدون ایجاد تغییر در اعضای کلاس در خارج از کلاس، برای کلاس تعریفشون کنیم.</p>
 
             <p>
             اضافه کردن property یا function خارج از کلاس به کلاس بدون دستکاری خود کلاس.
             </p>
             <p>
-            اکستنشن ها تغییری در کلاس ایجاد نمیکنن و مانند property و function های داخل کلاس اونا رو صدا می‌زنیم.
+            اکستنشن ها تغییری در کلاس ایجاد نمیکنن و مانند property و function های داخل کلاس اونا رو صدا میزنیم.
             </p>
 
             <p>
-            اکستنشن ها شامل توابع اکستنشن، اکستنشن property و Companion object extension هستند
+            اکستنشن ها شامل توابع اکستنشن، اکستنشن پراپرتی (Extension Property)، و اکستنشن های Companion Object هستند.
             </p>
 
+            <p>معمولا اکستنشن ها رو داخل فایل کاتلین و به صورت <a href="https://skybirdbits.github.io/article/kotlin/functions.html#sub8">Top Level</a> تعریف میکنیم.
+            </p>
             </div>
 
                 <div id="sub1" class="subsection">
@@ -108,7 +117,7 @@ fun &lt;T&gt; MyClass&lt;T&gt;.myFunction(...){
 
             <p>
                 در اینجا MyClass اسم کلاس مورد نظر است یه نقطه میزاریم سپس اسم دلخواه برای تابعمون مینویسیم و مثل
-                function معمولی پارامتر های دلخواه داخل پرانتز function رو تعریف میکنیم.
+                توابع معمولی پارامتر های دلخواه داخل پرانتز تابع رو تعریف میکنیم.
             </p>
 
             <p>
@@ -209,6 +218,8 @@ list.swap(0, 2)
 
 
             <div class="code-container">
+// &lt;T&gt; after function satisfies the generic.
+
 fun &lt;T&gt; MutableList&lt;T&gt;.swap(index1: Int, index2: Int) {
     val tmp = this[index1]
     this[index1] = this[index2]
@@ -270,13 +281,14 @@ fun main(){
 
             <div id="sub3" class="subsection">
             <p class="title">
-                Companion Object Extension
+                اکستنشن های Companion Object
             </p>
 
 
             <p>
-                اگه کلاسی دارای Companion object باشه میتونیم Extension ها رو به صورت Companion تعریف کنیم:
+                اگه برای یک کلاس Companion Object تعریف شده باشه، میتونیم برای Companion Object اکستنشن فانکشن و اکستنشن پراپرتی تعریف کنیم.
             </p>
+
 
             <div class="code-container">
 MyClass.Companion.myFunction(){
@@ -298,10 +310,116 @@ MyClass.myFunction()
 
             </div>
 
+            <div class="subsection" , id="sub4">
+              <p class="title">تعریف اکستنشن به عنوان عضو یک کلاس
+              </p>
 
-            <div id="sub4" class="subsection">
+              <div class="note">
+                <p class="h6">توجه:</p>
+                <p>
+                برای مطالعه ی این بخش توصیه میشه با مبانی شی گرایی اشنایی داشته باشید.
+                </p>
+              </div>
 
-              <p class="h3">خلاصه</p>
+              <p>میتونیم برای یک کلاس داخل کلاس دیگه اکستنشن تعریف کنیم به کلاسی که داخلش اکستنشن تعریف کردیم dispatch receiver و به کلاسی که اکستنشن رو براش تعریف کردیم extension receiver میگیم.</p>
+              <p>مثال:</p>
+
+              <p>استفاده از یک کلاس به عنوان extension receiver.</p>
+
+              <div class="code-container">
+class MyExtensionReceiver{               
+  val id: Int = (0..100).random()
+
+  fun printMessage(){
+    println("This is a message from MyExtensionReceiver")
+  }
+}
+              </div>
+
+              <p>
+              استفاده از یک کلاس به عنوان dispatch receiver.
+              </p>
+
+              <div class="code-container">
+class MyDispatchReceiver(val er: MyExtensionReceiver){
+
+  MyExtensionReceiver.printInfo(){
+    println("The id of MyExtensionReceiver is $id")
+  }
+
+}
+              </div>
+
+              <div class="note">
+                <p class="h6">توجه:</p>
+                <p>اگه بخوایم داخل تابع printInfo یکی از اعضای کلاس dispatch receiver رو صدا بزنیم و با عضو کلاس extension receiver هم نام باشه، اولویت با اعضای extension receiver است. برای همین برای صدا زدن اعضای dispatch receiver از کلیدواژه ی <strong>this@ClassName</strong> استفاده میکنیم تا از تداخل اسمی جلوگیری بشه.</p>
+              </div>
+
+              <p>فرض کنید در کلاس MyDispatchReceiver عضوی با اسم id نیز وجود داشته باشه: </p>
+
+              <div class="code-container">
+class MyDispatchReceiver(val er: MyExtensionReceiver){
+  val id: Int = (0..20).random()
+
+  MyExtensionReceiver.printInfo(){
+    val extensionId = id
+    println("The id of MyExtensionReceiver is $id")
+    val dispatchId = this@MyDispatchReceiver.id
+    println("The id of MyDispatchReceiver is $dispatchId")
+
+  }
+
+}
+              </div>
+
+              <p>میتونیم تابع اکستنشن داخل کلاس رو به صورت open تعریف کنیم تا در وراثت بتونیم override کنیم.</p>
+
+              <p>
+              مثال:
+              </p>
+
+              <div class="code-container">
+open class Base { }
+
+class Derived : Base() { }
+
+open class BaseCaller {
+    open fun Base.printFunctionInfo() {
+        println("Base extension function in BaseCaller")
+    }
+
+    open fun Derived.printFunctionInfo() {
+        println("Derived extension function in BaseCaller")
+    }
+
+    fun call(b: Base) {
+        b.printFunctionInfo() 
+    }
+}
+
+class DerivedCaller: BaseCaller() {
+    override fun Base.printFunctionInfo() {
+        println("Base extension function in DerivedCaller")
+    }
+    override fun Derived.printFunctionInfo() {
+        println("Derived extension function in DerivedCaller")
+    }
+}
+
+fun main() {
+    BaseCaller().call(Base())
+    DerivedCaller().call(Base())
+    DerivedCaller().call(Derived())
+}
+
+              </div>
+
+            </div>
+
+
+            <div id="sub5" class="subsection">
+
+              <p class="title">خلاصه</p>
 
             <p>
                 -در کاتلین Extension ها تاثیری روی کلاس ندارن وقتی برای یک کلاس extension تعریف میکنیم فقط بیان میکنیم که
@@ -342,6 +460,10 @@ val list = myObject.myExtensionProperty
 
 MyClass.myExtensionCompanionFunction()
             </div>
+
+            <p>اکستنشن ها رو در داخل کلاس هم میشه تعریف کرد به کلاسی که اکستنشن داخلش تعریف شده dispatch receiver و به کلاسی که اکستنشن براش تعریف شده extension receiver میگیم.</p>
+
+
 
             </div>
 
