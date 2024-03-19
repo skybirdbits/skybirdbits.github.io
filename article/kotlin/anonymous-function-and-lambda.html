@@ -2,15 +2,15 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content=" عبارت لاندا ، توابع بی نام، برنامه نویسی تابعی، عبارت لامبدا، کاتلین، اندروید، تابع anonymous" name="keywords"/>
-    <meta content="بررسی توابع بی نام و عبارت لاندا در کاتلین به همراه مثال" name="description"/>
+    <meta content=" عبارت لاندا ، توابع بی نام، برنامه نویسی تابعی، عبارت لامبدا، کاتلین، اندروید، تابع anonymous، توابع تحت اللفظی" name="keywords"/>
+    <meta content="در این مطلب به بررسی دو عبارت تحت اللفظی عبارت لامبدا و توابع بی نام در کاتلین می پردازیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
 
-    <title>توابع بی نام و عبارت لاندا در کاتلین</title>
+    <title>عبارت لامبدا و توابع بی نام در کاتلین</title>
 
     <meta property="og:title" content="توابع بی نام و عبارت لاندا در کاتلین"/>
-    <meta property="og:description" content="بررسی توابع بی نام و عبارت لاندا در کاتلین به همراه مثال"/>
+    <meta property="og:description" content="در این مطلب به بررسی دو عبارت تحت اللفظی عبارت لامبدا و توابع بی نام در کاتلین می پردازیم."/>
     <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
     <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html" />
     <meta property="og:type" content="article">
@@ -37,6 +37,8 @@
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
             </address>
 
+            <div class="page-last-update"></div>
+
             <figure class="figure figure-wrapper">
                 <img alt="عبارت لامبدا"
                      class="rounded figure-img"
@@ -48,23 +50,26 @@
 
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">بررسی یه ویژگی از کاتلین</a>
-                        <a class="list-group-item list-group-item-action" href="#sub1">عبارت لامبدا (lambda-expression) در کاتلین</a>
-                        <a class="list-group-item list-group-item-action" href="#sub2">توابع بی نام ( anonymous functions ) در کاتلین</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub1">تعریف توابع تحت اللفظی</a>
+ 
+                    
+                        <a class="list-group-item list-group-item-action" href="#sub2">عبارت لامبدا در کاتلین</a>
+                        <a class="list-group-item list-group-item-action" href="#sub3">توابع بی نام  در کاتلین</a>
+
+                        <a class="list-group-item list-group-item-action" href="#sub4">توابع تحت الفلفظی با receiver</a>
+ 
                 </div>
             </div>
 
         </div>
         <article>
 
-          <p>عبارات لامبدا و توابع بی نام در کاتلین یکی از ویژگی های برنامه نویسی تابعیه که در کاتلین هم وجود داره. از این ویژگی در فریمورک های مختلف از جمله اندروید زیاد استفاده میشه. یک نمونه میشه به jetpack compose در اندروید اشاره کرد.</p>
-
             <div id="sub0" class="subsection">
                 <p class="title">بررسی یه ویژگی از کاتلین</p>
 
                 <blockquote>
-                    در کاتلین همه چیز دارای مقدار است؛ از متغیر ها گرفته تا توابع تقریبا هر عبارت و تابعی که وجود داره
-                    دارای
-                    مقداره.
+                    در کاتلین همه چیز دارای مقداره، تقریبا هر متغیر و تابعی که در کاتلین وجود داره دارای مقداره. دونستن این موضوع میتونه به درک بهتر عبارت لامبدا و توابع بی نام کمک کنه.
                 </blockquote>
                 <p>
                     فرض کنید تو جاوا تابعی رو صدا میزنیم اگه مقداریو برگردونه میتونیم به متغیر اختصاص بدیم:
@@ -101,11 +106,31 @@ private fun myMethod(){
 //correct
 val result = myMethod()
                 </div>
+                <p>
+               دونستن این موضوع شاید به درک بهتر عبارت لامبدا (Lambda Expression) و توابع بی نام (Anonymous Function) کمک کنه.
+               
+               </p>
+
+
             </div>
+           <div class="subsection" id="sub1">
+             <p class="title">تعریف</p>
+
+
+
+          <p>عبارات لامبدا و توابع بی نام در کاتلین دو قسمت از برنامه نویسی تابعی هستند. که در فریمورک های مختلف از جمله اندروید زیاد استفاده میشن. یک نمونه میشه به jetpack compose در اندروید اشاره کرد.</p>
+
+             <p>
+به عبارت لامبدا و تابع بی نام، <strong>توابع تحت اللفظی (Function Literals)</strong> گفته میشه.
+             </p>
+
+             <p>توابع تحت اللفظی رو مثل توابع معمولی تعریف نمیکنیم بلکه مانند یک متغیر تعریفشون میکنیم و هنگام صدا زدن مانند تابع معمولی صداشون میزنیم. </p>
+
+           </div>
 
             <div id="sub1" class="subsection">
                 <p class="title">
-                    عبارت لامبدا (lambda expression) در کاتلین
+                    عبارت لامبدا در کاتلین
                 </p> 
 
                 <p>
@@ -128,7 +153,7 @@ val result = myMethod()
                 </p>
 
                 <p>
-                    مقدار لامبدا: همان مقدار متغیر است و با {...} متغیرو‌ مقداردهی میکنیم.
+                    مقدار لامبدا: همان مقدار متغیر است و با {...} متغیرو مقداردهی میکنیم.
                 </p>
 
                 <p>
@@ -156,7 +181,7 @@ val myLambda: (T0, T1 , ... , Tn) -&gt; Type = {
                 </p>
 
                 <p>
-                    سپس عبارتو‌ مانند تابع معمولی به صورت زیر صدا می‌زنیم:
+                    سپس عبارتو مانند تابع معمولی به صورت زیر صدا میزنیم:
                 </p>
 
                 <div class="code-container">
@@ -356,6 +381,89 @@ println(message)
                 </div>
             </div>
 
+            <div class="subsection" id="sub3">
+              <p class="title">توابع تحت اللفظی با receiver</p>
+              <p>میتونیم عبارت لامبدا رو با یک کلاس به عنوان receiver بنویسیم. سپس به اعضای کلاس در داخل تابع دسترسی داریم. این کار شبیه تعریف <a href="https://skybirdbits.github.io/article/kotlin/extensions.html" class="text-decoration-none">اکستنشن ها</a> در کاتلین است.
+              </p>
+
+              <p>مثال:</p>
+
+              <p>در زیر یک تابع تعریف کردیم که بررسی میکنه یک رقم در داخل استرینگ وجود داره یا خیر.</p>
+
+              <div class="code-container">
+val containsDigit: String.(Int) -&gt; Boolean = {
+  digit -&gt;
+
+  val d = digit.toString()
+
+
+  var containsDigit = false
+
+  if(d.length == 1){
+
+    for(ch in this){
+      if(ch.toString() == d){ 
+        containsDigit = true
+        break
+      }
+    }
+  }
+
+  containsDigit
+}
+  
+
+//صدا زدن تابع
+
+fun main(){
+  var s = "A binary number 01001 equals 9 in decimal"
+  
+  println("s contains 9? ${s.containsDigit(9)}")
+
+  println("s contains 5? ${s.containsDigit(5)}")
+
+  println("s contains 0? ${s.containsDigit(0)}")
+
+  println("s contains 1? ${s.containsDigit(1)}")
+}
+              </div>
+
+              <p>مثال:</p>
+              <p>در مثال زیر یک عبارت بدون پارامتر تعریف میکنیم که بررسی میکنه طول یک String زوج است یا خیر.</p>
+
+              <div class="code-container">
+val isLengthEven: String.() -&gt; Boolean {
+  (length % 2) == 0
+}
+
+fun main(){
+  val s = "Lambda Expression"
+  val even = s.isLengthEven()
+  println("Is $s length even? $even")
+}
+              </div>
+
+      <p>توابع بی نام هم مانند عبارت لامبدا میتونن کلاس receiver داشته باشن.</p>
+
+      <p>مثال:</p>
+
+      <div class="code -container">
+val divide = fun Int.(other: Int): Int{
+  return this / other
+}
+
+fun main(){
+  val a = 8
+  val b = 2
+
+  val result = a.divide(b)
+
+  println("$a divided by $b equals $result")
+      </div>
+
+              
+            </div>
+
                 <p>
                 یکی از ویژگی هایی که کاتلینو با جاوا متمایز کرده قدرت functionality کاتلینه.
                 در این مقاله با توابع anonymous و عبارت لاندا در کاتلین اشنا شدیم.
@@ -370,6 +478,9 @@ println(message)
             <div class="d-block">
               <p class="h5">مطالب مرتبط:</p>
               <div class="d-flex flex-wrap">
+                <span>
+                  <a class="text-decoration-none" href="/article/kotlin/functions.html">بررسی توابع در کاتلین</a>
+                </span>
                 <span>
                   <a class="text-decoration-none" href="/article/kotlin/extension-function.html">توابع اکستنشن در کاتلین</a>
                 </span>
