@@ -80,7 +80,7 @@
             <p>اکستنشن ها در کاتلین توابع و متغیر هایی هستن که برای کلاس تعریفشون میکنیم.</p>
 
             <p>
-            اکستنشن ها تغییری در داخل کلاس ایجاد نمیکنن و مانند property و function های عضو کلاس اونا رو صدا میزنیم.
+            اکستنشن ها تغییری در داخل کلاس ایجاد نمیکنن و مانند پراپرتی (field) و تابع (function) های عضو کلاس اونا رو صدا میزنیم.
             </p>
 
             <p>با اینکه اکستنشن ها مانند اعضای کلاس صدا زده میشن اما عضوی به کلاس اضافه نمیکنن و <a class="text-decoration-none" href="/article/java/static-keyword.html">استاتیک</a> در نظر گرفته میشن. مثلا اگه برای دو کلاس تابع اکستنشن یکسان تعریف کرده باشیم، و دو کلاس از همدیگ ارث ببرن بدون توجه به وراثت؛ زمان کامپایل مشخص میشه تابع اکستنشن کدوم کلاس اجرا میشه.</p>
@@ -371,7 +371,7 @@ class MyDispatchReceiver(val er: MyExtensionReceiver){
 
               <div class="note">
                 <p class="h6">توجه:</p>
-                <p>اگه بخوایم داخل تابع printInfo یکی از اعضای کلاس dispatch receiver رو صدا بزنیم و با عضو کلاس extension receiver هم نام باشه، اولویت با اعضای extension receiver است. برای همین برای صدا زدن اعضای dispatch receiver از کلیدواژه ی <strong>this@ClassName</strong> استفاده میکنیم تا از تداخل اسمی جلوگیری بشه.</p>
+                <p>اگه بخوایم داخل تابع printInfo یکی از اعضای dispatch receiver رو صدا بزنیم و با عضو extension receiver هم نام باشه، اولویت با اعضای extension receiver است. برای همین موقع صدا زدن اعضای dispatch receiver از <strong>this@ClassName</strong> استفاده میکنیم تا از تداخل اسمی جلوگیری بشه.</p>
               </div>
 
               <p>فرض کنید در کلاس MyDispatchReceiver عضوی با اسم id نیز وجود داشته باشه: </p>
@@ -494,17 +494,13 @@ val list = myObject.myExtensionProperty
 MyClass.myExtensionCompanionFunction()
             </div>
 
-            <p>اکستنشن ها رو در داخل کلاس هم میشه تعریف کرد به کلاسی که اکستنشن داخلش تعریف شده dispatch receiver و به کلاسی که اکستنشن براش تعریف شده extension receiver میگیم.</p>
-
-
-
             </div>
 
             <p>
-            در این مطلب به بررسی اکستنشن ها در کاتلین پرداختیم و با انواع اکستنشن های تابعی ، متغیری و companion object در کاتلین اشنا شدیم
+            در این مطلب به بررسی اکستنشن ها در کاتلین پرداختیم و با توابع اکستنشن ، اکستنشن پراپرتی  و اکستنشن های companion object در کاتلین اشنا شدی و اکستنشن های عضو کلاس رو بررسی کردیم.م
             </p>
 
-            <p>موفق و معید باشید</p>
+            <p>موفق باشید</p>
 
         </article>
         <div class="article-foot">
