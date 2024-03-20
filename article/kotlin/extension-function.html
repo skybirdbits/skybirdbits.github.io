@@ -12,7 +12,7 @@
     <title>اکستنشن ها در کاتلین</title>
 
     <meta property="og:title" content="اکستنشن ها در کاتلین"/>
-    <meta property="og:description" content="در این مطلب به بررسی اکستنشن ها در کاتلین می پردازیم و با انوع اکستنشن از جمله تابع اکستنشن، اکستنشن پراپرتی، اکستنشن های Companion Object اشنا شده و تعریف اکستنشن ها در داخل کلاس رو بررسی میکنیم."/>
+    <meta property="og:description" content="در این مطلب به بررسی اکستنشن ها در کاتلین می پردازیم و با تابع اکستنشن، اکستنشن پراپرتی، اکستنشن های Companion Object اشنا شده و تعریف اکستنشن ها در داخل کلاس رو بررسی میکنیم."/>
 
     <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
     <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/extension-function.html" />
@@ -86,12 +86,16 @@
             اکستنشن ها تغییری در کلاس ایجاد نمیکنن و مانند property و function های داخل کلاس اونا رو صدا میزنیم.
             </p>
 
+            <p>با اینکه اکستنشن ها مانند اعضای کلاس صدا زده میشن اما عضوی به کلاس اضافه نمیکنن و استاتیک در نظر گرفته میشن. مثلا اگه برای دو کلاس تابع اکستنشن یکسان تعریف کرده باشیم، و دو کلاس از همدیگ ارث ببرن بدون توجه به وراثت؛ زمان کامپایل مشخص میشه تابع اکستنشن کدوم کلاس اجرا بشه.</p>
+
             <p>
             اکستنشن ها شامل توابع اکستنشن، اکستنشن پراپرتی (Extension Property)، و اکستنشن های Companion Object هستند.
             </p>
 
-            <p>معمولا اکستنشن ها رو داخل فایل کاتلین و به صورت <a href="https://skybirdbits.github.io/article/kotlin/functions.html#sub8">Top Level</a> تعریف میکنیم.
+            <p>معمولا اکستنشن ها رو داخل فایل کاتلین؛ یعنی به صورت <a href="https://skybirdbits.github.io/article/kotlin/functions.html#sub8">Top Level</a> تعریف میکنیم.
             </p>
+
+
             </div>
 
                 <div id="sub1" class="subsection">
@@ -137,16 +141,6 @@ myClass.myFunction(...)
 
             <div class="note">
 
-              <p class="h6">نکته:</p>
-
-              <p>
-                 این توابع کلاس رو دستکاری نمیکنن و با تعریف کردنشون عضوی به اعضای داخل کلاس اضافه نمیشه.
-              </p>
-
-            </div>
-
-            <div class="note">
-
               <p class="h6">
             نکته:
               </p>
@@ -180,6 +174,32 @@ fun main(){
   println("is $s3 palindrome? ${s3.isPalindrome()}")
 }
             </div>
+
+            <p>مثال:</p>
+
+            <div class="code-container">
+open class A { }
+
+class ChildA: A() { }
+
+fun A.printInfo(){
+  println("An Extension for A")
+}
+
+fun ChildA.printInfo(){
+  println("An Extension for ChildA")
+}
+
+fun show(a: A){
+  a.printInfo()
+}
+
+fun main(){
+  show(A())
+  show(ChildA())
+}    
+            </div>
+            <p>همینطور که در ابتدا گفتیم اکستنشن ها استاتیک در نظر گرفته میشن و زمان کامپایل مشخص میشه کدوم تابع اجرا بشه در بالا نتیجه احرای تابع printInfo مربوط به A است.</p>
 
             <p class="h5">استفاده از کلیدواژه ی this داخل تابع:</p>
 
@@ -375,48 +395,62 @@ class MyDispatchReceiver(val er: MyExtensionReceiver){
 
               <p>میتونیم تابع اکستنشن داخل کلاس رو به صورت open تعریف کنیم تا در وراثت بتونیم override کنیم.</p>
 
+              <div class="note">
+                <p class="h6">توجه:</p>
+                تابع اکستنشن برای extension receiver و فرزندانش استاتیک و برای dispatcher receiver عضو به حساب میاد.
+              </div>
+
               <p>
               مثال:
               </p>
 
               <div class="code-container">
-open class Base { }
+open class A { }
 
-class Derived : Base() { }
+class ChildA: A() { }
 
-open class BaseCaller {
-    open fun Base.printFunctionInfo() {
-        println("Base extension function in BaseCaller")
-    }
+open class B {
 
-    open fun Derived.printFunctionInfo() {
-        println("Derived extension function in BaseCaller")
-    }
+  open fun A.printInfo(){
+    println("An Extension function for A in B")
+  }
 
-    fun call(b: Base) {
-        b.printFunctionInfo() 
-    }
+  open fun ChildA.printInfo(){
+    println("An Extension function for ChildA in B")
+  }
+
+  fun call(a: A){
+    a.printInfo()
+  }
+
 }
 
-class DerivedCaller: BaseCaller() {
-    override fun Base.printFunctionInfo() {
-        println("Base extension function in DerivedCaller")
-    }
-    override fun Derived.printFunctionInfo() {
-        println("Derived extension function in DerivedCaller")
-    }
+class ChildB: B(){
+
+  @override
+  fun A.printInfo("An Extension function for A in ChildB") 
+
+  @override
+  fun ChildA.printInfo("An Extension function for ChildA in ChildB")
+
 }
 
 fun main() {
-    BaseCaller().call(Base())
-    DerivedCaller().call(Base())
-    DerivedCaller().call(Derived())
-}
+    
+    val b = B()
+    b.call(A())
+    b.call(ChildA())
 
+    val cb = ChildB()
+
+    cb.call(A())
+    cb.call(ChildA())
+}
               </div>
 
-            </div>
+              <p>ابتدا برای کلاس های A و ChildA تابع اکستنشن printInfo رو در B تعریف کردیم، سپس با ارث بری ChildB از B این دو تابع رو در ChildB بازنویسی کردیم، سپس در تابع main، تابع call رو صدا کردیم و نمونه جدید از A و ChildA رو به call پاس دادیم. چون پارامتر تعریف شده در  call از نوع A است،تابع printInfo برای A در B و ChildB اجرا میشه.</p>
 
+            </div>
 
             <div id="sub5" class="subsection">
 
