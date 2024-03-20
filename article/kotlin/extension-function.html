@@ -86,13 +86,13 @@
             اکستنشن ها تغییری در کلاس ایجاد نمیکنن و مانند property و function های داخل کلاس اونا رو صدا میزنیم.
             </p>
 
-            <p>با اینکه اکستنشن ها مانند اعضای کلاس صدا زده میشن اما عضوی به کلاس اضافه نمیکنن و استاتیک در نظر گرفته میشن. مثلا اگه برای دو کلاس تابع اکستنشن یکسان تعریف کرده باشیم، و دو کلاس از همدیگ ارث ببرن بدون توجه به وراثت؛ زمان کامپایل مشخص میشه تابع اکستنشن کدوم کلاس اجرا بشه.</p>
+            <p>با اینکه اکستنشن ها مانند اعضای کلاس صدا زده میشن اما عضوی به کلاس اضافه نمیکنن و<a class="text-decoration-none" href="/article/java/static-keyword.html">استاتیک</a> در نظر گرفته میشن. مثلا اگه برای دو کلاس تابع اکستنشن یکسان تعریف کرده باشیم، و دو کلاس از همدیگ ارث ببرن بدون توجه به وراثت؛ زمان کامپایل مشخص میشه تابع اکستنشن کدوم کلاس اجرا میشه.</p>
 
             <p>
             اکستنشن ها شامل توابع اکستنشن، اکستنشن پراپرتی (Extension Property)، و اکستنشن های Companion Object هستند.
             </p>
 
-            <p>معمولا اکستنشن ها رو داخل فایل کاتلین؛ یعنی به صورت <a href="https://skybirdbits.github.io/article/kotlin/functions.html#sub8">Top Level</a> تعریف میکنیم.
+            <p>معمولا اکستنشن ها رو داخل فایل کاتلین؛ یعنی به صورت <a class="text-decoration-none" href="https://skybirdbits.github.io/article/kotlin/functions.html#sub8">Top Level</a> تعریف میکنیم.
             </p>
 
 
@@ -176,6 +176,7 @@ fun main(){
             </div>
 
             <p>مثال:</p>
+            <p>اجرای تابع اکستنشن از دو کلاس پدر و فرزند.</p>
 
             <div class="code-container">
 open class A { }
@@ -199,7 +200,7 @@ fun main(){
   show(ChildA())
 }    
             </div>
-            <p>همینطور که در ابتدا گفتیم اکستنشن ها استاتیک در نظر گرفته میشن و زمان کامپایل مشخص میشه کدوم تابع اجرا بشه در بالا نتیجه احرای تابع printInfo مربوط به A است.</p>
+            <p>همینطور که در ابتدا گفتیم اکستنشن ها استاتیک در نظر گرفته میشن و زمان کامپایل مشخص میشه تابع کدوم کلاس اجرا بشه در بالا نتیجه اجرای تابع printInfo مربوط به A است. چون پارامتر show از نوع A است.</p>
 
             <p class="h5">استفاده از کلیدواژه ی this داخل تابع:</p>
 
@@ -448,7 +449,7 @@ fun main() {
 }
               </div>
 
-              <p>ابتدا برای کلاس های A و ChildA تابع اکستنشن printInfo رو در B تعریف کردیم، سپس با ارث بری ChildB از B این دو تابع رو در ChildB بازنویسی کردیم، سپس در تابع main، تابع call رو صدا کردیم و نمونه جدید از A و ChildA رو به call پاس دادیم. چون پارامتر تعریف شده در  call از نوع A است،تابع printInfo برای A در B و ChildB اجرا میشه.</p>
+              <p>ابتدا برای کلاس های A و ChildA تابع اکستنشن printInfo رو در B تعریف کردیم، سپس با ارث بری ChildB از B این دو تابع رو در ChildB بازنویسی کردیم، سپس در تابع main، تابع call رو صدا کردیم و نمونه جدید از A و ChildA رو به call پاس دادیم. چون پارامتر تعریف شده در  call از نوع A است، تابع printInfo برای A در B و ChildB اجرا میشه.</p>
 
             </div>
 
@@ -526,6 +527,10 @@ MyClass.myExtensionCompanionFunction()
 
                     <span class="p-2">
                         <a class="text-decoration-none" href="/article/kotlin/loops.html">حلقه (Loop) ها در کاتلین</a>
+                    </span>
+
+                    <span class="p-2">
+                        <a class="text-decoration-none" href="/article/java/static-keyword.html">کلیدواژه ی استاتیک در جاوا</a>
                     </span>
                     <span class="p-2">
                       <a class="text-decoration-none" href="https://kotlinlang.org/docs/extensions.html">مطالعه در سایت رسمی کاتلین</a>
