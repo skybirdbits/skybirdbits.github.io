@@ -219,7 +219,29 @@ fun main(){
 //تعریف تابع
 fun max(a: Int, b: Int): Int {
   return if(a &lt; b) a else b
-}          </div>
+}       
+          </div>
+
+          <p class="h5">تعریف overloading</p>
+          <p>وقتی دو یا چند تابع هم نام با پارامتر های متفاوت تعریف کنیم بهش میگیم overloading</p>
+
+          <p>مثال</p>
+
+          <div class="code-container">
+ fun max(a: Int, b: Int): Int {
+  return if(a &lt; b) a else b
+}
+
+fun max(a: Double, b: Double): Double {
+  return if(a &lt; b) a else b
+}
+
+fun max(a: Long, b: Long): Long {
+  return if(a &lt; b) a else b
+}
+          </div>
+
+          <p>در بالا تابع max رو با تغییر دادن نوع پارامتر ها overload کردیم.</p>
 
         </div>
 
