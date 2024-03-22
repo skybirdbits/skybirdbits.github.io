@@ -21,6 +21,10 @@
     {
       "subject": "عبارت لامبدا و توابع بی نام",
       "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
-    } 
+    },
+    {
+     "subject": "توابع مرتبه بالا",
+     "href": "https://skybirdbits.github.io/article/kotlin/higher-order-functions.html"
+    }
   ]
 }
