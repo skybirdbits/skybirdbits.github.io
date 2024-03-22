@@ -43,23 +43,31 @@
         <div class="page-last-update"></div>
 
         <figure class="figure figure-wrapper">
-          <img alt="توابع مرتبه بالا" class="rounded figure-img" src="/resources/image/kotlin/cover_higher_order.png">
+          <img alt="توابع مرتبه بالا" class="rounded figure-img" src="/resources/image/kotlin/cover_higher_order_functions.png">
         </figure>
+
+            <div class="toc">
+                <p class="p-2 mx-2 h5">دسترسی سریع</p>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#sub0">تابع مرتبه بالا</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">خلاصه</a>
+                </div>
+            </div>
       </div>
 
       <article>
         <div class="subsection" id="sub0">
           <p class="title">تابع مرتبه بالا</p>
-          <p>در کاتلبن همه چیز object و دارای مقدار است حتی یک تابع.</p>
+          <p>در کاتلین همه چیز object و دارای مقدار است حتی یک تابع.</p>
           <p>توابع در کاتلین <a href="https://en.wikipedia.org/wiki/First-class_function" class="text-decoration-none">first-class</a> هستند یعنی میتونیم به یک متغیر اختصاصشون بدیم، به عنوان پارامتر به یک تابع دیگه پاس بدیم، به عنوان مقدار از یک تابع دیگه برشون گردونیم و در ساختار داده مرتبشون کنیم.</p>
           <p>تابع مرتبه بالا (<a class="text-decoration-none" href="https://en.wikipedia.org/wiki/Higher-order_function">Higher-order function</a>)  به تابعی گفته میشه که حداقل یک تابع به عنوان پارامتر بگیره یا یک تابع به عنوان مقدار برگردونه.</p>
 
-          <p>برای تعریف توابع مرتبه بالا در کاتلین معمولا از <a href="article/kotlin/anonymous-function-and-lambda.html">توابع تحت اللفظی</a> به عنوان پارامتر یا مقدار بازگشتی استفاده میکنیم.
+          <p>برای تعریف توابع مرتبه بالا در کاتلین معمولا از <a class="text-decoration-none" href="article/kotlin/anonymous-function-and-lambda.html">توابع تحت اللفظی</a> به عنوان پارامتر یا مقدار بازگشتی استفاده میکنیم.
           </p>
 
-          <p>معمولا از توابع تحت اللفظی در پارامتر به عنوان callback استفاده میکنیم.</p>
+          <p>میتونیم از توابع تحت اللفظی در پارامتر به عنوان callback استفاده کنیم.</p>
 
-          <p>تابع setOnClickListener در اپلیکیشن نویسی معروفه و در اندروید زیاد استفاده میشه این تابع تقریبا مثل زیر تعریف شده:</p>
+          <p>تابع setOnClickListener در اپلیکیشن نویسی معروفه و در اندروید زیاد استفاده میشه این تابع تقریبا مثل زیر تعریف شده و onclick یک callback برای setOnClickListener است.</p>
 
           <div class="code-container">
 setOnClickListener(onClick: (view: View) -&gt; Unit){
@@ -76,7 +84,7 @@ setOnClickListener(onClick: (view: View) -&gt; Unit){
           <p>صدا زدن تابع:</p>
 
           <div class="code-container">
-setOnClickListener({ v -&gt;
+setOnClickListener({ v -&gt; //Callback
 
 })
           </div>
@@ -123,8 +131,7 @@ fun main(){
   
   println("Printing random chars")
   //صدا زدن تابع
-  val randomChars: String = generateRandomChars(200, 'A', 'Z') {
-    //داخل بدنه ی لامبدا (Callback)
+  val randomChars: String = generateRandomChars(200, 'A', 'Z') { //اختصاص دادن لامبدا به اخرین پارامتر
     ch , index -&gt;
 
         
@@ -140,7 +147,7 @@ fun main(){
 }
 
 //تعریف تابع
-fun generateRandomChars(length: Int, startRange: Char, endRange: Char,/*تعریف لامبدا*/ accessible: (generated: Char, index: Int) -&gt; Unit): String{
+fun generateRandomChars(length: Int, startRange: Char, endRange: Char, accessible: (generated: Char, index: Int) -&gt; Unit): String{
   
   val start = startRange.code
   val end = endRange.code
