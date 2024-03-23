@@ -5,15 +5,15 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <meta name="keywords" content="کاتلین، توابع مرتبه بالا، تابع مرتبه بالا، تابع با رسیور، توابع تحت اللفطی، لامبدا، عبارت لامبدا، مرتبه بالا، first-class">
-  <meta name="description" content="در این مطلب به توابع مرتبه بالا و تعریف توابع تحت اللفظی به عنوان پارامتر های مرتبه بالا با جزییاتجزییات می پردازیم.">
+  <meta name="keywords" content="کاتلین، توابع مرتبه بالا، تابع مرتبه بالا، تابع با رسیور، توابع تحت لفطی، لامبدا، عبارت لامبدا، مرتبه بالا، first-class">
+  <meta name="description" content="در این مطلب به توابع مرتبه بالا و تعریف توابع تحت لفظی به عنوان پارامتر توابع مرتبه بالا می پردازیم.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>توابع مرتبه بالا در کاتلین</title>
 
   <meta property="og:title" content="توابع مرتبه بالا در کاتلین">
-  <meta property="og:description" content="در این مطلب به توابع مرتبه بالا و تعریف توابع تحت اللفظی به عنوان پارامتر های مرتبه بالا با جزییاتجزییات می پردازیم.">
+  <meta property="og:description" content="در این مطلب به توابع مرتبه بالا و تعریف توابع تحت لفظی به عنوان پارامتر توابع مرتبه بالا می پردازیم.">
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/higher-order-functions.html">
@@ -63,7 +63,7 @@
           <p>برای تعریف توابع مرتبه بالا در کاتلین معمولا از <a class="text-decoration-none" href="/article/kotlin/anonymous-function-and-lambda.html">توابع تحت اللفظی</a> به عنوان پارامتر یا مقدار بازگشتی استفاده میکنیم.
           </p>
 
-          <p>میتونیم از توابع تحت اللفظی در پارامتر به عنوان callback استفاده کنیم.</p>
+          <p>میتونیم از توابع تحت لفظی در پارامتر به عنوان callback استفاده کنیم.</p>
 
           <p>تابع setOnClickListener در اپلیکیشن نویسی معروفه و در اندروید زیاد استفاده میشه این تابع تقریبا مثل زیر تعریف شده و onclick یک callback برای setOnClickListener است.</p>
 
@@ -173,14 +173,14 @@ fun generateRandomChars(length: Int, startRange: Char, endRange: Char, accessibl
 }
           </div>
 
-          <p class="h5">تعریف تابع تحت اللفظی با receiver به عنوان پارامتر</p>
+          <p class="h5">تعریف تابع تحت لفظی با receiver به عنوان پارامتر</p>
           
           <div class="note">
             <p class="h6">توجه:</p>
             <p>برای درک بهتر این قسمت خوبه که با شی گرایی و ساخت نمونه از کلاس اشنایی داشته باشید</p>
           </div>
 
-          <p>میتونیم <a href="/article/kotlin/anonymous-function-and-lambda.html" class="text-decoration-none">توابع تحت اللفظی با رسیور</a> رو به عنوان پارامتر برای تابع مرتبه بالا تعریف کنیم. مهم ترین کاربردشون در type-safe builder ها است.</p>
+          <p>میتونیم <a href="/article/kotlin/anonymous-function-and-lambda.html" class="text-decoration-none">توابع تحت لفظی با رسیور</a> رو به عنوان پارامتر برای تابع مرتبه بالا تعریف کنیم. مهم ترین کاربردشون در type-safe builder ها است.</p>
 
           <p>مثال:</p>
 
@@ -212,7 +212,7 @@ html {       // مقداردهی عبارت لامبدا با رسیور به ع
           <p class="title">خلاصه</p>
 
           <p>- در کاتلین توابع first-class هستند</p>
-          <p>- تابع مرتبه بالا به تابعی گفته میشه که حداقل یک تابع به عنوان پارامتر دریافت کنه یا یک تابع به عنوان مقدار بازگشتی برگردونه.</p>
+          <p>- تابع مرتبه بالا به تابعی گفته میشه که حداقل یک تابع به عنوان پارامتر دریافت کنه یا یک تابع به عنوان مقدار برگردونه.</p>
 
           <p>- معمولا از توابع تحت اللفظی به عنوان پارامتر تابع مرتبه بالا استفاده میشه.</p>
 

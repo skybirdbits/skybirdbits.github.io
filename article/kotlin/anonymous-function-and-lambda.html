@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content=" عبارت لاندا ، توابع بی نام، برنامه نویسی تابعی، عبارت لامبدا، کاتلین، اندروید، تابع anonymous، توابع تحت اللفظی، تابع بی نام" name="keywords"/>
+    <meta content=" عبارت لاندا ، توابع بی نام، برنامه نویسی تابعی، عبارت لامبدا، کاتلین، اندروید، تابع anonymous، توابع تحت لفظی، تابع بی نام" name="keywords"/>
     <meta content="در این مطلب به بررسی دو عبارت تحت اللفظی عبارت لامبدا و توابع بی نام در کاتلین می پردازیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
@@ -49,14 +49,14 @@
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">بررسی یه ویژگی از کاتلین</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub1">توابع تحت اللفظی</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">توابع تحت لفظی</a>
  
                     
                         <a class="list-group-item list-group-item-action" href="#sub2">عبارت لامبدا در کاتلین</a>
                         <a class="list-group-item list-group-item-action" href="#sub3">توابع بی نام  در کاتلین</a>
 
-                        <a class="list-group-item list-group-item-action" href="#sub4">توابع تحت اللفظی با receiver</a>
- 
+                        <a class="list-group-item list-group-item-action" href="#sub4">توابع تحت لفظی با receiver</a>
+                        <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                 <p class="title">بررسی یه ویژگی از کاتلین</p>
 
                 <blockquote>
-                    در کاتلین همه چیز دارای مقداره، تقریبا هر متغیر و تابعی که در کاتلین وجود داره دارای مقداره. دونستن این موضوع میتونه به درک بهتر عبارت لامبدا و توابع بی نام کمک کنه.
+                    در کاتلین همه چیز دارای مقدار است؛ تقریبا هر متغیر و تابعی که وجود داره، حتی void که مفدارش Unit است.
                 </blockquote>
                 <p>
                     فرض کنید تو جاوا تابعی رو صدا میزنیم اگه مقداریو برگردونه میتونیم به متغیر اختصاص بدیم:
@@ -114,15 +114,13 @@ val result = myMethod()
            <div class="subsection" id="sub1">
              <p class="title">توابع تحت اللفظی</p>
 
-
-
-          <p>عبارات لامبدا و توابع بی نام در کاتلین دو قسمت از برنامه نویسی تابعی هستند. که در فریمورک های مختلف از جمله اندروید زیاد استفاده میشن. یک نمونه میشه به jetpack compose در اندروید اشاره کرد.</p>
+          <p>عبارات لامبدا و توابع بی نام در کاتلین دو موضوع از برنامه نویسی تابعی هستند. این دو کاربرد های متعددی دارن ودر فریمورک های مختلف از جمله اندروید زیاد استفاده میشن. یک نمونه میشه به jetpack compose در اندروید اشاره کرد.</p>
 
              <p>
-به عبارت لامبدا و تابع بی نام، <strong>توابع تحت اللفظی (Function Literals)</strong> گفته میشه.
+به عبارت لامبدا و تابع بی نام، <strong>توابع تحت لفظی (Function Literals)</strong> گفته میشه.
              </p>
 
-             <p>توابع تحت اللفظی رو مثل توابع معمولی تعریف نمیکنیم بلکه مانند یک متغیر تعریفشون میکنیم و هنگام صدا زدن مانند تابع معمولی صداشون میزنیم. </p>
+             <p>توابع تحت لفظی رو مثل توابع معمولی تعریف نمیکنیم بلکه مانند یک متغیر تعریفشون میکنیم و هنگام صدا زدن مانند تابع معمولی صداشون میزنیم. </p>
 
            </div>
 
@@ -167,7 +165,7 @@ val myLambda: (T0, T1 , ... , Tn) -&gt; Type = {
                 </div>
 
                 <p>
-                در بالا T0 , T1 ... Tn پارامتر هاییست که می‌خوایم عبارت داشته باشه.
+                در بالا T0 , T1 ... Tn پارامتر هاییست که میخوایم عبارت داشته باشه.
                 </p>
 
                 <p>
@@ -278,21 +276,24 @@ println(result)
                 </p>
 
                 <p>
-                    میتونیم به مقداری که برای عبارت تعریف میکنیم برچسب بزنیم تا هنگام بازگرداندن نتیجه به صورت آشکار
-                    مشخص
-                    کنیم میخواهیم نتیجه رو از داخل مقدار عبارت برگردونیم:
+                استفاده از کلیدواژه ی return داخل لامبدا ممنوعه مگه در مواردی که لامبدا خطی (inline) باشه یا برای مقدار لامبدا برچسب تعریف کرده باشیم.
+                </p>
+
+                <p>
+                    میتونیم به مقداری که برای عبارت تعریف میکنیم برچسب بزنیم تا هنگام بازگرداندن نتیجه به صورت آشکارمشخص کنیم میخواهیم نتیجه رو از داخل مقدار عبارت برگردونیم:
                 </p>
 
                 <div class="code-container">
-    val myLambda: () -&gt; String = mylambda@{
-        return@mylambda "Hello From Lambda"
-    }
+val myLambda: () -&gt; String = mylambda@{
+    return@mylambda "Hello From Lambda"
+}
                 </div>
 
 
                 <p>
-                    برچسب<strong dir="ltr">mylambda@{...}</strong> اسم دلخواهیه که به عنوان برچسب برای عبارت تعریف
-                    میکنیم.
+                در بالا برچسب 
+                <strong>&#x200E;myLambda@{...}</strong>
+                رو برای عبارت تعریف کردیم. و از return با برچسبی که تعریف کردیم میتونیم استفاده کنیم.
                 </p>
             </div>
 
@@ -380,8 +381,8 @@ println(message)
             </div>
 
             <div class="subsection" id="sub4">
-              <p class="title">توابع تحت اللفظی با receiver</p>
-              <p>میتونیم عبارت لامبدا رو با یک کلاس receiver بنویسیم. سپس به اعضای کلاس در داخل تابع دسترسی داریم. این کار شبیه تعریف <a href="https://skybirdbits.github.io/article/kotlin/extension-function.html" class="text-decoration-none">اکستنشن ها</a> در کاتلین است.
+              <p class="title">توابع تحت لفظی با receiver</p>
+              <p>میتونیم عبارت لامبدا رو با یک کلاس receiver بنویسیم. سپس به اعضای کلاس در داخل تابع دسترسی داریم. این کار شبیه تعریف <a href="/article/kotlin/extension-function.html" class="text-decoration-none">اکستنشن ها</a> در کاتلین است.
               </p>
 
               <p>مثال:</p>
@@ -441,7 +442,7 @@ fun main(){
 }
               </div>
 
-      <p>تابع بی نام هم مانند عبارت لامبدا میتونن کلاس receiver داشته باشه.</p>
+      <p>تابع بی نام هم مانند عبارت لامبدا میتونه کلاس receiver داشته باشه.</p>
 
       <p>مثال:</p>
 
@@ -459,6 +460,17 @@ fun main(){
   println("$a divided by $b equals $result")
       </div>
               
+            </div>
+
+            <div class="subsection" id="sub5">
+              <p class="title">خلاصه</p>
+
+              <p>- دو عبارت بی نام و تابع لامبدا جزو توابع تحت لفظی هستند</p>
+
+              <p>- توابع تحت لفظی رو مانند یک متغیر تعریف میکنیم و مثل تابع معمولی صدا میزنیم</p>
+              
+              <p>میتونیم مثل اکستنشن ها توابع تحت لفظی رو با رسیور تعریف کنیم</p>
+
             </div>
 
                 <p>
