@@ -20,14 +20,16 @@ fileloader.loadJavaScript(
 "anonymous"
 );
 
-window.onload = function(){
 
+window.location.replace(window.location.href)
+
+window.onload = function(){
 
     $('header').load('/ui-components/header-contents.html', function(){
         initSidebar();
         loadAllArticleLinks();
     });
-    $('footer').load('/ui-components/footer-contents.html');
+    $('footer').load('/ui-components/footer-contents.html');    
   
     showPageLastModified();
     createCodeViews();
