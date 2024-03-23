@@ -21,8 +21,6 @@ fileloader.loadJavaScript(
 );
 
 
-window.location.replace(window.location.href)
-
 window.onload = function(){
 
     $('header').load('/ui-components/header-contents.html', function(){
