@@ -1,4 +1,4 @@
-import {createCodeViews, scrollTopVisibility, showPageLastModified} from './article.js';
+import {createCodeViews, scrollTopVisibility} from './article.js';
 import {initSidebar , loadAllArticleLinks} from './base.js';
 import * as fileloader from './fileloader.js';
 
@@ -29,7 +29,6 @@ window.onload = function(){
     });
     $('footer').load('/ui-components/footer-contents.html');    
   
-    showPageLastModified();
     createCodeViews();
 }
 

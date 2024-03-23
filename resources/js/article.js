@@ -145,16 +145,4 @@ var scrollTopVisibility = function(){
     currentScrollY = window.scrollY;
 }
 
-function showPageLastModified(){
-  
-  var lastModified = document.lastModified;
-  var date = new Date(lastModified).toLocaleDateString('fa-IR-u-nu-latn');
-
-  var ltu = document.querySelector(".page-last-update");
-
-  if(ltu != null)
-    ltu.innerHTML = "آخرین بروزرسانی: " + date;
-
-}
-
-export {createCodeViews, scrollTopVisibility, showPageLastModified};
+export {createCodeViews, scrollTopVisibility};
