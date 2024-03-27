@@ -8,16 +8,16 @@
 
   <meta name="keywords" content="توابع خطی، تابع خطی، inline، کلیدواژه ی inline، کلیدواژه ی noinline، کلیدواژه ی crossinline، پارامتر های reified type، پارامتر های نوع reified، پراپرتی های خطی، property های خطی">
 
-  <meta name="description" content="برای بهبود کیفیت برنامه و یا تعریف پارامتر های جنریک نوع reified از توابع خطی استفاده میکنیم، یک تابع مرتبه ی بالا رو میتونیم به صورت خطی تعریف کنیم در این مطلب به بررسی توابع و پراپرتی های خطی در کاتلین میپردازیم.">
+  <meta name="description" content="برای بهبود کیفیت برنامه و یا تعریف پارامتر های جنریک نوع reified از توابع خطی استفاده میکنیم، در این مطلب به بررسی توابع و پراپرتی (property) های خطی در کاتلین می پردازیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>توابع خطی (inline) در کاتلین</title>
+  <title>توابع و پراپرتی (property) های خطی (inline) در کاتلین</title>
 
-  <meta name="og:title" content="توابع خطی (inline) در کاتلین">
-  <meta name="og:description" content="برای بهبود کیفیت برنامه و یا تعریف پارامتر های جنریک نوع reified از توابع خطی استفاده میکنیم، در این مطلب به بررسی توابع و پراپرتی های خطی در کاتلین میپردازیم.">
+  <meta name="og:title" content="توابع و پراپرتی (property) های خطی (inline) در کاتلین">
+  <meta name="og:description" content="برای بهبود کیفیت برنامه و یا تعریف پارامتر های جنریک نوع reified از توابع خطی استفاده میکنیم، در این مطلب به بررسی توابع و پراپرتی (property) های خطی در کاتلین می پردازیم.">
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/inline-functions.html">
@@ -37,7 +37,7 @@
     <div class="page-wrap">
       <div class="article-head">
         <h1>
-          توابع خطی در کاتلین
+          توابع خطی (inline) در کاتلین
         </h1>
 
         <address>
@@ -62,7 +62,7 @@
 
             <a class="list-group-item list-group-item-action" href="#sub4">پارامتر های نوع refied</a>
             
-            <a class="list-group-item list-group-item-action" href="#sub5">تعریف property ها به صورت خطی</a>
+            <a class="list-group-item list-group-item-action" href="#sub5">پراپرتی (property) های خطی</a>
 
             <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
           </div>
@@ -88,7 +88,7 @@
         <p class="h5">تعریف تابع خطی</p>
           
           <p>
-          هنگامی که یک <a class="text-decoration-none" href="/article/kotlin/higher-order-functions.html">تابع مرتبه بالا</a> تعریف میکنیم لامبدا هایی که به عنوان پارامتر تابع تعریف کردیم هرکدوم یک Object هستند که میتونن فضای حافطه رو اشغال کنن.
+          هنگامی که یک <a class="text-decoration-none" href="/article/kotlin/higher-order-functions.html">تابع مرتبه بالا</a> تعریف میکنیم لامبدا هایی که به عنوان پارامتر تابع تعریف کردیم هرکدوم یک Object هستند که میتونن فضای حافظه رو اشغال کنن.
           </p>
 
           <p>برای بهبود کیفیت برنامه میتونیم از توابع خطی (inline) در کاتلین استفاده کنیم تا از دست ابجکت هایی که حافظه رو اشغال کردن خلاص بشیم.</p>
@@ -169,12 +169,12 @@ System.out.println("After");
           </p>
 
           <p>
-          ۳- توابع خطی نمیتونن به توابع و متغیر های private دسترسی داشته باشن، در مورد internal ها باید با <strong>@PublishedApi</strong> علامتگذاری بشن. 
+          ۳- توابع خطی نمیتونن به توابع و متغیر های private دسترسی داشته باشن، در مورد internal ها باید با <strong>&#x200e;@PublishedApi</strong> علامتگذاری بشن. 
           </p>
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">استفاده از کلیدواژه ی noinline</p>
+          <p class="title">کلیدواژه ی noinline</p>
 
           <p>هنگامی که یک تابع مرتبه ی بالا رو به صورت خطی تعریف میکنیم، تمام پارمتر ها خطی میشن، اگه بخوایم بعضی از پارامتر ها خطی نباشن از کلیدواژه ی noinline استفاده میکنیم.</p>
 
@@ -262,7 +262,7 @@ inline fun bar(crossinline block: (String) -&gt; Unit){
 
           <p>مثال:</p>
 
-          <div>
+          <div class="code-container">
 inline fun foo(crossinline body: () -&gt; Unit) {
     val bar = object: Runnable {
         override fun run() = body()
@@ -279,14 +279,13 @@ inline fun foo(crossinline body: () -&gt; Unit) {
 
           <p class="title">پارامتر های Reified Type</p>
 
-          <blockquote>توابعی که نوع پارامتر های جنریک refied هستند باید خطی باشن.</blockquote>
+          <blockquote>توابعی که پارامتر های نوع جنریکشون refied است باید خطی باشن.</blockquote>
 
+          <p>داخل بدنه ی <a class="text-decoration-none" href="/article/kotlin/functions.html#sub6">تابع جنریک</a> نمیشه به پارامتر های جنریک (مثلا T) دسترسی داشت چون فقط T هنگام کامپایل وجود داره و زمان اجرا پاک میشه. اما اگه نوع T با reified تعریف شده باشه میتونیم بهش  زمان اجرا دسترسی داشته باشیم.</p>
 
-          <p>داخل بدنه ی <a href="/article/kotlin/functions.html#sub6">تابع جنریک</a> نمیشه به پارامتر های جنریک (مثلا T) دسترسی داشت چون فقط T هنگام کامپایل وجود داره و زمان اجرا پاک میشه.اما اگه نوع T با reified تعریف شده باشه میتونیم بهش  زمان اجرا دسترسی داشته باشیم.</p>
+          <p>با بیان یک مثال میخوایم بررسی کنیم یک آبجکت نمونه ای از یک کلاس هست یا خیر؟</p>
 
-          <p>با بیان یک مثال میخوایم بررسی کنیم یک آبجکت از نوع یک کلاس هست یا خیر؟</p>
-
-          <p>اگه یک تابع جنریک برای این کار تعریف کنیم مانند زیر، برنامه دچار خطا میشه:</p>
+          <p>اگه یک تابع جنریک برای این کار تعریف کنیم، برنامه دچار خطا میشه:</p>
 
 
 
@@ -296,7 +295,7 @@ fun &lt;T&gt; Any.instanceOf() = this is T
           </div>
 
           <p>
- برای حل این موضوع یا باید از reflection استفاده کنیم یا یک تابع خطی جنریک تعریف کنیم که نوع پارامتر جنریکش reified باشه.
+ برای حل این موضوع یا باید از reflection در تابع جنریک استفاده کنیم یا یک تابع خطی جنریک تعریف کنیم که پارامتر نوع جنریکش reified باشه.
           </p>
 
 
@@ -319,9 +318,9 @@ fun main(){
           <p>در بالا یک پارامتر جنریک نوع T با reified تعریف کردیم.</p>
 
         <div class="subsection" id="sub5">
-          <p class="title">پراپرتی های خطی</p>
+          <p class="title">پراپرتی (property) های خطی</p>
 
-          <p>کلیدواژه ی inline میتونه برای getter و setter های property هایی که backing field ندارن استفاده بشه.</p>
+          <p>کلیدواژه ی inline میتونه برای getter و setter های property که backing field ندارن استفاده بشه.</p>
 
           <p>مثال:</p>
 
@@ -341,25 +340,27 @@ inline val foo: Foo
   set(v){...}
           </div>
 
+          <p>به پراپرتی که در مثال دیدید property های خطی در کاتلین میگیم.</p>
+
         </div>
 
         <div class="subsection" id="sub6">
           <p class="title">خلاصه</p>
 
-          <p>-از توابع خطی برای بهبود کیفیت برنامه و تعریف پارامتر reified استفاده میشه.</p>
+          <p>- از توابع خطی برای بهبود کیفیت برنامه و تعریف پارامتر reified استفاده میشه.</p>
 
           <p>- هنگام استفاده از کلیدواژه ی inline تابع و پارامتر هاش خطی میشه.</p>
 
           <p>- پارامتر توابع خطی با استفاده از کلیدواژه ی noinline میتونن غیر خطی بشن.
           </p>
 
-          <p>در لامبدا های خطی میتونیم از return غیر محلی برای متوقف کردن تابع استفاده کنیم</p>
+          <p>- در لامبدا های خطی میتونیم از return غیر محلی برای متوقف کردن تابع استفاده کنیم</p>
           
-          <p>با استفاده از کلیدواژه ی crossinline میتونیم پارامتر های خطی رو در غیر خطی های داخل تابع صدا بزنیم.</p>
+          <p>- با استفاده از کلیدواژه ی crossinline میتونیم پارامتر های خطی رو در غیر خطی های داخل تابع صدا بزنیم.</p>
 
-          <p>میتونیم برای تابع خطی جنریک های reified تعریف کنیم.</p>
+          <p>- میتونیم برای تابع خطی جنریک های reified تعریف کنیم.</p>
 
-          <p>میتونیم getter و setter های پراپرتی ها رو به صورت خطی تعریف کنیم یا کل پراپرتی رو خطی کنیم.</p>
+          <p>- میتونیم getter و setter های پراپرتی ها رو به صورت خطی تعریف کنیم یا کل پراپرتی رو خطی کنیم.</p>
 
         </div>
 
