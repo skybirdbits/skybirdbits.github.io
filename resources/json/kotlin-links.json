@@ -25,6 +25,10 @@
     {
      "subject": "توابع مرتبه بالا",
      "href": "https://skybirdbits.github.io/article/kotlin/higher-order-functions.html"
+    },
+    {
+      "subject": "توابع خطی",
+      "href": "/article/kotlin/inline-functions.html"
     }
   ]
 }

@@ -3,19 +3,19 @@
   "title": "اندروید",
   "links": [
     {
-      "subject": "دیتا بایندینگ در اندروید",
+      "subject": "دیتا بایندینگ",
       "href": "https://skybirdbits.github.io/article/android/data-binding.html"
     },
     {
-      "subject": "نویگیشن در اندروید",
+      "subject": "نویگیشن",
       "href": "https://skybirdbits.github.io/article/android/navigation.html"
     },
     {
-      "subject": "پروژه ی عملی از دیتابایندینگ و نویگیشن در اندروید",
+      "subject": "پروژه ی عملی از دیتابایندینگ و نویگیشن",
       "href": "https://skybirdbits.github.io/article/android/data-binding-navigation-sample.html"
     },
     {
-      "subject": "چرخه ی حیات اکتیویتی در اندروید",
+      "subject": "چرخه ی حیات اکتیویتی",
       "href": "https://skybirdbits.github.io/article/android/activity-lifecycle.html"
     }
   ]
