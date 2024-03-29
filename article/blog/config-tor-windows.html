@@ -2,14 +2,14 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="نصب tor، کانفیگ tor، نصب تور در ویندوز، دیپ وب، دارک وب، فیلترشکن" name="keywords"/>
-    <meta content="در این مقاله به چگونگی نصب، کانفیگ و استفاده از فیلترشکن tor در ویندوز می پردازیم" name="description"/>
+    <meta content="نصب tor، کانفیگ tor، نصب تور در ویندوز، دیپ وب، دارک وب، فیلترشکن، نصب تور، کانفیگ تور، پراکسی" name="keywords"/>
+    <meta content="در این مقاله به چگونگی نصب، کانفیگ و پراکسی برنامه ها با استفاده از فیلترشکن tor در ویندوز می پردازیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
     <title>نصب و کانفیگ tor در ویندوز</title>
 
-    <meta content="نصب و کانفیگ فیلترشکن tor در ویندوز" property="og:title"/>
-    <meta content="آموزش نصب و کانفیگ تور و پراکسی کردن برنامه ها در ویندوز"
+    <meta content="نصب و کانفیگ tor در ویندوز" property="og:title"/>
+    <meta content="در این مقاله به چگونگی نصب، کانفیگ و پراکسی برنامه ها با استفاده از فیلترشکن tor در ویندوز می پردازیم."
           property="og:description"/>
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
     <meta content="https://skybirdbits.github.io/article/blog/config-tor-windows.html" property="og:url"/>
@@ -31,7 +31,6 @@
 
             <h1>نصب و کانفیگ تور در ویندوز</h1>
 
-
             <address>
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
             </address>
@@ -46,9 +45,8 @@
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">دانلود تور</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">نصب برنامه</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">افزودن پل</a>
-                    <a class="list-group-item list-group-item-action" href="#sub3">اجرای برنامه</a>
-                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">کانفیگ Transport Plugin ها</a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">خلاصه</a>
                 </div>
             </div>
         </div>
@@ -62,11 +60,11 @@
 
             <div class="subsection" id="sub0">
 
-                <h3>دانلود تور</h3>
+                <p class="title">دانلود تور</p>
 
                 <p>
                     برای دانلود تور به لینک
-                    <a href="https://www.torproject.org/download/tor/">tor</a>
+                    <a class="text-decoration-none" href="https://www.torproject.org/download/tor/">tor</a>
 
                     برید و متناسب با معماری کامپیوترتون (اغلب x86_64) نسخه ی expert-bundle
                     برای ویندوز رو دانلود کنید
@@ -76,11 +74,10 @@
 
             <div class="subsection" id="sub1">
 
-                <h3>نصب برنامه</h3>
+                <p class="title">نصب برنامه</p>
 
                 <p>فایل دانلودی رو در جایی اکسترکت کنید و وارد پوشه ی اکسترکت شده بشید</p>
-                <p>فایل tor.exe رو اجرا کنید بعد از اجرا و اتصال برنامه رو ببندید</p>
-                <p>یک پوشه به اسم tor در مسیر زیر ایجاد میشه:</p>
+                <p>یک پوشه به اسم tor در مسیر زیر ایجاد کنید اگه پوشه های قبلی وجود نداشت اونام ایجاد کنید.</p>
 
                 <div class="code-container">
 C:\Users\&lt;user&gt;\AppData\Roaming\tor\
@@ -88,71 +85,57 @@ C:\Users\&lt;user&gt;\AppData\Roaming\tor\
 
                 <p>
                     <strong>
-                        توجه: بجای &lt;user&gt; نام کاربری خود در ویندوز رو بنویسید.
+                      بجای &lt;user&gt; نام کاربری خود در ویندوز رو بنویسید.
                     </strong>
                 </p>
 
-                <p>اکنون تمام فایل های .exe فایل های .dll ایجاد شده در همین پوشه رو به مسیر منتقل کنید</p>
-                <p>فایل های geoip و geoip6 در داخل پوشه ی data در پوشه ی اکسترکت شده رو به مسیر منتقل کنید</p>
-                <p>داخل پوشه ی pluggable_transports فایل obfs4proxy.exe رو به مسیر منتقل کنید</p>
-                <p>به مسیر برید و یک فایل torrc بدون پسوند ایجاد کنید و داخلش اینا رو بنویسید</p>
+                <p>اکنون فایل tor.exe و tor-gencert.exe داخل پوشه ی tor رو به مسیر منتقل کنید.</p>
 
-                <div class="code-container">
+                <p>فایل های geoip و geoip6 در داخل پوشه ی data رو به مسیر منتقل کنید</p>
+
+                <div class="subsection" id="sub2">
+
+                  <p class="title">کانفیگ Transport Plugin ها</p>
+
+
+                  <p class="h5">کانفیگ  snowflake</p>
+                  <p>داخل پوشه ی pluggable_transport فایل snowflake-client.exe رو به مسیر منتقل کنید.</p>
+                  <p>فایل torrc رو باز کنید و به شکل زیر تغییرش بدید.</p>
+
+                  <div class="code-container">
 Log notice file C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
 GeoIPFile C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip
 GeoIPv6File C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip6
-                </div>
-                <p>سپس فایل torrc رو ذخیره کنید</p>
 
-            </div>
-            <div class="subsection" id="sub2">
-                <h3>افزودن پل</h3>
-                <p>
-                    برای دریافت پل به لینک
-                    <a href="https://bridges.torproject.org">پل ها</a>
-                    مراجعه کنید</p>
-
-
-                <p>رو گزینه ی Get Bridges بزنید</p>
-
-                <p>در صفحه ی بعد باز گزینه ی Get Bridges رو بزنید پس از پر کردن عبارت امنیتی پل ها رو مشاهده میکنید پل
-                    ها رو کپی کنید</p>
-                <p>فایل torrc رو دوباره باز کنید و در اخرش متن زیر رو وارد و پل ها رو به فرمت نمونه ی زیر (یعنی یک bridge قبل از هرکدوم بنویسید) و به torrc اضافه کنید</p>
-
-                <div class="code-container">
 UseBridges 1
-ClientTransportPlugin obfs4 exec C:\Users\&lt;user&gt;\AppData\Roaming\tor\obfs4proxy managed
 
-bridge obfs4 167.88.182.244:24679 21CFB6528C072D4F2365ECDA0AF515C7A3E5AF72 cert=1ZUb64xwNvHXvRvl8Q/vYg7S7EbSITvhYOdQndB3xF5TLniuLD1FGGTnrnMWKEDWFWI8Gw iat-mode=0
+ClientTransportPlugin snowflake exec snowflake-client.exe \
+-url https://snowflake-broker.torproject.net.global.prod.fastly.net/ \
+-front cdn.sstatic.net \
+-ice stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478
 
-bridge obfs4 109.14.168.159:5082 BFE1416DEFFE969581F016A4A319A87FFB26BA91 cert=n3X1CDdKBPXPIzfKh83p3ydfMzb0AD9gKC+/gIpHb7+xjjAnYO9x3LT+T/MvOIfAXxYySg iat-mode=0
+Bridge snowflake 192.0.2.3:1
+                  </div>
 
-bridge obfs4 45.150.172.16:80 82849E69CBB25EA7F479155F7DCD89D85717FF47 cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-mode=0
                 </div>
 
-                <p>
-                    <strong>توجه: هرچندتا پل داشتید میتونید اضافه کنید</strong>
-                </p>
+                <p>فایل torrc رو ذخیره کنید.</p>
 
+                <p>در cmd با cd به مسیر برید:</p>
 
-                <p>فایل رو ذخیره کنید</p>
-            </div>
-
-            <div class="subsection" id="sub3">
-                <h3>اجرای برنامه</h3>
-
-                <p>در ویندوز cmd روباز کنید و به مسیر ایجاد شده برید</p>
                 <div class="code-container">
 cd C:\Users\&lt;user&gt;\AppData\Roaming\tor\
                 </div>
 
-                <p>سپس با دستور زیر tor رو اجرا کنید</p>
+                <p>و با دستور زیر tor رو اجرا کنید:</p>
+
                 <div class="code-container">
 tor.exe -f torrc
                 </div>
 
-                <p>اگر خروجی 100 درصد گرفتید یعنی شما به مدار وصل شدید و میتونید از طریق socks5 به ادرس localhost:9050
-                    برنامه هاتونو پروکسی کنید</p>
+
+
+                <p>اگر خروجی 100 درصد گرفتید یعنی شما به مدار وصل شدید و میتونید از طریق socks5 به ادرس localhost:9050 برنامه هاتونو پراکسی کنید</p>
                 <p>
                     برای بررسی روند اتصال و مشکلات احتمالی میتونید در مسیر فایل notice.log روباز کنید و از عملکرد برنامه باخبر بشید
                 </p>
@@ -161,22 +144,65 @@ tor.exe -f torrc
 C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
                 </div>
 
+
+                <p class="h5">کانفیگ obfs4proxy</p>
+
+                <p>میتونید بجای snowflake از پلاگین obfs4proxy استفاده کنید.</p>
+
+                <div class="note">
+                  <p class="h6">توجه:</p>
+                  <p>در بروزرسانی های اخیر ظاهرا این پلاگین از بسته ی دانلودی تور حذف شده با این حال نحوه ی کانفیگ کردنشو گذاشتم.</p>
+                </div>
+
+                <p>داخل پوشه ی pluggable_transports فایل obfs4proxy.exe رو به مسیر منتقل کنید</p>
+
+
                 <p>
-                    <strong>توجه: میتونید در torrc خط ClientTransportPlugin... رو پاک یا کامنت کنید و هنگام گرفتن پل ها به‌جای obfs4 گزینه ی none رو انتخاب کنید و به پل هاتون بدون TransportPlugin وصل بشید </strong>
+                    برای دریافت پل های obfs4 به لینک
+                    <a class="text-decoration-none" href="https://bridges.torproject.org">پل ها</a>
+                    مراجعه کنید</p>
+
+                <p>رو گزینه ی Get Bridges بزنید</p>
+
+                <p>در صفحه ی بعد باز گزینه ی Get Bridges رو بزنید پس از پر کردن عبارت امنیتی پل ها رو مشاهده میکنید پل
+                    ها رو کپی کنید</p>
+
+                <p>به مسیر برید و یک فایل torrc بدون پسوند ایجاد کنید و داخلش اینا رو بنویسید</p>
+
+                <div class="code-container">
+Log notice file C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
+GeoIPFile C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip
+GeoIPv6File C:\Users\&lt;user&gt;\AppData\Roaming\tor\geoip6
+
+UseBridges 1
+ClientTransportPlugin obfs4 exec obfs4proxy managed
+
+bridge obfs4 167.88.182.244:24679 21CFB6528C072D4F2365ECDA0AF515C7A3E5AF72 cert=1ZUb64xwNvHXvRvl8Q/vYg7S7EbSITvhYOdQndB3xF5TLniuLD1FGGTnrnMWKEDWFWI8Gw iat-mode=0
+
+bridge obfs4 109.14.168.159:5082 BFE1416DEFFE969581F016A4A319A87FFB26BA91 cert=n3X1CDdKBPXPIzfKh83p3ydfMzb0AD9gKC+/gIpHb7+xjjAnYO9x3LT+T/MvOIfAXxYySg iat-mode=0
+
+bridge obfs4 45.150.172.16:80 82849E69CBB25EA7F479155F7DCD89D85717FF47 cert=+Krdu1jmVQOxWkMj0mqJHgwbQV49eyD6mZDS+mRExssWNHosa60g4P5Gp81sBJKzN8NrSw iat-mode=0
+                </div>
+
+                <p>سپس فایل torrc رو ذخیره کنید</p>
+
+                <p>
+                     هرچندتا پل داشتید مثل بالا میتونید اضافه کنید.
+                </p>
+
+                <p>
+                    میتونید در torrc خط ClientTransportPlugin... رو پاک یا کامنت کنید و هنگام گرفتن پل ها به جای obfs4 گزینه ی none رو انتخاب کنید و به پل هاتون بدون TransportPlugin وصل بشید.
                 </p>
 
             </div>
 
-            <div class="subsection" id="sub4">
-                <h3>خلاصه</h3>
+            <div class="subsection" id="sub3">
+                <p class="title">خلاصه</p>
                 <p>
                     تور یک برنامه اپن سورسه که یکی از کاربرداش عبور از سانسور اینترنته البته که این برنامه کاربرد های دیگه
                     ای هم داره به عنوان استفاده از deep web و dark web به وسیله ی تور و...
                 </p>
 
-                <p>
-                    یکبار تور رو بدون cmd اجرا میکنیم تا فایل های .dll مورد نیاز رو بسازه
-                </p>
                 <p>
                     در فایل torrc کانفیگ های مورد نیاز tor رو انجام میدیم
                 </p>
@@ -188,9 +214,9 @@ C:\Users\&lt;user&gt;\AppData\Roaming\tor\notice.log
             </div>
 
             <p>
-                امیدوارم باهاش بتونید سایت هایی که تحریم هستیم رو به خوبی دور بزنید!
                 موفق باشید
             </p>
+
         </article>
     </div>
 </main>
