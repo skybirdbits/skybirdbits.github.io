@@ -116,6 +116,7 @@
 .toc .list-group-item{
     border: none !important;
     border-top: 1px solid #bcbcbc !important;
+    overflow: hidden;
 }
 
 .toc{
@@ -123,23 +124,55 @@
     margin-bottom: 32px;
     border: 1px solid #bcbcbc;
     border-radius: 8px;
+    overflow: hidden;
 }
 
-.subjects .list-group{
-  border: none !important;
-  border-radius: 0px;
-}
 
-.subjects .list-group-item{
-  border: none !important;
-  border-top: 1px solid #bcbcbc !important;
-}
-
-.subjects{
+.toc.toc-course{
   margin-top: 16px;
   margin-bottom: 32px;
-  border: 1px solid #bcbcbc;
-  border-radius: 8px;
+}
+
+.toc-course .toc-course-head{
+  display: block;
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+.toc-course-head p{
+  margin-top: 1px;
+}
+
+.toc-course-head .toc-course-head-title{
+  display: flex;
+  direction: rtl;
+}
+
+.toc-course-head-title h3{
+  padding: 4px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+
+.toc-course-head-title span{
+  font-size: 1.5rem;
+}
+
+.course-category{
+  width: 100%;
+  height: fit-content;
+  background-color: #01579B;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.course-category h2{
+  color: #fafafa;
 }
 
 .note{
