@@ -116,7 +116,6 @@
 .toc .list-group-item{
     border: none !important;
     border-top: 1px solid #bcbcbc !important;
-
 }
 
 .toc{
@@ -124,6 +123,23 @@
     margin-bottom: 32px;
     border: 1px solid #bcbcbc;
     border-radius: 8px;
+}
+
+.subjects .list-group{
+  border: none !important;
+  border-radius: 0px;
+}
+
+.subjects .list-group-item{
+  border: none !important;
+  border-top: 1px solid #bcbcbc !important;
+}
+
+.subjects{
+  margin-top: 8px;
+  margin-bottom: 32px;
+  border: 1px solid #bcbcbc;
+  border-radius: 8px;
 }
 
 .note{
