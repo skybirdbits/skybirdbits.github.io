@@ -114,7 +114,7 @@ for(element in myClass){
           <p>خوندن اعضای ارایه با استفاده از روش foreach.</p>
 
           <div class="code-container">
-val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43, 55, 92}
+val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 for(element in myArray)
     println(element)
           </div>
@@ -238,18 +238,18 @@ println(result);
           <p>استفاده از روش index-based برای خوندن اعضای یک آرایه با for-loop</p>
 
           <div class="code-container">
-val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43, 55, 92}
+val myArray = Array&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 
 for(i in myArray.indices)
     println(myArray[i]
           </div>
 
           <p>
-          میتونید با کمک تابع withIndex() در آرایه اعضای ارایه رو صدا بزنید و همزمان index هر عضو در ارایه هم داشته باشید.
+          میتونید با کمک تابع withIndex در آرایه اعضای ارایه رو صدا بزنید و همزمان index هر عضو در ارایه هم داشته باشید.
           </p>
 
           <div class="code-container">
-val myArray = Array&lt;Int&gt;(6){22, 36, 74, 43,       55, 92}
+val myArray = Array&lt;Int&gt;(22, 36, 74, 43,       55, 92)
 for((index, element) in myArray.withIndex())
     println("The element at $index is $element")
           </div>
