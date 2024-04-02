@@ -238,7 +238,7 @@ println(result);
           <p>استفاده از روش index-based برای خوندن اعضای یک آرایه با for-loop</p>
 
           <div class="code-container">
-val myArray = Array&lt;Int&gt;(22, 36, 74, 43, 55, 92)
+val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 
 for(i in myArray.indices)
     println(myArray[i]
@@ -249,7 +249,7 @@ for(i in myArray.indices)
           </p>
 
           <div class="code-container">
-val myArray = Array&lt;Int&gt;(22, 36, 74, 43,       55, 92)
+val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 for((index, element) in myArray.withIndex())
     println("The element at $index is $element")
           </div>
