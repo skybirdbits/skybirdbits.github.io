@@ -29,6 +29,10 @@
     {
       "subject": "توابع خطی",
       "href": "/article/kotlin/inline-functions.html"
+    },
+    {
+      "subject": "آرایه ها",
+      "href": "/article/kotlin/arrays.html"
     }
   ]
 }
