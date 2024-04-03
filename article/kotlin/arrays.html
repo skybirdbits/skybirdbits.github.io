@@ -6,19 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کاتلین، آرایه ها در کاتلین، arrayOf، arrayOfNulls، emptyArray، کلاس Array، آرایه های یک بعدی، آرایه های دو بعدی، آرایه های چند بعدی، isEmpty، shuffle، isContentEquals، آرایه ها">
+  <meta name="keywords" content="کاتلین، آرایه ها در کاتلین، arrayOf، arrayOfNulls، emptyArray، کلاس Array، آرایه یک بعدی، آرایه های دو بعدی، آرایه های چند بعدی، isEmpty، shuffle، isContentEquals، آرایه ها">
   <meta name="description" content="در این مطلب به تعریف آرایه، آرایه های یک بعدی، آرایه های دو بعدی و آرایه های چند بعدی در کاتلین میپردازیم.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>آرایه ها در کاتلین</title>
+  <title>آرایه (Array) ها در کاتلین</title>
 
-  <meta property="og:title" content="آرایه ها در کاتلین">
+  <meta property="og:title" content="آرایه (Array) ها در کاتلین">
   <meta property="og:description" content="در این مطلب به تعریف آرایه، آرایه های یک بعدی، آرایه های دو بعدی و آرایه های چند بعدی در کاتلین میپردازیم.">
 
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/arrays.html">
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/inline-functions.html">
   <meta property="og:type" content="article">
+
+  <link rel="shortcut icon" href="/resources/favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" href="/resources/css/main.css">
   <script type="module" src="/resources/js/main.js"></script>
@@ -30,7 +32,7 @@
     <header></header>
     <div class="page-wrap">
       <div class="article-head">
-        <h1>آرایه ها در کاتلین</h1>
+        <h1>آرایه (Array) ها در کاتلین</h1>
 
         <address>
           <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
@@ -46,13 +48,15 @@
           <div class="list-group">
             <a class="list-group-item list-group-item-action" href="#sub0">تعریف آرایه</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub1">آرایه تک بعدی</a>
+            <a class="list-group-item list-group-item-action" href="#sub1">روش های ایجاد آرایه در کاتلین</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub2">آرایه دو بعدی</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">توابع رایج در آرایه</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub3">آرایه چند بعدی</a>
+            <a class="list-group-item list-group-item-action" href="#sub3">آرایه دو بعدی</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub4">آرایه چند بعدی</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
 
           </div>
         </div>
@@ -113,11 +117,9 @@ println(myArray[5])
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">آرایه های تک بعدی</p>
+          <p class="title">روش های ایجاد آرایه در کاتلین</p>
 
-          <p>به یک آرایه با طول مشخص، آرایه یک بعدی گفته میشه.</p>
-         
-          <p class="h5">روش های ایجاد آرایه در کاتلین</p>
+          <p>به یک آرایه، آرایه یک بعدی گفته میشه.</p>
 
           <p>ارایه ها در کاتلین رو به دو روش کلی میشه ایجاد کرد:</p>
 
@@ -126,7 +128,7 @@ println(myArray[5])
           <p>۲- با ایجاد آبجکت از کلاس Array</p>
 
 
-          <p class="h6">ایجاد آرایه با تابع arrayOf</p>
+          <p class="h5">ایجاد آرایه با تابع arrayOf</p>
 
           <p>پارامتر تابع arrayOf در کاتلین از نوع <a class="text-decoration-none" href="/article/kotlin/functions.html">vararg</a> است.</p>
 
@@ -150,7 +152,7 @@ val names = arrayOf&lt;String&gt;("James", "Tom", "Joy", "Issable")
 println(names.joinToString())
           </div>
 
-          <p class="h6">ایجاد آرایه با تابع arrayOfNulls</p>
+          <p class="h5">ایجاد آرایه با تابع arrayOfNulls</p>
 
           <p>تابع arrayOfNulls در کاتلین یک آرایه به طول n و با عناصر null ایجاد میکنه.</p>
 
@@ -173,7 +175,7 @@ val v = arrayOfNulls&lt;Double&gt;(100)
           </div>
 
 
-          <p class="h6">ایجاد آرایه با استفاده از تابع emptyArray</p>
+          <p class="h5">ایجاد آرایه با استفاده از تابع emptyArray</p>
 
           <p>با استفاده از این تابع یک آرایه با طول 0 ایجاد میکنیم.</p>
 
@@ -196,7 +198,7 @@ arr += "Smith"
 println("After adding value(s) length is ${lastNames.size}")
           </div>
 
-          <p class="h6">ایجاد آرایه با استفاده از کلاس Array</p>
+          <p class="h5">ایجاد آرایه با استفاده از کلاس Array</p>
 
           <p>در این روش با ایجاد یک نمونه (آبجکت) از کلاس Array در کاتلین میتونیم یک آرایه ایجاد کنیم.</p>
           
@@ -265,9 +267,14 @@ val name = names[2]
 println("Index is 2 name is $name")
           </div>
           
-          <p class="h5">توابع رایج در کلاس Array</p>
 
-          <p class="h6">تابع isEmpty</p>
+        </div>
+
+        <div class="subsection" id="sub2">
+
+          <p class="title">توابع رایج در آرایه</p>
+
+          <p class="h5">تابع isEmpty</p>
 
           <p>این تابع معلوم میکنه یک آرایه خالی است یا خیر.</p>
 
@@ -278,7 +285,7 @@ println(arr.isEmpty())
 
 
 
-          <p class="h6">تابع shuffle</p>
+          <p class="h5">تابع shuffle</p>
 
           <p>این تابع جایگاه عناصر داخل آرایه رو با همدیگه عوض میکنه اصطلاحا عناصر داخل آرایه رو قاطی پاتی میکنه.</p>
 
@@ -294,7 +301,7 @@ numbers.shuffle()
 println("After shuffling: ${numbers.joinToString()}")
           </div>
 
-          <p class="h6">تابع contentEquals</p>
+          <p class="h5">تابع contentEquals</p>
 
           <p>تایع contentEquals در کاتلین یک تابع <a class="text-decoration-none" href="/article/kotlin/functions.html#sub5">infix</a> است.</p>
 
@@ -313,7 +320,8 @@ arr1 += "z"
 println(arr0 contentEquals arr1)
           </div>
 
-          <p class="h6">توابع toList و toSet</p>
+          <p class="h5">توابع toList و toSet</p>
+
           <p>تابع toList برای تبدیل آرایه به List و تابع toSet برای تبدیل آرایه به Set به کار برده میشه.</p>
 
           <p>مثال</p>
@@ -322,12 +330,11 @@ println(arr0 contentEquals arr1)
 val arr = arrayOf("Sophia", "Billy", "Jonathan")
 val list: List&lt;String&gt; = arr.toList()
           </div>
-
         </div>
 
-        <div class="subsection" id="sub2">
+        <div class="subsection" id="sub3">
 
-          <p class="title">آرایه دو بعدی</p>
+          <p class="title">آرایه های دو بعدی</p>
 
           <blockquote>
             عناصر یک آرایه خود میتونن آرایه باشن.
@@ -337,7 +344,7 @@ val list: List&lt;String&gt; = arr.toList()
 
           <p>مثال</p>
 
-          <div>
+          <div class="code-container">
 val row0 = arrayOf&lt;String&gt;("a", "b", "c")
 val row1 = arrayOf&lt;String&gt;("x", "y", "z")
 
@@ -348,6 +355,7 @@ for(row in twoD.indices){
     val cell = twoD[row][col]
     print("$cell ")
   }
+  println()
 }
           </div>
 
@@ -423,7 +431,7 @@ for(row in matrix.indices){
           </div>
         </div>
        
-        <div class="subsection" id="sub3">
+        <div class="subsection" id="sub4">
           <p class="title">آرایه های چند بعدی</p>
 
           <p>در آرایه دو بعدی اگه عناصر آرایه های داخل آرایه اول نیز یک آرایه باشن آرایه سه بعدی میشه.</p>
@@ -463,8 +471,8 @@ for(i in threeD.indices){
 
         </div>
 
-        <div class="subsection" id="sub4">
-          <p title="title">خلاصه</p>
+        <div class="subsection" id="sub5">
+          <p class="title">خلاصه</p>
 
           <p>آرایه ها برای نگهداری تعداد متناهی از متغیر های یک نوع به کار میروند.</p>
           <p>به متغیر های داخل آرایه عنصر یا عضو میگیم.</p>
