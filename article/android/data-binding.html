@@ -2,8 +2,7 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="برنامه نویسی کاتلین ، برنامه نویسی اندروید ، استفاده از data binding ، آموزش data binding در اندروید"
-          name="keywords"/>
+    <meta content="برنامه نویسی، برنامه نویسی اندروید ، استفاده از data binding ، data binding در اندروید، دیتا بایندینگ" name="keywords"/>
     <meta content="آموزش افزودن و استفاده از کتابخانه ی data binding اندروید" name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
@@ -41,11 +40,11 @@
             <figure class="figure figure-wrapper">
                 <img alt="data binding"
                      class="rounded figure-img"
-                     src="/resources/image/android/data_binding_cover.png">
+                     src="/resources/image/android/cover_data_binding.png"/>
             </figure>
 
             <div class="toc">
-                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">فعال سازی Data Binding</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">استفاده از Data Binding</a>
@@ -56,18 +55,18 @@
 
         <article>
             <blockquote>
-                تعریف: یک کتابخونه که با استفاده ازش میتونید UI رو به داده های برنامه وصل کنید و view ها رو بدون
+                 یک کتابخونه که با استفاده ازش میتونید UI رو به داده های برنامه وصل کنید و view ها رو بدون
                 نیاز به کد نویسی اپدیت کنید
             </blockquote>
 
             <div class="subsection" id="sub0">
-                <h3>
-                    فعال سازی Data Binding
-                </h3>
+                <p class="title">
+                    فعال سازی Data Binding در اندروید
+                </p>
 
                 <p>درون پوشه ی app داخل فایل build.gradle داخل android بنویسید:</p>
 
-                <p>Root Project -> app -> build.gradle</p>
+                <p>Root Project -&gt; app -&gt; build.gradle</p>
 
                 <div class="code-container">
 android{
@@ -84,18 +83,18 @@ android{
             </div>
 
             <div class="subsection" id="sub1">
-                <h3>
+                <p class="title">
                     استفاده از Data Binding
-                </h3>
+                </p>
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <p>
                     فرض کنید یک کلاس داریم به اسم
                     <strong>TestFragment</strong>
                     و یک فایل xml به اسم
                     <strong>fragment_test</strong>
-                    برای استفاده از Data Binding سه مرحله رو باید انجام بدیم
+                    برای استفاده از دیتا بایندینگ سه مرحله رو باید انجام بدیم
                 </p>
 
                 <figure class="figure figure-wrapper">
@@ -105,16 +104,18 @@ android{
                 </figure>
 
 
-                <p><strong>۱- ایجاد تگ layout :</strong></p>
-                <p>
-                    این تگو باید قبل از هر تگ دیگه ای ایجاد کنیم
+                <p>۱- ایجاد تگ layout: 
+                <br>
+                این تگو باید قبل از هر تگ دیگه ای ایجاد کنیم.
                 </p>
 
 
-                <p><strong>۲- ایجاد و مقداردهی داده هایی که میخوایم view ها رو بهشون وصل کنیم :</strong></p>
+                <p>۲- ایجاد و مقداردهی داده هایی که میخوایم view ها رو بهشون وصل کنیم :
+                </p>
+
                 <p>
                     ابتدا متغیر(ها) رو مانند شکل بالا داخل تگ data تعریف میکنیم
-                    سپس داخل متد onCreateView مربوط به کلاس Fragment مانند زیر اونا رو مقدار دهی میکنیم
+                    سپس داخل متد onCreateView مربوط به کلاس Fragment مانند زیر اونا رو مقدار دهی میکنیم:
                 </p>
 
                 <div class="code-container">
@@ -136,14 +137,14 @@ savedInstanceState: Bundle?
                     در قطعه کد بالا ابتدا با استفاده از کلاس FragmentTestBinding که خودکار ساخته شده فایل
                     fragment_test.xml رو inflate کردیم
                     سپس متغیر viewmodel رو که در فایل xml تعریف کرده بودیم صدا و مقداردهی کردیم
-                    در نهایت root که در اینجا LinearLayout هست رو برگردوندیم
+                    در نهایت root که در اینجا LinearLayout هست رو برگردوندیم.
                 </p>
 
                 <p><strong>۳- وصل کردن view به داده ها:</strong></p>
 
                 <p>
                     با استفاده از syntax
-                    <b dir="ltr">@{ ... }</b>
+                    <strong>&#x200e;@{ ... }</strong>
                     ویو رو به داده ها وصل میکنیم
                 </p>
             </div>
@@ -159,7 +160,7 @@ savedInstanceState: Bundle?
         <div class="article-foot">
 
             <div class="d-block">
-                <h5>مطالب مرتبط:</h5>
+                <p class="h5">مطالب مرتبط:</p>
 
                 <div class="d-flex flex-wrap">
                         <span class="p-1">

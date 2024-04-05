@@ -6,9 +6,9 @@
     <meta content="بررسی چرخه ی اکتیویتی و متد های مرتبط با چرخه در اندروید" name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
-    <title>چرخه ی حیات Activity در اندروید</title>
+    <title>چرخه ی حیات اکتیویتی در اندروید</title>
 
-    <meta content="چرخه ی یک Activity در اندروید" property="og:title"/>
+    <meta content="چرخه ی حیات اکتیویتی در اندروید" property="og:title"/>
     <meta content="بررسی چرخه ی اکتیویتی و متد های مرتبط با چرخه در اندروید" property="og:description"/>
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
     <meta content="https://skybirdbits.github.io/article/android/activity-lifecycle.html" property="og:url"/>
@@ -30,7 +30,7 @@
     <div class="page-wrap">
 
         <div class="article-head">
-            <h1>چرخه ی حیات Activity در اندروید</h1>
+            <h1>چرخه ی حیات اکتیویتی در اندروید</h1>
             <address>
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
             </address>
@@ -41,7 +41,7 @@
             </figure>
 
             <div class="toc">
-                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <p class="h5 p-2 mx-2">دسترسی سریع</p>
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">پیش نیاز</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">وضعیت های یک اکتیویتی</a>
@@ -52,13 +52,13 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <h3>پیش نیاز</h3>
-                <h4>قسمت های یک برنامه ی اندرویدی:</h4>
+                <p class="title">پیش نیاز</p>
+                <p class="h5">قسمت های یک برنامه ی اندرویدی:</p>
 
                 <p>یه برنامه ی اندرویدی سه قسمت کلی داره که هنگام شروع برنامه به ترتیب اجرا میشن:</p>
 
 
-                <p class="ltr"><strong>Application -> Activity -> Fragment</strong></p>
+                <p class="ltr"><strong>Application -&gt; Activity -&gt; Fragment</strong></p>
 
                 <p class="ltr">------------------------------------------------------</p>
 
@@ -68,38 +68,36 @@
 
                 <p class="ltr">m * Activity</p>
 
-                <p class="ltr">1 <= m</p>
+                <p class="ltr">1 &lt;= m</p>
 
                 <p class="ltr">-------------------------------------------------------</p>
 
                 <p class="ltr">n * Fragment</p>
 
-                <p class="ltr">0 <= n</p>
+                <p class="ltr">0 &lt;= n</p>
 
                 <p class="ltr">------------------------------------------------------</p>
 
 
                 <p>در یک برنامه ی اندرویدی تنها یک Application داریم و حداقل یک Activity </p>
 
-                <p>داشتن یک یا چند Fragment اختیاریه البته استفاده از Fragment ها باعث میشه برنامه انعطاف‌پذیر تر
-                    باشه</p>
-
-                <p><strong>توضیح:</strong></p>
+                <p>داشتن یک یا چند Fragment اختیاریه البته استفاده از Fragment بجای اکتیویتی باعث میشه برنامه انعطاف پذیر تر
+                    باشه.</p>
 
                 <p>یک برنامه ی اندرویدی می تونه یک یا چند اکتیویتی داشته باشه اکتیویتی ها به عنوان مجری اصلی کد های ما
                     به حساب میان (مثل متد main در برنامه های کنسولی جاوا) پس از Application به اولین اکتیویتی که شروع به
-                    فعالیت میکنه main activity گفته میشه</p>
+                    فعالیت میکنه main activity گفته میشه.</p>
             </div>
 
             <div class="subsection" id="sub1">
-                <h3>وضعیت های یک اکتیویتی</h3>
+                <p class="title">وضعیت های یک اکتیویتی</p>
 
                 <figure class="figure figure-wrapper">
                     <img alt="چرخه ی یک اکتیویتی"
                          class="rounded figure-img" src="/resources/image/android/activity_lifecycle.png"/>
                 </figure>
 
-                <p>در سیستم عامل اندروید یک اکتیویتی دارای شش وضعیت کلیه </p>
+                <p>در سیستم عامل اندروید یک اکتیویتی دارای شش وضعیت کلیه به مجموع این وضعیت ها چرخه ی حیات اکتیویتی در اندروید میگیم.</p>
 
                 <p>وقتی در هر وضعیتی از چرخه قرار داریم وضعیت متقارنش وجود داره که اگر Activity وارد وضعیت جدید نشه و
                     باز بخواد شروع به اجرا شدن کنه از وضعیت متقارن خودش شروع میکنه به اجرا شدن.</p>
@@ -112,12 +110,15 @@ onStop() -&gt; onStart()
 onPause() -&gt; onResume()
                 </div>
 
-                <p>
-                    <strong>نکته: برای onPause و onStop حالت استثنا هم وجود داره در این حالت اکتیویتی از onCreate شروع
+                <div class="note">
+
+                  <p class="h6">نکته</p>
+
+                    <p>برای onPause و onStop حالت استثنا هم وجود داره در این حالت اکتیویتی از onCreate شروع
                         به اجرا شدن می کنه و این حالت زمانی اتفاق میفته که حافظه ی گوشی کمه و برنامه هایی با اولویت
                         بالاتر به حافظه نیاز دارن تو این شرایط اکتیویتی به وضعیت onPause یا onStop میره بعد برای اجرا به
-                        onCreate برمیگرده</strong>
-                </p>
+                        onCreate برمیگرده</p>
+                </div>
 
                 <div class="code-container">
 onPause() -&gt; onCreate()
