@@ -1,129 +1,123 @@
-const linkCoursesRepo = [
-   "https://skybirdbits.github.io/resources/json/java-links.json",
-   "https://skybirdbits.github.io/resources/json/kotlin-links.json",
-   "https://skybirdbits.github.io/resources/json/android-links.json",
-   "https://skybirdbits.github.io/resources/json/web-links.json",
-   "https://skybirdbits.github.io/resources/json/blog-links.json",
+import {createCourseListView} from './ui.js';
+
+const courseDataRepo = [
+  "/resources/json/java-links.json",
+  "/resources/json/kotlin-links.json",
+  "/resources/json/android-links.json",
+  "/resources/json/web-links.json",
+  "/resources/json/blog-links.json"
 ]
 
-function initSidebar(){
-    var sidebar = document.getElementById('sidebar');
+const header = document.querySelector('header');
+const footer = document.querySelector("footer");
 
-        if(sidebar != null){
-            sidebar.addEventListener('show.bs.offcanvas', function(){
-               $("#brand").hide('slow');
-            });
-            sidebar.addEventListener('hide.bs.offcanvas', function(){
-                $("#brand").show('slow');
-            });
-        }
+class CourseData {
+  isExpanded = false;
+  constructor(id, title, urls) {
+    this.id = id;
+    this.title = title;
+    this.urls = urls;
+  }
+
+  reverseExpandStatus() {
+    this.isExpanded = !this.isExpanded;
+  }
 }
 
-/*
-    Functions to create list with links to article subjects
-    views: createArticleListView(article), createListItemView(link) ,createExpandableButton(article),
-    utils: rotate(icon, article), getTransformRotation(degree)
-*/
 
-//retrieve links stored in json files inside path: /resources/json
-function loadAllArticleLinks(){
+//loads Ui Components into documents
+function loadAllUiComponents() {
 
-    const articleListViewContainer = document.getElementById('article_container');
 
-    if(articleListViewContainer){
-        for(var i =0; i<linkCoursesRepo.length; i++){
+  loadComponent("/ui-components/header-contents.html", header, () => {
 
-        $.getJSON(linkCoursesRepo[i], function(data){
+    //container is already loaded
+    const container = document.getElementById("article_container");
 
-            var article = {
-                            id: data.id,
-                            title: data.title,
-                            links: data.links,
-                            isExpanded: false
-                           };
-            var articleListView = createArticleListView(article);
-            articleListViewContainer.appendChild(articleListView);
+    prepareSidebarAnim();
 
-            }).fail(function(){
-                articleListViewContainer.innerText = "Links did not Load";
-            });
-        }
-    }
-}
+    loadJsonUrls((result) => {
+      const data = new CourseData(
+        result.id, result.title, result.links
+      );
 
-//create list view for an article to show its related links
-function createArticleListView(article){
-    var parent = document.createElement('div');
+      const listView = createCourseListView(data);
 
-    var btExpand = createExpandableButton(article);
+      container.appendChild(listView);
 
-    var subjectListContainer = document.createElement('div');
-    subjectListContainer.classList.add('collapse');
-    subjectListContainer.id = article.id;
-
-    var unorderedList = document.createElement('ul');
-    unorderedList.classList.add('list');
-
-    var links = article.links;
-    for(var i =0; i<links.length; i++){
-        var item = createListItemView(links[i]);
-        unorderedList.appendChild(item);
-    }
-
-    subjectListContainer.appendChild(unorderedList);
-
-    parent.appendChild(btExpand);
-    parent.appendChild(subjectListContainer);
-
-    return parent;
-}
-
-//create an expandable button for every lists which contain links
-function createExpandableButton(article){
-    var btExpand = document.createElement('button');
-    btExpand.classList.add('md-bt-expandable');
-    btExpand.dataset.bsTarget = ('#' + article.id);
-    btExpand.dataset.bsToggle = 'collapse'
-
-    var icon = document.createElement('span');
-    icon.classList.add('material-icons');
-    icon.innerHTML = 'arrow_drop_down'
-    icon.style.transform = 'rotate(90deg)';
-
-    var text = document.createElement('span');
-    text.innerText = article.title;
-
-    btExpand.appendChild(icon);
-    btExpand.appendChild(text);
-
-    btExpand.addEventListener('click', function(){
-            rotate(icon, article);
     });
 
-    return btExpand;
+  });
+
+  loadComponent("/ui-components/footer-contents.html", footer);
+
 }
 
-function rotate(icon , article){
-    if(!article.isExpanded){
-        icon.style.transform = 'rotate(0deg)';
-    }else{
-        icon.style.transform = 'rotate(90deg)';
+function prepareSidebarAnim() {
+  const sidebar = document.getElementById('sidebar');
+
+  if (sidebar != null) {
+    sidebar.addEventListener('show.bs.offcanvas', function () {
+      $("#brand").hide('slow');
+    });
+    sidebar.addEventListener('hide.bs.offcanvas', function () {
+      $("#brand").show('slow');
+    });
+  }
+}
+
+
+async function loadComponent(path, parent, callback) {
+
+  callback = callback || 0;
+  const req = await fetch(path);
+
+  await req.text().then(
+    (text) => {
+      parent.insertAdjacentHTML('beforeend', text);
+      if (callback != 0)
+        callback();
+
+    }).catch((e) => console.log(e));
+}
+
+//retrieve data stored in json files inside path: /resources/json
+async function loadJsonUrls(onRetrieveJSONListener) {
+
+  for (var i = 0; i < courseDataRepo.length; i++) {
+
+    const url = courseDataRepo[i];
+
+    const req = await fetch(url)
+    await req.json().then(
+      (result) =>
+        onRetrieveJSONListener(result)
+    ).catch(e => console.log(e));
+  }
+}
+
+
+const scrollButtonContainer = document.querySelector('.scroll-top-container')
+
+let currentScrollY = 0;
+
+var scrollTopVisibility = function () {
+
+  if (window.scrollY == 0) {
+    scrollButtonContainer.style.visibility = "hidden";
+  } else {
+
+    if (window.scrollY < currentScrollY) {
+
+      if (document.documentElement.scrollTop > header.offsetHeight)
+        scrollButtonContainer.style.visibility = "visible";
+
+    } else {
+      scrollButtonContainer.style.visibility = "hidden";
     }
+  }
 
-    article.isExpanded = !article.isExpanded;
+  currentScrollY = window.scrollY;
 }
 
-function createListItemView(link){
-   var item = document.createElement('li');
-   item.classList.add('list-item');
-
-   var anchor = document.createElement('a');
-   anchor.classList.add('list-item-link');
-   anchor.href = link.href;
-   anchor.innerHTML = link.subject;
-   item.appendChild(anchor);
-
-   return item;
-}
-
-export {initSidebar , loadAllArticleLinks};
+export {loadAllUiComponents, scrollTopVisibility};
