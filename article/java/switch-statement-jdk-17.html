@@ -37,15 +37,15 @@
             </address>
 
             <figure class="figure figure-wrapper">
-                <img alt="دستور سویچ در jdk 17"
-                     class="rounded figure-img" src="/resources/image/java/switch_statement_jdk17_cover.png"/>
+                <img alt="دستور سوییچ در jdk 17"
+                     class="rounded figure-img" src="/resources/image/java/cover_switch_until_jdk17.png"/>
             </figure>
             <div class="toc">
-                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <p class="h5 p-2 mx-2">دسترسی سریع</p>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#sub0">JDK < 1.8</a>
-                    <a class="list-group-item list-group-item-action" href="#sub1">JDK >= 1.8</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">JDK >= 17</a>
+                    <a class="list-group-item list-group-item-action" href="#sub0">JDK &lt; 1.8</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">JDK &gt;= 1.8</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">JDK &gt;= 17</a>
                 </div>
             </div>
         </div>
@@ -55,15 +55,17 @@
                 JDK 17 LTS تغییرات قابل توجهی داشته تو این مقاله به طور خلاصه به این تغییرات میپردازیم</p>
 
 
-            <p><strong>توجه: در این مقاله i0, i1, i2, ... , ik و سمبل هایی از این قبیل فرضی هستن که میتوان هر مقدار
-                دلخواهی رو بجاشون در نظر بگیریم</strong></p>
+            <div class="note">
+              <p class="h6">توجه:</p>
+              <p>در این مقاله i0, i1, i2, ... , ik و سمبل هایی از این قبیل فرضی هستن که میتوان هر مقدار
+                دلخواهی رو بجاشون در نظر بگیریم</p></div>
 
             <div class="subsection" id="sub0">
-                <h3>JDK < 1.8</h3>
+                <p class="title">JDK &lt; 1.8</p>
 
                 <p>قبل از JDK 1.8 شما فقط میتوانستید اعداد integer را به عنوان پارامتر داخل سوییچ پاس کنید</p>
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <div class="code-container">
 int myInteger = ...
@@ -94,12 +96,12 @@ switch(myInteger){
             </div>
 
             <div class="subsection" id="sub1">
-                <h3>JDK >= 1.8</h3>
+                <p class="title">JDK &gt;= 1.8</p>
 
                 <p>از JDK 1.8 به بعد علاوه بر integer از string و enum هم پشتیبانی شد</p>
 
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <div class="code-container">
 String myString = ...
@@ -134,15 +136,15 @@ switch(myString){
 
             <div class="subsection" id="sub2">
 
-                <h3>JDK >= 17</h3>
+                <p class="title">JDK &gt;= 17</p>
 
-                <h5>۱-قابلیت بازگرداندن مقدار توسط سوییچ: </h5>
+                <p class="h5">۱-قابلیت بازگرداندن مقدار توسط سوییچ: </p>
 
 
                 <p>شما میتوانید هر چیزی را با کلید واژه ی yield برگردانید</p>
 
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <div class="code-container">
 String myString = ...
@@ -171,15 +173,18 @@ MyType myType = switch(myString){
 };
                 </div>
 
+                <div class="note">
+                  <p class="h6"></p>
 
-                <p>نکته: در این مثال myValue از نوع MyType هست و MyType متغیر فرضیه</p>
+                  <p> در این مثال myValue از نوع MyType هست و MyType متغیر فرضیه</p>
+                </div>
 
 
-                <h5>۲-پشتیبانی از چند برچسبی: </h5>
+                <p class="h5">۲-پشتیبانی از چند برچسبی: </p>
 
                 <p> در هر case میتوانید چند برچسب را مورد بررسی قرار بدید</p>
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <div class="code-container">
 String myString = ...
@@ -222,12 +227,12 @@ case s0, s4:{
                 <p>یعنی اگر s0 یا s2 درست بود بلاک را اجرا کن...</p>
 
 
-                <h5>۳- علامت فلش:</h5>
+                <p class="h5">۳- علامت فلش:</p>
 
-                <p>میتوانیم در case ها به‌جای دو نقطه از فلش استفاده کنیم</p>
+                <p>میتونیم در case ها به جای دو نقطه از فلش استفاده کنیم</p>
 
 
-                <p><strong>مثال:</strong></p>
+                <p>مثال:</p>
 
                 <div class="code-container">
 String myString = ...
@@ -260,9 +265,23 @@ MyType myType = switch(myString){
 
             </div>
 
-            <p> جاوا تا این نسخه بروزرسانی های مختلفی درونش به وجود اومده که بهبود سوییچ یکی از این بروزرسانی ها در
-                جاواست</p>
+            <p> جاوا تا این نسخه بروزرسانی های مختلفی درونش به وجود اومده که بهبود سوییچ یکی از این بروزرسانی ها درجاوا است.</p>
         </article>
+        <div class="article-foot">
+            <div class="d-block">
+                <p class="h5">مطالب مرتبط:</p>
+                <div class="d-flex flex-wrap">
+
+                    <span>
+                      <a class="p-2 text-decoration-none" href="/article/java/selectors.html">دستورات شرطی در جاوا</a>
+                    </span>
+                    <span>
+                        <a class="p-2 text-decoration-none" href="loops.html">حلقه ها در جاوا</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 

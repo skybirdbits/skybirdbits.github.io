@@ -37,26 +37,26 @@
 
             <figure class="figure figure-wrapper">
                 <img alt="کلید واژه ی static در جاوا"
-                     class="rounded figure-img" src="/resources/image/java/static_keyword_java_cover.png"/>
+                     class="rounded figure-img" src="/resources/image/java/cover_static_keyword.png"/>
 
             </figure>
 
             <div class="toc">
-                <h5 class="p-2 mx-2">دسترسی سریع</h5>
+                <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">متغیر (فیلد) های استاتیک (static)</a>
                     <a class="list-group-item list-group-item-action" href="#sub1">متد های استاتیک (static)</a>
                     <a class="list-group-item list-group-item-action" href="#sub2">مثال از متد و فیلد استاتیک در
                         جاوا</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">کلاس های استاتیک (static)</a>
-
+                    <a class="list-group-item list-group-item-action" href="#sub3">کلاس های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
                 </div>
             </div>
 
         </div>
         <article>
-            <blockquote>کاربرد: هنگامی که این کلید واژه برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
-                و ربطی به نمونه های کلاس نداره و در طی زمان اجرای برنامه بدون نیاز به نمونه سازی در دسترسه
+            <blockquote>هنگامی که از کلید واژه ی استاتیک در جاوا برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
+                و ربطی به نمونه (آبجکت) های کلاس نداره و در طی زمان اجرای برنامه بدون نیاز به نمونه سازی در دسترسه.
             </blockquote>
 
 
@@ -64,12 +64,12 @@
 
 
             <div class="subsection" id="sub0">
-                <h3>متغیر (فیلد) های استاتیک (static)</h3>
-                <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام نمونه های
+                <p class="title">فیلد های استاتیک (static)</p>
+                <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام آبجکت های
                     ایجاد شده از کلاس به اشتراک گذاشته بشه</p>
 
 
-                <p><strong>فرم کلی:</strong></p>
+                <p>فرم کلی:</p>
 
                 <div class="code-container">
 public class ClassName{
@@ -88,20 +88,20 @@ public class ClassName{
                     Type type = ClassName.variableName;
                 </div>
 
-                <p><strong> نکته: با در نظر گرفتن Modifier سطح دسترسی متغیر (public , protected , private) میشه متغیر رو
+                <div class="note">
+                  <p class="h6">نکته:</p>
+                  <p> با در نظر گرفتن Modifier سطح دسترسی متغیر (public , protected , private) میشه متغیر رو
                     در
-                    کلاس های دیگه نیز صدا زد </strong></p>
+                    کلاس های دیگه نیز صدا زد </p></div>
 
             </div>
 
             <div class="subsection" id="sub1">
-                <h3>متد های استاتیک (static)</h3>
+                <p class="title">متد های استاتیک (static)</p>
 
-                <p>این متد ها مانند فیلد های استاتیک وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم
-                    کلاس
-                    صداشون می زنیم</p>
+                <p>این متد ها مانند فیلد های استاتیک وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم کلاس صداشون می زنیم.</p>
 
-                <p><strong> فرم کلی: </strong></p>
+                <p> فرم کلی:</p>
 
                 <div class="code-container">
 public class ClassName {
@@ -113,7 +113,7 @@ public class ClassName {
 }
                 </div>
 
-                <p><strong> صدا زدن متد:</strong></p>
+                <p> صدا زدن متد:</p>
 
                 <div class="code-container">
 Type0 type0 = new Type0();
@@ -124,12 +124,15 @@ ClassName.methodName(type0, type1, … , typeN)
                 </div>
 
 
-                <p><strong>نکته: تمام اعضای کلاس Math در جاوا استاتیکن Math.PI، Math.sin(p0, p1) و ...</strong></p>
+                <div class="note">
+                  <p class="h6">نکته:</p>
+                  <p>تمام اعضای کلاس Math در جاوا استاتیکن Math.PI، Math.sin(p0, p1) و ...</p>
+                </div>
 
             </div>
 
             <div class="subsection" id="sub2">
-                <h3>مثال از متد و فیلد استاتیک در جاوا</h3>
+                <p class="title">مثال از متد و فیلد استاتیک در جاوا</p>
                 <p><strong> Circle.java </strong></p>
                 <div class="code-container">
 public class Circle {
@@ -191,15 +194,16 @@ public class TestCircle {
             </div>
 
             <div class="subsection" id="sub3">
-                <h3>کلاس های استاتیک (static)</h3>
+                <p class="title">کلاس های استاتیک (static)</p>
 
                 <p> میشه از کلید واژه ی استاتیک برای inner class ها نیز استفاده کرد </p>
 
-                <p><strong> نکته: فقط کلاس های داخلی در جاوا یا همون Inner Class ها رو میشه به صورت استاتیک تعریف
-                    کرد </strong></p>
+                <div class="note">
+                <p class="h6">نکته:</p>
+                <p> فقط کلاس های داخلی در جاوا یا همون Inner Class ها رو میشه به صورت استاتیک تعریف
+                    کرد </p></div>
 
-                <p><strong> فرم کلی: </strong></p>
-
+                <p>فرم کلی:</p>
 
                 <div class="code-container">
 public class ClassName {
@@ -221,7 +225,8 @@ ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
 
             </div>
 
-            <h3>خلاصه:</h3>
+            <div class="subsection" id="sub4">
+            <p class="title">خلاصه:</p>
             <p>-کلید واژه ی استاتیک در جاوا برای اعضای داخل کلاس استفاده میشه</p>
 
             <p>- اعضای استاتیک وابسته به نمونه های ساخته شده از کلاس نیستن و در طول زمان اجرای برنامه در دسترسن</p>
@@ -235,6 +240,7 @@ ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
 
             <p>- برای نمونه سازی از کلاس های استاتیک new رو می نویسیم نام کلاس اصلی رو می نویسیم نقطه میزاریم و نام کلاس
                 استاتیک داخل کلاس اصلی رو مینویسیم و مانند سایر کلاس ها نمونه سازی یا همون شی سازی می کنیم</p>
+            </div>
 
 
             <p>موفق باشید</p>
