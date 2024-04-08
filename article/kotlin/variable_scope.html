@@ -7,16 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کاتلین، متغیر، تابع، محدوده، scope، دسترسی، محدوده ی متغیر، محدوده ی توابع">
-  <meta name="description" content="در کاتلین چهار مکان میشه یک متغیر یا تابع رو تعریف کرد در این مطلب به تعریف متغیر در این چهار مکان میپردازیم.">
+  <meta name="keywords" content="کاتلین، متغیر، تابع، محدوده، scope، دسترسی، محدوده ی متغیر، محدوده ی توابع، تاپ لول، top level، member، عضو، توابع، ایجاد متغیر، ایجاد توابع">
+  <meta name="description" content="در کاتلین چهار محل برای ایجاد متغیر ها و توابع وجود داره در این مطلب میخوایم این چهار محل رو بررسی کنیم...">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محدوده ی تعریف متغیر و توابع در کاتلین</title>
 
-  <meta name="og:title" content="محدوده ی تعریف متغیر و توابع در کاتلین">
+  <title>محدوده ی ایجاد متغیر ها و توابع در کاتلین</title>
 
-  <meta name="og:description" content="در کاتلین چهار مکان میشه یک متغیر یا تابع رو تعریف کرد در این مطلب به تعریف متغیر در این چهار مکان میپردازیم.">
+  <meta name="og:title" content="محدوده ی ایجاد متغیر ها و توابع در کاتلین">
+
+  <meta name="og:description" content="در کاتلین چهار محل برای ایجاد متغیر ها و توابع وجود داره در این مطلب میخوایم این چهار محل رو بررسی کنیم...">
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/">
@@ -36,14 +37,14 @@
     <div class="page-wrap">
 
       <div class="article-head">
-        <h1>محدوه ی تعریف متغیر و توابع</h1>
+        <h1>محدوده ی ایجاد متغیر ها و توابع</h1>
 
         <address>
           <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
         </address>
 
         <figure class="figure figure-wrapper">
-          <img alt="توابع خطی" class="rounded figure-img" src="/article/kotlin/variable_scope.html" />
+          <img alt="محدوده ی تعریف متغیر و توابع در کاتلین" class="rounded figure-img" src="/resources/image/kotlin/cover_variable_scope.png" />
         </figure>
 
         <div class="toc">
@@ -58,32 +59,31 @@
 
       <article>
         <div class="subsection" id="sub0">
-          <p class="title">محدوده ی تعریف متغیر و توابع</p>
-          <p>به محل تعریف متغیر ها و توابع محدوده (scope) تعریف متغیر یا تابع گفته میشه.</p>
-
-          <p>یک متغیر رو از نطر scope در چهار محل میشه تعریف کرد.</p>
+          <p class="title">محدوده ی ایجاد متغیر ها و توابع</p>
+         
+          <p>در کاتلین چهار محل برای ایجاد متغیر ها و توابع وجود داره به این محل ها محدوده ی ایجاد متغیر ها و توابع گفته میشه (scope of variables).</p>
 
           <div class="note">
             <p class="h6">توجه:</p>
-            <p>در این مطلب برای خلاصه نویسی فقط محل تعریف متغیر ها رو نشون دادیم و دیگه صداشون نکردیم همینطور از تعریف تابع نیز خودداری کردیم چون فقط داریم مکان های تعریف یک متغیر یا تابع رو بررسی میکنیم.</p>
+            <p>در این مطلب فقط ایجاد یک متغیر رو نشون میدیم و از تابع صرف تظر میکنیم همینطور صدا زدن متغیر رو نادیده گرفتیم، فقط میخوایم بدونیم یک متغیر یا تابع در کجا میتونه ایجاد بشه.</p>
           </div>
 
         </div>
 
-          <p class="h5">محدوده ی top-level</p>
+          <p class="h5">محدوده ی تاپ لول (top level)</p>
 
-          <p>وقتی یک متغیر یا تابع رو داخل فایل کاتالین تعریف کنیم بهش متغیر یا تابع top-level میگیم. کل توابع و کلاس های داخل فایل میتونن به این متغیر دسترسی مستقیم داشته باشن.</p>
+          <p>وقتی یک متغیر یا تابع رو داخل فایل کاتالین تعریف کنیم بهش متغیر یا تابع تاپ لول (top level) میگیم. کل توابع و کلاس های داخل فایل میتونن به این متغیر دسترسی مستقیم داشته باشن.</p>
 
           <div class="code-container">
-var memberFile = "This is a top level"
+var topLevel = "This is a top level variable"
 
 fun main(){
-   println(v)
+   println(topLevel)
 }
           </div>
 
           <p class="h5"> محدوده ی کلاس (member class)</p>
-
+          <p>متغیر یا توابعی که داخل کلاس تعریف میشن.</p>
           <p>اعضای کلاس بجز اعضای companion object به متغیر یا تابع دسترسی مستقیم دارن.</p>
 
           <div class="code-container">
@@ -97,6 +97,8 @@ class MyClass{
           </div>
 
           <p class="h5">محدوده ی companion object</p>
+          <p>متغیر یا توابعی که داخل companion object تعریف میشن.</p>
+
           <p>اعضای companion object و اعضای کلاس به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
 
           <div class="code-container">
@@ -108,7 +110,7 @@ class MyClass{
 
     ...
 
-    var companionVariable = "This is a companion object's Variable"
+    var companionVariable = "This is a companion variable"
     ...
 
   }
@@ -118,6 +120,7 @@ class MyClass{
 
           <p class="h5">محدوده ی داخل تابع (local)</p>
 
+          <p>متغیر یا توابعی که داخل تابع تعریف میشن.</p>
           <p>فقط اعضای داخل تابع به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
 
           <div class="code-container">
@@ -131,6 +134,11 @@ fun myFunction(){
 }
 
           </div>
+
+
+            <p>خب اینم از مکان های تعریف متغیر و توابع. موضوعی به نام سطوح دسترسی یک متغیر یا تابع وجود داره که در این بخش  گفته نشد؛ انشالله بعدا بهش می پردازیم.</p>
+
+            <p>موفق باشید.</p>
 
       </article>
 
