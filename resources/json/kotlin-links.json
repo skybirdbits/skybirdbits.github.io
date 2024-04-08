@@ -8,7 +8,7 @@
     },
     {
       "subject": "حلقه (loop) ها",
-      "href":"https://skybirdbits.github.io/article/kotlin/loops.html"
+      "href": "https://skybirdbits.github.io/article/kotlin/loops.html"
     },
     {
       "subject": "توابع",
@@ -23,8 +23,8 @@
       "href": "https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html"
     },
     {
-     "subject": "توابع مرتبه بالا",
-     "href": "https://skybirdbits.github.io/article/kotlin/higher-order-functions.html"
+      "subject": "توابع مرتبه بالا",
+      "href": "https://skybirdbits.github.io/article/kotlin/higher-order-functions.html"
     },
     {
       "subject": "توابع خطی",
@@ -40,6 +40,10 @@
     },
     {
       "subject": "توابع و مقادیر ثابت ریاضی",
+      "href": "/article/kotlin/mathematics.html"
+    },
+    {
+      "subject": "محدوده ی تعریف متغیر و توابع",
       "href": "/article/kotlin/mathematics.html"
     }
   ]
