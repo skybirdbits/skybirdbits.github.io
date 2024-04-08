@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="برنامه نویسی، کاتلین، زبان کاتلین، توابع ریاضی در کاتلین">
+  <meta name="description" content="توابع و مقادیر ثابت ریاضی در بسیاری از زبان های برنامه نویسی به عنوان کتابخونه ی استاندارد زبان تعریف شدن؛ زبان کاتلین از این قاعده مستثنی نبوده و برای کاتلین نیز این توابع ریاضی در کتابخونه ی رسمی استاندارد زبان وجود دارن.">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>توابع و مقادیر ثابت ریاضی در کاتلین</title>
+
+  <meta property="og:title" content="توابع و مقادیر ثابت ریاضی در کاتلین">
+  <meta property="og:description" content="توابع و مقادیر ثابت ریاضی در بسیاری از زبان های برنامه نویسی به عنوان کتابخونه ی استاندارد زبان تعریف شدن؛ زبان کاتلین از این قاعده مستثنی نبوده و برای کاتلین نیز این توابع ریاضی در کتابخونه ی رسمی استاندارد زبان وجود دارن.">
+
+  <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
+  <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/mathematics.html">
+  <meta property="og:type" content="article">
+
+  <link rel="shortcut icon" href="/resources/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/resources/css/main.css">
+  <script type="module" src="/resources/js/main.js"></script>
+
+</head>
+
+<body>
+
+  <main>
+
+    <header></header>
+
+    <div class="page-wrap">
+      <div class="article-head">
+        <h1>
+          توابع و اعداد ثابت ریاضی در کاتلین
+        </h1>
+
+        <address>
+          <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+        </address>
+
+        <figure class="figure figure-wrapper">
+          <img alt="توابع ریاضی در کاتلین" class="rounded figure-img"
+            src="/resources/image/kotlin/cover_mathematics.png">
+        </figure>
+
+        <div class="toc">
+          <p class="p-2 mx-2 h5">دسترسی سریع</p>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub1">توابع مثلثاتی</a>
+            
+            <a class="list-group-item list-group-item-action" href="#sub2">توابع نمایی و لگاریتمی</a>
+            
+            <a class="list-group-item list-group-item-action" href="#sub3">توابع گرد کردنی (rounding)</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub4">توابع min، max و قدرمطلق</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub5">ایجاد اعداد تصادفی با استفاده از تابع random</a>
+
+
+            <a class="list-group-item list-group-item-action" href="#sub6">محاسبه ی زاویه رأس های یک مثلث در صفحه</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
+          </div>
+        </div>
+      </div>
+
+      <article>
+        <div class="subsection" id="sub0">
+          <p class="title">توضیحات</p>
+          <p>در زبان برنامه نویسی کاتلین مانند سایر زبان ها محاسبات ریاضی یک امر مهم و پر کاربرد است گاهی بعضی اعمال ریاضی پر تکرار هستند که برای جلوگیری از این تکرار بهتره براشون تابع تعریف کرد. <br>بعضی از توابع ریاضی بدیهی و به طور عمومی برای همه شناخته شده هستند؛ توابع و مقادیر ثابت ریاضی در بسیاری از زبان های برنامه نویسی به عنوان کتابخونه ی استاندارد زبان تعریف شدن؛ زبان کاتلین از این قاعده مستثنی نبوده و برای کاتلین نیز این توابع ریاضی در کتابخونه ی استاندارد زبان وجود دارن.</p>
+
+          <p>این توابع در کتابخونه ی استاندارد کاتلین در داخل پکیج <strong>&#x200;kotlin.math</strong>برای کاتلین به صورت <a class="text-decoration-none" href="/article/kotlin/functions.html">Top Level</a> تعریف شدن.<br> در ادامه به بررسی چندتا از مهم ترین هاشون میپردازیم.</p>
+
+
+          <div class="note">
+            <p class="h6">توجه:</p>
+            <p>بعضی از توابع در حال حاضر در کتابخونه رسمی کاتلین تعریف نشدن، اما در کلاس <strong>Math</strong> در جاوا به صورت <a class="text-decoration-none" href="/article/java/static-keyword.html">استاتیک</a> وجود دارن و از اونجایی که در کاتلین میشه از کلاس و تابع (متد) های جاوا استفاده کرد میتونیم از کلاس Math در جاوا کمک بگیریم.</p>
+          </div>
+
+          <p>در این مطلب توابع ریاضی در کاتلین رو به <strong>توابع مثلثاتی</strong>،<strong>توابع نمایی (exponential) و لگاریتم</strong> و <strong>توابع مقایسه ای و قدر مطلق</strong> دسته بندی کرده و در آخر نگاهی به تابع random انداختیم.</p>
+        </div>
+
+        <div class="subsection" id="sub1">
+          <p class="title">توابع مثلثاتی</p>
+
+          <p class="h5">ثابت PI</p>
+
+          <p>عدد PI نسبت یک دایره به محیطش است. از PIبه عنوان زاویه (رادیان) در مثلثات استفاده میکنیم، این عدد به عنوان پراپرتی (فیلد) ثابت نوع Double در کاتلین تعریف شده و مقدارش تقریبا برابر با 3.14 است.</p>
+
+          <div class="code-container">
+const val PI: Double            
+          </div>
+
+
+          <div class="note">
+            <p class="h6">نکته</p>
+            <p>پارامتر توابع مثلثاتی در کاتلین Double یا Float و مقداری که بر میگردونن از نوع پارامتر است.</p>
+          </div>
+
+          <p class="h5">تابع سینوس  (sin)</p>
+          <p>این تابع زاویه رو به عنوان پارامتر میگیره و مقدار سینوس زاویه رو بر میگردونه.</p>
+
+
+          <div class="code-container">
+fun sin(x: Double): Double
+fun sin(x: Float): Float
+          </div>
+
+          <p class="h5">
+          تابع کسینوس (cos)
+          </p>
+
+          <p>زاویه رو به عنوان پارامتر میگیره و مقدار کسینوس بر میگردونه.</p>
+
+          <div class="code-container">
+fun cos(x: Double): Double
+fun cos(x: Float): Float
+          </div>
+
+          <p class="h5">
+          تابع تانژانت (tan)
+          </p>
+
+          <p>زاویه رو به عنوان پارامتر میگیره و مقدار تانژانت رو برمیگردونه.</p>
+
+          <div class="code-container">
+fun cos(x: Double): Double
+fun cos(x: Float): Float
+          </div>
+
+          <p class="h5">تابع سینوس اینورس (asin)</p>
+
+          <p>مقدار سینوس به عنوان پارامتر میگیره و زاویه رو به عنوان رادیان برمیگردونه.</p>
+
+          <div class="code-container">
+fun asin(x: Double): Double
+fun asin(x: Float): Float
+          </div>
+
+          <p class="h5">تابع کسینوس اینورس (acos)</p>
+          <p>مقدار کسینوس به عنوان پارامتر میگیره و زاویه رو به عنوان رادیان بر میگردونه.</p>
+          
+          <div class="code-container">
+fun acos(x: Double): Double
+fun acos(x: Float): Float
+          </div>
+
+          <p class="h5">تابع تانژانت اینورس (atan)</p>
+          <p>مقدار تانژانت رو به عنوان پارامتر میگیره و زاویه رو به عنوان رادیان بر میگردونه.</p>
+
+          <div class="code-container">
+fun acos(x: Double): Double
+fun acos(x: Float): Float
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub2">
+
+          <p class="title">توابع نمایی و لگاریتمی</p>
+          <p class="h5">عدد ثابت E</p>
+          <p>پایه ی لگاریتم طبیعی این متغیر به عنوان پراپرتی (فیلد) ثابت تعریف شده و مقدارش تقریبا برابر با 2.71 است.</p>
+
+          <div class="code-container">
+const val E: Double
+          </div>
+
+          <p class="h5">تابع exp</p>
+
+          <p>یک مقدار به عنوان پارامتر میگیره و عدد e (اویلر) رو به توان پارامتر میرسونه.</p>
+          
+          <div class="code-container">
+fun exp(x: Double): Double
+fun exp(x: Float): Float
+          </div>
+
+          <p>تابع لگاریتم طبیعی (ln)</p>
+
+          <p>لگاریتم طبیعی رو حساب میکنه</p>
+          
+          <div class="code-container">
+fun ln(x: Double): Double
+fun ln(x: Float): Float
+          </div>
+
+          <p>تابع لگاریتم (log)</p>
+
+          <p>لگاریتم x رو بر پایه base حساب میکنه.</p>
+          <div class="code-container">
+fun log(x: Double, base: Double): Double
+fun log(x: Float, base: Float): Float
+          </div>
+
+
+          <p class="h5">تابع توان (pow)</p>
+
+          <p>عدد رو به توان x میرسونه. تابع pow یک تابع اکستنشن است.</p>
+
+          <div class="code-container">
+fun Double.pow(x: Double): Double
+fun Float.pow(x: Float): Float
+
+fun Double.pow(x: Int): Double
+fun Float.pow(x: Int): Float
+          </div>
+
+          <p class="h5">تابع جذر (sqrt)</p>
+          <p>جذر یک عدد رو میگیره</p>
+
+          <div class="code-container">
+fun sqrt(x: Double): Double
+fun sqrt(x: Float): Float
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub3">
+          <p class="title">توابع گرد کردنی (rounding)</p>
+          <p class="h5">تابع ceil</p>
+          <p>مقدارو به اولین عدد صحیح بالاتر میرسونه، مثلا اگه مقدار 2.1 باشه به 3؛ و اگه عدد -2.1 باشه به -2 میرسونه.</p>
+
+          <div class="code-container">
+fun ceil(x: Double): Double
+fun ceil(x: Float): Float
+          </div>
+
+          <p class="h5">تابع round</p>
+
+          <p>مقدارو به نزدیک ترین عدد صحیح میرسونه مثلا اگه 2.4 باشه به 2 میرسونه و اگه مقدار 2.6 باشه به 3 میرسونه.</p>
+
+          <div class="code-container">
+fun round(x: Double): Double
+fun round(x: Float): Float
+          </div>
+
+          <p class="h5"> تابع floor</p>
+          <p>مقدار عددو به اولین عدد صحیح پایین تر میرسونه مثلا اگه عدد 2.1 باشه به 2 میرسونه و اگه -2.1 باشه به -3 میرسونه.</p>
+          
+          <div class="code-container">
+fun floor(x: Double): Double
+fun floor(x: Float): Float
+          </div>
+
+        </div>
+
+
+        <div class="subsection" id="sub4">
+          <p class="title">تابع min، max و قدرمطلق</p>
+          <p class="h5">تابع max</p>
+
+          <p>بین دو عدد مقدار بزرگترو بر میگردونه</p>
+          <div class="code-container">
+fun max(a: UInt, b: UInt): UInt
+fun max(a: ULong, b: ULong): ULong
+fun max(a: Double, b: Double): Double
+fun max(a: Float, b: Float): Float
+fun max(a: Int, b: Int): Int
+fun max(a: Long, b: Long): Long
+          </div>
+
+          <p>تابع min</p>
+          <p>مقدار کوچیکترو بین دو عدد بر میگردونه</p>
+          <div class="code-container">
+fun min(a: UInt, b: UInt): UInt
+fun min(a: ULong, b: ULong): ULong
+fun min(a: Double, b: Double): Double
+fun min(a: Float, b: Float): Float
+fun min(a: Int, b: Int): Int
+fun min(a: Long, b: Long): Long
+          </div>
+
+          <p class="h5">تابع قدرمطلق (abs)</p>
+
+          <p>مقدار مثبت یک عدد رو بر میگردونه</p>
+
+          <div class="code-container">
+fun abs(x: Double): Double
+fun abs(x: Float): Float
+fun abs(n: Int): Int
+fun abs(n: Long): Long
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub5">
+          <p class="title">ایجاد اعداد تصادفی با استفاده از تابع random</p>
+
+          <p>برای ایجاد اعداد تصادفی به دو روش میتونیم عمل کنیم</p>
+
+          <p class="h5">با استفاده از تابع random در کاتلین</p>
+          <p>مثال:</p>
+          
+          <p>میخوایم یک عدد بین 0 تا 100 به صورت تصادفی ایجاد کنیم اگه بخوایم خود 100 به حساب نیاد از until استفاده میکنیم.</p>
+
+          <div class="code-container">
+val rndm0 = (0 until 100).random()
+val rndm1 = (0..100).random()
+println("rndm0 is $rndm0 and rndm1 is $rndm1")
+          </div>
+
+          <p class="h5">با استفاده از تابع استاتیک random در کلاس Math جاوا</p>
+
+          <p>اگه بخوایم از بین اعداد 0 تا x یک عدد به عنوان عدد تصادفی ایجاد کنیم کافیه تابع random رو ضربدر x کنیم.</p>
+
+          <p>مثال</p>
+          <p>میخوایم یک عدد تصادفی بین 0 تا 1000 ایجاد کنیم (خود 1000 به حساب نیاد).</p>
+          <div class="code-container">
+val rndm = (Math.random() * 1000).toInt()
+println("rndm is $rndm")
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub6">
+
+          <p class="title">محاسبه ی زاویه یک مثلث روی صفحه.</p>
+
+          <p>فرض کنید سه نقطه رو صفحه داریم </p>
+
+          <p>&#x200;<strong>p0=(x0,y0)</strong>, <strong>p1=(x1,y1)</strong> <strong>p2=(x2,y2)</strong></p>
+
+
+          <p>
+          این سه نقطه سه رأس یک مثلث رو تشکیل میدن؛ حالا هر ضلع یک مثلث رو به ترتیب<strong>&#x200e;a, b, c</strong> در نظر بگیرید. <br> برای محاسبه ی طول هر ضلع از فرمول زیر استفاده میکنیم:</p>
+
+          <div class="code-container">   
+val a = sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0))
+          
+val b = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))
+          
+val c = sqrt((x2 - x0) * (x2 - x0) + (y2 - y0) * (y2 - y0))
+          </div>
+
+          <p>بعد از حساب کردن طول هر ضلع میتونیم از فرمول زیر زاویه هر رأس رو حساب کنیم:</p>
+
+
+
+          <div class="code-container">
+val A = acos(a * a - b * b - c * c) / (-2 * b * c)
+
+val B = acos(b * b - a * a - c * c) / (-2 * a * c)
+          
+val C = acos(c * c - a * a - b * b) / (-2 * a * b)
+          </div>
+
+          <p>پیاده سازی کامل کد ها:</p>
+
+          <div class="code-container">
+val input = new Scanner(System.in)
+
+println("Enter Three points: ")
+
+val x0 = input.nextDouble()
+val y0 = input.nextDouble()
+val x1 = input.nextDouble()
+val y1 = input.nextDouble()
+val x2 = input.nextDouble()
+val y2 = input.nextDouble()
+
+
+val a = sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0))
+val b = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))
+val c = sqrt((x2 - x0) * (x2 - x0) + (y2 - y0) * (y2 - y0))
+
+
+val A = Math.toDegree(acos(a * a - b * b - c * c) / (-2 * b * c))
+
+val B = Math.toDegree(acos(b * b - a * a - c * c) / (-2 * a * c))
+          
+val C = Math.toDegree(acos(c * c - a * a - b * b) / (-2 * a * b))
+
+println("The Three angles are ${round(A * 100)/100}, ${round(B * 100)/100}, ${round(C * 100)/100}")
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub7">
+          <p class="title">خلاصه</p>
+          <p>در کتابخونه رسمی کاتلین مانند سایر زبون های برنامه نویسی توابع ریاضی تعریف شده.</p>
+
+          <p>توابع مثلثاتی شامل sin، cos، tan، asin، acos و atan هستند.</p>
+          <p>توابع نمایی شامل exp، ln، log، pow و sqrt هستند.</p>
+
+          <p>- توابع rounding شامل ceil، round و floor است.</p>
+
+          <p>بعضی از توابع در پکیج math کاتلین تعریف نشده مانند toDegree میتونیم از توابع (متد) های استاتیک در کلاس Math در جاوا بهره ببریم.</p>
+
+        </div>
+
+      </article>
+
+      <div class="article-foot">
+        <div class="d-block">
+          <p class="h5"></p>
+          <div class="d-flex flex-wrap">
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/functions.html">توابع در کاتلین</a>
+            </span>
+
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/extension-function.html">اکستنشن ها در کاتلین</a>
+            </span>
+
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/extension-function.html">حلقه ها در کاتلین</a>
+            </span>
+
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/extension-function.html">دستورات شرطی در کاتلین</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#">
+      arrow_drop_up
+    </a>
+  </div>
+
+  <footer></footer>
+
+  <div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+  </div>
+
+</body>
+
+</html>
