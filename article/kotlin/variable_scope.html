@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="keywords" content="کاتلین، متغیر، تابع، محدوده، scope، دسترسی، محدوده ی متغیر، محدوده ی توابع">
+  <meta name="description" content="در کاتلین چهار مکان میشه یک متغیر یا تابع رو تعریف کرد در این مطلب به تعریف متغیر در این چهار مکان میپردازیم.">
+
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محدوده ی تعریف متغیر و توابع در کاتلین</title>
+
+  <meta name="og:title" content="محدوده ی تعریف متغیر و توابع در کاتلین">
+
+  <meta name="og:description" content="در کاتلین چهار مکان میشه یک متغیر یا تابع رو تعریف کرد در این مطلب به تعریف متغیر در این چهار مکان میپردازیم.">
+
+  <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
+  <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/">
+
+  <meta property="og:type" content="article">
+
+  <link rel="shortcut icon" href="/resources/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/resources/css/main.css">
+  <script type="module" src="/resources/js/main.js"></script>
+
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <div class="page-wrap">
+
+      <div class="article-head">
+        <h1>محدوه ی تعریف متغیر و توابع</h1>
+
+        <address>
+          <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+        </address>
+
+        <figure class="figure figure-wrapper">
+          <img alt="توابع خطی" class="rounded figure-img" src="/article/kotlin/variable_scope.html" />
+        </figure>
+
+        <div class="toc">
+          <p class="p-2 mx-2 h5">دسترسی سریع</p>
+          <div class="list-group">
+
+            <a class="list-group-item list-group-item-action" href="#sub0">محدوده ی تعریف متغیر و توابع</a>
+
+          </div>
+        </div>
+      </div>
+
+      <article>
+        <div class="subsection" id="sub0">
+          <p class="title">محدوده ی تعریف متغیر و توابع</p>
+          <p>به محل تعریف متغیر ها و توابع محدوده (scope) تعریف متغیر یا تابع گفته میشه.</p>
+
+          <p>یک متغیر رو از نطر scope در چهار محل میشه تعریف کرد.</p>
+
+          <div class="note">
+            <p class="h6">توجه:</p>
+            <p>در این مطلب برای خلاصه نویسی فقط محل تعریف متغیر ها رو نشون دادیم و دیگه صداشون نکردیم همینطور از تعریف تابع نیز خودداری کردیم چون فقط داریم مکان های تعریف یک متغیر یا تابع رو بررسی میکنیم.</p>
+          </div>
+
+        </div>
+
+          <p class="h5">محدوده ی top-level</p>
+
+          <p>وقتی یک متغیر یا تابع رو داخل فایل کاتالین تعریف کنیم بهش متغیر یا تابع top-level میگیم. کل توابع و کلاس های داخل فایل میتونن به این متغیر دسترسی مستقیم داشته باشن.</p>
+
+          <div class="code-container">
+var memberFile = "This is a top level"
+
+fun main(){
+   println(v)
+}
+          </div>
+
+          <p class="h5"> محدوده ی کلاس (member class)</p>
+
+          <p>اعضای کلاس بجز اعضای companion object به متغیر یا تابع دسترسی مستقیم دارن.</p>
+
+          <div class="code-container">
+class MyClass{
+  ...
+
+  val memberVariable = "This is a member variable"
+
+  ...
+}
+          </div>
+
+          <p class="h5">محدوده ی companion object</p>
+          <p>اعضای companion object و اعضای کلاس به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
+
+          <div class="code-container">
+class MyClass{
+
+...
+
+  companion object{
+
+    ...
+
+    var companionVariable = "This is a companion object's Variable"
+    ...
+
+  }
+}
+          </div>
+
+
+          <p class="h5">محدوده ی داخل تابع (local)</p>
+
+          <p>فقط اعضای داخل تابع به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
+
+          <div class="code-container">
+fun myFunction(){
+
+  ...
+
+  var localVariable = "This is a local variable"
+
+  ...
+}
+
+          </div>
+
+      </article>
+
+      <div class="article-foot">
+        <div class="d-block">
+          <p class="h5">مطالب مرتبط:</p>
+          <div class="d-flex flex-wrap">
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/variables_mutable_immutable.html">متغیر های تغییرپذیر و تغییرناپذیر در کاتلین</a>
+            </span>
+
+
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/mathematics.html">توابع و مقادیر ثابت ریاضی در کاتلین</a>
+            </span>
+
+            <span class="p-2">
+              <a class="text-decoration-none" href="/article/kotlin/functions.html">توابع در کاتلین</a>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#">
+      arrow_drop_up
+    </a>
+  </div>
+
+  <footer></footer>
+
+  <div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+  </div>
+
+</body>
+
+</html>
