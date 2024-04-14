@@ -8,6 +8,19 @@
     border-radius: 4px;
 }
 
+.md-bt .hint{
+  visibility: hidden;
+  width: auto;
+  height: auto;
+  background-color: #212121;
+  color: #fafafa;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+}
+
 .md-bt.md-bt-dark{
      color: #fafafa;
      background-color: #212121;
