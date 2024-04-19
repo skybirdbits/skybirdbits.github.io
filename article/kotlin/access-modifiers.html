@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کلیدواژه ی سطح دسترسی، سطح دسترسی توابع، سطح دسترسی متغیر ها، سطح دسترسی کلاس، کلیدواژه ی private، کلیدواژه ی protected، کلیدواژه ی internal، کلیدواژه ی public">
+  <meta name="keywords" content="کلیدواژه ی سطح دسترسی، سطح دسترسی توابع، سطح دسترسی متغیر ها، سطح دسترسی کلاس، کلیدواژه ی private، کلیدواژه ی protected، کلیدواژه ی internal، کلیدواژه ی public، access modifiers در کاتلین، کلیدواژه های سطح دسترسی در کاتلین">
   <meta name="description" content="در این مطلب به کلیدواژه های سطح دسترسی می پردازیم و نحوه ی تعیبن سطح دسترسی، متغیر، توابع و کلاس رو در کاتلین بررسی میکنیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -70,10 +70,10 @@
 
           <blockquote>سطح دسترسی پیشفرض تمام اعضا در کاتلین public است.</blockquote>
 
-          <p>با استفاده از کلیدواژه های سطح دسترسی (accees modifiers) در کاتلین میتونیم مشخص کنیم یک متغیر، تابع، کلاس یا اینترفیس در چه محدوده ای قابل دسترسی است.</p>
+          <p>با استفاده از کلیدواژه های سطح دسترسی (accees modifiers) در کاتلین میتونیم مشخص کنیم متغیرها، توابع، کلاس ها و اینترفیس ها کجاها قابل دسترسی اند.</p>
 
           <div class="note">
-            <p>نکته:</p>
+            <p class="h6">نکته</p>
           <p>کلیدواژه های سطح دسترسی برای متغیر ها، توابع و کلاس های محلی (local) قابل استفاده نیستند.</p>
           </div>
 
@@ -88,7 +88,7 @@
         <div class="subsection" id="sub1">
           <p class="title">سطح دسترسی برای اعضای تاپ لول</p>
 
-          <p>متغیر، تابع، کلاس، آبجکت های اعلامی و اینترفیس میتونن به صورت <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top level</a> تعریف بشن.</p>
+          <p>متغیر ها، توابع، کلاس ها، آبجکت های اعلامی و اینترفیس ها میتونن به صورت <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top level</a> تعریف بشن.</p>
           
           <p class="h5">private</p>
 
@@ -147,7 +147,7 @@ public class MyClass{
 
           <div class="note">
             <p class="h6">نکته</p>
-            <p>کلیدواژه ی protected برای اعضای <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top level</a> قابل استفاده نیست.</p>
+            <p>کلیدواژه ی protected برای اعضای <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top-level</a> قابل استفاده نیست.</p>
           </div>
 
         </div>
@@ -193,7 +193,7 @@ class MyClass{
 
           <p class="h5">internal</p>
 
-          <p>تمام اعضای module که به کلاس دسترسی دارن (مثلا سطح دسترسی خود کلاس private نباشه) به اعضایی که در کلاس با سطح دسترسی internal تعریف شدن نیز دسترسی دارن.</p>
+          <p>تمام اعضای module که به کلاس دسترسی دارن؛ به اعضایی که در کلاس با سطح دسترسی internal تعریف شدن نیز دسترسی دارن.</p>
 
           <div class="code-container">
 class MyClass{
@@ -210,7 +210,7 @@ class MyClass{
 }
           </div>
 
-          <p>public</p>
+          <p class="h5">public</p>
 
           <p>کل پروژه به عضوی که در کلاس با سطح دسترسی public تعریف شده دسترسی داره.</p>
 
@@ -274,17 +274,17 @@ class MyClass{
 
         <div class="relative-articles-container">
           <p>مطالب مرتبط</p>
-          <div class="d-flex flex-wrap">
-            <span class="p-2">
-              <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">محدوده ی متغیر ها در کاتلین</a>
+          <div>
+            <span>
+              <a href="/article/kotlin/variable_scope.html">محدوده ی متغیر ها در کاتلین</a>
             </span>
 
-            <span class="p-2">
-              <a class="text-decoration-none" href="/article/kotlin/functions.html">توابع در کاتلین</a>
+            <span>
+              <a href="/article/kotlin/functions.html">توابع در کاتلین</a>
             </span>
 
-            <span class="p-2">
-              <a class="text-decoration-none" href="https://kotlinlang.org/docs/visibility-modifiers.html">مطالعه در وبسایت رسمی کاتلین</a>
+            <span>
+              <a href="https://kotlinlang.org/docs/visibility-modifiers.html">مطالعه در وبسایت رسمی کاتلین</a>
             </span>
           </div>
         </div>
