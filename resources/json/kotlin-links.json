@@ -45,6 +45,10 @@
     {
       "subject": "محدوده ی تعریف متغیر و توابع",
       "href": "/article/kotlin/variable_scope.html"
+    },
+    {
+      "subject": "کلیدواژه های سطح دسترسی",
+      "href": "/article/kotlin/access-modifiers.html"
     }
   ]
 }
