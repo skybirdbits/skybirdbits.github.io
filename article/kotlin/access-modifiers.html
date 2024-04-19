@@ -70,7 +70,7 @@
 
           <blockquote>سطح دسترسی پیشفرض تمام اعضا در کاتلین public است.</blockquote>
 
-          <p>با استفاده از کلیدواژه های سطح دسترسی (accees modifiers) در کاتلین میتونیم مشخص کنیم متغیرها، توابع، کلاس ها و اینترفیس ها کجاها قابل دسترسی اند.</p>
+          <p>با استفاده از کلیدواژه های سطح دسترسی (access modifiers) در کاتلین میتونیم مشخص کنیم متغیرها، توابع، کلاس ها و اینترفیس ها کجاها قابل دسترسی اند.</p>
 
           <div class="note">
             <p class="h6">نکته</p>
@@ -92,7 +92,7 @@
           
           <p class="h5">private</p>
 
-          <p>با کلیدواژه ی private اعلام میکنیم فقط داخل فایل قابل دسترسی هستند.</p>
+          <p>با کلیدواژه ی private اعلام میکنیم عضو فقط برای اعضای داخل فایل در دسترس است.</p>
 
           <div class="code-container">
 private var v = ...
@@ -130,7 +130,6 @@ internal class MyClass{
 
           <p class="h5">public</p>
 
-
           <p>با استفاده از کلیدواژه ی public اعلام میکنیم کل پروژه میتونه به عضو دسترسی داشته باشه.</p>
 
            <div class="code-container">
@@ -155,7 +154,7 @@ public class MyClass{
         <div class="subsection" id="sub2">
           <p class="title">سطح دسترسی برای اعضای کلاس</p>
           <p class="h5">private</p>
-          <p>با کلیدواژه ی private برای یک عضو کلاس اعلام میکنیم فقط اعضای داخل کلاس میتونن بهش دسترسی داشته باشن.</p>
+          <p>با استفاده از کلیدواژه ی private برای یک عضو کلاس اعلام میکنیم فقط اعضای داخل کلاس میتونن بهش دسترسی داشته باشن.</p>
 
           <div class="code-container">
 class MyClass{
@@ -173,7 +172,7 @@ class MyClass{
           </div>
 
           <p class="h5">protected</p>
-          <p>اگه از کلاسی که عضوش با سطح دسترسی protected تعریف شده ارث بری نداشته باشیم مثل private است. در صورت ارث بری کلاس فرزند به اعضایی که در کلاس پدر با protected تعریف شدن دسترسی داره.</p>
+          <p>اگه از کلاسی که عضوش با سطح دسترسی protected تعریف شده ارث بری نداشته باشیم مثل private عمل میکنه. در صورت ارث بری کلاس فرزند به عضوی که در کلاس پدر با protected تعریف شده دسترسی داره.</p>
 
           <div class="code-container">
 class MyClass{
@@ -193,7 +192,7 @@ class MyClass{
 
           <p class="h5">internal</p>
 
-          <p>تمام اعضای module که به کلاس دسترسی دارن؛ به اعضایی که در کلاس با سطح دسترسی internal تعریف شدن نیز دسترسی دارن.</p>
+          <p>تمام اعضای module که به کلاس دسترسی دارن؛ به عضو کلاس که با سطح دسترسی internal تعریف شده نیز دسترسی دارن.</p>
 
           <div class="code-container">
 class MyClass{
@@ -237,11 +236,11 @@ class MyClass{
           <p class="title">خلاصه</p>
           <p>- کلیدواژه های سطح دسترسی تعیبن میکنن یک تابع متغیر، کلاس و ... در چه محدوده ای قابل دسترسی هستند.</p>
           
-          <p>در کاتلین چهارتا کلیدواژه ی سطح دسترسی داریم که عبارتند از private، protected، internalو public.</p>
+          <p>- در کاتلین چهارتا کلیدواژه ی سطح دسترسی داریم که عبارتند از private، protected، internalو public.</p>
 
-          <p>کلیدواژه های سطح دسترسی برای اعضای داخلی (local) قابل استفاده نیستند.</p>
+          <p>- کلیدواژه های سطح دسترسی برای اعضای داخلی (local) قابل استفاده نیستند.</p>
 
-          <p>کلیدواژه ی protected برای اعضای top level قابل استفاده نیست.</p>
+          <p>- کلیدواژه ی protected برای اعضای top level قابل استفاده نیست.</p>
 
         </div>
 
@@ -256,13 +255,13 @@ class MyClass{
             <span class="material-icons">
               navigate_next
             </span>
-            <span>
+            <span class="hint">
               بعدی
             </span>
           </a>
 
           <a href="/article/kotlin/variable_scope.html" class="md-bt md-bt-light">
-            <span>
+            <span class="hint">
               قبلی
             </span>
             <span class="material-icons">
