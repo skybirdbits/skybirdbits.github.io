@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کاتلین، آبجکت، کلاس، آبجکت همراه، متغیر های عضو کلاس، پراپرتی، تابع، توابع، شی گرایی، شی گرایی کاتلین، اشیا کاتلین، کلیدواژه ی this کاتلین، ایجاد آبجکت در کاتلین، class در کاتلین، companion object در کاتلین، companion object، توابع عضو کلاس، متغیر های استاتیک، اعضای استاتیک، سازنده کاتلین، کانستراکتور کاتلین، constructor کاتلین، کانستراکتور اولیه، کانستراکتور ثانویه، property کاتلین، بکینگ فیلد، بکینگ پراپرتی، backing field کاتلین، backing property کاتلین">
+  <meta name="keywords" content="کاتلین، آبجکت، کلاس، آبجکت همراه، متغیر های عضو کلاس، پراپرتی، تابع، توابع، شی گرایی، شی گرایی کاتلین، اشیا کاتلین، کلیدواژه ی this کاتلین، ایجاد آبجکت در کاتلین، class در کاتلین، companion object در کاتلین، companion object، توابع عضو کلاس، متغیر های استاتیک، اعضای استاتیک، سازنده کاتلین، کانستراکتور کاتلین، constructor کاتلین، کانستراکتور اولیه، کانستراکتور ثانویه، property کاتلین، بکینگ فیلد، بکینگ پراپرتی، backing field کاتلین، backing property کاتلین، ساختار کلاس کاتلین">
 
   <meta name="description" content="در این مقاله یک توضیح کامل از کلاس ها و آبجکت ها در کاتلین داریم؛ سازنده (constructor) ها، متغیر ها و توابع داخل کلاس رو بررسی کرده و به اعضای ابجکت همراه میپردازیم و در آخر گفته ها رو با مثال بیان میکنیم.">
 
@@ -84,7 +84,7 @@
 
           <p>هرچندتا آبجکت که بخوایم میتونیم از یک کلاس ایجاد کنیم و هر آبجکت اطلاعات مختص به خودشو داره و از سایر آبجکت ها مستقله.</p>
 
-          <p>هنگامی که یک آبجکت از یک کلاس (class)ایجاد میکنیم میگیم یک نمونه از کلاس ایجاد کردیم.</p>
+          <p>هنگامی که یک آبجکت از یک کلاس (class) ایجاد میکنیم میگیم یک نمونه از کلاس ایجاد کردیم.</p>
 
         </div>
 
@@ -94,7 +94,7 @@
           <p><blockquote>برای ایجاد آبجکت نیاز داریم کلاس (class) تعریف کنیم.</blockquote></p>
 
 
-          <p>با استفاده از کلیدواژه ی کلاس و اسم دلخواه برای کلاس میتونیم یک کلاس تعریف کنیم.</p>
+          <p>با استفاده از کلیدواژه ی class و اسم دلخواه برای کلاس میتونیم یک کلاس تعریف کنیم.</p>
 
           <div class="code-container">
 class Name{
@@ -103,12 +103,12 @@ class Name{
           </div>
           
 
-          <p>به طور کلی یک کلاس در کاتلین از چهار قسمت تشکیل شده:</p>
+          <p>به طور کلی یک کلاس در کاتلین از چهار قسمت تشکیل شده.</p>
 
 
-        <figure class="figure figure-wrapper">
+        <figure>
           <img alt="ساختار کلاس در کاتلین" class="rounded figure-img img-fluid" src="/resources/image/kotlin/class_structure.png" />
-          <figcaption class="figure-caption text-end">قسمت های یک کلاس</figcaption>
+          <figcaption class="figure-caption text-end p-2">ساختار یک کلاس </figcaption>
         </figure>
 
 
@@ -127,7 +127,7 @@ class Name{
 
           <p class="h6">۴- آبجکت همراه (companion object)</p>
 
-          <p>داخل هر کلاس میتونیم فقط یدونه آبجکت همراه (companion object)داشته باشیم.</p>
+          <p>داخل هر کلاس میتونیم فقط یک آبجکت همراه (companion object) داشته باشیم.</p>
 
         </div>
 
@@ -141,10 +141,10 @@ class Name{
 
           <p>در هر کلاس میتونیم یک یا چند کانستراکتور تعریف کنیم و برای ایجاد نمونه از کلاس هرکدومو خواستیم صدا کنیم.</p>
 
-          <p>در کاتلین اولین کانستراکتور که هنگام تعریف کلاس بعد از اسم کلاس وجود داره به <strong>کانستراکتور اولیه</strong> و بقیه کانستراکتور ها به <strong>کانستراکتور (سازنده) های ثانویه</strong>  معروف هستند.</p>
+          <p>در کاتلین اولین کانستراکتور که هنگام تعریف کلاس بعد از اسم کلاس وجود داره به <strong>کانستراکتور اولیه</strong> و بقیه کانستراکتور ها به <strong>کانستراکتور های ثانویه</strong>  معروف هستند.</p>
 
          
-          <p class="h5">سازنده (constructor) اولیه</p>
+          <p class="h5">کانستراکتور اولیه</p>
 
           <p>با استفاده از کلیدواژه ی constructor بعد از اسم کلاس میتونیم سازنده ی اولیه در کاتلین ایجاد کنیم.</p>
 
@@ -164,9 +164,6 @@ class MyClass private constructor(){
 
 }
           </div>
-
-
-          <p class="h5">کانستراکتور های اولیه</p>
             
           <p>        بدنه ی کنستراکتور اولیه بلوک init است برای کانستراکتور اولیه در کاتلین هرچندتا بلوک init خواستیم میتونیم تعریف کنیم که به ترتیب موقع اجرای برنامه کد های داخلشون اجرا میشن.</p>
 
@@ -188,7 +185,7 @@ class MyClass(){
 }
          </div>
 
-          <p>میتونیم داخل بدنه ی کانستراکتور که بلوک init بدنه ی کانستراکتور اولیه به حساب میاد پارامتر های مانستراکتور رو به متغیر های کلاس اختصاص بدیم.</p>
+          <p>میتونیم داخل بدنه ی کانستراکتور پارامتر های کانستراکتور رو به متغیر های کلاس اختصاص بدیم.</p>
 
          <p>اگه قبل از کانستراکتور اولیه نخوایم کلیدواژه ی سطح دسترسی تعریف کنیم یا annotation بزاریم میتونیم از نوشتن کلید واژه ی constructor صرف نظر کنیم:</p>
 
@@ -256,12 +253,12 @@ class TV(size: Float){
 
 
             <p class="h5">ایجاد نمونه (آبجکت) از کلاس</p>
-            <p>هنگامی که یک آبجکت (نمونه از کلاس) در حافظه ایجاد میشه متغیر به آدرس آبجکت در حافظه اشاره میکنه و خود متغیر حاوی مقداری نیست، به عبارتی متغیر نقش یک <strong>اشاره گر</strong> رو بازی میکنه.</p>
 
             <p>برای ایجاد نمونه از کلاس کافیه یکی از کانستراکتور های کلاسو صدا بزنیم.</p>
 
+            <p>هنگامی که یک آبجکت (نمونه از کلاس) در حافظه ایجاد میشه متغیر به آدرس آبجکت در حافظه اشاره میکنه و خود متغیر حاوی مقداری نیست، به عبارتی متغیر نقش یک <strong>اشاره گر</strong> رو بازی میکنه.</p>
 
-            <p>مثال</p>
+            <p class="h6">مثال</p>
 
             <p>میخوایم یک کلاس به اسم TV تعریف کنیم و ازش سه تا نمونه در تابع main ایجاد کنیم. در این مثال سه تا سازنده (کانستراکتور) در کلاس TV تعریف میکنیم و هر سه کانستراکتور ها رو به ترتیب در تابع main صدا میزنیم.</p>
 
@@ -333,6 +330,7 @@ class TV(private val size: Float){
 
           <p>برای هر پراپرتی دو تابع setter و getter در کاتلین به صورت پیشفرض تعریف شده وقتی بخوایم مقدار جدیدی به پراپرتی بدیم تابع set به طور پنهان صدا زده میشه؛ وقتی بخوایم از پراپرتی استفاده کنیم تابع get به طور پنهان صدا زده میشه.</p>
 
+
           <p class="h5">تعریف آشکار setter و معرفی backing field</p>
 
           <p>میتونیم تابع setter رو برای هر پراپرتی به طور <strong>آشکار</strong> پیاده سازی کنیم.</p>
@@ -362,7 +360,7 @@ class TV(){
 }
           </div>
 
-          <p class="h5">تعریف آشکار getter و معرفی backing property</p>
+          <p class="h5">تعریف آشکار getter</p>
 
           <p>میتونیم تابع getter رو برای  هر متغیری که خواستیم، به طور <strong>آشکار</strong> تعریف کنیم.</p>
 
@@ -380,13 +378,15 @@ class MyClass{
 
           <p>اگه مقداری که getter بر میگردونه به صورت تک عبارتی و متغیر <a class="text-decoration-none" href="/article/kotlin/variables_mutable_immutable.html">تغییرناپذیر</a> (val) باشه، میتونیم getter رو به فرم زیر تعریف کنیم:</p>
 
-          <div>
+          <div class="code-container">
 class MyClass{
     
   var prop: T get() = t
 
 }           
           </div>
+
+          <p class="h5">معرفی بکینگ پراپرتی (Backing Property)</p>
 
           <p>اگه متغیر <a class="text-decoration-none" href="/article/kotlin/variables_mutable_immutable.html">تغییرپذیر</a> (var) باشه و تابع setter پنهان باشه و به هر دلیلی نخواید مقدار متغیر در بیرون از کلاس تغییر کنه میتونید متغیر رو به صورت بکینگ پراپرتی (Backing Property) پیاده سازی کنید.</p>
 
@@ -425,7 +425,7 @@ class TV{
 }
           </div>
 
-          <p>در داخل کلاس هنگامی که متغیر عضو کلاس با یک متغیر دیگه که عضو کلاس نیست هم نام باشه؛ با کلیدواژه ی this در کاتلین باید مشخص کنیم کدوم متغیر عضو کلاس است.</p>
+          <p>در داخل کلاس هنگامی که متغیر عضو کلاس با یک متغیر دیگه که عضو کلاس <strong>هم نام</strong> باشه؛ با کلیدواژه ی this در کاتلین باید مشخص کنیم کدوم متغیر عضو کلاس است.</p>
 
           <div class="code-container">
 class TV(private val size){
@@ -437,7 +437,6 @@ class TV(private val size){
   }
 
 }
-
           </div>
 
         </div>
@@ -586,7 +585,7 @@ class MyClass{
           <p>خب الان وقتشه مثال هایی از کلاس و آبجکت ببینیم.</p>
 
 
-          <p class="h5">ایجاد کلاس تلویزیون و ساخت آبجکت تلویزیون.</p>
+          <p class="h5">تعریف کلاس تلویزیون و ایجاد نمونه از کلاس.</p>
 
           <p>از قسمت های کلاس TV در بالا برای توضیحات استفاده کردیم الان وقتشه این قسمت ها رو یکجا در قالب یک مثال کامل بیاریم.</p>
 
@@ -642,9 +641,8 @@ class TV(private val size: Float){
   }
 
 
-  constructor(size: Float, panel: String, color: String): this(size){
+  constructor(size: Float, panel: String, color: String): this(size, panel){
 
-    this.panel panel
     this.color = color
 
   }
@@ -684,9 +682,35 @@ class TV(private val size: Float){
 }
           </div>
 
-          <p class="h5">تعریف کلاس دایره</p>
+          <p class="h5">تعریف کلاس مستطیل و ایجاد نمونه از کلاس.</p>
 
-          <p>دایره یه شکل هندسیه و محاسبات مساحت و محیط دایره بستگی به مقدار شعاع دایره داره. در این مثال هربار که مقدار جدیدی به شعاع دایره میدیم پراپرتی های مساحت و محیط دایره هنگام صدا زدن بروز میشن و چون مقدار مساحت و محیط دایره وابسته به شعاع دایره است، مساحت و محیط رو با val نوشتیم.</p>
+          <p>طول و عرض مستطیل ویژگی های مستطیل هستند، مساحت و محیط مستطیل از طول و عرض مستطیل محاسبه میشه بنابراین دوتا پراپرتی برای طول و عرض داریم و دو تابع برای مساحت و محیط مستطیل.</p>
+
+          <div class="code-container">
+fun main(){
+  
+  val r0 = Rectangle()
+  
+  println("Rectangle r0: \n width: ${r0.width} \n height: ${r0.height} \n area: ${r0.area()} \n perimeter: ${r0.perimeter()}")
+
+  val r1 = Rectangle(4, 8)
+
+  println("Rectangle r1: \n width: ${r1.width} \n height: ${r1.height} \n area: ${r1.area()} \n perimeter: ${r1.perimeter()}")
+
+} 
+            
+class Rectangle(var width: Double = 1.0, var height: Double = 1.0){
+
+  fun area(): Double = width * height
+  
+  fun perimeter() = 2 * (width + height)
+
+}
+          </div>
+
+          <p class="h5">تعریف کلاس دایره و ایجاد نمونه از کلاس.</p>
+
+          <p>دایره یه شکل هندسیه و محاسبات مساحت و محیط دایره بستگی به مقدار شعاع دایره داره. در این مثال برای محاسبه ی مساحت و محیط بجای تابع از پراپرتی val با getter استفاده میکنیم وقتی پراپرتی تغییر ناپذیر با getter تعریف میشه نقشی شبیه به تابع رو ایفا میکنه.</p>
 
           <div class="code-container">
 fun main(){
@@ -716,35 +740,6 @@ class Circle(){
     constructor(radius: Double){
       this.radius = radius
     }
-
-}
-          </div>
-
-          <p class="h5">تعریف کلاس مستطیل و ایجاد نمونه ازش</p>
-
-          <div class="code-container">
-fun main(){
-  
-  val r0 = Rectangle()
-  
-  val w = r0.width
-  val h = r0.height
-  val area = r0.area
-  val perimeter = r0.perimeter
-
-  println("Rectangle r0: \n width: $w \n height: $h \n area: $area \n perimeter: $perimeter")
-
-  val r1 = Rectangle(4, 8)
-
-  println("Rectangle r1: \n width: ${r1.width} \n height: ${r1.height} \n area: ${r1.area} \n perimeter: ${r1.perimeter}")
-
-} 
-            
-class Rectangle(var width: Double = 1.0, var height: Double = 1.0){
-
-  val area: Double get() = width * height
-  
-  var perimeter: Double get() = 2 * (width + height)
 
 }
           </div>
