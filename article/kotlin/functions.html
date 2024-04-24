@@ -6,16 +6,16 @@
 
   <meta charset="UTF-8">
 
-  <meta name="keywords" content="توابع، فانکشن، متد، تابع، تابع در کاتلین، فانکشن در کاتلین، تابع تک عبارتی، تابع infix، لوکال فانکشن، تابع جنریک، تابع void، کلیدواژه ی vararg، تابع tail recursive، تابع داخلی، تاپ لول فانکشن، ممبر فانکشن، برنامه نویسی تابعی، تابع single expression، تابع Generic، تابع Unit Type، کلیدواژه ی infix، کلیدواژه ی return، ساختار تابع، tail recursion" />
+  <meta name="keywords" content="کاتلین، توابع، فانکشن، متد، تابع، توابع کاتلین، فانکشن کاتلین، تابع تک عبارتی، تابع infix، لوکال فانکشن، تابع جنریک، تابع void، کلیدواژه ی vararg، تابع tail recursive، تابع داخلی، تاپ لول فانکشن، ممبر فانکشن، برنامه نویسی تابعی، تابع single expression، تابع Generic، تابع Unit Type، کلیدواژه ی infix، کلیدواژه ی return، ساختار تابع" />
 
-  <meta name="description" content="بررسی کامل انواع توابع با مثال در کاتلین">
+  <meta name="description" content="در این مقاله با توابع در کاتلین آشنا میشیم و تابع تک عبارتی (single expression)، void، infix، جنریک و tail recursive رو بررسی میکنیم و در اخر توضیح میدیم توابع رو در چه محدوده (مکان) هایی میشه تعریف کرد.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تابع و برنامه نویسی تابعی در کاتلین</title>
+  <title>توابع (functions) در کاتلین</title>
 
-  <meta property="og:title" content="تابع و برنامه نویسی تابعی در کاتلین"/>
+  <meta property="og:title" content="توابع (functions) در کاتلین"/>
 
-  <meta property="og:description" content="بررسی کامل انواع توابع با مثال در کاتلین" />
+  <meta property="og:description" content="در این مقاله با توابع در کاتلین آشنا میشیم و تابع تک عبارتی (single expression)، void، infix، جنریک و tail recursive رو بررسی میکنیم و در اخر توضیح میدیم توابع رو در چه محدوده (مکان) هایی میشه تعریف کرد." />
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
 
@@ -41,7 +41,7 @@
       <div class="article-head">
 
         <h1>
-          توابع در کاتلین
+          توابع (functions) در کاتلین
         </h1>
 
         <address>
@@ -91,19 +91,11 @@
 
           <p>موضوع تابع و برنامه نویسی تابعی (<a class="text-decoration-none" href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a>) در کاتلین به خوبی پشتیبانی میشه و کاتلین در این زمینه قوی عمل کرده.</p>
 
-          <p>به تابع ، فانکشن (function) و بعضا متد  در کاتلین گفته می شود.</p>
+          <p>به تابع ، فانکشن (function) و متد گفته می شود.</p>
 
           <p>به علت گستردگی موضوع  توابع مرتبه بالا (higher order functions)، توابع بی نام، عبارت لامبدا ، توابع اکستنشن و توابع خطی (inline functions) رو این مطلب پوشش نمیده و باید در صفحه ی اختصاصی خودشون مطالعه کنید.</p>
 
-          <p>برای مطالعه ی موارد ذکر شده میتونید به لینک های زیر مراجعه کنید:</p>
-
-          <div class="p-2 rtl">
-            <a href="/article/kotlin/extension-function.html" class="text-decoration-none">توابع اکستنشن</a>
-          </div>
-
-          <div class="p-2 rtl">
-            <a href="/article/kotlin/anonymous-function-and-lambda.html" class="text-decoration-none">توابع بی نام و عبارت لامبدا</a>
-          </div>
+          <p>برای مطالعه ی موارد ذکر شده میتونید به هر کدوم در مطالب مرتبط پایین همین صفحه مراجعه کنید.</p>
 
         </div>
 
@@ -113,13 +105,14 @@
 
           <p>فرم کلی:</p>
 
-          <p>فرم کلی ساختار تابع در کاتلین در تصویر زیرنمایان شده.</p>
+          <p>فرم کلی ساختار یک تابع در تصویر زیرنمایان شده.</p>
 
-          <figure class="figure figure-wrapper">
-            <img src="/resources/image/kotlin/function_structure.png" alt="فرم کلی ساختار تابع در کاتلین" class="rounded figure-img">
+          <figure>
+            <img src="/resources/image/kotlin/function_structure.png" alt=" ساختار تابع در کاتلین" class="rounded figure-img img-fluid">
+            <figcaption class="figure-caption text-end p-2">ساختار تابع در کاتلین</figcaption>
           </figure>
 
-          <p>۱-بیان کننده ی سطح دسترسی تابع در پروژه است. سطح دسترسی میتونه private، protected، internal و public باشه. به این کلیدواژه ها کلیدواژه های سطح دسترسی یا access modifier گفته میشه.</p>
+          <p>۱-بیان کننده ی <a class="text-decoration-none" href="/article/kotlin/access-modifiers.html">سطح دسترسی</a> به تابع در پروژه است. سطح دسترسی میتونه private، protected، internal و public باشه. به این کلیدواژه ها کلیدواژه های سطح دسترسی یا access modifier گفته میشه.</p>
 
           <div class="note">
             <p class="h6">توجه:</p>
