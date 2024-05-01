@@ -3,14 +3,14 @@
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
     <meta content=" عبارت لاندا ، توابع بی نام، برنامه نویسی تابعی، عبارت لامبدا، کاتلین، اندروید، تابع anonymous، توابع تحت لفظی، تابع بی نام" name="keywords"/>
-    <meta content="در این مطلب به بررسی دو تابع تحت لفظی عبارت لامبدا و تابع بی نام در کاتلین می پردازیم." name="description"/>
+    <meta content="عبارات لامبدا و توابع بی نام هر دو از یک جنس هستند و تنها در مدل پیاده سازی باهم فرق دارن؛ در این مطلب به بررسی این دو تابع می پردازیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
 
     <title>عبارات لامبدا و توابع بی نام در کاتلین</title>
 
     <meta property="og:title" content="توابع بی نام و عبارت لامبدا در کاتلین"/>
-    <meta property="og:description" content="در این مطلب به بررسی دو تابع تحت لفظی عبارت لامبدا و تابع بی نام در کاتلین می پردازیم."/>
+    <meta property="og:description" content="عبارات لامبدا و توابع بی نام هر دو از یک جنس هستند و تنها در مدل پیاده سازی باهم فرق دارن؛ در این مطلب به بررسی این دو تابع می پردازیم."/>
     <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png" />
     <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/anonymous-function-and-lambda.html" />
     <meta property="og:type" content="article">
@@ -47,23 +47,33 @@
                 <p class="p-2 mx-2 h5">دسترسی سریع</p>
 
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#sub0">بررسی یه ویژگی از کاتلین</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub1">توابع تحت لفظی</a>
+                    <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub1">بررسی یه ویژگی از کاتلین</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub2">توابع تحت لفظی</a>
  
                     
-                        <a class="list-group-item list-group-item-action" href="#sub2">عبارت لامبدا در کاتلین</a>
-                        <a class="list-group-item list-group-item-action" href="#sub3">تابع بی نام  در کاتلین</a>
+                        <a class="list-group-item list-group-item-action" href="#sub3">عبارت لامبدا در کاتلین</a>
+                        <a class="list-group-item list-group-item-action" href="#sub4">تابع بی نام  در کاتلین</a>
 
-                        <a class="list-group-item list-group-item-action" href="#sub4">توابع تحت لفظی با receiver</a>
-                        <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
+                        <a class="list-group-item list-group-item-action" href="#sub5">توابع تحت لفظی با receiver</a>
+                        <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
                 </div>
             </div>
 
         </div>
         <article>
 
-            <div id="sub0" class="subsection">
+          <div class="subsection" id="sub0">
+            <p class="title">توضیحات</p>
+            <p>عبارات لامبدا و توابع بی نام هر دو از یک جنس هستند و تنها در مدل پیاده سازی باهم فرق دارن. یعنی اگه بخوایم برای تابع بی نام یک متغیر تعریف کنیم میتونیم بجای پیاده سازی تابع بی نام، عبارت لامبدا رو برای متغیر پیاده کنیم. یکی از تفاوت هایی که توابع بی نام با عبارات لامبدا دارن در استفاده از return است، در توابع بی نام به صورت آشکار میشه از return استفاده کرد در حالی که در عبارت لامبدا از return به صورت آشکار نمیشه استفاده کرد و آخرین خط کد داخل عبارت به عنوان return در نطر گرفته میشه.</p>
+
+            <p>در ادامه ی این مطلب به بررسی این دو تابع میپردازیم.</p>
+          </div>
+
+            <div id="sub1" class="subsection">
                 <p class="title">بررسی یه ویژگی از کاتلین</p>
 
                 <blockquote>
@@ -111,7 +121,7 @@ val result = myMethod()
 
 
             </div>
-           <div class="subsection" id="sub1">
+           <div class="subsection" id="sub2">
              <p class="title">توابع تحت لفظی</p>
 
           <p>عبارات لامبدا و توابع بی نام در کاتلین دو موضوع از برنامه نویسی تابعی هستند. این دو کاربرد های متعددی دارن ودر فریمورک های مختلف از جمله اندروید زیاد استفاده میشن. یک نمونه میشه به jetpack compose در اندروید اشاره کرد.</p>
@@ -124,7 +134,7 @@ val result = myMethod()
 
            </div>
 
-            <div id="sub2" class="subsection">
+            <div id="sub3" class="subsection">
                 <p class="title">
                     عبارت لامبدا در کاتلین
                 </p> 
@@ -297,7 +307,7 @@ val myLambda: () -&gt; String = mylambda@{
                 </p>
             </div>
 
-            <div id="sub3" class="subsection">
+            <div id="sub4" class="subsection">
                 <p class="title">
                     تابع بی نام در کاتلین
                 </p>
@@ -380,7 +390,7 @@ println(message)
                 </div>
             </div>
 
-            <div class="subsection" id="sub4">
+            <div class="subsection" id="sub5">
               <p class="title">توابع تحت لفظی با receiver</p>
               <p>میتونیم عبارت لامبدا رو با یک کلاس receiver بنویسیم. سپس به اعضای کلاس در داخل تابع دسترسی داریم. این کار شبیه تعریف <a href="/article/kotlin/extension-function.html" class="text-decoration-none">اکستنشن ها</a> در کاتلین است.
               </p>
@@ -462,7 +472,7 @@ fun main(){
               
             </div>
 
-            <div class="subsection" id="sub5">
+            <div class="subsection" id="sub6">
               <p class="title">خلاصه</p>
 
               <p>- دو عبارت بی نام و تابع لامبدا جزو توابع تحت لفظی هستند</p>
