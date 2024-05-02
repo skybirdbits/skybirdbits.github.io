@@ -53,6 +53,10 @@
     {
       "subject": "ابجکت ها و کلاس ها",
       "href": "/article/kotlin/objects-and-classes.html"
+    },
+    {
+      "subject": "وراثت (inheritance)",
+      "href": "/article/kotlin/inheritance.html"
     }
   ]
 }
