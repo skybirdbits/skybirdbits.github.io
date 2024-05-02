@@ -39,7 +39,7 @@
 
       <div class="article-head">
         <h1>
-وراثت (inheritance)
+وراثت (inheritance) در کاتلین
         </h1>
 
         <address>
@@ -54,9 +54,17 @@
           <p class="p-2 mx-2 h5">دسترسی سریع</p>
           <div class="list-group">
 
-            <a class="list-group-item list-group-item-action" href="#sub0"></a>
+            <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub1"></a>
+            <a class="list-group-item list-group-item-action" href="#sub1">نحوه ی ارث بردن از یک کلاس</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub2">بازنویسی (override) کردن توابع</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub3">بازنویسی (override) کردن پراپرتی ها</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub4">معرفی کلاس Any</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub5">مورد مطالعه (مثال ها)</a>
 
             <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
           </div>
@@ -80,11 +88,12 @@
         </div>
 
         <div class="subsection" id="sub1">
-          <p>نحوه ی ارث بری در وراثت</p>
+          <p>نحوه ی ارث بردن از یک کلاس</p>
+
           <p>برای ارث بردن از سوپر کلاس (superclass) باید کلاس پدر با کلیدواژه ی open تعریف بشه.</p>
 
           <div class="code-container">
-open class Geometry{
+open class Parent{
   ...
 }
           </div>
@@ -160,7 +169,6 @@ class Child: Parent{
   }
 
 }
-
           </div>
 
         </div>
@@ -459,15 +467,23 @@ fun main(){
           <p>مطالب مرتبط</p>
           <div class="d-flex flex-wrap">
             <div>
-              <a href=""></a>
+              <a href="/article/kotlin/objects-and-classes.html">آبجکت و کلاس ها در کاتلین</a>
             </div>
 
             <div>
-              <a href=""></a>
+              <a href="/article/kotlin/access-modifiers.html">کلیدواژه های سطح دسترسی</a>
             </div>
 
             <div>
-              <a href="">مطالعه در وبسایت رسمی کاتلین</a>
+              <a href="/article/kotlin/variable_scope.html">محدوده ی تعریف متغیر ها در کاتلین</a>
+            </div>
+
+            <div>
+              <a href="/article/kotlin/functions.html">توابع در کاتلین</a>
+            </div>
+
+            <div>
+              <a href="https://kotlinlang.org/docs/inheritance.html">مطالعه در وبسایت رسمی کاتلین</a>
             </div>
           </div>
         </div>
