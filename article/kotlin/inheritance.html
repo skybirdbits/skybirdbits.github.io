@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کاتلین، سوپر کلاس، وراثت، ارث بری، inheritance کاتلین، کلیدواژه ی super، بازنویسی تابع، بازنویسی پراپرتی، override کردن تابع، override کردن پراپرتی، وراثت شی گرایی، وراثت کاتلین، inheritance شی گرایی، کلاس Any، کلیدواژه ی open, کلیدواژه ی override">
+  <meta name="keywords" content="کاتلین، سوپر کلاس، وراثت، ارث بری، inheritance کاتلین، کلیدواژه ی super، بازنویسی تابع، بازنویسی پراپرتی، override کردن تابع، override کردن پراپرتی، وراثت شی گرایی، وراثت کاتلین، inheritance شی گرایی، کلاس Any، کلیدواژه ی open, کلیدواژه ی override، ساب کلاس، super class کاتلین، subclass کاتلین">
 
   <meta name="description" content="وراثت (inheritance) یکی از ویژگی های شی گراییه که با استفاده ازش میتونیم از دوباره نویسی توابع و پراپرتی های یک کلاس در کلاس دیگه جلوگیری کنیم در این مقاله به بررسی این ویژگی در کاتلین پرداختیم.">
 
@@ -83,21 +83,27 @@
 
           <p>برای این منظور میتونیم یک کلاس به اسم GeometricShape تعریف کنیم که دارای پراپرتی ها و توابع مشترک بین Circle و Rectangle است، و این دو کلاس پراپرتی و توابع GeometricShape رو به ارث ببرن.</p>
 
+          <figure>
+            <img src="/resources/image/generic/inheritance_example_diagram.png" alt="ارث بری دو کلاس" class="rounded figure-img img-fluid">
+            <figcaption class="rtl figure-caption text-end p-2">ارث بری دو کلاس Circle و Rectangle از GeometricShape</figcaption>
+          </figure>
+
+
           <p>به کلاسی که ویژگی های مشترک دایره و مستطیل رو داره کلاس پدر یا سوپر کلاس  (superclass) و به کلاس های دایره و مستطیل که ازش ارث میبرن کلاس بچه یا ساب کلاس (subclass) میگیم.</p>
 
         </div>
 
         <div class="subsection" id="sub1">
-          <p>نحوه ی ارث بردن از یک کلاس</p>
+          <p class="title">نحوه ی ارث بردن از یک کلاس</p>
 
-          <p>برای ارث بردن از سوپر کلاس (superclass) باید کلاس پدر با کلیدواژه ی open تعریف بشه.</p>
+          <p>برای ارث بردن از سوپر کلاس (superclass) باید  سوپر کلاس با کلیدواژه ی open تعریف بشه.</p>
 
           <div class="code-container">
 open class Parent{
-  ...
+  
 }
           </div>
-          <p>هنگام تعریف ساب کلاس (subclass) با استفاده از دو نقطه بعد از <a class="text-decoration-none" href="/article/kotlin/objects-and-classes.html">کانستراکتور اولیه</a> اسم سوپر کلاس (superclass) رو می نویسیم.</p>
+          <p>هنگام تعریف ساب کلاس (subclass) با استفاده از دو نقطه بعد از اسم subclass و کانستراکتور اولیه ساب کلاس (در صورت تعریف آشکار کانستراکتور) اسم سوپر کلاس (superclass) رو می نویسیم.</p>
 
           <div class="code-container">
 open class Parent{
@@ -109,30 +115,47 @@ class Child: Parent{
 }
           </div>
 
-          <p>اگه در سوپر کلاس کانستراکتور اولیه داشته باشیم هنگام ارث بری باید پارامتر های یکی از کانسنراکتور های سوپر کلاس مقداردهی بشن.</p>
+          <p>هنگام ایجاد آبجکت از ساب کلاس (subclass) ابتدا سوپر کلاس (superclass) آماده سازی میشه و سپس subclass.</p>
 
           <div class="code-container">
-open class Parent(s0: String){
-  var s0 = s0
-  var s1 = ""
+//superclass            
+open class Parent{
 
-  constructor(s1: String, s0: String): this(s0){
-    this.s1 = s1
+  init{
+    println("This is from the parent")
   }
+
 }
 
-class Child0(var b: Boolean, s0: String): Parent(s0){
-   
+//subclass
+class Child: Parent{
+
+  init{
+    println("This is from the Child")
+  }
+
 }
 
-class Child1(var b: Boolean, s0: String, s1: String): Parent(s1, s0){
+fun main(){
+  val child = Child()
+}
+          </div>
 
-  }
+          <p>اگه در subclass کانستراکتور اولیه داشته باشیم هنگام ارث بری باید یکی از کانسنراکتور های سوپر کلاس مقداردهی بشن.</p>
+
+          <div class="code-container">
+open class Parent(s: String){
+
+}
+
+class Child(b: Boolean, s: String): Parent(s0){
    
 }
           </div>
 
-          <p>اگه در ساب کلاس (subclass) کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم، با استفاده از کلیدواژه ی super بعد از کانستراکتور ثانویه ساب کلاس (subclass) کانستراکتور های سوپر کلاس رو صدا میزنیم.</p>
+          <p class="h5">استفاده از کلیدواژه ی super برای صدا زدن کانستراکتور های superclass</p>
+
+          <p>اگه در ساب کلاس (subclass) کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم؛ بنابراین با استفاده از کلیدواژه ی super بعد از کانستراکتور های ثانویه ساب کلاس (subclass) کانستراکتور های سوپر کلاس رو مقداردهی میکنیم.</p>
 
           <div class="note">
             <p class="h6">نکته</p>
@@ -141,7 +164,7 @@ class Child1(var b: Boolean, s0: String, s1: String): Parent(s1, s0){
 
           <div class="note">
             <p class="h6">نکته</p>
-            <p>اگه یکی از کانستراکتور های ثانویه با this رجوع میکنه به کانستراکتوری که از super استفاده کرده در این حالت نیاری به استفاده از کلیدواژه ی super نیست.</p>
+            <p>اگه کانستراکتور ثانویه در ساب کلاس (subclass) با this رجوع کنه به کانستراکتوری که از super استفاده کرده در این حالت نیاری به استفاده از کلیدواژه ی super نیست.</p>
           </div>
 
           <p class="h6">مثال</p>
@@ -149,22 +172,21 @@ class Child1(var b: Boolean, s0: String, s1: String): Parent(s1, s0){
           <p>در زیر کلیدواژه ی this رجوع میکنه به کانستراکتور های خود کلاس و کلیدواژه ی super رجوع میکنه به کانستراکتور های superclass</p>
 
           <div class="code-container">
-            
-open class Parent(s0: String){
+open class Parent(s: String){
  
- constructor(): this("assigned in superclass")
+ constructor(): this("Assigned in superclass")
 }
 
 class Child: Parent{
 
-  constructor(n: Int, s0: String): super(s0){
+  constructor(b: Boolean, n: Int, s: String): super(s0){
 
   }
-  constructor(n: Int): this(n, "assigned in subclass"){
+  constructor(b: Boolean, n: Int): this(b , n, "Assigned in subclass"){
 
   }
 
-  constructor(b: Boolean): super(){
+  constructor(n: Int): super(){
   
   }
 
@@ -183,16 +205,18 @@ class Child: Parent{
           <div class="code-container">
 open class Parent{
   open fun message(){
-    println("This is a message from Parent")
+    println("This is a message from the Parent")
   }
 }
 
 class Child{
   override fun message(){
-    println("This message is overridded and it is from Child")
+    println("Overridden message from the Child")
   }
 }
           </div>
+
+          <p class="h5">استفاده از کلیدواژه ی super برای صدا زدن کد های تابع در superclass</p>
 
           <p>هنگام override کردن تابع (متد) اگه بخوایم کد های superclass رو در subclass داشته باشیم با استفاده از کلیدواژه ی super، نقطه و اسم تابع کد ها رو صدا میزنیم.</p>
 
@@ -210,7 +234,7 @@ open class Parent{
 class Child: Parent{
 
   override fun message(){
-    println("This message is overrided and it is from the Child")
+    println("Overriden message from the Child")
     //صدا زدن کد های تابع در سوپر کلاس
     super.message()
   }
@@ -288,6 +312,12 @@ fun main(){
         <div class="subsection" id="sub5">
           <p class="title">مورد مطالعه (مثال ها)</p>
           <p>یک کلاس تعریف میکنیم به اسم Shape که ویژگی های عمومی یک شکل رو به همراه داره سپس با کلاس GeometricShape این ویزگی ها رو به ارث می بریم و به علاوه ویژگی های جدید به GeometricShape اضافه میکنیم و در نهایت با دو کلاس Rectangle و Circle از کلاس GeometricShape ارث بری میکنیم و کلاس های اختصاصی دایره و مستطیل رو به وجود میاریم.</p>
+
+
+          <figure>
+            <img src="/resources/image/generic/inheritance_example_diagram2.png" alt="ارث بری" class="rounded figure-img img-fluid">
+            <figcaption class="rtl figure-caption text-end p-2">ارث بری از Shape و GeometricShape</figcaption>
+          </figure>
 
           <div class="code-container">
 open class Shape(var color: String = "White",var stroke: String = "Black",var isFilled: Boolean = false){
@@ -465,7 +495,7 @@ fun main(){
 
         <div class="relative-articles-container">
           <p>مطالب مرتبط</p>
-          <div class="d-flex flex-wrap">
+          <div>
             <div>
               <a href="/article/kotlin/objects-and-classes.html">آبجکت و کلاس ها در کاتلین</a>
             </div>
