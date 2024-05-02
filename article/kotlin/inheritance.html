@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="keywords" content="کاتلین، سوپر کلاس، وراثت، ارث بری، inheritance کاتلین، کلیدواژه ی super، بازنویسی تابع، بازنویسی پراپرتی، override کردن تابع، override کردن پراپرتی، وراثت شی گرایی، وراثت کاتلین، inheritance شی گرایی، کلاس Any، کلیدواژه ی open, کلیدواژه ی override">
+
+  <meta name="description" content="وراثت (inheritance) یکی از ویژگی های شی گراییه که با استفاده ازش میتونیم از دوباره نویسی توابع و پراپرتی های یک کلاس در کلاس دیگه جلوگیری کنیم در این مقاله به بررسی این ویژگی در کاتلین پرداختیم.">
+
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وراثت (inheritance) در کاتلین</title>
+
+  <meta name="og:title" content="وراثت (inheritance) در کاتلین">
+
+  <meta name="og:description" content="وراثت (inheritance) یکی از ویژگی های شی گراییه که با استفاده ازش میتونیم از دوباره نویسی توابع و پراپرتی های یک کلاس در کلاس دیگه جلوگیری کنیم در این مقاله به بررسی این ویژگی در کاتلین پرداختیم.">
+
+  <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
+
+  <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/inheritance.html">
+
+  <meta property="og:type" content="article">
+
+  <link rel="shortcut icon" href="/resources/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/resources/css/main.css">
+  <script type="module" src="/resources/js/main.js"></script>
+
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <div class="page-wrap">
+
+      <div class="article-head">
+        <h1>
+وراثت (inheritance)
+        </h1>
+
+        <address>
+          <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+        </address>
+
+        <figure class="figure figure-wrapper">
+          <img alt="وراثت در کاتلین" class="rounded figure-img" src="/resources/image/kotlin/cover_inheritance.png" />
+        </figure>
+
+        <div class="toc">
+          <p class="p-2 mx-2 h5">دسترسی سریع</p>
+          <div class="list-group">
+
+            <a class="list-group-item list-group-item-action" href="#sub0"></a>
+
+            <a class="list-group-item list-group-item-action" href="#sub1"></a>
+
+            <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
+          </div>
+        </div>
+      </div>
+
+      <article>
+        <div class="subsection" id="sub0">
+          <p class="title">توضیحات</p>
+
+          <blockquote>شی گرایی در برنامه نویسی به شما این امکان رو میده ویژگی ها و توابع یک کلاس رو به کلاس جدید منتقل کنید به این قابلیت وراثت یا ارث بری (inheritance) گفته میشه</blockquote>
+
+          <p>قابلیت وراثت یا ارث بری کمک میکنه تا از دوباره نویسی توابع و پراپرتی های تکراری پرهیز کنید. این کار به سرعت نوشتن اپلیکیشن و درک بهتر کد ها کمک میکنه.</p>
+
+          <p>فرض کنید میخوایم برای Circle (دایره) و Rectangle (مستطیل) دوتا کلاس تعریف کنیم، این دو آبجکت پراپرتی و توابع مشترکی دارن که هر دو میتونن از یک کلاس مشترک به ارث ببرن.</p>
+
+          <p>برای این منظور میتونیم یک کلاس به اسم GeometricShape تعریف کنیم که دارای پراپرتی ها و توابع مشترک بین Circle و Rectangle است، و این دو کلاس پراپرتی و توابع GeometricShape رو به ارث ببرن.</p>
+
+          <p>به کلاسی که ویژگی های مشترک دایره و مستطیل رو داره کلاس پدر یا سوپر کلاس  (superclass) و به کلاس های دایره و مستطیل که ازش ارث میبرن کلاس بچه یا ساب کلاس (subclass) میگیم.</p>
+
+        </div>
+
+        <div class="subsection" id="sub1">
+          <p>نحوه ی ارث بری در وراثت</p>
+          <p>برای ارث بردن از سوپر کلاس (superclass) باید کلاس پدر با کلیدواژه ی open تعریف بشه.</p>
+
+          <div class="code-container">
+open class Geometry{
+  ...
+}
+          </div>
+          <p>هنگام تعریف ساب کلاس (subclass) با استفاده از دو نقطه بعد از <a class="text-decoration-none" href="/article/kotlin/objects-and-classes.html">کانستراکتور اولیه</a> اسم سوپر کلاس (superclass) رو می نویسیم.</p>
+
+          <div class="code-container">
+open class Parent{
+  
+}
+
+class Child: Parent{
+
+}
+          </div>
+
+          <p>اگه در سوپر کلاس کانستراکتور اولیه داشته باشیم هنگام ارث بری باید پارامتر های یکی از کانسنراکتور های سوپر کلاس مقداردهی بشن.</p>
+
+          <div class="code-container">
+open class Parent(s0: String){
+  var s0 = s0
+  var s1 = ""
+
+  constructor(s1: String, s0: String): this(s0){
+    this.s1 = s1
+  }
+}
+
+class Child0(var b: Boolean, s0: String): Parent(s0){
+   
+}
+
+class Child1(var b: Boolean, s0: String, s1: String): Parent(s1, s0){
+
+  }
+   
+}
+          </div>
+
+          <p>اگه در ساب کلاس (subclass) کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم، با استفاده از کلیدواژه ی super بعد از کانستراکتور ثانویه ساب کلاس (subclass) کانستراکتور های سوپر کلاس رو صدا میزنیم.</p>
+
+          <div class="note">
+            <p class="h6">نکته</p>
+            <p>در این حالت باید از کلیدواژه ی super بعد از تمام کانستراکتور های ثانویه استفاده بشه.</p>
+          </div>
+
+          <div class="note">
+            <p class="h6">نکته</p>
+            <p>اگه یکی از کانستراکتور های ثانویه با this رجوع میکنه به کانستراکتوری که از super استفاده کرده در این حالت نیاری به استفاده از کلیدواژه ی super نیست.</p>
+          </div>
+
+          <p class="h6">مثال</p>
+
+          <p>در زیر کلیدواژه ی this رجوع میکنه به کانستراکتور های خود کلاس و کلیدواژه ی super رجوع میکنه به کانستراکتور های superclass</p>
+
+          <div class="code-container">
+            
+open class Parent(s0: String){
+ 
+ constructor(): this("assigned in superclass")
+}
+
+class Child: Parent{
+
+  constructor(n: Int, s0: String): super(s0){
+
+  }
+  constructor(n: Int): this(n, "assigned in subclass"){
+
+  }
+
+  constructor(b: Boolean): super(){
+  
+  }
+
+}
+
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub2">
+          <p class="title">باز نویسی (override) کردن توابع</p>
+
+          <p>میتونیم توابع superclass رو در subclass بازنویسی کنیم در اینصورت میگیم تابع رو override کردیم.</p>
+
+          <p>برای این کار تابع باید در superclass با کلیدواژه ی open تعریف شده باشه و در subclass از کلیدواژه ی override برای بازنویسی تابع استفاده کنیم.</p>
+
+          <div class="code-container">
+open class Parent{
+  open fun message(){
+    println("This is a message from Parent")
+  }
+}
+
+class Child{
+  override fun message(){
+    println("This message is overridded and it is from Child")
+  }
+}
+          </div>
+
+          <p>هنگام override کردن تابع (متد) اگه بخوایم کد های superclass رو در subclass داشته باشیم با استفاده از کلیدواژه ی super، نقطه و اسم تابع کد ها رو صدا میزنیم.</p>
+
+          <p class="h6">مثال</p>
+
+          <div class="code-container">
+open class Parent{
+
+  open fun message(){
+    println("This is a message from Parent")
+  }
+
+}
+
+class Child: Parent{
+
+  override fun message(){
+    println("This message is overrided and it is from the Child")
+    //صدا زدن کد های تابع در سوپر کلاس
+    super.message()
+  }
+
+}
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub3">
+          <p class="title">بازنویسی (override) کردن پراپرتی ها</p>
+
+          <p>مانند توابع، پراپرتی ها باید در سوپر کلاس با کلیدواژه ی open تعریف بشن؛ سپس در subclass با کلیدواژه ی override میتونیم بازنویسیشون کنیم.</p>
+
+          <div class="note">
+            <p class="h6">نکته:</p>
+            <p>هنگام override کردن یک پراپرتی (property) اگه پراپرتی با val تعریف شده بود میتونیم با var بازنویسیش کنیم اما برعکس ممکن نیست.</p>
+          </div>
+
+          <div class="code-container">
+open class FilledCircle {
+  var radius: Double = 1.0
+  open val isFilled = true
+}
+
+class Circle: FilledCircle{
+  override var isFilled = false
+}
+          </div>
+          
+        </div>
+
+        <div class="subsection" id="sub4">
+          <p class="title">معرفی کلاس Any</p>
+          <p>کلاس Any در کاتلین مانند کلاس Object در جاواست، این کلاس دارای سه تابع (متد) hashcode، equals و toString است.</p>
+          <p>هر کلاسی که superclass نداشته باشه به طور پیشفرض از این کلاس ارث بری میکنه بنابراین میشه نتیجه گرفت کلاس Any سوپر کلاس تمام کلاس ها به طور مستقیم یا غیر مستقیم است.</p>
+
+          <p class="h6">مثال</p>
+          <div class="code-container">
+class Line(var x: Double = 0, var x1: Double = 0, var y: Double = 0, var y0: Double = 0){
+  
+  val dateCreated = java.util.Date()
+
+  val length: Double get() = sqrt((x-x0)*(x-x0) + (y-y0)*(y-y0))
+
+
+  override fun toString(){
+    return "line created at $dateCreated and its length is $length"
+  }
+
+  override fun equals(other: Any){
+    if(other !is Line) throw IllegalArgumentException("Parameter is not Line type")
+
+    return other.length == this.length
+  }
+
+}
+
+fun main(){
+ val line0 = Line(3.0, 4.0, 2.0, 6.0)
+ println(line0.toString())
+
+
+ val line = Line(-3.0, -4.0, -2.0, -6.0)
+ println(line.toString())
+
+ val eq = line0.equals(line)
+
+ println("line0 equals to line1? $eq")
+
+}
+          </div>
+        </div>
+
+        <div class="subsection" id="sub5">
+          <p class="title">مورد مطالعه (مثال ها)</p>
+          <p>یک کلاس تعریف میکنیم به اسم Shape که ویژگی های عمومی یک شکل رو به همراه داره سپس با کلاس GeometricShape این ویزگی ها رو به ارث می بریم و به علاوه ویژگی های جدید به GeometricShape اضافه میکنیم و در نهایت با دو کلاس Rectangle و Circle از کلاس GeometricShape ارث بری میکنیم و کلاس های اختصاصی دایره و مستطیل رو به وجود میاریم.</p>
+
+          <div class="code-container">
+open class Shape(var color: String = "White",var stroke: String = "Black",var isFilled: Boolean = false){
+  
+  val dateCreated = java.util.Date()
+
+  override fun toString(): String{
+    return "Shape created at $dateCreated \ncolor is $color and stroke is $stroke \nisFilled? $isFilled"
+  }
+
+}
+
+open class GeometricShape(var x: Int = 0, var y: Int = 0, color: String, stroke: String, isFilled: Boolean): Shape(color, stroke, isFilled){
+
+  open val area get() = 0
+  open val perimeter get() = 0
+
+  constructor(): this(0, 0,"White", "Black", false)
+
+  override fun toString(): String{
+    return super.toString() + "\nArea is $area \nperimeter is $perimeter \nX is $x and Y is $y"
+  }
+
+  override fun equals(other: Any?): Boolean{
+    if(other !is GeometricShape) 
+      throw IllegalArgumentException("GeometricShape argument required")
+
+      return other.area == this.area
+  }
+}
+
+// تعریف کلاس دایره
+class Circle: GeometricShape{
+
+  var radius = 1
+
+  override val area get() = (radius * radius * PI).toInt()
+
+  override val perimeter get() = (2 * radius * PI).toInt()
+
+  constructor(radius: Int, x: Int, y: Int, color: String, stroke: String, isFilled: Boolean): super(x, y, color, stroke, isFilled){
+   this.radius = radius
+}
+
+  constructor(): super()
+
+  constructor(radius: Int): super(){
+    this.radius = radius
+  }
+ 
+  override fun toString(): String{
+    val fromGeometricShape = super.toString()
+
+    return fromGeometricShape + "\nThe shape is Circle!"
+  }  
+}
+
+// تعریف کلاس مستطیل
+class Rectangle: GeometricShape{
+
+  var width = 1
+  var height = 1
+
+  override val area get() = width * height
+
+  override val perimeter get() = (width + height) * 2
+
+  constructor(width: Int, height: Int, x: Int, y: Int, color: String, stroke: String, isFilled: Boolean): super(x, y, color, stroke, isFilled){
+   this.width = width
+   this.height = height
+}
+
+  constructor(): super()
+
+  constructor(width: Int, height: Int): super(){
+    this.width = width
+    this.height = height
+  }
+
+  fun isSquare(): Boolean = (width == height)
+ 
+  override fun toString(): String{
+    val fromGeometricShape = super.toString()
+
+    return fromGeometricShape + "\nThe shape is Rectangle!"
+  }
+  
+}
+
+fun main(){
+
+    val c = Circle(2)
+    c.stroke = "Blue"
+
+    val c1 = Circle(radius = 5, x = 1, y =  1, "Yellow", "Red", true)
+
+    val rect = Rectangle(3 , 4)
+
+    val rect1 = Rectangle(7, 7)
+
+    println("$c")
+
+    println("\n$c1")
+
+    println("\n$rect")
+
+    println("\n$rect1")
+
+    println()
+
+    println("Are c and rect equal? ${c.equals(rect)}")
+
+    println("Are c1 and c equal? ${c1.equals(c)}" )
+
+    println()
+
+    println("Is rect square? ${rect.isSquare()}")
+
+    println("Is rect1 square? ${rect1.isSquare()}")
+
+}
+          </div>
+
+        </div>
+
+        <div class="subsection" id="sub6">
+          <p class="title">خلاصه</p>
+
+          <p>- از وراثت برای جلوگیری از دوباره نویسی کد های یک کلاس در کلاس دیگه استفاده میشه.</p>
+
+          <p>- در وراثت به کلاسی که ازش ارث برده میشه superclass و کلاسی که ارث می بره subclass گفته میشه.</p>
+
+          <p>- هنگامی که superclass کانستراکتور اولیه داشته باشه باید پارامتر های یکی از کانستراکتور هاش موقع ارث بری مقداردهی بشن.</p>
+
+          <p>- از کلیدواژه ی super برای صدا زدن کانستراکتور های superclass میتونیم استفاده کنیم.</p>
+
+          <p>- میتونیم توابع superclass رو در subclass بازنویسی کنیم.</p>
+
+          <p>- هنگام بازنویسی یک تابع میتونیم با استفاده از کلیدواژه ی super کد های تابع در superclass رو داشته باشیم.</p>
+
+          <p>- میتونیم پراپرتی ها در superclass رو در subclass بازنویسی کنیم.</p>
+
+          <p>- کلاس Any به طور پیشفرض superclass کلاسی است که از کلاسی ارث بری نکرده.</p>
+
+          <p>- کلاس Any سوپر کلاس مستقیم و غیر مستقیم تمام کلاس هاست.</p>
+
+        </div>
+
+      </article>
+
+      <div class="article-foot">
+
+        <div class="navigator-container">
+
+          <a href="#" class="md-bt md-bt-light">
+
+            <span class="material-icons">
+              navigate_next
+            </span>
+            <span class="hint">
+              بعدی
+            </span>
+          </a>
+
+          <a href="/article/kotlin/objects-and-classes.html" class="md-bt md-bt-light">
+            <span class="hint">
+              قبلی
+            </span>
+            <span class="material-icons">
+              navigate_before
+            </span>
+
+          </a>
+        </div>
+
+        <div class="relative-articles-container">
+          <p>مطالب مرتبط</p>
+          <div class="d-flex flex-wrap">
+            <div>
+              <a href=""></a>
+            </div>
+
+            <div>
+              <a href=""></a>
+            </div>
+
+            <div>
+              <a href="">مطالعه در وبسایت رسمی کاتلین</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#">
+      arrow_drop_up
+    </a>
+  </div>
+
+  <footer></footer>
+
+  <div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+  </div>
+</body>
+
+</html>
