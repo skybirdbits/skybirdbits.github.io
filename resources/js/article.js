@@ -1,4 +1,4 @@
-import {createCodeViewHead} from './ui.js';
+import {createCodeViewHead, createCodeWrap, createCodeTableView} from './ui.js';
 
 const keyword = /(?<!([^\s,(}]{1}|\/\/.*))(public|private|protected|void|return|static|instanceof|for|while|do|if|else|switch|case|override|fun|var|val|companion|data|in|infix|tailrec|inline|noinline|crossinline|reified|false|true|null|class|short|byte|int|long|double|float|boolean|throw|throws|try|catch|finally|final|static|interface|enum|abstract|import|this|super|new|package|yield|default)(?![\w\d]|[^\s)\{\(;]{1})/g;
 const string = /(?<!\/\/.*)(["']([^+]*)["'])|(["'](@\+.*)["'])/g;
@@ -33,23 +33,22 @@ function createCodeViews() {
 
 }
 
+
 function createCodeViewContents(codeLines) {
-  var codeWrap = document.createElement('div');
-  codeWrap.classList.add('code-wrap');
+  var codeWrap = createCodeWrap();
 
-  var table = document.createElement('table');
-  var tBody = table.createTBody();
-  tBody.classList.add('code-body');
+  createCodeTableView(codeWrap, (table, tBody) => {
 
-  for (var lineIndex = 0; lineIndex < codeLines.length; lineIndex++) {
-    let line = codeLines[lineIndex];
-    line = styleAllSensitiveWords(line);
-    insertLine(tBody, line, lineIndex);
-  }
+    for (var lineIndex = 0; lineIndex < codeLines.length; lineIndex++) {
+      let line = codeLines[lineIndex];
+      line = styleAllSensitiveWords(line);
+      insertLine(tBody, line, lineIndex);
+    }
 
-  table.appendChild(tBody);
+    table.appendChild(tBody);
 
-  codeWrap.appendChild(table);
+  });
+
 
   return codeWrap;
 }
