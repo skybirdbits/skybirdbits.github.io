@@ -320,7 +320,7 @@ fun main(){
           </figure>
 
           <div class="code-container">
-open class Shape(var color: String = "White",var stroke: String = "Black",var isFilled: Boolean = false){
+open class Shape(var color: String ,var stroke: String, var isFilled: Boolean = false){
   
   val dateCreated = java.util.Date()
 
@@ -330,12 +330,12 @@ open class Shape(var color: String = "White",var stroke: String = "Black",var is
 
 }
 
-open class GeometricShape(var x: Int = 0, var y: Int = 0, color: String, stroke: String, isFilled: Boolean): Shape(color, stroke, isFilled){
+open class GeometricShape(color: String, stroke: String, isFilled: Boolean): Shape(color, stroke, isFilled){
 
   open val area get() = 0
   open val perimeter get() = 0
 
-  constructor(): this(0, 0,"White", "Black", false)
+  constructor(): this("White", "Black", false)
 
   override fun toString(): String{
     return super.toString() + "\nArea is $area \nperimeter is $perimeter \nX is $x and Y is $y"
@@ -358,7 +358,7 @@ class Circle: GeometricShape{
 
   override val perimeter get() = (2 * radius * PI).toInt()
 
-  constructor(radius: Int, x: Int, y: Int, color: String, stroke: String, isFilled: Boolean): super(x, y, color, stroke, isFilled){
+  constructor(radius: Int, color: String, stroke: String, isFilled: Boolean): super(color, stroke, isFilled){
    this.radius = radius
 }
 
@@ -385,7 +385,7 @@ class Rectangle: GeometricShape{
 
   override val perimeter get() = (width + height) * 2
 
-  constructor(width: Int, height: Int, x: Int, y: Int, color: String, stroke: String, isFilled: Boolean): super(x, y, color, stroke, isFilled){
+  constructor(width: Int, height: Int, color: String, stroke: String, isFilled: Boolean): super(color, stroke, isFilled){
    this.width = width
    this.height = height
 }
