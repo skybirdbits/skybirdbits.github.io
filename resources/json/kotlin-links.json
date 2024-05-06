@@ -57,6 +57,10 @@
     {
       "subject": "وراثت (inheritance)",
       "href": "/article/kotlin/inheritance.html"
+    },
+    {
+      "subject": "چند ریختی و کست کردن",
+      "href": "/article/kotlin/polymorphism-and-type-casting"
     }
   ]
 }
