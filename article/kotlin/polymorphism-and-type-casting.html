@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="description" content="چند ریختی (polymirphism) رکن سوم شی گرایی است، چند ریختی یعنی متغیر از جنس یکی از superclass ها باشه و به آبجکت ایجاد شده از subclass اشاره کنه در این مقاله به چند ریختی (polymirphism) و سپس به دو ویژگی پیوند پویا (dynamic binding) و کست کردن (type casting) که مرتبط با چند ریختی هستند می پردازیم.">
+  <meta name="description" content="چند ریختی رکن سوم شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
 
       <div class="article-head">
         <h1>
-چند ریختی (polymorphism) و کست کردن (type casting) در کاتلین
+چند ریختی و کست کردن در کاتلین
         </h1>
 
         <address>
@@ -50,14 +50,15 @@
           <p class="p-2 mx-2 h5">دسترسی سریع</p>
           <div class="list-group">
 
+            <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub0">مفهوم چند ریختی</a>
+            <a class="list-group-item list-group-item-action" href="#sub1">مفهوم چند ریختی</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub1">پیوند پویا (dynamic binding)</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">پیوند پویا (Dynamic Binding)</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub2">کست کردن (type casting)</a>
+            <a class="list-group-item list-group-item-action" href="#sub3">کست کردن (Type Casting)</a>
 
-            <a class="list-group-item list-group-item-action" href="#sub3">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
           </div>
         </div>
       </div>
@@ -77,9 +78,9 @@
         </div>
         <div class="subsection" id="sub1">
 
-          <p class="title">مفهوم چند ریختی (Polymorphism)</p>
+          <p class="title">چند ریختی (Polymorphism)</p>
 
-          <blockquote>چند ریختی یعنی یک متغیر از جنس superclass اشاره کنه به آبجکت ایجاد شده از subclass
+          <blockquote>چند ریختی یعنی متغیر از جنس یکی از superclass ها اشاره کنه به آبجکت ایجاد شده از subclass
           </blockquote>
 
           <p>همینطور که در قسمت قبل (وراثت) گفته شد subclass ویژگی های superclass رو به ارث میبره به علاوه ویژگی های جدید خودشو میتونه داشته باشه پس میشه گفت subclass یک کلاس اختصاصی از superclass است.</p>
@@ -88,7 +89,7 @@
 
           <figure>
             <img src="/resources/image/generic/inheritance_example_diagram.png" alt="ارث بری اشکال هندسی از کلاس GeometricShape" class="figure-img img-fluid">
-            <figcaption class="figure-caption">ارث بری دو کلاس Circle و Rectangle از GeometricShape</figcaption>
+            <figcaption class="figure-caption text-end p-2 rtl">ارث بری دو کلاس Circle و Rectangle از GeometricShape</figcaption>
           </figure>
 
           <p>هر دایره شکل هندسیه اما هر شکل هندسی دایره نیست (میتونه مستطیل باشه).</p>
@@ -98,7 +99,7 @@
           <p>با توجه به این استدلال میشه گفت هر متغیر از GeometricShape میتونه به هر آبجکت از Circle یا Rectangle اشاره کنه اما برعکسش نمیشه.</p>
 
 
-          <p>در <a href="/article/kotlin/inheritance.html">مورد مطالعه بخش قبل</a> کلاس های Circle، Rectangle و GeometricShape تعریف شدن. همینطور کلاس GeometricShape از Shape نیز ارث بری میکنه.</p>
+          <p>در <a class="text-decoration-none" href="/article/kotlin/inheritance.html">بخش قبل</a> کلاس های Circle، Rectangle و GeometricShape تعریف شدن. همینطور کلاس GeometricShape از Shape نیز ارث بری میکنه.</p>
 
           <p>در مثال زیر برای خلاصه شدن از دوباره نویسیشون خودداری کردیم میتونید به بخش قبل مراجعه و در <strong>مورد مطالعه</strong> کد هاشونو کپی کنید.</p>
 
@@ -122,6 +123,8 @@ fun main(){
           </div>
           
           <p class="h6">مثال</p>
+
+          <p>در زیر کلاس Person سوپر کلاس Student و Citizen است.</p>
 
           <div class="code-container">
 open class Person(val name: String, val age: Int) {
@@ -151,7 +154,7 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="title">پیوند پویا (dynamic binding)</p>
+          <p class="title">پیوند پویا (Dynamic Binding)</p>
 
           <blockquote>یک تابع در طی ارث بری میتونه به چند روش پیاده سازی بشه زمان اجرای برنامه jvm تصمیم میگیره کدوم پیاده سازی به اجرا در بیاد.</blockquote>
 
@@ -170,14 +173,16 @@ println(shape.toString())
 
           <p class="h5">نوع تعریف شده (declared type)</p>
 
-          <p>هنگام تعریف متغیر اگه نوع متغیر رو مشخص کنیم بهش declared type میگیم در بالا declared type کلاس Any است که هنگام تعریف متغیر نوع متغیر رو Any مشخص کردیم.</p>
+          <p>هنگام تعریف متغیر اگه نوع متغیر رو مشخص کنیم بهش declared type میگیم در بالا declared type کلاس Any است.</p>
 
           <p class="h5">نوع واقعی (actual type)</p>
-          <p>به آبجکتی که ایجاد میکنیم نوع واقعی (actual type) میگیم. actual type میتونه نوعش با declared type یکی باشه یا یکی از subclass های <strong>declared type</strong> باشه.</p>
+          <p>به آبجکتی که ایجاد میکنیم نوع واقعی (actual type) میگیم. actual type میتونه نوعش با declared type یکی باشه یا یکی از subclass های <strong>declared type</strong> باشه. در بالا actual type کلاس Shape است.</p>
 
-          <p>بهتره برگردیم به سوالمون اینکه کدوم toString اجرا میشه بستگی به actual type داره.</p>
+          <p>بهتره برگردیم به سوالمون اینکه کدوم toString اجرا میشه؟ </p>
 
-          <p>زمان اجرا jvm از actual type شروع میکنه به بررسی و به اولین پیاده سازی تابع برسه همونو اجرا میکنه و در بالا چون اولین پیاده سازی toString داخل Shape اتفاق افتاده همونو اجرا میکنه.</p>
+          <p>جواب: بستگی به actual type داره.</p>
+
+          <p>زمان اجرا JVM از actual type شروع میکنه به بررسی تا به declared type برسه و به اولین پیاده سازی تابع که رسید بررسی رو متوقف و تابع رو اجرا میکنه. در بالا چون اولین پیاده سازی toString داخل Shape اتفاق افتاده همونو اجرا میکنه.</p>
 
           <p class="h6">مثال:</p>
 
@@ -213,9 +218,9 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="title">کست کردن (type casting)</p>
+          <p class="title">کست کردن (Type Casting)</p>
           <blockquote>
-            تبدیل یک نوع آبجکت به یک نوع دیگه از آبجکت رو کست کردن میگیم.
+            تبدیل آبجکت به یک آبجکت از نوع دیگه رو کست کردن (type casting) میگیم.
           </blockquote>
 
           <p>فرض کنید declared type سوپر کلاس actual type است.</p>
@@ -255,7 +260,7 @@ fun main(){
 }
           </div>
 
-          <p>در این حالت کامپایلر اخطار میده ممکنه o به Shape در حافظه اشاره نکنه و این کست کردن safe نیست. به هر حال کست کردن انجام میشه و برنامه بدون مشکل اجرا میشه.</p>
+          <p>در این حالت کامپایلر اخطار میده که ممکنه <strong>o</strong> به <strong>Shape</strong> در حافظه اشاره نکنه و این کست کردن safe نیست. به هر حال کست کردن انجام میشه و برنامه بدون مشکل اجرا میشه.</p>
 
           <p>میتونیم با استفاده از is بررسی کنیم declared type سوپر کلاس actual type هست یا خیر.</p>
 
@@ -322,9 +327,11 @@ fun displayData(object: Any){
 
           <p>- چند ریختی یعنی یک متغیر از جنس superclass اشاره کنه به آبجکتی از جنس subclass</p>
 
-          <p>کست کردن یعنی تبدیل آبجکت از یک نوع به آبجکتی از نوع دیگه.</p>
+          <p>- هنگامی که یک تابع صدا زده میشه JVM از actual type شروع میکنه به بررسی و اولین پیاده سازی تابع رو اجرا میکنه.</p>
 
-         <p>کاتلین از ویژگی کست هوشمند یا (smart casting) پشتیبانی میکنه یعنی اگه با is مشخص بشه متغیر از نوع superclass به کدوم subclass اشاره میکنه نیازی به کست مردن آشکار نیست.</p> 
+          <p>- کست کردن یعنی تبدیل آبجکت از یک نوع به آبجکتی از نوع دیگه.</p>
+
+         <p>- کاتلین از ویژگی کست هوشمند یا (smart casting) پشتیبانی میکنه.</p> 
 
         </div>
 
@@ -356,7 +363,7 @@ fun displayData(object: Any){
 
         <div class="relative-articles-container">
           <p>مطالب مرتبط</p>
-          <div class="d-flex flex-wrap">
+          <div>
             <div>
               <a href="/article/kotlin/inheritance.html">وراثت در کاتلین</a>
             </div>
@@ -370,7 +377,7 @@ fun displayData(object: Any){
             </div>
 
             <div>
-              <a href="https://kotlinlang.org/docs/typecasts.html">کست کردن در وبسایت رسمی کاتلین</a>
+              <a href="https://kotlinlang.org/docs/typecasts.html">مطالعه type casting در وبسایت رسمی کاتلین</a>
             </div>
           </div>
         </div>
