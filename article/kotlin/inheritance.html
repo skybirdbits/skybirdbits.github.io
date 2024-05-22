@@ -89,7 +89,7 @@
           </figure>
 
 
-          <p>به کلاسی که ویژگی های مشترک دایره و مستطیل رو داره کلاس پدر یا سوپر کلاس  (superclass) و به کلاس های دایره و مستطیل که ازش ارث میبرن کلاس بچه یا ساب کلاس (subclass) میگیم.</p>
+          <p>به کلاسی که ویژگی های مشترک دایره و مستطیل رو داره کلاس پدر <strong> سوپر کلاس  (superclass)</strong> و به کلاس های دایره و مستطیل که ازش ارث میبرن کلاس بچه یا <strong>ساب کلاس (subclass)</strong>میگیم.</p>
 
         </div>
 
@@ -103,7 +103,7 @@ open class Parent{
   
 }
           </div>
-          <p>هنگام تعریف ساب کلاس (subclass) با استفاده از دو نقطه بعد از اسم subclass و کانستراکتور اولیه ساب کلاس (در صورت تعریف آشکار کانستراکتور) اسم سوپر کلاس (superclass) رو می نویسیم.</p>
+          <p>هنگام تعریف subclass با استفاده از دو نقطه بعد از اسم subclass و کانستراکتور اولیه اش (در صورت تعریف آشکار کانستراکتور) اسم superclass رو می نویسیم.</p>
 
           <div class="code-container">
 open class Parent{
@@ -115,7 +115,7 @@ class Child: Parent{
 }
           </div>
 
-          <p>هنگام ایجاد آبجکت از ساب کلاس (subclass) ابتدا سوپر کلاس (superclass) آماده سازی میشه و سپس subclass.</p>
+          <p>هنگام ایجاد آبجکت از subclass ابتدا superclass آماده سازی میشه و سپس subclass.</p>
 
           <div class="code-container">
 //superclass            
@@ -148,14 +148,14 @@ open class Parent(s: String){
 
 }
 
-class Child(b: Boolean, s: String): Parent(s0){
+class Child(b: Boolean, s: String): Parent(s){
    
 }
           </div>
 
           <p class="h5">استفاده از کلیدواژه ی super برای صدا زدن کانستراکتور های superclass</p>
 
-          <p>اگه در ساب کلاس (subclass) کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم؛ بنابراین با استفاده از کلیدواژه ی super بعد از کانستراکتور های ثانویه ساب کلاس (subclass) کانستراکتور های سوپر کلاس رو مقداردهی میکنیم.</p>
+          <p>اگه در subclass کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم؛ بنابراین با استفاده از کلیدواژه ی super بعد از کانستراکتور های ثانویه subclass کانستراکتور های superclass رو مقداردهی میکنیم.</p>
 
           <div class="note">
             <p class="h6">نکته</p>
@@ -320,22 +320,22 @@ fun main(){
           </figure>
 
           <div class="code-container">
-open class Shape(var color: String ,var stroke: String, var isFilled: Boolean = false){
+open class Shape(var color: String, var isFilled: Boolean = false){
   
   val dateCreated = java.util.Date()
 
   override fun toString(): String{
-    return "Shape created at $dateCreated \ncolor is $color and stroke is $stroke \nisFilled? $isFilled"
+    return "Shape created at $dateCreated \ncolor is $color, \nisFilled? $isFilled"
   }
 
 }
 
-open class GeometricShape(color: String, stroke: String, isFilled: Boolean): Shape(color, stroke, isFilled){
+open class GeometricShape(color: String, isFilled: Boolean): Shape(color, isFilled){
 
   open val area get() = 0
   open val perimeter get() = 0
 
-  constructor(): this("White", "Black", false)
+  constructor(): this("White", false)
 
   override fun toString(): String{
     return super.toString() + "\nArea is $area \nperimeter is $perimeter \nX is $x and Y is $y"
@@ -358,7 +358,7 @@ class Circle: GeometricShape{
 
   override val perimeter get() = (2 * radius * PI).toInt()
 
-  constructor(radius: Int, color: String, stroke: String, isFilled: Boolean): super(color, stroke, isFilled){
+  constructor(radius: Int, color: String, isFilled: Boolean): super(color, isFilled){
    this.radius = radius
 }
 
@@ -385,7 +385,7 @@ class Rectangle: GeometricShape{
 
   override val perimeter get() = (width + height) * 2
 
-  constructor(width: Int, height: Int, color: String, stroke: String, isFilled: Boolean): super(color, stroke, isFilled){
+  constructor(width: Int, height: Int, color: String, isFilled: Boolean): super(color, isFilled){
    this.width = width
    this.height = height
 }
@@ -412,7 +412,7 @@ fun main(){
     val c = Circle(2)
     c.stroke = "Blue"
 
-    val c1 = Circle(radius = 5, x = 1, y =  1, "Yellow", "Red", true)
+    val c1 = Circle(radius = 5, x = 1, y =  1, "Yellow", true)
 
     val rect = Rectangle(3 , 4)
 
