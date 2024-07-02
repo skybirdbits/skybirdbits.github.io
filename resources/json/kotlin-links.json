@@ -61,6 +61,10 @@
     {
       "subject": "چند ریختی و کست کردن",
       "href": "/article/kotlin/polymorphism-and-type-casting"
+    },
+    {
+      "subject": "کلاس های ابسترکت",
+      "href": "https://skybirdbits.github.io/article/kotlin/abstract-classes.html"
     }
   ]
 }
