@@ -64,7 +64,11 @@
     },
     {
       "subject": "کلاس های ابسترکت",
-      "href": "https://skybirdbits.github.io/article/kotlin/abstract-classes.html"
+      "href": "/article/kotlin/abstract-classes.html"
+    },
+    {
+      "subject": "اینترفیس ها",
+      "href": "/article/kotlin/interfaces.html"
     }
   ]
 }
