@@ -37,8 +37,7 @@
     <div class="page-wrap">
 
         <div class="article-head">
-            <h1>
-            </h1>
+            <h1>کلاس های تو در تو در کاتلین</h1>
 
             <address>
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
@@ -71,13 +70,14 @@
             <div class="subsection" id="sub0">
                 <p class="title">توضیحات</p>
 
-                <p>میتونیم داخل کلاس یک کلاس دیگه تعریف کنیم که بهش کلاس تو در تو یا (Nested Class) و به خود کلاس، کلاس
-                    بیرونی یا outer class میگیم.</p>
+                <p>میتونیم داخل کلاس یک کلاس دیگه تعریف کنیم که بهش کلاس تو در تو یا (Nested Class) میگیم.</p>
+
+                <p>به کلاسی که داخلش کلاس تعریف میکنیم کلاس بیرونی یا outer class میگیم.</p>
 
                 <p>کلاس های داخلی در کاتلین از قوانین <a class="text-decoration-none" href="access-modifiers.html">کلیدواژه
                     های سطح دسترسی</a> بقیه ی اعضای کلاس بیرونی پیروی میکنن.</p>
 
-                <p>در کاتلین مانند جاوا کلاس های تو در تو به دو دسته ی <strong>کلاس استاتیک تو در تو</strong>(Static Nested Class) و <strong>کلاس غیر استاتیک داخلی</strong> (Non-static Inner Class) تقسیم میشن.</p>
+                <p>در کاتلین مانند جاوا کلاس های تو در تو به دو دسته ی <strong>کلاس استاتیک تو در تو</strong> (Static Nested Class) و <strong>کلاس غیر استاتیک داخلی</strong> (Non-static Inner Class) تقسیم میشن.</p>
 
 
                 <p> در کاتلین علاوه بر کلاس میتونیم اینترفیس رو داخل یک کلاس تعریف کنیم همینطور میتونیم داخل اینترفیس
@@ -94,7 +94,6 @@
 MyOuterClass.MyInnerClass()
                 </div>
 
-                <p>مثال:</p>
                 <p>در زیر یک کلاس به عنوان کلاس بیرونی و یک کلاس به عنوان کلاس تو در تو و یک تابع برای
                     چاپ پیام از کلاس تو در تو تعریف کردیم.</p>
 
@@ -104,11 +103,11 @@ fun main(){
     nested.printMessage()
 }
 
-    class MyOuterClass{
-        ...
-        class MyNestedClass{
-            fun printMessage(){
-            println("This is from Nested Class")
+class MyOuterClass{
+    ...
+    class MyNestedClass{
+        fun printMessage(){
+        println("This is from nested class")
         }
     }
 }
@@ -119,16 +118,14 @@ fun main(){
             <div class="subsection" id="sub2">
                 <p class="title">کلاس غیر استاتیک داخلی (Non-Static Inner Class)</p>
 
-                <p>برای تعریف کلاس های غیر استاتیک داخلی از کلیدواژه ی inner استفاده میکنیم</p>
+                <p> برای تعریف کلاس های غیر استاتیک داخلی از کلیدواژه ی <strong>inner</strong> استفاده میکنیم </p>
                 <p>این کلاس ها وابسته به آبجکت کلاس بیرونی هستند و به اعضای کلاس بیرونی دسترسی دارن</p>
                 <p>.برای ساخت ابجکت از این کلاس ها ابتدا یک آبجکت از کلاس بیرونی می‌سازیم و پس از گذاشتن نقطه آبجکت از
                     کلاس داخلی رو ایجاد میکنیم</p>
 
                 <div class="code-container">
-                    MyOuterClass().MyInnerClass()
+MyOuterClass().MyInnerClass()
                 </div>
-
-                <p>مثال</p>
 
                 <p>مثال زیر بیانگر دسترسی کلاس داخلی به کلاس خارجی و نحوه ی تعریف کلاس داخلی در داخل کلاس خارجی است.</p>
 
@@ -149,7 +146,7 @@ class MyOuterClass{
         fun printMessage(){
             //صدا زدن مستقیم تابع MyOuterClass در MyInnerClass
             printOuterMessage()
-            println("This is from Nested Class")
+            println("This is from inner class")
         }
     }
 }
@@ -159,11 +156,9 @@ class MyOuterClass{
 
 
             <div class="subsection" id="sub3">
-                <p class="title">ساخت آبجکت از کلاس و اینترفیس های تو در تو به صورت بی نام (anonymous)</p>
+                <p class="title">ساخت نمونه از کلاس و اینترفیس های تو در تو به صورت anonymous</p>
 
-                <p>میتونیم از کلاس ها و اینترفیس های داخلی توسط کلید واژه ی object به صورت بی نام آبجکت بسازیم.</p>
-
-                <p>مثال</p>
+                <p>میتونیم از کلاس ها و اینترفیس های داخلی توسط کلید واژه ی object به صورت بی نام نمونه بسازیم.</p>
 
                 <p>در زیر نشون میدیم چطور setOnClickListener در کلاس View اندروید طراحی شده</p>
 
@@ -181,7 +176,7 @@ fun main(){
 class View{
 
     fun printMessage(){
-       println("Clicked on me!")
+       println("This is view the from android!")
     }
 
     fun setOnClickListener(onClickListener: OnClickListener){
@@ -206,11 +201,8 @@ class View{
 
                 <p>کلاس استاتیک تو در تو رو مثل کلاس معمولی داخل کلاس تعریف می کنیم.</p>
 
-                <p>- برای ساخت ابجکت از کلاس تو در تو استاتیک ابتدا اسم کلاس خارجی رو می نویسیم و سپس نقطه میزاریم و
-                    سپس یک آبجکت از کلاس تو در تو ایجاد می کنیم.</p>
-
                 <p>کلاس غیر استاتیک داخلی رو با کلید واژه ی inner تعریف می کنیم.</p>
-                <p>- برای ساختن آبجکت از کلاس غیر استاتیک داخلی ابتدا باید یک آبجکت از کلاس بیرونی تعریف کنیم.</p>
+
                 <p>- کلاس های غیر استاتیک داخلی به تمام اعضای کلاس بیرونی دسترسی دارن.</p>
 
                 <p>- میتونیم از کلاس های تو در تو به صورت بی نام (anonymous) آبجکت بسازیم.</p>
