@@ -69,6 +69,10 @@
     {
       "subject": "اینترفیس ها",
       "href": "/article/kotlin/interfaces.html"
+    },
+    {
+      "subject": "کلاس های تو در تو در کاتلین",
+      "href": "/article/kotlin/nested-classes.html"
     }
   ]
 }

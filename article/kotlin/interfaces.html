@@ -191,14 +191,14 @@ val player = object: Player{
 
           <p>اینترفیس هایی که فقط یک تابع دارن میتونیم به صورت تابعی داخل کد پیاده سازیشون کنیم به این اینترفیس ها Single Abstract Method Interface (SAM) نیز گفته میشه.</p>
 
-
+            <p>برای اینکه یک اینترفیس تابعی باشه باید قبل از کلیدواژه ی اینترفیس از کلید واژه ی fun نیز استفاده کنیم.</p>
 
           <p class="h6">مثال</p>
 
-          <p>در مثال زیر اینترفیس رو به دو روش معمولی و تابعی پیاده سازی کردیم:</p>
+          <p>در مثال زیر اینترفیس رو به دو روش معمولی و تابعی پیاده‌سازی کردیم:</p>
 
           <div class="code-container">
-interface PredictableNumber{
+fun interface PredictableNumber{
   fun predict(v: Int): Boolean
 }
 
@@ -240,9 +240,9 @@ fun main(){
 
           <p>هر کلاسی علاوه بر یک کلاس از یک یا چند اینترفیس میتونه ارث ببره.</p>
 
-          <p>علاوه بر ارث بری میتونیم اینترفیس ها رو داخل کد پیاده سازی کنیم.</p>
+          <p>علاوه بر ارث بری میتونیم اینترفیس ها رو داخل کد پیاده‌سازی کنیم.</p>
 
-          <p>اینترفیس هایی که فقط یک تابع ابستراکت دارند رو میتونیم به صورت تابعی پیاده سازی کنیم که بهشون اینترفیس های تابعی و یا Single Abstract Method Interface (SAM)  گفته میشه.</p>
+          <p>اینترفیس هایی که فقط یک تابع ابستراکت دارند رو میتونیم به صورت تابعی پیاده‌سازی کنیم که بهشون اینترفیس های تابعی و یا Single Abstract Method Interface (SAM) گفته میشه.</p>
 
         </div>
       </article>
@@ -286,6 +286,10 @@ fun main(){
             <div>
               <a href="/article/kotlin/objects-and-classes.html">آبجکت و کلاس ها</a>
             </div>
+
+              <div>
+                  <a href="/article/kotlin/nested-classes.html">کلاس های تو در تو</a>
+              </div>
 
             <div>
               <a href="https://kotlinlang.org/docs/interfaces.html">مطالعه در وبسایت رسمی کاتلین</a>
