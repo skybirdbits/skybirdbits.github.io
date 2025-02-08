@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+
+    <meta content="IE=7" http-equiv="X-UA-Compatible">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <meta content="در کاتلین دو نوع کلاس تو در تو داریم: کلاس استاتیک تو در تو و کلاس غیر استاتیک داخلی در این مطلب به بررسی هردو کلاس و ویژگی های آنها می پردازیم و نحوه ی ایجاد آبجت از هرکدوم رو بررسی میکنیم همچنین یه نگاهی ام داریم به ساخت آبجکت بی نام از کلاس های تو در تو."
+          name="description">
+
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>کلاس های تو در تو (Nested Classes) در کاتلین</title>
+
+    <meta content="کلاس های تو در تو (Nested Classes) در کاتلین" name="og:title">
+    <meta content="در کاتلین دو نوع کلاس تو در تو داریم: کلاس استاتیک تو در تو و کلاس غیر استاتیک داخلی در این مطلب به بررسی هردو کلاس و ویژگی های آنها می پردازیم و نحوه ی ایجاد آبجت از هرکدوم رو بررسی میکنیم همچنین یه نگاهی ام داریم به ساخت آبجکت بی نام از کلاس های تو در تو."
+          name="og:description">
+
+    <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image">
+    <meta content="" property="og:url">
+
+    <meta content="article" property="og:type">
+
+    <link href="/resources/favicon.png" rel="shortcut icon" type="image/x-icon">
+
+    <link href="/resources/css/main.css" rel="stylesheet">
+    <script src="/resources/js/main.js" type="module"></script>
+
+</head>
+
+<body>
+<header></header>
+<main>
+    <div class="page-wrap">
+
+        <div class="article-head">
+            <h1>
+            </h1>
+
+            <address>
+                <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
+            </address>
+
+            <figure class="figure figure-wrapper">
+                <img alt="" class="rounded figure-img" src="/resources/image/kotlin/cover_nested_classes.png"/>
+            </figure>
+
+            <div class="toc">
+                <p class="p-2 mx-2 h5">دسترسی سریع</p>
+                <div class="list-group">
+
+                    <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub1">کلاس استاتیک تو در تو (Static Nested Class) در کاتلین</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub2">کلاس غیر استاتیک داخلی (Non-Static Inner Class)</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub3">ساخت آبجکت از کلاس های تو در تو به صورت بی نام</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+
+                </div>
+            </div>
+        </div>
+
+        <article>
+
+            <div class="subsection" id="sub0">
+                <p class="title">توضیحات</p>
+
+                <p>میتونیم داخل کلاس یک کلاس دیگه تعریف کنیم که بهش کلاس تو در تو یا (Nested Class) و به خود کلاس، کلاس
+                    بیرونی یا outer class میگیم.</p>
+
+                <p>کلاس های داخلی در کاتلین از قوانین <a class="text-decoration-none" href="access-modifiers.html">کلیدواژه
+                    های سطح دسترسی</a> بقیه ی اعضای کلاس بیرونی پیروی میکنن.</p>
+
+                <p>در کاتلین مانند جاوا کلاس های تو در تو به دو دسته ی <strong>کلاس استاتیک تو در تو (Static Nested Class)</strong> و
+                    <strong>کلاس غیر استاتیک داخلی (Non-static Inner Class)</strong> تقسیم میشن.</p>
+            </div>
+
+            <div class="subsection" id="sub1">
+                <p class="title">کلاس استاتیک تو در تو (Static Nested Class) در کاتلین</p>
+
+                <p>در کاتلین کافیه یک کلاس معمولی داخل کلاس تعریف کنیم و برای ساخت آبجکت ازش مثل زیر عمل می کنیم:</p>
+
+                <div class="code-container">
+MyOuterClass.MyInnerClass()
+                </div>
+
+                <p>مثال:</p>
+                <p>در زیر یک کلاس به عنوان کلاس بیرونی و یک کلاس به عنوان کلاس تو در تو و یک تابع برای
+                    چاپ پیام از کلاس تو در تو تعریف کردیم.</p>
+
+                <div class="code-container">
+fun main(){
+    val nested = MyOuterClass.MyNestedClass()
+    nested.printMessage()
+}
+
+    class MyOuterClass{
+        ...
+        class MyNestedClass{
+            fun printMessage(){
+            println("This is from Nested Class")
+        }
+    }
+}
+                </div>
+
+            </div>
+
+            <div class="subsection" id="sub2">
+                <p class="title">کلاس غیر استاتیک داخلی (Non-Static Inner Class)</p>
+
+                <p>برای تعریف کلاس های غیر استاتیک داخلی از کلیدواژه ی inner استفاده میکنیم</p>
+                <p>این کلاس ها وابسته به آبجکت کلاس بیرونی هستند و به اعضای کلاس بیرونی دسترسی دارن</p>
+                <p>.برای ساخت ابجکت از این کلاس ها ابتدا یک آبجکت از کلاس بیرونی می‌سازیم و پس از گذاشتن نقطه آبجکت از
+                    کلاس داخلی رو ایجاد میکنیم</p>
+
+                <div class="code-container">
+                    MyOuterClass().MyInnerClass()
+                </div>
+
+                <p>مثال</p>
+
+                <p>مثال زیر بیانگر دسترسی کلاس داخلی به کلاس خارجی و نحوه ی تعریف کلاس داخلی در داخل کلاس خارجی است.</p>
+
+                <div class="code-container">
+fun main(){
+    val outer = MyOuterClass()
+    val inner = outer.MyInnerClass()
+    inner.printMessage()
+}
+
+class MyOuterClass{
+
+    fun printOuterMessage(){
+        println("This is from outer class")
+    }
+
+    inner class MyInnerClass{
+        fun printMessage(){
+            //صدا زدن مستقیم تابع MyOuterClass در MyInnerClass
+            printOuterMessage()
+            println("This is from Nested Class")
+        }
+    }
+}
+                </div>
+
+                <p> در کاتلین علاوه بر کلاس میتونیم اینترفیس رو داخل یک کلاس تعریف کنیم همینطور میتونیم داخل اینترفیس
+                    کلاس و اینترفیس تعریف کنیم و محدودیتی وجود نداره.</p>
+
+            </div>
+
+
+            <div class="subsection" id="sub3">
+                <p class="title">ساخت آبجکت از کلاس و اینترفیس های تو در تو به صورت بی نام (anonymous)</p>
+
+                <p>میتونیم از کلاس ها و اینترفیس های داخلی توسط کلید واژه ی object به صورت بی نام آبجکت بسازیم.</p>
+
+                <p>مثال</p>
+
+                <p>در زیر نشون میدیم چطور setOnClickListener در کلاس View اندروید طراحی شده</p>
+
+                <div class="code-container">
+fun main(){
+    val v = View()
+
+    v.setOnClickListener(object: View.OnClickListener{
+        fun onClick(v: View){
+            v.printMessage()
+        }
+    }
+}
+
+class View{
+
+    fun printMessage(){
+       println("Clicked on me!")
+    }
+
+    fun setOnClickListener(onClickListener: OnClickListener){
+        onClickListener.onClick(this)
+    }
+
+    //Nested Interface
+    fun interface OnClickListener{
+        fun onClick(v: View)
+    }
+}
+                </div>
+
+            </div>
+
+            <div class="subsection" id="sub4">
+                <p class="title">خلاصه</p>
+                <p>- به کلاسی که داخلش کلاس تعریف میکنیم کلاس بیرونی (outer class) میگیم.</p>
+                <p>- در کاتلین دو نوع کلاس تو در تو داریم: <strong>استاتیک تو در تو</strong> و <strong>غیر استاتیک
+                    داخلی</strong>.</p>
+                <p>- کلاس های تو در تو از قوانین سطح دسترسی سایر اعضای کلاس بیرونی پیروی میکنن.</p>
+
+                <p>کلاس استاتیک تو در تو رو مثل کلاس معمولی داخل کلاس تعریف می کنیم.</p>
+
+                <p>- برای ساخت ابجکت از کلاس تو در تو استاتیک ابتدا اسم کلاس خارجی رو می نویسیم و سپس نقطه میزاریم و
+                    سپس یک آبجکت از کلاس تو در تو ایجاد می کنیم.</p>
+
+                <p>کلاس غیر استاتیک داخلی رو با کلید واژه ی inner تعریف می کنیم.</p>
+                <p>- برای ساختن آبجکت از کلاس غیر استاتیک داخلی ابتدا باید یک آبجکت از کلاس بیرونی تعریف کنیم.</p>
+                <p>- کلاس های غیر استاتیک داخلی به تمام اعضای کلاس بیرونی دسترسی دارن.</p>
+
+                <p>- میتونیم از کلاس های تو در تو به صورت بی نام (anonymous) آبجکت بسازیم.</p>
+            </div>
+
+
+        </article>
+
+        <div class="article-foot">
+
+            <div class="navigator-container">
+
+                <a class="md-bt md-bt-light" href="/article/kotlin/inheritance.html">
+            <span class="material-icons">
+              navigate_next
+            </span>
+                    <span class="hint">
+              بعدی
+            </span>
+                </a>
+
+                <a class="md-bt md-bt-light" href="/article/kotlin/interfaces.html">
+            <span class="hint">
+              قبلی
+            </span>
+                    <span class="material-icons">
+              navigate_before
+            </span>
+
+                </a>
+            </div>
+
+            <div class="relative-articles-container">
+                <p>مطالب مرتبط</p>
+                <div>
+                    <div>
+                        <a href="/article/kotlin/functions.html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div class="scroll-top-container">
+    <a class="text-decoration-none link-dark material-icons" href="#">
+        arrow_drop_up
+    </a>
+</div>
+
+<footer></footer>
+
+<div class="copy-message">
+    <span class="copy-message-text">کپی شد!</span>
+</div>
+
+</body>
+</html>
