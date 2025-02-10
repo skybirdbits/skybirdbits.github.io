@@ -65,9 +65,8 @@
             <div class="subsection" id="sub0">
                 <p class="title">توضیحات</p>
 
-                <p>کلاس های sealed در کاتلین به منظور جلوگیری از ارث بری در خارج از پکیج یا ماژول طراحی شدن</p>
-                <p>کلمه ی sealed به معنی مهر و موم شده است.</p>
-                <p>به عبارت دیگه هیچ <a class="text-decoration-none" href="inheritance.html">subclass</a> مستقیمی برای این کلاس ها در خارج از پکیج یا ماژول داخل برنامه قابل تعریف نیست.</p>
+                <p>کلاس های sealed در کاتلین به منظور جلوگیری از ارث بری در خارج از پکیج یا ماژول طراحی شدن؛ کلمه ی sealed به معنی مهر و موم شده است.</p>
+                <p>به عبارت دیگه هیچ <a class="text-decoration-none" href="inheritance.html">subclass</a> مستقیمی برای این کلاس ها در خارج از پکیج یا ماژول قابل تعریف نیست.</p>
 
                 <p>ابتدای این کلاس ها کلیدواژه ی <strong>sealed</strong> میزاریم و بقیشو مثل کلاس معمولی تعریف می کنیم: </p>
 
@@ -86,7 +85,7 @@ sealed class MyClass {
 
 
                 <p>کلاس های sealed <a class="text-decoration-none" href="abstract-classes.html">ابستراکت</a> هستند بنابراین به طور مستقیم نمیتونیم ازشون آبجکت ایجاد کنیم.</p>
-                <p>باید <a class="text-decoration-none" href="access-modifiers.html">سطح دسترسی</a> <a class="text-decoration-none" href="objects-and-classes.html">کانستراکتور</a> های کلاس sealed یا protected باشه یا private.</p>
+                <p>باید <a class="text-decoration-none" href="access-modifiers.html">سطح دسترسی</a> <a class="text-decoration-none" href="objects-and-classes.html">کانستراکتور</a> های کلاس سیلد protected یا private باشه.</p>
 
 
                 <p>فرض کنید حیوون خونگی داریم و میخوایم بهشون غذا بدیم اما نمیخوایم این غذا رو به حیوونای دیگه این غذا رو بدیم بنابراین برای غذا کلاس sealed تعریف می کنیم:</p>
@@ -146,6 +145,7 @@ fun printHungryPetVoice(petFood: PetFood){
             </div>
 
             <div class="subsection" id="sub2">
+                <p class="title">خلاصه</p>
                 <p>- کلاس های sealed در خارج از پکیج به طور مستقیم برای ارث بری در دسترس نیستند.</p>
                 <p>- کلاس های sealed در کاتلین ابسترکت هستند</p>
                 <p>- سطح دسترسی کانستراکتور های این کلاس ها یا protected باید باشه یا private.</p>
@@ -183,7 +183,19 @@ fun printHungryPetVoice(petFood: PetFood){
                 <p>مطالب مرتبط</p>
                 <div>
                     <div>
-                        <a href="/article/kotlin/functions.html"></a>
+                        <a href="/article/kotlin/objects-and-classes.html">آبجکت و کلاس ها</a>
+                    </div>
+
+                    <div>
+                        <a href="/article/kotlin/inheritance.html">وراثت</a>
+                    </div>
+
+                    <div>
+                        <a href="/article/kotlin/abstract-classes.html">کلاس های ابسترکت</a>
+                    </div>
+
+                    <div>
+                        <a href="https://kotlinlang.org/docs/sealed-classes.html">مطالعه در وبسایت رسمی کاتلین</a>
                     </div>
                 </div>
             </div>
