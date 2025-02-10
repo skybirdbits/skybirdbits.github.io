@@ -77,6 +77,10 @@
     {
       "subject": "کلاس های enum",
       "href": "/article/kotlin/enum-classes.html"
+    },
+    {
+      "subject": "کلاس های sealed",
+      "href": "/article/kotlin/sealed-classes.html"
     }
   ]
 }
