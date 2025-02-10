@@ -73,6 +73,10 @@
     {
       "subject": "کلاس های تو در تو",
       "href": "/article/kotlin/nested-classes.html"
+    },
+    {
+      "subject": "کلاس های enum",
+      "href": "/article/kotlin/enum-classes.html"
     }
   ]
 }
