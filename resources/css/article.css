@@ -118,38 +118,6 @@
     overflow: hidden;
 }
 
-
-.toc.toc-course{
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
-
-.toc-course .toc-course-head{
-  display: block;
-  padding: 16px;
-  background-color: #f5f5f5;
-}
-
-.toc-course-head p{
-  margin-top: 1px;
-}
-
-.toc-course-head .toc-course-head-title{
-  display: flex;
-  direction: rtl;
-}
-
-.toc-course-head-title h3{
-  padding: 4px;
-  margin-right: 2px;
-  vertical-align: middle;
-}
-
-
-.toc-course-head-title span{
-  font-size: 1.5rem;
-}
-
 .course-category{
   width: 100%;
   height: fit-content;
