@@ -85,6 +85,10 @@
     {
       "subject": "کلاس های دیتا",
       "href": "/article/kotlin/data-classes.html"
+    },
+    {
+      "subject": "الگوی Delegation",
+      "href": "/article/kotlin/delegation.html"
     }
   ]
 }
