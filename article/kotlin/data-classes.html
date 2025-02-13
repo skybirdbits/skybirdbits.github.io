@@ -53,9 +53,9 @@
                 <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
 
-                    <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
+                    <a class="list-group-item list-group-item-action" href="#sub0">توضیحات و کاربرد ها</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub1">بررسی کاربرد ها و ویژگی ها</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">بررسی ویژگی ها</a>
 
                     <a class="list-group-item list-group-item-action" href="#sub2">خلاصه</a>
 
@@ -66,7 +66,7 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">توضیحات</p>
+                <p class="title">توضیحات و کاربردها</p>
 
                 <blockquote>دیتا کلاس (Data Class) ها توسط کاتلین به صورت نیتیو پشتیبانی میشن و برای ذخیره و استفاده از داده ها طی زمان اجرای برنامه مورد استفاده قرار میگیرن.</blockquote>
 
@@ -76,33 +76,37 @@
 
                 <p>معمولا برای این کار برنامه نویس ها کلاس طراحی میکنن که این کلاس ها وظیفه ی نگهداری داده ها رو به عهده داره؛ کاتلین اومده این موضوع کاربردی رو به صورت نیتیو پیاده‌سازی کرده.</p>
 
+                <p>اگه بخوایم صحبت از طراحی کلاس معمولی برای ذخیره ی داده ها کنیم؛ این امر کاملا ممکنه اما کاتلین با نیتیو کردن کلاس های دیتا سعی در بهینه کردن برنامه و سریع تر شدن سرعت کد نویسی رو داشته.</p>
+
+                <p>یکی از کاربرد های مهم دیتا کلاس ها ایفا کردن نقش مدل در طراحی الگو است؛ در طراحی الگو های MVC، MVP، MVVM و ... از این کلاس ها به عنوان کلاس مدل میتونیم استفاده کنیم.</p>
+
+
+                <p>فرم کلی دیتا کلاس ها به صورت زیر است:</p>
+
+                <div class="code-container">
+data class ClassName(val t0: T0, val t1: T1, ... , val tn: Tn){
+    ...
+}
+                </div>
+
                 <div class="note">
                     <p class="h6">توجه</p>
                     <p>هنگامی که از نقش کلاس های داده برای ذخیره ی اطلاعات صحبت می کنیم منظور طی زمان اجرای برنامه و بر روی حافظه ی موقت یعنی RAM است و تا زمانی که برنامه در حال اجراست این کلاس ها داده ها رو در خودشون میتونن نگه دارن و بعد از بسته شدن برنامه از بین میرن.</p>
                 </div>
 
-
-                <p>اگه بخوایم صحبت از طراحی کلاس معمولی برای ذخیره ی داده ها کنیم؛ این امر کاملا ممکنه اما کاتلین با نیتیو کردن کلاس های دیتا سعی در بهینه کردن برنامه و سریع تر شدن سرعت کد نویسی رو داشته.</p>
-
-                <p>فرم کلی دیتا کلاس ها به صورت زیر است:</p>
-
-                <div class="code-container">
-data class MyDataClass(val t0: T0, val t1: T1, ... , val tn: Tn){
-    ...
-}
-                </div>
-
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">بررسی کاربرد ها و ویژگی ها</p>
+                <p class="title">بررسی ویژگی ها</p>
 
-                <blockquote>یکی از کاربرد های مهم دیتا کلاس ها ایفا کردن نقش مدل در طراحی الگو است.</blockquote>
+                <blockquote></blockquote>
 
                 <p>همینطور که گفتیم کاتلین به صورت نیتیو برای ذخیره، نگهداری و استفاده از داده ها در زمان اجرای برنامه از دیتا کلاس پشتیبانی می کنه.</p>
-                <p>در طراحی الگو های MVC، MVP، MVVM و ... از این کلاس ها به عنوان کلاس مدل میتونیم استفاده کنیم.</p>
 
                 <p>در ادامه به بررسی ویژگی های این <a class="text-decoration-none" href="objects-and-classes.html">کلاس ها</a> می پردازیم.</p>
+
+
+                <p class="h5">لزوم تعریف حداقل یک پراپرتی در کانستراکتور اولیه</p>
 
                 <p>هنگام تعریف دیتا کلاس تمام پارامتر های کانستراکتور اولیه باید به صورت پراپرتی تعریف بشن و حداقل باید یک پراپرتی در <a class="text-decoration-none" href="objects-and-classes.html#sub2">کانستراکتور</a> اولیه تعریف کنیم.</p>
 
@@ -111,13 +115,14 @@ data class Contact(val name: String){
     ...
 }                </div>
 
+                <p class="h5">تابع equals در دیتا کلاس</p>
                 <p>اگر تمام پراپرتی های کانستراکتور اولیه دو دیتا کلاس باهم برابر باشن دو کلاس باهم برابرند:</p>
 
                 <div class="code-container">
 fun main(){
     val c0 = Contact("Fredrick" , 332144141)
-    var c1 = Contact("Fredrick", 441232141)
-    val c2 = Contact("Fredrick", 332144141)
+    var c1 = Contact("Fredrick", 332144141)
+    val c2 = Contact("Fredrick", 442321345)
 
     println("Are c0 and c1 equals? ${c0 == c1)")
     println("Are c0 and c2 equals? ${c2 == c0}")
@@ -127,31 +132,30 @@ fun main(){
 data class Contact(val name: String, val phone: Long)
                 </div>
 
+                <p class="h5">تابع hashCode</p>
+
                 <p>تابع hashCode در دیتا کلاس ها نیز تحت تاثیر پراپرتی های تعریف شده در کانستراکتور اولیه قرار داره</p>
 
-                <p>در دیتا کلاس ها toString به طور پیشفرض به فرم (ClassName(t0=value0, t1=value1,...,tn=valueN نمایش داده میشه؛ ClassName اسم کلاس و t0-tN اسم پراپرتی های تعریف شده در کانستراکتور اولیه هستند.</p>
 
+                <p class="h5">تابع toString</p>
+
+                <p>در دیتا کلاس ها <strong>toString</strong> به طور پیشفرض به فرم <strong>ClassName(t0=value0, t1=value1,..., tn=valueN)</strong> نمایش داده میشه؛ <strong>ClassName</strong> اسم کلاس و<strong> t0-tN</strong> اسم پراپرتی های تعریف شده در کانستراکتور اولیه هستند.</p>
+
+
+                <p class="h5">تابع copy</p>
                 <p>با تابع کپی میتونیم یک نمونه از دیتا کلاس رو به طور کامل یا در صورت نیاز با تغییر در بعضی از پراپرتی هاش به یک متغیر جدید کپی کنیم:</p>
-
 
                 <div class="code-container">
 fun main(){
 
     val c0 = Contact("Fredrick" , 332144141)
-    val c1 = Contact("Fredrick", 332144141)
-    var c2 = Contact("Fredrick", 442131455)
+    val c1 = c0.copy()
+    var c2 = c0.copy(name = "Joe", phone = 13214521)
 
     println(c0)
     println(c1)
     println(c2)
 
-    println("Are c0 and c1 equals? ${c0 == c1)")
-    println("Are c0 and c2 equals? ${c2 == c0}")
-    println("What about c1 and c0? ${c1 == c0}")
-
-    c2 = c0.copy(name = "Joe", phone = 13214521)
-
-    println(c2)
 }
 
 data class Contact(val name: String, val phone: Long){
@@ -161,9 +165,15 @@ data class Contact(val name: String, val phone: Long){
 }
                 </div>
 
-                <p> پراپرتی های تعریف شده در <strong>بدنه ی</strong> کلاس تاثیری در موارد بالا ندارن.</p>
+                <p> پراپرتی های تعریف شده در <strong>بدنه ی</strong> کلاس تاثیری در ویژگی یا عملکرد توابع بالا ندارن.</p>
 
-                <p>دیتا کلاس ها نمیتونن با <strong>abstract</strong> ، <strong>open</strong> ، <strong>sealed</strong> یا <strong>inner</strong> تعریف بشن!</p>
+
+                <div class="note">
+                    <p class="h6">توجه</p>
+                    <p>دیتا کلاس ها نمیتونن با <strong>abstract</strong> ، <strong>open</strong> ، <strong>sealed</strong> یا <strong>inner</strong> تعریف بشن!</p>
+                </div>
+
+
 
             </div>
 
