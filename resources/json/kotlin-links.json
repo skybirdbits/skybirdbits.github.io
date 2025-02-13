@@ -81,6 +81,10 @@
     {
       "subject": "کلاس های sealed",
       "href": "/article/kotlin/sealed-classes.html"
+    },
+    {
+      "subject": "کلاس های دیتا",
+      "href": "/article/kotlin/data-classes.html"
     }
   ]
 }
