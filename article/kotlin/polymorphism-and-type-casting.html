@@ -14,7 +14,7 @@
   <title>چند ریختی (Polymorphism) و کست کردن (Type Casting) در کاتلین</title>
 
   <meta name="og:title" content="چند ریختی (Polymorphism) و کست کردن (Type Casting) در کاتلین">
-  <meta name="og:description" content="">
+  <meta name="og:description" content="چند ریختی رکن سوم شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/polymirphism-and-type-casting.html">
@@ -73,7 +73,7 @@
           <p>در دو بخش قبل با <a class="text-decoration-none" href="/article/kotlin/objects-and-classes.html">کپسوله کردن (encapsulation)</a> و <a class="text-decoration-none" href="/article/kotlin/inheritance.html">وراثت (inheritance)</a> آشنا شدیم در این بخش میخوایم با رکن سوم شی گرایی یعنی چند ریختی (polymirphism) آشنا بشیم. و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) که با چند ریختی مرتبط هستند می پردازیم.</p>
 
 
-          <p>برای پرداختن به پیوند پویا (dynamic binding) و کست کردن (type casting) ابتدا لازمه با چند ریختی (polymirphism) در کاتلین آشنا بشیم.</p>
+          <p>برای پرداختن به پیوند پویا (dynamic binding) و کست کردن (type casting) ابتدا لازمه با چند ریختی (polymorphism) در کاتلین آشنا بشیم.</p>
 
         </div>
         <div class="subsection" id="sub1">
@@ -182,7 +182,7 @@ println(shape.toString())
 
           <p>جواب: بستگی به actual type داره.</p>
 
-          <p>زمان اجرا JVM از actual type شروع میکنه به بررسی تا به declared type برسه و به اولین پیاده سازی تابع که رسید بررسی رو متوقف و تابع رو اجرا میکنه. در بالا چون اولین پیاده سازی toString داخل Shape اتفاق افتاده همونو اجرا میکنه.</p>
+          <p>زمان اجرا JVM از actual type شروع میکنه به بررسی تا به declared type برسه و به اولین پیاده سازی تابع که رسید بررسی رو متوقف و تابع رو اجرا میکنه. در بالا چون اولین پیاده‌سازی toString داخل Shape اتفاق افتاده همونو اجرا میکنه.</p>
 
           <p class="h6">مثال:</p>
 
