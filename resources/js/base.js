@@ -4,6 +4,7 @@ const courseDataRepo = [
   "/resources/json/java-links.json",
   "/resources/json/kotlin-links.json",
   "/resources/json/android-links.json",
+  "/resources/json/linux-links.json",
   "/resources/json/web-links.json",
   "/resources/json/blog-links.json"
 ]

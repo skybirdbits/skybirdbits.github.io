@@ -1,0 +1,10 @@
+{
+  "id": "linux_chapters",
+  "title": "لینوکس",
+  "links": [
+    {
+      "subject": "معرفی لینوکس",
+      "href": "/article/linux/introduction.html"
+    }
+  ]
+}
