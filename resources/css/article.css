@@ -22,8 +22,6 @@
     padding: 4px 6px 4px 6px;
 }
 
-
-
 .code-container{
     border-radius: 4px;
     background: #eeeeee;
@@ -153,6 +151,15 @@
   font-size: 1.6em;
   font-weight: 500;
   margin-right: 8px;
+}
+
+.piece{
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    font-size: 1.11em;
+    font-weight:500;
+    margin-right:8px;
 }
 
 .scroll-top-container{

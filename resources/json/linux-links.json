@@ -5,6 +5,14 @@
     {
       "subject": "معرفی لینوکس",
       "href": "/article/linux/introduction.html"
+    },
+    {
+      "subject": "دستور ls",
+      "href": "/article/linux/list-directory-contents.html"
+    },
+    {
+      "subject": "دستور cd",
+      "href": "/article/linux/change-directory.html"
     }
   ]
 }

@@ -41,3 +41,7 @@ blockquote {
 .comment{
     color: #8c8c8c;
 }
+
+.shell-commands{
+    color: #006064;
+}

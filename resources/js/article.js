@@ -2,10 +2,11 @@ import {createCodeViewHead, createCodeWrap, createCodeTableView} from './ui.js';
 
 const keyword = /(?<!([^\s,(}]{1}|\/\/.*))(public|private|protected|void|return|static|instanceof|for|while|do|if|else|switch|case|override|fun|var|val|companion|data|in|infix|tailrec|inline|noinline|crossinline|reified|false|true|null|class|short|byte|int|long|double|float|boolean|throw|throws|try|catch|finally|final|static|interface|enum|abstract|import|this|super|new|package|yield|default)(?![\w\d]|[^\s)\{\(;]{1})/g;
 const string = /(?<!\/\/.*)(["']([^+]*)["'])|(["'](@\+.*)["'])/g;
-const className = /(?<![^\s./-<,(]|(\/\/.*))[A-Z]{1}[\w\d]*(?!([^\s.,>:("]){1})/g;
+const className = /((?<![^\s./-<,(]|(\/\/.*))([A-Z]{1}[\w\d]*)(?!([^\s.,>:("]){1}))/g;
 const digit = /(?<![^\s,(]|(\w\s))\d+(?![\w\d]|[^\s),;]{1})/g;
 const annotation = /(?<![^\s]{1})@[A-Z]{1}[a-zA-Z\d]*/g
 const comment = /(?<!(http{1}.*))\/\/.*/g
+const shellCommands = /(?<!([^\s,(}]{1}|\/\/.*))(ls|cd)(?![\w\d]|[^\s)\{\(;]{1})/g;
 
 const elements = document.querySelectorAll('.code-container');
 
@@ -60,6 +61,7 @@ function styleAllSensitiveWords(textLine) {
   textLine = styleSensitiveWords(textLine, digit, "digit")
   textLine = styleSensitiveWords(textLine, annotation, "annotation")
   textLine = styleSensitiveWords(textLine, comment, "comment");
+  textLine = styleSensitiveWords(textLine, shellCommands, "shell-commands")
   return textLine;
 }
 
