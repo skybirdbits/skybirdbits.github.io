@@ -7,7 +7,7 @@
     <meta content="IE=7" http-equiv="X-UA-Compatible">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
-    <meta content="به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن در این مطلب با اکسپشن ها در جاوا اشنا میشیم و همینطور مطالب برای کسایی که با کاتلین کد نویسی میکنند نیز مناسب است."
+    <meta content="به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن در این مطلب با عملکرد و نحوه ی استفاده از اکسپشن ها در جاوا اشنا میشیم."
           name="description">
 
     <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
@@ -16,7 +16,7 @@
     <title>اکسپشن (exception) ها در جاوا</title>
 
     <meta content="اکسپشن (exception) ها در جاوا" name="og:title">
-    <meta content="به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن در این مطلب با اکسپشن ها در جاوا اشنا میشیم و همینطور مطالب برای کسایی که با کاتلین کد نویسی میکنند نیز مناسب است."
+    <meta content="به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن در این مطلب با عملکرد و نحوه ی استفاده از اکسپشن ها در جاوا آشنا میشیم"
           name="og:description">
 
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image">
@@ -46,7 +46,7 @@
             </address>
 
             <figure class="figure figure-wrapper">
-                <img alt="" class="rounded figure-img" src=""/>
+                <img alt="اکسپشن ها در جاوا" class="rounded figure-img" src="/resources/image/java/cover_exceptions.png"/>
             </figure>
 
             <div class="toc">
@@ -63,7 +63,7 @@
 
                     <a class="list-group-item list-group-item-action" href="#sub4">تعریف کلاس اختصاصی اکسپشن</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub5">استفاده از کلیدواژه ی throws</a>
+                    <a class="list-group-item list-group-item-action" href="#sub5">کلیدواژه ی throws</a>
 
                     <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
 
@@ -87,7 +87,6 @@
 
 
                 <p>در زیر یک آرایه به طول ۶ تعریف کردیم؛ برنامه از کاربر میخواد شماره ی یکی از خونه های ارایه رو وارد کنه تا برنامه مقدار اون خونه رو نمایش بده.</p>
-                <p>اگه شماره خارج از تعداد خونه های ارایه باشه برنامه دچار خطای IndexOutOfBoundsException شده و متوقف میشه.</p>
 
                 <div class="code-container">
 public static void main(String[] args){
@@ -97,19 +96,15 @@ public static void main(String[] args){
     for(int i=0; i&lt;randomNumbers.length; i++)
         randomNumbers[i] = (int) (Math.random() * 100);
 
-    do{
-    try{
             System.out.print("Enter corresponding index: ")
             int index = input.nextInt();
             System.out.println("The value of corresponding index is: "+ randomNumbers[index];
 
-        }catch(IndexOutOfBoundsException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 }
                 </div>
 
+                <p>اگه شماره خارج از تعداد خونه های ارایه باشه برنامه دچار خطای IndexOutOfBoundsException شده و متوقف میشه.</p>
 
                 <p>فرض کنید میخوایم یک عدد رو به عدد دیگه تقسیم کنیم:</p>
 
@@ -152,7 +147,7 @@ public static int quotient(number0, number1){
                 </div>
 
 
-                <p>برای حل مشکل بالا یکی از راه حل ها اضافه کردن شرط بررسی صفر نبودن number1 است؛ این شرط از انداختن اکسپشن جلوگیری میکنه.</p>
+                <p>برای حل مشکل بالا یکی از راه حل ها اضافه کردن شرط بررسی صفر نبودن number1 است؛ این شرط از بیرون افتادن اکسپشن جلوگیری میکنه.</p>
 
                 <div class="code-container">
 public static void main(String[] args){
@@ -175,7 +170,7 @@ public static int quotient(number0, number1){
 }
                 </div>
 
-                <p>ااگه اکسپشنو بندازیم باید چکار کنیم تا برنامه متوقف نشه؟</p>
+                <p>حالا اگه اکسپشن بیوفته بیرون باید چکار کنیم تا برنامه متوقف نشه؟</p>
 
             </div>
 
@@ -183,7 +178,7 @@ public static int quotient(number0, number1){
                 <p class="title">کنترل کردن اکسپشن</p>
                 <blockquote>با استفاده از بلوک try-catch میتونیم یک اکسپشن رو کنترل و از متوقف شدن برنامه جلو گیری کنیم.</blockquote>
 
-                <p>اگه جایی از کد های برنامه یه اکسپشن بندازه بیرون؛ میتونیم اونو داخل بلوک try-catch قرار بدیم با این کار اکسپشن رو میگیریم و برنامه ادامه پیدا میکنه.</p>
+                <p>اگه جایی از کد های برنامه یه اکسپشن بیوفته بیرون؛ میتونیم اونو داخل بلوک try-catch قرار بدیم با این کار اکسپشن رو میگیریم و برنامه ادامه پیدا میکنه.</p>
 
                 <p class="piece">فرم کلی</p>
 
@@ -197,9 +192,9 @@ try{
 }
                 </div>
 
-                <p>بلوک catch شبیه متد (تابع) عمل می کنه؛ کلاس های داخل پرانتز catch همون پارامتر های catch است که هنگام افتادن اکسپشن در try بلوک catch صدا زده میشه و اکسپشن انداخته شده در try توسط catch به عنوان مقدار پارامتر گرفته میشه.</p>
+                <p>بلوک catch شبیه متد (تابع) عمل می کنه؛ کلاس های اکسپشن داخل پرانتز catch همون پارامتر های catch است که هنگام بیرون افتادن اکسپشن در try بلوک catch صدا زده میشه و اکسپشن انداخته شده در try توسط catch به عنوان مقدار پارامتر گرفته میشه.</p>
 
-                <p>اگه داخل بلوک try توسط متد یا کدی اکسپشن انداخته بشه؛ بلوک catch صدا زده میشه با catch اکسپشن رو میگیریم و داخل بلوک میتونیم اکسپشن رو کنترل کنیم و بعد از اجرا شدن کد های داخل بلوک catch کد های بعد از بلوک catch به اجرا در میاد.</p>
+                <p>اگه داخل بلوک try توسط متد یا کدی اکسپشن بیرون انداخته بشه؛ بلوک catch صدا زده میشه، اکسپشن رو میگیره و داخل بلوک میتونیم اکسپشن رو کنترل کنیم و بعد از اجرا شدن کد های داخل بلوک catch کد های بعد از بلوک به اجرا در میاد.</p>
 
                 <p>در مثال قبل میخوایم برنامه رو بعد از انداختن اکسپشن کنترل کنیم:</p>
 
@@ -326,7 +321,7 @@ public static int quotient(number0, number1){
 
                 <p>ساب کلاس های کلاس Exception از نظر نوع اکسپشن به دو دسته ی کلی تقسیم میشن:</p>
 
-                <p>1-اکسپشن های checked</p>
+                <p class="h5">1-اکسپشن های checked</p>
 
                 <div class="note">
                     <p class="h6">توجه</p>
@@ -339,7 +334,7 @@ public static int quotient(number0, number1){
 
 
 
-                <p>2-اکسپشن های unchecked</p>
+                <p class="h5">2-اکسپشن های unchecked</p>
                 <p>کلاس های unchecked-exception توسط کامپایلر قابل شناسایی نیستند و زمان اجرای برنامه در صورت بروز خطا اجرا میشن.</p>
                 <p>بر خلاف دسته ی اول، این کلاس ها به صورت آشکار نیازی به بلوک try-catch ندارن مگه اینکه خودمون از قبل بدونیم خطایی در کار است.</p>
                 <p>ساب کلاس های RuntimeException در این دسته قرار دارن.</p>
@@ -418,7 +413,7 @@ System.out.println("Perimeter of circle c0: " + c0.getPerimeter());
 
 System.out.println();
 
-//اختصاص دادن مقدار منفی به کانستراکتور Circle برای اجرای اکسپشن
+//اختصاص دادن مقدار منفی به کانستراکتور Circle برای بیرون انداختن اکسپشن
 CircleWithRadiusException c1 = new CircleWithRadiusException(-2);
 System.out.println("Radius of circle c1: " + c1.getRadius());
 System.out.println("Area of circle c1: " + c1.getArea());
@@ -500,7 +495,7 @@ fun readData(){
 
             <div class="navigator-container">
 
-                <a class="md-bt md-bt-light" href="">
+                <a class="md-bt md-bt-light" href="#">
             <span class="material-icons">
               navigate_next
             </span>
@@ -509,7 +504,7 @@ fun readData(){
             </span>
                 </a>
 
-                <a class="md-bt md-bt-light" href="">
+                <a class="md-bt md-bt-light" href="/article/java/static-keyword.html">
             <span class="hint">
               قبلی
             </span>
@@ -524,7 +519,20 @@ fun readData(){
                 <p>مطالب مرتبط</p>
                 <div>
                     <div>
-                        <a href="/article/kotlin/functions.html"></a>
+                        <a href="/article/java/selectors.html">دستورات شرطی در جاوا (سلکتورها)</a>
+                    </div>
+                    <div>
+                        <a href="/article/java/loops.html">حلقه ها در جاوا</a>
+                    </div>
+
+                    <div>
+                        <a href="/article/kotlin/selectors.html">دستورات شرطی (سلکتور ها) در کاتلین</a>
+                    </div>
+                    <div>
+                        <a href="/article/kotlin/functions.html">توابع در کاتلین</a>
+                    </div>
+                    <div>
+                        <a href="https://kotlinlang.org/docs/exceptions.html">مطالعه ی اکسپشن ها در وبسایت کاتلین</a>
                     </div>
                 </div>
             </div>
