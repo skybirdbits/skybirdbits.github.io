@@ -3,7 +3,11 @@
   "title": "جاوا",
   "links": [
     {
-      "subject": "دستورات شرطیا",
+      "subject": "انواع متغیر",
+      "href": "/article/java/type-variables.html"
+    },
+    {
+      "subject": "دستورات شرطی",
       "href": "https://skybirdbits.github.io/article/java/selectors.html"
     },
     {
