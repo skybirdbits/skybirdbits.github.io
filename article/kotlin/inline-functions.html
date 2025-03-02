@@ -96,71 +96,94 @@
 
           <p>به کد زیر دقت کنید</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun foo(block: () -&gt; Unit){
   println("Before")
   block()
   println("After")
 }
+                  </div>
+              </div>
           </div>
 
           <p>در بالا یک تابع مرتبه بالا داریم و یک <a class="text-decoration-none" href="/article/kotlin/anonymous-function-and-lambda.html">عبارت لامبدا</a> رو به عنوان پارامتر براش تعریف کردیم. اگه کد رو بخوایم کامپایل کنیم قبلش تو جاوا یه چیزی شبیه زیر میشه:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 public void foo(Function block){
   System.out.println("before");
   block.invoke();
   System.out.println("after");
 }
+                  </div>
+              </div>
           </div>
 
           <p>وقتی بخوایم تابعو صدا بزنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 foo(){
   println("Do something here")
 }
+                  </div>
+              </div>
           </div>
 
           <p>
           به چیزی شبیه زیر تو جاوا تبدیل میشه:
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 foo(new Function(){
   @Override
   public void invoke(){
     System.out.println("Do something here")
   }
 });
-
+                  </div>
+              </div>
           </div>
 
           <p>همینطور که ملاحظه کردید اگه بخوایم تابع foo رو به صورت معمولی ایجاد کنیم یک آبجکت از Function ایجاد میشه که حافظه رو اشغال میکنه.</p>
 
           <p>حالا تابع foo رو با استفاده از کلید واژه ی inline تعریف میکنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 inline fun foo(block: () -&gt; Unit){
   println("Before")
   block()
   println("After")
 }
+                  </div>
+              </div>
           </div>
 
           <p>وقتی تابعو مثل قبل صدا کنیم کامپایلر کد ها رو مثل زیر از تابع میندازه بیرون:
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 System.out.println("Before");
 block()
 System.out.println("After");
+                  </div>
+              </div>
           </div>
 
           <p>دیگه خبری از Function نیست و عبارت block به صورت تابع ایجاد شد؛ همین در بهبود کیفیت مخصوصا زمانی که حافظه رو با آبجکت های زیادی اشغال کرده باشیم میتونه کمک کنه.</p>
 
 
-          <p class="h5">نکات قابل توجه هنگام تعریف تابع خطی</p>
+          <p class="piece">نکات قابل توجه هنگام تعریف تابع خطی</p>
 
           <p>۱- از تعریف توابع بزرگ (به لحاظ زیاد بودن کد های داخل تابع) باید خودداری کرد.</p>
 
@@ -180,12 +203,16 @@ System.out.println("After");
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 inline fun foo(bar: (String) -&gt; Unit, noinline baz: (Int) -&gt; Unit){
 
   //Do something here
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>در بالا <strong>bar</strong> خطی و <strong>baz</strong> غیر خطی است.</p>
@@ -203,7 +230,9 @@ inline fun foo(bar: (String) -&gt; Unit, noinline baz: (Int) -&gt; Unit){
 
           <p>در زیر از return یک بار به صورت غیر محلی استفاده کردیم و یک بار به صورت محلی با تعریف برچسب <strong>op</strong> برای operator.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   val a = 5.0
   val b = 0.0
@@ -231,6 +260,8 @@ inline fun operateSquareNumbers(a: Double, b: Double, operator: (Double, Double)
 
   return operator(sqA, sqB)
 }
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -244,7 +275,9 @@ inline fun operateSquareNumbers(a: Double, b: Double, operator: (Double, Double)
 
           <p>فرض کنید تابع foo غیر خطی و تابع bar خطی باشه، میخوایم foo رو داخل bar صدا بزنیم و از پارامتر bar داخل foo استفاده کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun foo(executor: () -&gt; Unit){
   executor()
 }
@@ -257,18 +290,23 @@ inline fun bar(crossinline block: (String) -&gt; Unit){
     block("From noinline function")  
   }
 }
-  
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 inline fun foo(crossinline body: () -&gt; Unit) {
     val bar = object: Runnable {
         override fun run() = body()
     }
     // ...
 }
+                  </div>
+              </div>
           </div>
 
           <p>در مثال بالا یک object از نوع Runnable داخل foo تعریف کردیم و body رو داخل آبجکت صدا زدیم.</p>
@@ -289,9 +327,13 @@ inline fun foo(crossinline body: () -&gt; Unit) {
 
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 // Error            
 fun &lt;T&gt; Any.instanceOf() = this is T
+                  </div>
+              </div>
           </div>
 
           <p>
@@ -302,7 +344,9 @@ fun &lt;T&gt; Any.instanceOf() = this is T
           <p>مثال:</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 inline fun &lt;reified T&gt; Any.instanceOf() = this is T
 
 fun main(){
@@ -312,6 +356,8 @@ fun main(){
 
 
   println("myInt is Int? ${myInt.instanceOf&lt;Int&gt;()}")
+                  </div>
+              </div>
           </div>
         </div>
 
@@ -324,20 +370,28 @@ fun main(){
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val foo: Foo
     inline get() = Foo()
 
 var bar: Bar
     inline set(v) { ... }
+                  </div>
+              </div>
           </div>
 
           <p>همچنین میتونیم کل property رو خطی کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 inline val foo: Foo 
   get() = Foo()
   set(v){...}
+                  </div>
+              </div>
           </div>
 
           <p>به پراپرتی که در مثال دیدید property های خطی در کاتلین میگیم.</p>

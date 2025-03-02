@@ -87,41 +87,52 @@
                 <p>
                     فرض کنید تو جاوا تابعی رو صدا میزنیم اگه مقداریو برگردونه میتونیم به متغیر اختصاص بدیم:
                 </p>
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 private String myMethod(){
     return "This is a result type of String"
 }
 
 //correct
 String result = myMethod();
+                        </div>
+                    </div>
                 </div>
 
                 <p>
                     اگه مقداریو بر نگردونه چیزی رو نمیتونیم به متغیر اختصاص بدیم و دچار خطای کامپایل میشیم:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 private void myMethod(){
     ...
 }
 
 //compile error
 String result = myMethod()
+                        </div>
+                    </div>
                 </div>
 
                 <p> در کاتلین void هم یک مقدار داره از نوع Unit :</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 private fun myMethod(){
 ...
 }
 
 //correct
 val result = myMethod()
+                        </div>
+                    </div>
                 </div>
                 <p>
                دونستن این موضوع شاید به درک بهتر عبارت لامبدا (Lambda Expression) و توابع بی نام (Anonymous Function) کمک کنه.
-               
                </p>
 
             </div>
@@ -158,20 +169,24 @@ val result = myMethod()
                 اگه بخوایم عبارت پارامتر داشته باشه به صورت زیر براش پارامتر تعریف میکنیم:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myLambda: (T0, T1 , ... , Tn) -&gt; Type = {
     t0, t1, ... tn -&gt;
     ...
     type
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>
-                در بالا T0 , T1 ... Tn پارامتر هاییست که میخوایم عبارت داشته باشه.
+                در بالا T0, T1, ..., Tn پارامتر هاییست که میخوایم عبارت داشته باشه.
                 </p>
 
                 <p>
-                t0, t1, ...,tn اسامی دلخواهیه که به پارامتر ها اختصاص میدیم و داخل {} از پارامتر ها استفاده میکنیم.
+                t0, t1, ..., tn اسامی دلخواهیه که به پارامتر ها اختصاص میدیم و داخل {} از پارامتر ها استفاده میکنیم.
                 </p>
 
                 <p>
@@ -182,22 +197,30 @@ val myLambda: (T0, T1 , ... , Tn) -&gt; Type = {
                     سپس عبارتو مانند تابع معمولی به صورت زیر صدا میزنیم:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val t0 = T0()
 val t1 = T1()
 ...
 val tn = Tn()
 val type = myLambda(t0, t1, ..., tn)
+                        </div>
+                    </div>
                 </div>
 
                 <p>
                         مثال:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myLambda: () -&gt; String = {
     "Hello From Lambda"
 }
+                        </div>
+                    </div>
                 </div>
 
 
@@ -209,8 +232,12 @@ val myLambda: () -&gt; String = {
                     صدا زدن عبارت به صورت تابع:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val result: String = myLambda()
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -218,10 +245,14 @@ val result: String = myLambda()
                 </p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myLambda: (String) -&gt; String = {
     it -&gt; "Hello $it, From Lambda!"
 }
+                        </div>
+                    </div>
                 </div>
 
 
@@ -234,21 +265,29 @@ val myLambda: (String) -&gt; String = {
                 </p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val name = "Joe"
 val result: String = myLambda(name)
 println(result)
+                        </div>
+                    </div>
                 </div>
 
                 <p>
                         مثال:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myLambda: (String , Int) -&gt; String = {
     name , age -&gt;
     "My name is $name, I'm $age years old, this is a message from lambda expmression"
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -266,14 +305,18 @@ val myLambda: (String , Int) -&gt; String = {
                     صدا زدن عبارت به صورت تابع:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val name = "Joe"
 val age = 24
 val result: String = myLambda(name, age)
 println(result)
+                        </div>
+                    </div>
                 </div>
 
-                <p class="h5">
+                <p class="piece">
                     برچسب زدن به عبارت لامبدا:
                 </p>
 
@@ -285,10 +328,14 @@ println(result)
                     میتونیم به مقداری که برای عبارت تعریف میکنیم برچسب بزنیم تا هنگام بازگرداندن نتیجه به صورت آشکارمشخص کنیم میخواهیم نتیجه رو از داخل مقدار عبارت برگردونیم:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myLambda: () -&gt; String = mylambda@{
     return@mylambda "Hello From Lambda"
 }
+                        </div>
+                    </div>
                 </div>
 
 
@@ -321,18 +368,26 @@ val myLambda: () -&gt; String = mylambda@{
                     تعریف تابع:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myAnonymous: () -&gt; Unit = fun(){
   println("Hello From Anonymous")
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>
                     صدا زدن تابع:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 myAnonymous()
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -342,19 +397,27 @@ myAnonymous()
                 <p>
                     تعریف تابع:
                 </p>
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myAnonymous: (String) -&gt; String = fun(name: String): String{
 
     return "Hello $name from Anonymous"
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>صدا زدن تابع:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val name = "Joe"
 val message = myAnonymous(name)
 println(message)
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -364,21 +427,29 @@ println(message)
                 <p>
                     تعریف تابع:
                 </p>
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val myAnonymous: (String, Int) -&gt; String = fun(name: String, age: Int): String {
 
    return "Hello my name is $name, I'm $age years old this is a message from anonymous"
 
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>صدا زدن تابع:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val name = "Joe"
 val age = 24
 val message = myAnonymous(name , age)
 println(message)
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -391,7 +462,9 @@ println(message)
 
               <p>در زیر یک تابع تعریف کردیم که بررسی میکنه یک رقم در داخل استرینگ وجود داره یا خیر.</p>
 
-              <div class="code-container">
+              <div class="sample">
+                  <div class="snippet-container">
+                      <div class="snippet Kotlin">
 val containsDigit: String.(Int) -&gt; Boolean = {
   digit -&gt;
 
@@ -427,12 +500,16 @@ fun main(){
 
   println("s contains 1? ${s.containsDigit(1)}")
 }
+                      </div>
+                  </div>
               </div>
 
               <p>مثال:</p>
               <p>در مثال زیر یک عبارت بدون پارامتر تعریف میکنیم که بررسی میکنه طول یک String زوج است یا خیر.</p>
 
-              <div class="code-container">
+              <div class="sample">
+                  <div class="snippet-container">
+                      <div class="snippet Kotlin">
 val isLengthEven: String.() -&gt; Boolean {
   (length % 2) == 0
 }
@@ -442,13 +519,17 @@ fun main(){
   val even = s.isLengthEven()
   println("Is $s length even? $even")
 }
+                      </div>
+                  </div>
               </div>
 
       <p>تابع بی نام هم مانند عبارت لامبدا میتونه کلاس receiver داشته باشه.</p>
 
       <p>مثال:</p>
 
-      <div class="code-container">
+      <div class="sample">
+          <div class="snippet-container">
+              <div class="snippet Kotlin">
 val divide = fun Int.(other: Int): Int{
   return this / other
 }
@@ -460,6 +541,8 @@ fun main(){
   val result = a.divide(b)
 
   println("$a divided by $b equals $result")
+              </div>
+          </div>
       </div>
               
             </div>

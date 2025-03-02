@@ -70,7 +70,9 @@
         <p>هنگامی که یک اینترفیس رو توسط یک کلاس پیاده‌سازی میکنیم گاهی نیاز به همون پیاده‌سازی در کلاس دیگه داریم برای جلوگیری از دوباره نویسی از الگوی delegation استفاده میکنیم </p>
         <p>با این روش به کلاس جدید وکالت استفاده از توابع و پراپرتی های public پیاده‌سازی شده در یک کلاس دیگه رو می دیم.</p>
 
-        <div class="code-container">
+        <div class="sample">
+          <div class="snippet-container">
+            <div class="snippet Kotlin">
 fun main(){
   val audioP = AudioPlayer()
   val videoP = VideoPlayer(audioP)
@@ -103,14 +105,17 @@ class AudioPlayer(): BasePlayer{
 class VideoPlayer(b: BasePlayer): BasePlayer by b{
   var isFullScreen: Boolean = false
 }
+            </div>
+          </div>
         </div>
 
 
         <p>میتونیم توابع یا پراپرتی هایی رو که به وکالت گرفتیم بازنویسی کنیم</p>
         <p>در مثال زیر برای خلاصه کردن از نوشتن قسمت هایی از کد بالا خودداری کردیم.</p>
 
-        <div class="code-container">
-
+        <div class="sample">
+          <div class="snippet-container">
+            <div class="snippet Kotlin">
           ...
 
 interface BasePlayer{
@@ -127,6 +132,8 @@ class VideoPlayer(b: BasePlayer): BasePlayer by b {
   override val codecType: String = "H265"
           ...
 }
+            </div>
+          </div>
         </div>
 
         <div class="note">

@@ -165,14 +165,18 @@
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun squareEven(a: Int): Int{
   if(a % 2 != 0) return -1
 
   val square = a * a
 
   return square
-}             
+}
+                  </div>
+              </div>
           </div>
 
           <p>در مثال بالا اگه عدد زوج نباشه مقدار -1 بر گردونده میشه و ادامه ی کد اجرا نمیشه.</p>
@@ -181,13 +185,17 @@ fun squareEven(a: Int): Int{
 
           <p>برای صدا زدن تابع کافیه اسم تابعو با پارامتر هایی که براش تعریف کردیم بنویسیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var t0: T0 = ...            
 val t1: T1 = ...
 ...
 var tn: Tn = ...
 
 val returnedValue: R = myFunction(t0, t1, ..., tn)
+                  </div>
+              </div>
           </div>
 
 <p>مثال:</p>
@@ -195,7 +203,9 @@ val returnedValue: R = myFunction(t0, t1, ..., tn)
 <p>در زیر یک تابع با modifier پیشفرض public مقدار maximum بین دو عددو بر میگردونه.</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){            
   val number0 = 34
   val number1 = 48
@@ -210,15 +220,19 @@ fun main(){
 //تعریف تابع
 fun max(a: Int, b: Int): Int {
   return if(a &lt; b) a else b
-}       
+}
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تعریف overloading</p>
+          <p class="piece">تعریف overloading</p>
           <p>وقتی دو یا چند تابع هم نام با پارامتر های متفاوت تعریف کنیم بهش میگیم overloading</p>
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
  fun max(a: Int, b: Int): Int {
   return if(a &lt; b) a else b
 }
@@ -230,6 +244,8 @@ fun max(a: Double, b: Double): Double {
 fun max(a: Long, b: Long): Long {
   return if(a &lt; b) a else b
 }
+                  </div>
+              </div>
           </div>
 
           <p>در بالا تابع max رو با تغییر دادن نوع پارامتر ها overload کردیم.</p>
@@ -248,15 +264,21 @@ fun max(a: Long, b: Long): Long {
 
           <p>تعریف تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun hello(name: String = "World"): String{
   return "Hello $name"
-}   
+}
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   val helloWorld = hello()
  
@@ -266,33 +288,43 @@ fun main(){
   
   println(helloKotlin)
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">نوشتن اسم پارامتر به صورت اشکار هنگام صدا زدن تابع:</p>
+          <p class="piece">نوشتن اسم پارامتر به صورت آشکار هنگام صدا زدن تابع:</p>
 
-          <p>بعد از صدا زدن تابع هنگامی که بخوایم مقداری به پارامتر اختصاص بدیم، میتونیم اسم پارامتر رو به صورت اشکار بنویسیم.</p>
+          <p>بعد از صدا زدن تابع هنگامی که بخوایم مقداری به پارامتر اختصاص بدیم، میتونیم اسم پارامتر رو به صورت آشکار بنویسیم.</p>
 
           <p>مثال:</p>
 
           <p>تعریف تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun multiply(number1: Double, number2: Double): Double{
 
   return number1 * number2
-} 
+}
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val mult = multiply(number1 = 78.3, number2 = 36.0)
 println("Multiplication of 78.3 and 36 is $mult")
+                  </div>
+              </div>
           </div>
 
           <p class="h5">۳- استفاده از کلیدواژه ی vararg هنگام تعریف پارامتر:</p>
 
-          <p><strong>توابع arrayOf ، listOf ، asList و ... با این روش پیاده سازی شدن.</strong></p>
+          <p><strong>توابع arrayOf ، listOf ، asList و ... با این روش پیاده‌سازی شدن.</strong></p>
 
           <p>با استفاده از کلیدواژه ی <strong>vararg</strong> برای پارامتر، هنگام صدا زدن تابع میتونید چندین مقدار به پارامتر اختصاص بدید.</p>
 
@@ -314,7 +346,7 @@ println("Multiplication of 78.3 and 36 is $mult")
             <p class="h6">توجه:</p>
 
             <p>
-          معمولا از این کلیدواژه در اخرین پارامتر استفاده میکنن. اگه از این کلیدواژه در اخرین پارامتر استفاده نشه هنگام صدا زدن تابع و اختصاص دادن مقدار به پارامتر باید اسم پارامتر به صورت اشکار نوشته بشه.
+          معمولا از این کلیدواژه در اخرین پارامتر استفاده میکنن. اگه از این کلیدواژه در اخرین پارامتر استفاده نشه هنگام صدا زدن تابع و اختصاص دادن مقدار به پارامتر باید اسم پارامتر به صورت آشکار نوشته بشه.
             </p>
 
           </div>
@@ -325,7 +357,9 @@ println("Multiplication of 78.3 and 36 is $mult")
 
          <p>تعریف تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun findAverage(vararg numbers: Double): Double{
   
   var sum = 0
@@ -333,14 +367,20 @@ fun findAverage(vararg numbers: Double): Double{
 
   return sum / numbers.size
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val average = findAverage(4, 7, 2, 9)
 
 println("Average is $average")
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
@@ -349,8 +389,10 @@ println("Average is $average")
 
           <p>تعریف تابع:</p>
 
-          <div class="code-container">
-fun countASCIIOccurances(asciiCode: Int, vararg strings: String): Int{
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
+fun countASCIIOccurrences(asciiCode: Int, vararg strings: String): Int{
 
   var count = 0
 
@@ -360,16 +402,22 @@ fun countASCIIOccurances(asciiCode: Int, vararg strings: String): Int{
 
   return count
 }
+                  </div>
+              </div>
           </div>
           
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val asciiCode = 65
 
-val asciiCodeOcuurances = countASCIIOccurances(asciiCode, "Emilly, "Adam", "Billy", "Michael")
+val asciiCodeOccurrences = countASCIIOccurrences(asciiCode, "Emily, "Adam", "Billy", "Michael")
 
-println("ASCII code $asciiCode has occurances")
+println("ASCII code $asciiCode has occurrences")
+                  </div>
+              </div>
           </div>
 
 
@@ -387,22 +435,34 @@ println("ASCII code $asciiCode has occurances")
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun multiply(number1: Double, number2: Double): Double = number1 * number2
+                  </div>
+              </div>
           </div>
 
           <p>میتونیم از نوشتن نوع کلاسی که تابع برمیگردونه صرف نظر کنیم کامپایلر به صورت خودکار تشخصی میده چه نوعی تابع قراره برگردونه.</p>
 
           <p>مثال:</p>
 
-          <div class="code-container">
-fun multiply(number1: Double, number2: Double) = number1 * number2            
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
+fun multiply(number1: Double, number2: Double) = number1 * number2
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun max(a: Double, b: Double) = if(a &gt; b) a else b
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -419,13 +479,17 @@ fun max(a: Double, b: Double) = if(a &gt; b) a else b
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun hello(): Unit{
  
   println("Hello World")
 
   return Unit
 }
+                  </div>
+              </div>
           </div>
 
           <p>برای تعریف تابع void در کاتلین میتونیم از نوشتن Unit صرف نظر کنیم.
@@ -438,23 +502,33 @@ fun hello(): Unit{
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun hello(){
   println("Hello World")
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun hello(name: String = "World!"){
   println("Hello $name")
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun printSquareEven(n: Int){
   if(n % 2 != 0){
     println("Not Even Number")
@@ -464,11 +538,15 @@ fun printSquareEven(n: Int){
   println("Square of number $n is $square")
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun printGrade(score: Double){
   if(score &gt;= 90){
     println('A')
@@ -482,6 +560,8 @@ fun printGrade(score: Double){
     println('F')
   }
 }
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -508,22 +588,30 @@ fun printGrade(score: Double){
 
           <p>فرم کلی:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 infix fun myInfixFunction(t: T): R {
   ...
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
           <p>میتونیم به یکی از دو روش زیر تابع رو صدا بزنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 a myInfixFunction b
 
 //Or
 
 a.myInfixFunction(b)
+                  </div>
+              </div>
           </div>
 
           <p>متغیر a رسیور (receiver) و متغیر b مقدار اختصاصی به پارامتر است.</p>
@@ -539,12 +627,16 @@ a.myInfixFunction(b)
 
           <p>مثال:</p>
 
-          <p>در زیر یک تابع infix تعریف میکنیم تا دوتا String  رو به هم زنجیر کنه: </p>
+          <p>در زیر یک تابع infix تعریف میکنیم تا دوتا String رو به هم زنجیر کنه: </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 infix fun String.chain(other: String): String {
   return this.plus(other)
 }
+                  </div>
+              </div>
           </div>
 
           <div class="note">
@@ -559,10 +651,14 @@ infix fun String.chain(other: String): String {
 
           <p>صدا زدن تابع</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val s = "Hello!" 
 val chained = s chain " I have been chained to hello"
 println(chained)
+                  </div>
+              </div>
           </div>
 
 
@@ -570,31 +666,43 @@ println(chained)
 
           <p>تابع زیر مانند until عمل میکنه با این تفاوت، بزرگترین عدد هم تو عمل تکرار به حساب میاد.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 infix fun Int.to(to: Int): IntRange{
 
   if(to &lt;= Int.MIN_VALUE) return IntRange.EMPTY
 
   return this..to
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
          
           <p>تابع زیر معادل downTo برای حلقه ی for عمل میکنه با این تفاوت کوچکترین عدد تو عمل تکرار حساب نمیشه. </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 infix fun Int.downUntil(to: Int): IntProgression{
   
   return IntProgression.fromClosedRange(this, (to + 1) , -1)
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
-for(i in 100 downUntil 0) println(i)            
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
+for(i in 100 downUntil 0) println(i)
+                  </div>
+              </div>
           </div>
 
 
@@ -629,10 +737,14 @@ for(i in 100 downUntil 0) println(i)
 
           <p>فرم کلی:</p>
           
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun &lt;E&gt; myFunction(e: E): Type&lt;E&gt;{
     ...
 }
+                  </div>
+              </div>
           </div>
 
           <p>E میتونه هر کلاسی باشه کافیه هنگام صدا زدن تابع نوع کلاسو مشخص کنیم.</p>
@@ -642,7 +754,9 @@ fun &lt;E&gt; myFunction(e: E): Type&lt;E&gt;{
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun &lt;E&gt; myList(vararg e: E): MutableList&lt;E&gt;{
 
   val list = MutableList&lt;E&gt;()
@@ -650,13 +764,19 @@ fun &lt;E&gt; myList(vararg e: E): MutableList&lt;E&gt;{
 
   return list
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -679,7 +799,9 @@ val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
 
           <p>محاسبه ی فیبوناچی به روش tail recursion.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 tailrec fun printFib(n: Int, a: Int = 0, b: Int = 1){
   if(n == 0){
     print("$a ")
@@ -688,6 +810,8 @@ tailrec fun printFib(n: Int, a: Int = 0, b: Int = 1){
     printFib(n - 1, b , a + b)
   }
 }
+                  </div>
+              </div>
           </div>
 
           <p>فرض کنید n = 3. برای n=3 ، a = 0 و b = 1 سپس تابع در داخل خودش صدا زده میشه و n = 2 میشه a = b و b = a + b میشه و به همین منوال این عمل تکرار میشه تا n به 0 برسه در اینجا صدا زدن تابع متوقف میشه.</p>
@@ -695,8 +819,12 @@ tailrec fun printFib(n: Int, a: Int = 0, b: Int = 1){
           <p>مثال:</p>
           <p>محاسبه ی فاکتوریل به روش tail recursion.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(n -1 , n * result)
+                  </div>
+              </div>
           </div>
 
           <p>فرض کنید میخوایم 5! حساب کنیم در اینصورت n=5 و result=5*4*3*2*1.</p>
@@ -716,15 +844,19 @@ tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(
 
           <p>میتونیم داخل یک تابع دیگه تعریف کنیم که بهش میگیم لوکال فانکشن (Local Function).</p>
 
-          <p class="h5">تاپ لول فانکشن:</p>
+          <p class="piece">تاپ لول فانکشن:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun myFunction(){
   ...
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">ممبر فانکشن:</p>
+          <p class="piece">ممبر فانکشن:</p>
           <div class="code-container">
 class MyClass{
   fun myFunction(){
@@ -733,7 +865,7 @@ class MyClass{
 }
           </div>
 
-          <p class="h5">لوکال فانکشن:</p>
+          <p class="piece">لوکال فانکشن:</p>
 
 
           <p>لوکال فانکشن (تابع داخلی) رو فقط داخل تابعی که تعریف کردیم میشه صدا زد.</p>
@@ -742,8 +874,10 @@ class MyClass{
 
           <p>فرم کلی:</p>
 
-          <div class="code-container">
-fun outterFunction(...): R0{
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
+fun outerFunction(...): R0{
   
   ...
   
@@ -759,12 +893,15 @@ fun outterFunction(...): R0{
 
   ...
 }
-
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun myFunction(){
   val a = 23
   val b = 54
@@ -775,12 +912,16 @@ fun myFunction(){
 
   printNumbers()
 }
+                  </div>
+              </div>
           </div>
 
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
   
   var a: Int = p0
@@ -805,9 +946,11 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
   }
 
 }
+                  </div>
+              </div>
           </div>
 
-        </div>
+          </div>
 
         <div class="subsection" id="sub9">
           <p class="title">خلاصه</p>

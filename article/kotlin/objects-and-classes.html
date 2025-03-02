@@ -7,8 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کاتلین، آبجکت، کلاس، آبجکت همراه، متغیر های عضو کلاس، پراپرتی، تابع، توابع، شی گرایی، شی گرایی کاتلین، اشیا کاتلین، کلیدواژه ی this کاتلین، ایجاد آبجکت در کاتلین، class در کاتلین، companion object در کاتلین، companion object، توابع عضو کلاس، متغیر های استاتیک، اعضای استاتیک، سازنده کاتلین، کانستراکتور کاتلین، constructor کاتلین، کانستراکتور اولیه، کانستراکتور ثانویه، property کاتلین، بکینگ فیلد، بکینگ پراپرتی، backing field کاتلین، backing property کاتلین، ساختار کلاس کاتلین">
-
   <meta name="description" content="در این مقاله یک توضیح کامل از کلاس ها و آبجکت ها در کاتلین داریم؛ سازنده (constructor) ها، متغیر ها و توابع داخل کلاس رو بررسی کرده و به اعضای ابجکت همراه میپردازیم و در آخر گفته ها رو با مثال بیان میکنیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -144,14 +142,18 @@ class Name{
           <p>در کاتلین اولین کانستراکتور که هنگام تعریف کلاس بعد از اسم کلاس وجود داره به <strong>کانستراکتور اولیه</strong> و بقیه کانستراکتور ها به <strong>کانستراکتور های ثانویه</strong>  معروف هستند.</p>
 
          
-          <p class="h5">کانستراکتور اولیه</p>
+          <p class="piece">کانستراکتور اولیه</p>
 
           <p>با استفاده از کلیدواژه ی constructor بعد از اسم کلاس میتونیم سازنده ی اولیه در کاتلین ایجاد کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class MyClass constructor(){
   ...
 }
+                  </div>
+              </div>
           </div>
 
          <p>سازنده (constructor) که در بالا میبینیم به عنوان کنستراکتور اولیه (primary constructor) شناخته میشه. یک کانستراکتور اولیه و چند کانستراکتور ثانویه در کاتلین میتونیم داشته باشیم.</p>
@@ -159,15 +161,21 @@ class MyClass constructor(){
 
             <p>میشه از <a class="text-decoration-none" href="/article/kotlin/access-modifiers.html">کلیدواژه های سطح دسترسی</a> در هر کانستراکتوری که خواستیم استفاده کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class MyClass private constructor(){
 
 }
+                  </div>
+              </div>
           </div>
             
           <p>        بدنه ی کنستراکتور اولیه بلوک init است برای کانستراکتور اولیه در کاتلین هرچندتا بلوک init خواستیم میتونیم تعریف کنیم که به ترتیب موقع اجرای برنامه کد های داخلشون اجرا میشن.</p>
 
-         <div class="code-container">
+         <div class="sample">
+             <div class="snippet-container">
+                 <div class="snippet Kotlin">
 class MyClass(){
 
   init{
@@ -183,34 +191,46 @@ class MyClass(){
   }
 
 }
+                 </div>
+             </div>
          </div>
 
           <p>میتونیم داخل بدنه ی کانستراکتور پارامتر های کانستراکتور رو به متغیر های کلاس اختصاص بدیم.</p>
 
          <p>اگه قبل از کانستراکتور اولیه نخوایم کلیدواژه ی سطح دسترسی تعریف کنیم یا annotation بزاریم میتونیم از نوشتن کلید واژه ی constructor صرف نظر کنیم:</p>
 
-         <div class="code-container">
+         <div class="sample">
+             <div class="snippet-container">
+                 <div class="snippet Kotlin">
 class MyClass <s>constructor</s>(){
   ...
 }
+                 </div>
+             </div>
          </div>
 
-            <p>در یک کلاس کانستراکتور اولیه به طور پیشفرض وجود داره حتی اگه اشکارا نوشته نشه.</p>
+            <p>در یک کلاس کانستراکتور اولیه به طور پیشفرض وجود داره حتی اگه آشکارا نوشته نشه.</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 class MyClass{
   
 }
+                    </div>
+                </div>
             </div>
 
-            <p class="h5">کانستراکتور های ثانویه</p>
+            <p class="piece">کانستراکتور های ثانویه</p>
             <p>کانستراکتور های ثانویه (Secondary Constructors) رو داخل کلاس و مانند کانستراکتور اولیه با استفاده از کلیدواژه ی constructor تعریف میکنیم.</p>
 
             <p>در تعریف کانستراکتور های ثانویه استفاده از کلیدواژه ی constructor همیشه لازمه.</p>
 
             <p>بدنه ی کانستراکتور های ثانویه دنباله ی خودشونه و بلوکی مثل init براشون وجود نداره.</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 class TV{
 
   constructor(size: Float, panel: String){
@@ -218,6 +238,8 @@ class TV{
   }
 
 }
+                    </div>
+                </div>
             </div>
 
 
@@ -225,7 +247,9 @@ class TV{
 
             <p>به بیان دیگه کانستراکتور اولیه به صورت پیشفرض قبل از سایر کانستراکتور ها صدا زده میشه، اگه کانستراکتور اولیه آشکارا تعریف شده باشه، باید با استفاده از کلیدواژه ی this بعد از پرانتز آشکارا کانستراکتور اولیه رو قبل از کانستراکتور ثانویه صدا بزنیم.</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 //تعریف آشکار کانستراکتور اولیه بدون پارامتر      
 class MyClass(){
   //صدا زدن کانستراکتور اولیه با کلیدواژه ی this
@@ -234,9 +258,13 @@ class MyClass(){
   }
 
 }
+                    </div>
+                </div>
             </div>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 class TV(size: Float){
 
   constructor(size: Float, panel: String): this(size){
@@ -244,11 +272,15 @@ class TV(size: Float){
   }
 
 }
+                    </div>
+                </div>
             </div>
 
             <p>میتونیم پارامتر های یکی از کانستراکتور های ثانویه که وکالت کانستراکتور اولیه رو به عهده داره با کلیدواژه ی this در کانستراکتور جدید مقداردهی کنیم، بدین ترتیب وکالت <strong>غیر مستقیم</strong> کانستراکتور اولیه رو به کانستراکتور جدید دادیم.</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 class TV(size: Float){
 
   constructor(size: Float, panel: String): this(size){
@@ -260,10 +292,12 @@ class TV(size: Float){
   }
   
 }
+                    </div>
+                </div>
             </div>
 
 
-            <p class="h5">ایجاد نمونه (آبجکت) از کلاس</p>
+            <p class="piece">ایجاد نمونه (آبجکت) از کلاس</p>
 
             <p>برای ایجاد نمونه از کلاس کافیه یکی از کانستراکتور های کلاسو صدا بزنیم.</p>
 
@@ -273,7 +307,9 @@ class TV(size: Float){
 
             <p>میخوایم یک کلاس به اسم TV تعریف کنیم و ازش سه تا نمونه در تابع main ایجاد کنیم. در این مثال سه تا سازنده (کانستراکتور) در کلاس TV تعریف میکنیم و هر سه کانستراکتور ها رو به ترتیب در تابع main صدا میزنیم.</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 fun main(){
   val tv0 = TV(21f)
   val tv1 = TV(42.5f, "LCD")
@@ -293,6 +329,8 @@ class TV(size: Float){
   }
   
 }
+                    </div>
+                </div>
             </div>
 
 
@@ -307,7 +345,9 @@ class TV(size: Float){
 
           <p>میتونیم به پراپرتی ها مقدار اولیه بدیم یا با پارمتر های کانستراکتور مقداردهیشون کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(size: Float){
    val size: Float
    var isOn: Boolean = false
@@ -317,36 +357,48 @@ class TV(size: Float){
     }
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>در کاتلین بدون نیاز به بلوک init میتونیم پارامتر های <strong>کانستراکتور اولیه</strong> رو مستقیم به پراپرتی ها اختصاص بدیم. </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(size: Float){
   
   private val _size = size
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p>همینطور میتونیم پراپرتی ها رو مستقیم  بجای پارامتر های <strong>کانستراکتور اولیه</strong> تعریف کنیم، کاتلین به صورت خودکار پارامتر های لازم رو تعریف میکنه و به پراپرتی ها اختصاص میده.</p>
+          <p>همینطور میتونیم پراپرتی ها رو مستقیم به‌جای پارامتر های <strong>کانستراکتور اولیه</strong> تعریف کنیم، کاتلین به صورت خودکار پارامتر های لازم رو تعریف میکنه و به پراپرتی ها اختصاص میده.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(private val size: Float){
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">توابع setter و getter پراپرتی ها</p>
+          <p class="piece">توابع setter و getter پراپرتی ها</p>
 
           <p>برای هر پراپرتی دو تابع setter و getter در کاتلین به صورت پیشفرض تعریف شده وقتی بخوایم مقدار جدیدی به پراپرتی بدیم تابع set به طور پنهان صدا زده میشه؛ وقتی بخوایم از پراپرتی استفاده کنیم تابع get به طور پنهان صدا زده میشه.</p>
 
 
-          <p class="h5">تعریف آشکار setter و معرفی backing field</p>
+          <p class="piece">تعریف آشکار setter و معرفی backing field</p>
 
           <p>میتونیم تابع setter رو برای هر پراپرتی به طور <strong>آشکار</strong> پیاده سازی کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
  class TV{
   
   var channel: Int = 1
@@ -356,26 +408,34 @@ class TV(private val size: Float){
       }
     }
 
-}           
+}
+                  </div>
+              </div>
           </div>
 
           <p>در بالا value یک اسم دلخواه برای پارامتر تابع set است و field داخل تابع set به طور خودکار توسط کاتلین ایجاد شده و مقدار پراپرتی در حافظه رو نگه داری میکنه. بهش بکینگ فیلد (backing field) میگیم.</p>
 
           <p>میتونیم با استفاده از کلیدواژه ی private از دسترسی به تابع setter در بیرون کلاس جلوگیری کنیم.</p>
           
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(){
   var isOn: Boolean = false
     private set
       
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تعریف آشکار getter</p>
+          <p class="piece">تعریف آشکار getter</p>
 
           <p>میتونیم تابع getter رو برای  هر متغیری که خواستیم، به طور <strong>آشکار</strong> تعریف کنیم.</p>
 
- <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 class MyClass{
     
   var prop: T = ...
@@ -384,26 +444,34 @@ class MyClass{
       return t
     }
 
-}           
-          </div>
+}
+                    </div>
+                </div>
+            </div>
 
           <p>اگه مقداری که getter بر میگردونه به صورت تک عبارتی و متغیر <a class="text-decoration-none" href="/article/kotlin/variables_mutable_immutable.html">تغییرناپذیر</a> (val) باشه، میتونیم getter رو به فرم زیر تعریف کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class MyClass{
     
   var prop: T get() = t
 
-}           
+}
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">معرفی بکینگ پراپرتی (Backing Property)</p>
+          <p class="piece">معرفی بکینگ پراپرتی (Backing Property)</p>
 
           <p>اگه متغیر <a class="text-decoration-none" href="/article/kotlin/variables_mutable_immutable.html">تغییرپذیر</a> (var) باشه و تابع setter پنهان باشه و به هر دلیلی نخواید مقدار متغیر در بیرون از کلاس تغییر کنه میتونید متغیر رو به صورت بکینگ پراپرتی (Backing Property) پیاده سازی کنید.</p>
 
           <p>در این روش با استفاده از کلیدواژه ی سطح دسترسی private از دسترسی به متغیر اصلی در خارج از کلاس جلوگیری میکنیم و با تعریف یک متغیر به عنوان نماینده ی متغیر اصلی به متغیر اصلی در خارج از کلاس با getter دسترسی میدیم. به متغیر اصلی بکینگ پراپرتی (backing property) میگیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(){
   
   private var _volumeLevel: Int = 0
@@ -411,13 +479,17 @@ class TV(){
 
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">صدا زدن پراپرتی</p>
+          <p class="piece">صدا زدن پراپرتی</p>
 
           <p>برای صدا زدن پراپرتی در خارج از کلاس کافیه اسم متغیری که به آبجکت اشاره داره رو بنویسیم، نقطه بزاریم و اسم پراپرتی مورد نظر در آبجکت رو بنویسیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   val tv = TV()
 
@@ -434,11 +506,15 @@ class TV{
   var isOn = false
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>در داخل کلاس هنگامی که متغیر عضو کلاس با یک متغیر دیگه که عضو کلاس <strong>هم نام</strong> باشه؛ با کلیدواژه ی this در کاتلین باید مشخص کنیم کدوم متغیر عضو کلاس است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class TV(private val size){
 
   private val panel: String
@@ -448,6 +524,8 @@ class TV(private val size){
   }
 
 }
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -462,7 +540,9 @@ class TV(private val size){
 
         <p>رفتار (behavior) یک آبجکت با توابع تعریف میشه. وقتی تابع مربوط به آبجکت رو صدا میزنیم تابع از آبجکت میخواد کاری رو انجام بده، مثلا در بخش پراپرتی ها دیدیم تابع getter مقدار پراپرتی رو بر میگردونه یا تابع setter مقدار جدید به پراپرتی اضافه میکنه.</p>
 
-        <div class="code-container">
+        <div class="sample">
+            <div class="snippet-container">
+                <div class="snippet Kotlin">
 class TV{
   var isOn = false
     private set
@@ -471,19 +551,24 @@ class TV{
     isOn = true
   }
 
-  
 }
+                </div>
+            </div>
         </div>
 
-        <p class="h5">صدا زدن تابع کلاس</p>
+        <p class="piece">صدا زدن تابع کلاس</p>
         <p>برای صدا زدن توابع کلاس مانند پراپرتی ها اسم متغیری که به آبجکت اشاره داره رو مینویسیم نقطه میزاریم و سپس اسم تابع مورد نظر رو مینویسیم.</p>
-        <div class="code-container">
+        <div class="sample">
+            <div class="snippet-container">
+                <div class="snippet Kotlin">
 fun main(){
   val tv = TV()
 
   tv.turnOn()
 
 }
+                </div>
+            </div>
         </div>
         
         </div>
@@ -501,7 +586,9 @@ fun main(){
 
           <p>آبجکت های همراه نوعی سینگلتون (singlton) هستند که همراه با کلاس ایجاد شده و مستقل از آبجکت های ایجاد شده از کلاسند.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
 
   val first = MyClass()
@@ -521,7 +608,6 @@ fun main(){
 
 }
 
-
 class MyClass{
 
   var index
@@ -540,13 +626,17 @@ class MyClass{
     }
   }
 }
+                  </div>
+              </div>
           </div>
 
           <p>اسم Counter اسمی دلخواه برای companion object است.</p>
 
           <p>میتونیم آبجکت های همراه رو نامگذاری نکنیم در این صورت برای صدا زدن اعضای آبجکت همراه باید اسم کلاس نقطه، اسم Companion نقطه و اسم عضو مورد نظر رو بنویسیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
  fun main(){
 
   val first = MyClass()
@@ -566,7 +656,6 @@ class MyClass{
 
 }
 
-
 class MyClass{
 
   var index
@@ -584,8 +673,9 @@ class MyClass{
       println("Total number of objects created by MyClass are $count")
     }
   }
-}           
-
+}
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -596,12 +686,14 @@ class MyClass{
           <p>خب الان وقتشه مثال هایی از کلاس و آبجکت ببینیم.</p>
 
 
-          <p class="h5">تعریف کلاس تلویزیون و ایجاد نمونه از کلاس.</p>
+          <p class="piece">تعریف کلاس تلویزیون و ایجاد نمونه از کلاس.</p>
 
           <p>از قسمت های کلاس TV در بالا برای توضیحات استفاده کردیم الان وقتشه این قسمت ها رو یکجا در قالب یک مثال کامل بیاریم.</p>
 
           
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
 
     val tv0 = TV(21f)
@@ -627,10 +719,9 @@ fun main(){
     println("tv1's channel is ${tv1.channel} and volume level is ${tv1.volumeLevel}")         
 }
 
-
 class TV(private val size: Float){
 
-  private var panel: String = "Flatron"
+  private var panel: String = "Flatiron"
   private var color: String = "Black"
 
   var isOn: Boolean = false
@@ -691,13 +782,17 @@ class TV(private val size: Float){
    }
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تعریف کلاس مستطیل و ایجاد نمونه از کلاس.</p>
+          <p class="piece">تعریف کلاس مستطیل و ایجاد نمونه از کلاس.</p>
 
           <p>طول و عرض مستطیل ویژگی های مستطیل هستند، مساحت و محیط مستطیل از طول و عرض مستطیل محاسبه میشه بنابراین دوتا پراپرتی برای طول و عرض داریم و دو تابع برای مساحت و محیط مستطیل.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   
   val r0 = Rectangle()
@@ -717,13 +812,17 @@ class Rectangle(var width: Double = 1.0, var height: Double = 1.0){
   fun perimeter() = 2 * (width + height)
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تعریف کلاس دایره و ایجاد نمونه از کلاس.</p>
+          <p class="piece">تعریف کلاس دایره و ایجاد نمونه از کلاس.</p>
 
           <p>دایره یه شکل هندسیه و محاسبات مساحت و محیط دایره بستگی به مقدار شعاع دایره داره. در این مثال برای محاسبه ی مساحت و محیط بجای تابع از پراپرتی val با getter استفاده میکنیم وقتی پراپرتی تغییر ناپذیر با getter تعریف میشه نقشی شبیه به تابع رو ایفا میکنه.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   val c0 = Circle(2)
   println("c0's radius is ${c0.radius} so the area is ${c0.area}, and the perimeter is ${c0.perimeter})
@@ -753,6 +852,8 @@ class Circle(){
     }
 
 }
+                  </div>
+              </div>
           </div>
 
         </div>

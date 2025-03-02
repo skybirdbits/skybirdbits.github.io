@@ -71,7 +71,9 @@
 
           <p>فرض کنید داخل برنامه به 7 تا متغیر از نوع یکسان احتیاج دارید؛ باید مثل زیر برای هر مقدار یک متغیر تعریف کنید:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var v0 = 5
 var v1 = 2
 var v2 = 8
@@ -79,14 +81,20 @@ var v3 = 0
 var v4 = 9
 var v5 = 1
 var v6 = 3
+                  </div>
+              </div>
           </div>
 
           <p>این کار ممکنه وقت گیر باشه و کد های برنامه رو زیاد کنه؛ مخصوصا زمانی که تعداد متغیر ها بالاست.</p>
 
           <p>میتونیم از ارایه برای راحت تر کردن کار استفاده کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var myArray = arrayOf&lt;Int&gt;(5, 2, 8, 0, 9, 1, 3)
+                  </div>
+              </div>
           </div>
 
           <p>همینطور که می بینید دیگه نیاز به تعریف 7 تا متغیر نداریم بلکه هر 7 متغیر رو داخل متغیری به اسم آرایه قرار دادیم، اصطلاحا میگیم یک آرایه به طول 7 ایجاد کردیم.</p>
@@ -103,16 +111,24 @@ var myArray = arrayOf&lt;Int&gt;(5, 2, 8, 0, 9, 1, 3)
 
           <p>طول یک ارایه عموما ثابت و تغییر ناپذیره یعنی وقتی یک آرایه به طول n ایجاد میکنیم n تا خونه ایجاد میشه و تعداد خونه ها نه میتونن کم بشن و نه زیاد. <br> طول یک آرایه در کاتلین رو با <strong>size</strong> بدست میاریم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val n = myArray.size
 println(n)
+                  </div>
+              </div>
           </div>
 
           <p>با اینکه طول یک آرایه ثابته اما متغیر های هر خونه میتونن تغییر کنن:</p>
           
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 myArray[5] = 32
 println(myArray[5])
+                  </div>
+              </div>
           </div>
         </div>
 
@@ -128,7 +144,7 @@ println(myArray[5])
           <p>۲- با ایجاد آبجکت از کلاس Array</p>
 
 
-          <p class="h5">ایجاد آرایه با تابع arrayOf</p>
+          <p class="piece">ایجاد آرایه با تابع arrayOf</p>
 
           <p>پارامتر تابع arrayOf در کاتلین از نوع <a class="text-decoration-none" href="/article/kotlin/functions.html">vararg</a> است.</p>
 
@@ -136,8 +152,12 @@ println(myArray[5])
 
           <p>فرم کلی:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr = arrayOf&lt;T&gt;(t0, t1, ..., tn)
+                  </div>
+              </div>
           </div>
 
           <p>در بالا t0 تا tn متغیر هایی از جنس T هستند که به تابع پاس داده شدن.</p>
@@ -147,12 +167,12 @@ val arr = arrayOf&lt;T&gt;(t0, t1, ..., tn)
           <p>در زیر یک آرایه از نوع String با طول 4 ایجاد کردیم.</p>
 
           <div class="code-container">
-val names = arrayOf&lt;String&gt;("James", "Tom", "Joy", "Issable")
+val names = arrayOf&lt;String&gt;("James", "Tom", "Joy", "Issuable")
 
 println(names.joinToString())
           </div>
 
-          <p class="h5">ایجاد آرایه با تابع arrayOfNulls</p>
+          <p class="piece">ایجاد آرایه با تابع arrayOfNulls</p>
 
           <p>تابع arrayOfNulls در کاتلین یک آرایه به طول n و با عناصر null ایجاد میکنه.</p>
 
@@ -160,8 +180,12 @@ println(names.joinToString())
 
           <p>فرم کلی</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr = arrayOfNulls&lt;T&gt;(n)
+                  </div>
+              </div>
           </div>
 
           <p>در بالا n یک عدد از نوع Int است که طول ارایه رو مشخص میکنه.</p>
@@ -170,12 +194,16 @@ val arr = arrayOfNulls&lt;T&gt;(n)
 
           <p>در زیر یک آرایه به طول 100 و از نوع Double با عناصر null ایجاد کردیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val v = arrayOfNulls&lt;Double&gt;(100)
+                  </div>
+              </div>
           </div>
 
 
-          <p class="h5">ایجاد آرایه با استفاده از تابع emptyArray</p>
+          <p class="piece">ایجاد آرایه با استفاده از تابع emptyArray</p>
 
           <p>با استفاده از این تابع یک آرایه با طول 0 ایجاد میکنیم.</p>
 
@@ -188,7 +216,9 @@ val v = arrayOfNulls&lt;Double&gt;(100)
 
           <p>یک آرایه String به طول 0 تعریف میکنیم و با افزودن یک مقدار به آرایه طولش 1 میشه:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val lastNames = emptyArray&lt;String&gt;()
 
 println("Before adding value(s) length is ${lastNames.size}")
@@ -196,27 +226,36 @@ println("Before adding value(s) length is ${lastNames.size}")
 arr += "Smith"
 
 println("After adding value(s) length is ${lastNames.size}")
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">ایجاد آرایه با استفاده از کلاس Array</p>
+          <p class="piece">ایجاد آرایه با استفاده از کلاس Array</p>
 
           <p>در این روش با ایجاد یک نمونه (آبجکت) از کلاس Array در کاتلین میتونیم یک آرایه ایجاد کنیم.</p>
           
           <p>فرم کلی</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr = Array&lt;T&gt;(n){ 
   index -&gt; 
 
   t
 }
+                  </div>
+              </div>
           </div>
+
           <p>در بالا تابع constructor کلاس Array <a class="text-decoration-none" href="/article/kotlin/higher-order-functions.html">تابع مرتبه ی بالا</a> است. n طول آرایه از نوع Int است، T نوع متغیر های آرایه، index شماره ی هر خونه که نوعش Int و t مقدار اختصاص داده شده به خونه ی شماره ی index است. </p>
 
           <p>مثال</p>
           <p>یک آرایه به طول 20 ایجاد میکنیم میکنیم که در صورت زوج بودن شماره خونه ی آرایه مقدار زوج و در صورت فرد بودنش مقدار فرد رو به صورت String بهش اختصاص بده.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val evenOrOdd = Array(20){
   index -&gt;
 
@@ -229,6 +268,8 @@ val evenOrOdd = Array(20){
 
     result
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال</p>
@@ -236,7 +277,9 @@ val evenOrOdd = Array(20){
 
           <p>یک آرایه به طول 30 تعریف میکنیم و اگه  شماره ی هر خونه عدد اول بود مقدار اون شماره رو به خونه ی مورد نظر اختصاص میدیم و بقیه رو 0 میزاریم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val primeIndices = Array&lt;Int&gt;(30){
   index -&gt;
 
@@ -252,19 +295,25 @@ val primeIndices = Array&lt;Int&gt;(30){
 }
 
 println(primeIndices.joinToString())
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">صدا زدن عناصر داخل آرایه</p>
+          <p class="piece">صدا زدن عناصر داخل آرایه</p>
           <blockquote>برای استفاده از آرایه داخل حلقه ها به قسمت <a class="text-decoration-none" href="/article/kotlin/loops.html">حلقه ها</a>مراجعه کنید.</blockquote>
 
           <p>برای صدا زدن متغیر های داخل آرایه مانند زیر عمل میکنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val names = arrayOf("Peter", "Fredrick", "Kyle", "Simon")
 
 val name = names[2]
 
 println("Index is 2 name is $name")
+                  </div>
+              </div>
           </div>
           
 
@@ -278,20 +327,26 @@ println("Index is 2 name is $name")
 
           <p>این تابع معلوم میکنه یک آرایه خالی است یا خیر.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr = emptyArray&lt;String&gt;()
 println(arr.isEmpty())
+                  </div>
+              </div>
           </div>
 
 
 
-          <p class="h5">تابع shuffle</p>
+          <p class="piece">تابع shuffle</p>
 
           <p>این تابع جایگاه عناصر داخل آرایه رو با همدیگه عوض میکنه اصطلاحا عناصر داخل آرایه رو قاطی پاتی میکنه.</p>
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val numbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
 
 println("Before shuffling: ${numbers.joinToString()}")
@@ -299,9 +354,11 @@ println("Before shuffling: ${numbers.joinToString()}")
 numbers.shuffle()
 
 println("After shuffling: ${numbers.joinToString()}")
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تابع contentEquals</p>
+          <p class="piece">تابع contentEquals</p>
 
           <p>تایع contentEquals در کاتلین یک تابع <a class="text-decoration-none" href="/article/kotlin/functions.html#sub5">infix</a> است.</p>
 
@@ -309,7 +366,9 @@ println("After shuffling: ${numbers.joinToString()}")
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr0 = arrayOf("a", "b", "c")
 val arr1 = arrayOf("a", "b", "c")
 
@@ -318,6 +377,8 @@ println(arr0 contentEquals arr1)
 arr1 += "z"
 
 println(arr0 contentEquals arr1)
+                  </div>
+              </div>
           </div>
 
           <p class="h5">توابع toList و toSet</p>
@@ -326,9 +387,13 @@ println(arr0 contentEquals arr1)
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val arr = arrayOf("Sophia", "Billy", "Jonathan")
 val list: List&lt;String&gt; = arr.toList()
+                  </div>
+              </div>
           </div>
         </div>
 
@@ -344,7 +409,9 @@ val list: List&lt;String&gt; = arr.toList()
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val row0 = arrayOf&lt;String&gt;("a", "b", "c")
 val row1 = arrayOf&lt;String&gt;("x", "y", "z")
 
@@ -357,13 +424,17 @@ for(row in twoD.indices){
   }
   println()
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال</p>
           
           <p>چاپ فاصله ی بین پنج شهر اراک، قم، همدان، تهران و شیراز به صورت دو بعدی.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 //Qom, Hamedan, Tehran, Shiraz
 val arak = arrayOf&lt;Int&gt;(132, 191, 282, 681)
 
@@ -402,13 +473,17 @@ for(row in distances.indices){
   }
   println()
 }
+                  </div>
+              </div>
           </div>
 
           <p>در بالا printf یک متد (تابع) جاواست.</p>
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val matrix = Array&lt;Array&lt;Int&gt;&gt;(4){
   arrayOfNulls&lt;Int&gt;(3)
 }
@@ -428,6 +503,8 @@ for(row in matrix.indices){
   }
   println()
 }
+                  </div>
+              </div>
           </div>
         </div>
        
@@ -440,7 +517,9 @@ for(row in matrix.indices){
 
            <p>ایجاد و چاپ یک ارایه سه بعدی از اعداد تصادفی در کاتلین.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val threeD = Array(4){
   Array(3){
     arrayOfNulls&lt;Int&gt;(2)
@@ -467,6 +546,8 @@ for(i in threeD.indices){
   }
   println()
 }
+                  </div>
+              </div>
           </div>
 
         </div>

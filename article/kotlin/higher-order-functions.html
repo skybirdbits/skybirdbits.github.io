@@ -67,7 +67,9 @@
 
           <p>تابع setOnClickListener در اپلیکیشن نویسی معروفه و در اندروید زیاد استفاده میشه این تابع تقریبا مثل زیر تعریف شده و onclick یک callback برای setOnClickListener است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 setOnClickListener(onClick: (view: View) -&gt; Unit){
   var view: View = ...
 
@@ -77,19 +79,25 @@ setOnClickListener(onClick: (view: View) -&gt; Unit){
 
   ...
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 setOnClickListener({ v -&gt; //Callback
   ...
 })
+                  </div>
+              </div>
           </div>
 
           <p>
           در بالا 
-          <strong>&#x200E;{ v -&gt; ... }</strong>
+          <strong>&#x200E;{ v -&gt; ...}</strong>
           مقدار لامبداییه که به پارامتر اختصاص دادیم.
           </p>
 
@@ -102,16 +110,22 @@ setOnClickListener({ v -&gt; //Callback
 
           <p>در زیر تابع myForeach وظیفه ی خوندن اعضای یک ارایه رو به عهده داره myForeach یک <a class="text-decoration-none" href="/article/kotlin/extension-function.html">تابع اکستنشن</a> نیز است. مشابه تابع myForeach یک تابع به اسم foreach در api رسمی کاتلین وجود داره.</p>
 
-          <div class="code-container">
- fun &lt;E&gt; Array&lt;E&gt;.myForeach(accesor: (element: E) -&gt; Unit){
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
+ fun &lt;E&gt; Array&lt;E&gt;.myForeach(accessor: (element: E) -&gt; Unit){
   for(e in this)
-    accesor(e)
+    accessor(e)
 }
+                  </div>
+              </div>
           </div>
 
           <p>صدا زدن تابع:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
   
   val arr = arrayOf&lt;Int&gt;(9, 10, 8, 2, 1)
@@ -121,6 +135,8 @@ fun main(){
       print("$element ");
   }
 }
+                  </div>
+              </div>
           </div>
 
 
@@ -128,7 +144,9 @@ fun main(){
 
           <p>در زیر یک تابع مرتبه بالا داریم که کارکتر های تصادفی درست میکنه و با استفاده از accessible با هربار تولید کارکتر میتونیم به اون کارکتر  به صورت Callback توسط لامبدا دسترسی داشته باشیم و در پایان کار تابع همه ی کاراکتر ها رو به صورت String بر میگردونه.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun main(){
 
   val NUMBER_OF_CHARS_PER_LINE = 12
@@ -144,7 +162,7 @@ fun main(){
 
   }
 
-  println("Returened chars from generateRandomChars: ")
+  println("Returned chars from generateRandomChars: ")
 
   println(randomChars)
   
@@ -170,9 +188,11 @@ fun generateRandomChars(length: Int, startRange: Char, endRange: Char, accessibl
   return result
 
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">تعریف تابع تحت لفظی با receiver به عنوان پارامتر</p>
+          <p class="piece">تعریف تابع تحت لفظی با receiver به عنوان پارامتر</p>
           
           <div class="note">
             <p class="h6">توجه:</p>
@@ -187,7 +207,9 @@ fun generateRandomChars(length: Int, startRange: Char, endRange: Char, accessibl
 
           <p>این مثال فقط برای تفهیم موضوعه و قابل اجرا نیست.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 class HTML {
     fun body() { ... }
 }
@@ -203,6 +225,8 @@ html {       // مقداردهی عبارت لامبدا با رسیور به ع
     body()   // صدا زدن اعضای رسیور
     ...
 }
+                  </div>
+              </div>
           </div>
         
         </div>

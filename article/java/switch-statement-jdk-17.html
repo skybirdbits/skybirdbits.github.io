@@ -67,7 +67,9 @@
 
                 <p>مثال:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 int myInteger = ...
 
 switch(myInteger){
@@ -91,6 +93,8 @@ switch(myInteger){
         ...
     }
 }
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -103,7 +107,9 @@ switch(myInteger){
 
                 <p>مثال:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 String myString = ...
 
 switch(myString){
@@ -128,6 +134,8 @@ switch(myString){
         ...
     }
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>در JDK 17 چه اتفاقی برای سوییچ افتاده؟ بیایید باهم بررسی کنیم :)</p>
@@ -138,7 +146,7 @@ switch(myString){
 
                 <p class="title">JDK &gt;= 17</p>
 
-                <p class="h5">۱-قابلیت بازگرداندن مقدار توسط سوییچ: </p>
+                <p class="piece">۱-قابلیت بازگرداندن مقدار توسط سوییچ: </p>
 
 
                 <p>شما میتوانید هر چیزی را با کلید واژه ی yield برگردانید</p>
@@ -146,7 +154,9 @@ switch(myString){
 
                 <p>مثال:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 String myString = ...
 
 MyType myType = switch(myString){
@@ -171,6 +181,8 @@ MyType myType = switch(myString){
         yield myValue;
     }
 };
+                        </div>
+                    </div>
                 </div>
 
                 <div class="note">
@@ -180,13 +192,15 @@ MyType myType = switch(myString){
                 </div>
 
 
-                <p class="h5">۲-پشتیبانی از چند برچسبی: </p>
+                <p class="piece">۲-پشتیبانی از چند برچسبی: </p>
 
                 <p> در هر case میتوانید چند برچسب را مورد بررسی قرار بدید</p>
 
                 <p>مثال:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 String myString = ...
 
 MyType myType = switch(myString){
@@ -213,28 +227,36 @@ MyType myType = switch(myString){
         yield myValue;
     }
 };
+                        </div>
+                    </div>
                 </div>
 
 
                 <p>در کد بالا:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 case s0, s4:{
 ...
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>یعنی اگر s0 یا s2 درست بود بلاک را اجرا کن...</p>
 
 
-                <p class="h5">۳- علامت فلش:</p>
+                <p class="piece">۳- علامت فلش:</p>
 
                 <p>میتونیم در case ها به جای دو نقطه از فلش استفاده کنیم</p>
 
 
                 <p>مثال:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 String myString = ...
 
 MyType myType = switch(myString){
@@ -261,6 +283,8 @@ MyType myType = switch(myString){
         yield myValue;
     }
 };
+                        </div>
+                    </div>
                 </div>
 
             </div>

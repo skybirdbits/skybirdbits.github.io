@@ -81,7 +81,7 @@
 
                 <p>در یک برنامه ی اندرویدی تنها یک Application داریم و حداقل یک Activity </p>
 
-                <p>داشتن یک یا چند Fragment اختیاریه البته استفاده از Fragment بجای اکتیویتی باعث میشه برنامه انعطاف پذیر تر
+                <p>داشتن یک یا چند Fragment اختیاریه البته استفاده از Fragment بجای اکتیویتی باعث میشه برنامه انعطاف‌پذیر تر
                     باشه.</p>
 
                 <p>یک برنامه ی اندرویدی می تونه یک یا چند اکتیویتی داشته باشه اکتیویتی ها به عنوان مجری اصلی کد های ما
@@ -104,10 +104,14 @@
 
                 <p>متقارن هر وضعیت:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 onDestroy() -&gt; onCreate()
 onStop() -&gt; onStart()
 onPause() -&gt; onResume()
+                        </div>
+                    </div>
                 </div>
 
                 <div class="note">
@@ -120,12 +124,16 @@ onPause() -&gt; onResume()
                         onCreate برمیگرده</p>
                 </div>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 onPause() -&gt; onCreate()
 onStop() -&gt; onCreate()
+                        </div>
+                    </div>
                 </div>
 
-                <p>البته وضعیت های دیگه ای هم برای یک اکتیویتی وجود داره مثل onRestart , onSavedInstanceState و... که
+                <p>البته وضعیت های دیگه ای هم برای یک اکتیویتی وجود داره مثل onRestart, onSavedInstanceState و... که
                     بین این 6 وضعیت اصلی قرار دارن برای خلاصه نویسی و کوتاه کردن کلام و قابل فهم تر بودن همین شش وضعیتو
                     به اختصار بیان کردم</p>
 

@@ -90,28 +90,38 @@
                 <p>مثال:</p>
                 <p>مثال زیر اعداد یک تا صد رو نمایش میده</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 for(int i=1; i&lt;= 100; i++){
     System.out.print(i + " ");
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p> مثال:</p>
                 <p>مثال زیر مجموع اعداد صفر تا صد رو نمایش میده.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 int sum = 0;
 for (int i=1; i&lt;= 100; i++){
     sum += i;
 }
 
                     System.out.println("Sum of 0 to 100 is " + sum);
+                        </div>
+                    </div>
                 </div>
 
                 <p> مثال:</p>
                 <p>مثال زیر یک عدد رو از کاربر میگیره و فاکتوریل آن را حساب کرده و نمایش میده.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 Scanner input = new Scanner(System.in);
 
 System.out.print("Enter a number to compute factorial: ");
@@ -134,6 +144,8 @@ for (int i = fact; i &gt; 0; i--) {
 }
 
 System.out.println(result);
+                        </div>
+                    </div>
                 </div>
 
                 <p class="h5">حلقه ی foreach</p>
@@ -142,12 +154,16 @@ System.out.println(result);
                     برای خواندن مقادیر داخل آرایه، List، Map، و هر کلاسی که از Iterator ارث بری میکنه در جاوا استفاده
                     میشه.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 String names = {"Joe", "Billy", "James", "Maya"};
 
 for(String n : names){
     System.out.println("Name: " + n);
 }
+                        </div>
+                    </div>
                 </div>
 
 
@@ -188,7 +204,9 @@ for(String n : names){
            در این مثال از کلید واژه ی break استفاده شده.</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 Scanner input = new Scanner(System.in);
 
 int num = (int)(Math.random() * 10);
@@ -211,6 +229,8 @@ while (answer != num){
 }
 
 System.out.println("Congratulations! you guessed correct");
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -232,7 +252,9 @@ System.out.println("Congratulations! you guessed correct");
                     برنامه مجموع اعداد وارد شده رو نمایش میده</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 int data;
 int sum = 0;
 
@@ -247,6 +269,8 @@ do {
 }while (data != 0);
 
 System.out.println("The sum is " + sum);
+                        </div>
+                    </div>
                 </div>
 
             </div>

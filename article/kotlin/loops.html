@@ -76,19 +76,21 @@
           <p>به دو روش میشه از حلقه ی for استفاده کرد.</p>
 
 
-          <p class="h5">روش foreach :</p>
+          <p class="piece">روش foreach :</p>
 
           <p>
           در کاتلین همه چیز object است دونستن این موضوع میتونه به درک بهتر حلقه ی for در کاتلین کمک کنه.
           </p>
 
           <p>
-          همین طور که گفتیم حلقه برای تکرار یک عمل مورد استفاده قرار میگیره روش foreachبرای هر ابجکتی که تابع iterator براش تعریف شده باشه قابل استفاده است.
+          همین طور که گفتیم حلقه برای تکرار یک عمل مورد استفاده قرار میگیره روش foreach برای هر ابجکتی که تابع iterator براش تعریف شده باشه قابل استفاده است.
           </p>
 
           <p>فرم کلی:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val myClass = MyClass(...)
 for(element in myClass){
 
@@ -96,6 +98,8 @@ for(element in myClass){
     ...
 
 }
+                  </div>
+              </div>
           </div>
           <p>
            عضو MyClass است. با for به ترتیب element هایی که myClass داره رو صدا میزنیم.
@@ -113,10 +117,14 @@ for(element in myClass){
 
           <p>خوندن اعضای ارایه با استفاده از روش foreach.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 for(element in myArray)
     println(element)
+                  </div>
+              </div>
           </div>
 
 
@@ -127,18 +135,21 @@ for(element in myArray)
 
           <p>خوندن اعضای لیست با استفاده از روش foreach</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val list = listOf&lt;String&gt;("Mary" ,"Peter", "Aida", "John")
 
 for(e in list){
     println(e)
 }
-
+                  </div>
+              </div>
           </div>
 
           <p>در مثال بالا یک لیست داریم با چهارتا عضو. با استفاده از for اعضای list رو دونه دونه صدا میکنیم و در println نمایش میدیم.</p>
 
-          <p class="h5">روش index-based :</p>
+          <p class="piece">روش index-based :</p>
 
           <p>
 اگه با for بخوایم عمل تکرارو در محددوه ای از اعداد انجام بدیم به این روش index-based گفته میشه
@@ -146,38 +157,54 @@ for(e in list){
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 for(index in 0 until 100){
     println(index)
 }
+                  </div>
+              </div>
           </div>
 
           <p>در مثال بالا برنامه اعداد 0 تا 99 رو نمایش میده. با هر تکرار یک واحد به index اضافه میشه تا به 100 برسه و حلقه متوقف بشه</p>
 
           <p>حالا اگه بخوایم خود عدد 100 هم تو محدوده وجود داشته باشه مینویسیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 for(index in 0..100){
      println(index)
 }
+                  </div>
+              </div>
           </div>
 
           <p>
-          حالا اگه بخوایم با هر تکرار بجای یک واحد دو یا چند واحد به index اضافه بشه مینویسیم:
+          حالا اگه بخوایم با هر تکرار به‌جای یک واحد دو یا چند واحد به index اضافه بشه مینویسیم:
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 for(index in 0 until 100 step 4)
     println(index)
+                  </div>
+              </div>
           </div>
 
-          <p>در مثال بالا با هر تکرار 4 واحد به index اضافه میشه و به ترتیب اعداد 0، 4، 8 و... رو تا رسیدن به 100  و متوقف شدن حلقه نمایش میده.</p>
+          <p>در مثال بالا با هر تکرار 4 واحد به index اضافه میشه و به ترتیب اعداد 0، 4، 8 و... رو تا رسیدن به 100 و متوقف شدن حلقه نمایش میده.</p>
 
           <p>اگه بخوایم index از بیشترین اعدد شروع بشه تا به کمترین عدد محدوده برسه مینویسیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 for(index in 100 downTo 0)
     println(index)
+                  </div>
+              </div>
           </div>
 
           <p>مثال بالا حلقه از 100 شروع میکنه و تا رسیدن index به 0 عمل تکرار رو انجام میده.نتیجه در نمونه ی بالا میشه نمایش اعداد از 100 تا 0.</p>
@@ -190,13 +217,17 @@ for(index in 100 downTo 0)
           <p>حاصل جمع اعداد از 0 تا 100.</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var sum = 0;
 for (num in 0..100){
     sum += num;
 }
 
 println("Sum of 0 to 100 is $sum");
+                  </div>
+              </div>
           </div>
 
           <p>
@@ -207,8 +238,9 @@ println("Sum of 0 to 100 is $sum");
           مثال زیر یک عدد رو از کاربر میگیره و فاکتوریل آن را حساب کرده و نمایش میده.
           </p>
 
-          <div class="code-container">
-
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 Scanner input = new Scanner(System.in);
 
 System.out.print("Enter a number to compute factorial: ");
@@ -230,28 +262,38 @@ for (index in fact downTo 1) {
 
 }
 
-println(result);                
+println(result);
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
 
           <p>استفاده از روش index-based برای خوندن اعضای یک آرایه با for-loop</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 
 for(i in myArray.indices)
     println(myArray[i]
+                  </div>
+              </div>
           </div>
 
           <p>
           میتونید با کمک تابع withIndex در آرایه اعضای ارایه رو صدا بزنید و همزمان index هر عضو در ارایه هم داشته باشید.
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val myArray = arrayOf&lt;Int&gt;(22, 36, 74, 43, 55, 92)
 for((index, element) in myArray.withIndex())
     println("The element at $index is $element")
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -263,7 +305,7 @@ for((index, element) in myArray.withIndex())
           این کلید واژه ها داخل حلقه مورد استفاده قرار میگیرن.
           </p>
 
-          <p class="h5">
+          <p class="piece">
           ۱- کلید واژه ی break:
           </p>
 
@@ -275,7 +317,9 @@ for((index, element) in myArray.withIndex())
           مثال
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var sum = 0
 var lastNumber = 0
 for(number in 1..20){
@@ -286,9 +330,11 @@ for(number in 1..20){
 
 println("Last Number in iteration is $lastNumber")
 println("Sum is $sum")
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">
+          <p class="piece">
           ۲-کلید واژه ی continue:
           </p>
 
@@ -298,7 +344,9 @@ println("Sum is $sum")
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var sum = 0
 for(number in 1..20){
   if(number % 2 != 0) continue
@@ -306,7 +354,9 @@ for(number in 1..20){
   sum+=number
 }
 
-println("Sum of even numbers to 20 is $sum)
+println("Sum of even numbers to 20 is $sum")
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -335,7 +385,9 @@ println("Sum of even numbers to 20 is $sum)
                 در مثال زیر برنامه یک عدد بین 0 تا 10 به صورت تصادفی ایجاد میکنه و کاربر باید عدد رو حدس بزنه در این مثال از کلید واژه ی break استفاده شده.
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 val input = Scanner(System.in);
 
 val num: Int = (0..10).random().toInt();
@@ -358,6 +410,8 @@ while (answer != num){
 }
 
 println("Congratulations! you guessed correct");
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -371,7 +425,7 @@ println("Congratulations! you guessed correct");
         <div class="subsection" id="sub3">
           <p class="title">حلقه ی do while</p>
 
-          <p>حلقه ی do while در کاتلین مثل while  است با این تفاوت که ابتدا کد های داخل بدنه ی حلقه اجرا میشن بعد شرط ادامه ی حلقه بررسی میشه.
+          <p>حلقه ی do while در کاتلین مثل while است با این تفاوت که ابتدا کد های داخل بدنه ی حلقه اجرا میشن بعد شرط ادامه ی حلقه بررسی میشه.
           </p>
 
           <p>مثال:</p>
@@ -380,7 +434,9 @@ println("Congratulations! you guessed correct");
           در برنامه ی زیر کاربر عدد رو وارد میکنه و پس از وارد کردن اعداد دلخواه با صفر از حلقه خارج میشه و برنامه حاصل جمع اعداد وارد شده رو نشون میده.
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var data;
 var sum = 0;
 
@@ -395,27 +451,33 @@ do {
 }while (data != 0);
 
 println("The sum is $sum");
+                  </div>
+              </div>
           </div>
 
         </div>
 
         <div class="subsection" id="sub4">
           <p class="title">حلقه های تو در تو (nested loops)</p>
-          <p>اگه بخوایم داخل یک حلقه حلقه ی دیگه ای استفاده کنیم ازش به عنوان حلقه های تو در تو یاد میکنیم.</p>
+          <p>اگه بخوایم داخل یک حلقه، حلقه ی دیگه ای استفاده کنیم ازش به عنوان حلقه های تو در تو یاد میکنیم.</p>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 for(i in 0 until 100){
   print("for i = $i printing j: ")
   for(j in 0 until 100){
     print("$j ")
   }
   println()
-}                
+}
+                  </div>
+              </div>
           </div>
 
-          <p>با هر تکرار حلقه ی بیرونی (i) حلقه ی داخلی (j) یک بار کامل از 0 تا 99 اجرا میشه و این موضوع درباره ی تمام حلقه ها صدق میکنه. میتونیم بجای for از هر حلقه ای که خواستیم استفاده کنیم.</p>
+          <p>با هر تکرار حلقه ی بیرونی (i) حلقه ی داخلی (j) یک بار کامل از 0 تا 99 اجرا میشه و این موضوع درباره ی تمام حلقه ها صدق میکنه. میتونیم به‌جای for از هر حلقه ای که خواستیم استفاده کنیم.</p>
          
         </div>
 
@@ -426,9 +488,9 @@ for(i in 0 until 100){
 
 
 
-          <p>تمام حلقه ها برای متوقف شدن نیاز به شرط دارن اما حلقه ی for در کاتلین شرط به صورت اشکار تعریف نمیشه</p>
+          <p>تمام حلقه ها برای متوقف شدن نیاز به شرط دارن اما حلقه ی for در کاتلین شرط به صورت آشکار تعریف نمیشه</p>
 
-          <p>حلقه ی for در کاتلین به دو روش foreach و index-based میتونه پیاده سازی بشه</p>
+          <p>حلقه ی for در کاتلین به دو روش foreach و index-based میتونه پیاده‌سازی بشه</p>
 
           <p>برای متوقف شدن حلقه ی while و do-while آشکارا باید شرط تعریف کنیم</p>
 

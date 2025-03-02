@@ -70,7 +70,7 @@
 به کلاس، تابع و پراپرتی های معمولی concrete میگیم اما نوعی از کلاس در کاتلین وجود داره که بهش abstract میگیم و میتونیم داخلش علاوه بر توابع و پراپرتی های concrete، توابع و پراپرتی های abstract نیز تعریف کنیم.
           </p>
 
-          <p>میتونیم یک تابع (متد) رو abstract تعریف کنیم و هنگام ارث بری و بازنویسی تابعو کامل پیاده سازی کنیم برای این کار تابع باید در کلاس <strong>abstract</strong> یا در <strong>interface</strong> تعریف بشه و هنگام ارث بری بازنویسی بشه، در این مطلب کلاس های ابسترکت رو بررسی میکنیم و در مطلب بعدی به اینترفیس ها می پردازیم.</p>
+          <p>میتونیم یک تابع (متد) رو abstract تعریف کنیم و هنگام ارث بری و بازنویسی تابعو کامل پیاده‌سازی کنیم برای این کار تابع باید در کلاس <strong>abstract</strong> یا در <strong>interface</strong> تعریف بشه و هنگام ارث بری بازنویسی بشه، در این مطلب کلاس های ابسترکت رو بررسی میکنیم و در مطلب بعدی به اینترفیس ها می پردازیم.</p>
 
           <p>برای تعریف کلاس ابسترکت از کلیدواژه ی abstract قبل از کلیدواژه ی class استفاده میکنیم و برای تعریف پراپرتی و توابع ابسترکت هم مثل کلاس ابسترکت ابتدا کلیدواژه ی abstract رو مینویسیم.</p>
 
@@ -78,7 +78,9 @@
 
           <p>فرم کلی کلاس های ابسترکت:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 abstract class MyAbstractClass{
   //abstract property
   abstract val t0: T
@@ -99,6 +101,8 @@ abstract class MyAbstractClass{
   }
   ...
 }
+                  </div>
+              </div>
           </div>
 
           <p>همینطور که در بالا مشخصه در کلاس های ابسترکت، علاوه بر توابع و متغیر های concrete توابع و متغیر های abstract نیز میتونیم تعریف کنیم.</p>
@@ -109,7 +113,9 @@ abstract class MyAbstractClass{
 
           <p>فرض کنید کلاس Foo سوپر کلاس و Bar ساب کلاس Foo است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 abstract class Foo{
   abstract val prop0: String
 
@@ -140,16 +146,22 @@ fun main(){
   bar.concreteSayHello()
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>هنگامی که در یک کلاس abstract متغیر یا تابع abstract تعریف نکنیم معمولا به عنوان کلاس Base در نظرش میگیریم. کلاس Base پایه و سوپر کلاس تمام subclass های یک بخشی از پروژه است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 abstract class MyBase{
   //without abstract properties and (or) functions
   ...
 
 }
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -168,7 +180,9 @@ abstract class MyBase{
 
           <p>حالا میخوایم دو کلاس Shape و GeometricShape رو به صورت abstract تعربف کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 abstract class Shape(var color: String, var isFilled: Boolean = false){
   
   val dateCreated = java.util.Date()
@@ -288,6 +302,8 @@ fun main(){
     println("Is rect1 square? ${rect1.isSquare()}")
 
 }
+                  </div>
+              </div>
           </div>
         </div>
 

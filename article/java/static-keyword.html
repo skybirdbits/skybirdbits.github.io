@@ -2,8 +2,7 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="برنامه نویسی جاوا ، کلید واژه ی استاتیک ، متد استاتیک ، فیلد استاتیک ، inner class، کلاس های داخلی"
-          name="keywords"/>
+
     <meta content="بررسی کلید واژه ی استاتیک (static) و تعریف فیلد، متد و کلاس استاتیک در جاوا" name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
@@ -71,7 +70,9 @@
 
                 <p>فرم کلی:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class ClassName{
 
     ...
@@ -80,17 +81,23 @@ public class ClassName{
 
     ...
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>صدا زدن متغیر:</p>
 
-                <div class="code-container">
-                    Type type = ClassName.variableName;
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+Type type = ClassName.variableName;
+                        </div>
+                    </div>
                 </div>
 
                 <div class="note">
                   <p class="h6">نکته:</p>
-                  <p> با در نظر گرفتن Modifier سطح دسترسی متغیر (public , protected , private) میشه متغیر رو
+                  <p> با در نظر گرفتن Modifier سطح دسترسی متغیر (public, protected, private) میشه متغیر رو
                     در
                     کلاس های دیگه نیز صدا زد </p></div>
 
@@ -103,24 +110,32 @@ public class ClassName{
 
                 <p> فرم کلی:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class ClassName {
 
-    public static void methodName(Type0 p0, Type1 p1, … , TypeN pN){
+    public static void methodName(Type0 p0, Type1 p1, …, TypeN pN){
     ...
     }
 
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p> صدا زدن متد:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 Type0 type0 = new Type0();
 Type1 type1 = new Type1();
 ...
 TypeN typeN = new TypeN();
 ClassName.methodName(type0, type1, … , typeN)
+                        </div>
+                    </div>
                 </div>
 
 
@@ -134,7 +149,10 @@ ClassName.methodName(type0, type1, … , typeN)
             <div class="subsection" id="sub2">
                 <p class="title">مثال از متد و فیلد استاتیک در جاوا</p>
                 <p><strong> Circle.java </strong></p>
-                <div class="code-container">
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class Circle {
     double radius;
 
@@ -159,11 +177,15 @@ public class Circle {
     }
 
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p><strong> TestCircle.java </strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class TestCircle {
 
     public static void main(String[] args){
@@ -180,6 +202,8 @@ public class TestCircle {
         + " number of objects are " + Circle.getNumberOfObjects());
     }
 }
+                        </div>
+                    </div>
                 </div>
 
 
@@ -205,7 +229,9 @@ public class TestCircle {
 
                 <p>فرم کلی:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class ClassName {
 ...
 
@@ -214,13 +240,19 @@ public class ClassName {
     }
 
 }
+                        </div>
+                    </div>
                 </div>
 
 
                 <p>هنگامی که بخوایم از InnerClassName نمونه ی جدید درست کنیم به صورت زیر عمل می کنیم:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -278,7 +310,7 @@ ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
 </main>
 
 <div class="scroll-top-container">
-    <a class="text-decoration-none link-dark material-icons" href="#top">
+    <a class="text-decoration-none link-dark material-icons" href="#">
         arrow_drop_up
     </a>
 </div>

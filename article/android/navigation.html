@@ -98,15 +98,19 @@
             <div class="subsection" id="sub0">
                 <p class="title">پلاگین ها و کتابخونه های مورد نیاز</p>
 
-                <p class="h5">افزودن Navigation به پروژه</p>
+                <p class="piece">افزودن Navigation به پروژه</p>
                 <p>RootProject -&gt; app -&gt; build.gradle</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Gradle">
 dependencies{
     ...
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.1"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.1"
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p class="h5">
@@ -121,29 +125,41 @@ dependencies{
                     RootProject -&gt; build.gradle
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Gradle">
 dependencies {
     ...
     classpath "androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:$nav_version"
     ...
 }
+                        </div>
+                    </div>
                 </div>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Gradle">
 plugins {
   ...
   id 'androidx.navigation.safeargs.kotlin' version '2.5.1' apply false
 }
+                        </div>
+                    </div>
                 </div>
 
 
                 <p>RootProject -&gt; app -&gt; build.gradle</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Gradle">
 plugins{
   ...
   id 'androidx.navigation.safeargs.kotlin'
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>
@@ -153,7 +169,7 @@ plugins{
                 <p>- ایجاد فایل Navigation Graph و ترسیم مسیر های بین فرگمنت ها.</p>
                 <p>- تعریف NavHost معمولا در main_activity تعریفش می کنیم.</p>
                 <p>- جابه جایی با استفاده از NavController (معمولا NavController رو با استفاده از متد findNavController
-                    در Fragment , Activity یا View صدا می زنیم).</p>
+                    در Fragment, Activity یا View صدا می زنیم).</p>
 
             </div>
 
@@ -166,12 +182,14 @@ plugins{
 
                 <p>فایل Navigation Graph دارای عناصر زیر است: </p>
 
-                <p class="h5">1- navigation</p>
+                <p class="piece">1- navigation</p>
 
                 <p>عنصر navigation ریشه ی Navigation Graph است بقیه ی عناصر فرزندان این عنصر هستند این عنصر باید دارای
                     دو فیلد id و startDestination باشه</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet XML">
 &lt;navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -182,23 +200,29 @@ plugins{
     ...
 
 &lt;/navigation&gt;
+                        </div>
+                    </div>
                 </div>
 
                 <p>فیلد id شامل ای دی برای navigation است.</p>
                 <p>فیلد startDestination شامل آی دی فرگمنتیه که به عنوان نقطه ی شروع در نظر گرفته میشه.</p>
 
 
-                <p class="h5">2- fragment</p>
+                <p class="piece">2- fragment</p>
                 <p>با استفاده از این عنصر destination ها رو تعریف میکنیم</p>
                 <p><strong>به این عنصر destination هم گفته میشه.</strong></p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet XML">
 &lt;fragment
     android:id="..."
     android:name="..."
     android:label="..."
     tools:layout="..." /&gt;
+                        </div>
+                    </div>
                 </div>
 
                 <p>فیلد id شامل آی دی برای fragment است</p>
@@ -207,13 +231,15 @@ plugins{
                 <p>فیلد label شامل اسم برچسب برای destination است.</p>
                 <p>در فیلد layout که اختیاریه ادرس فایل xml مربوط به Fragment در layout رو میدیم.</p>
 
-                <p class="h5">3- action:</p>
+                <p class="piece">3- action:</p>
 
                 <p> زمانی که میخوایم یک مسیر بین fragment ها تعریف کنیم این عنصر رو به عنوان فرزند fragment اولی تعریف
                     میکنیم.</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet XML">
 &lt;fragment ... &gt;
     ...
     &lt;action
@@ -222,6 +248,8 @@ plugins{
     ...
     &lt;/action&gt;
 &lt;/fragment&gt;
+                        </div>
+                    </div>
                 </div>
 
                 <p>فیلد id شامل آی دی برای action است.</p>
@@ -238,7 +266,9 @@ plugins{
                     object هایی از جنس parcelable رو از فرگمنت اولی به فرگمنت دومی منتقل کنیم
                     این عنصرو باید به عنوان فرزند action تعریف کنیم</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 &lt;action ... &gt;
 
     &lt;argument
@@ -247,6 +277,8 @@ plugins{
     app:nullable="..." /&gt;
 
 &lt;/action&gt;
+                        </div>
+                    </div>
                 </div>
 
 
@@ -265,7 +297,9 @@ plugins{
 
                 <p>سپس مانند نمونه ی زیر destination ها و مسیر های بینشونو تعریف میکنیم:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet XML">
 &lt;navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
@@ -298,6 +332,8 @@ plugins{
                 tools:layout="@layout/fragment_second"/&gt;
 
 &lt;/navigation&gt;
+                        </div>
+                    </div>
                 </div>
 
                 <p>اگه کد هاتون مثل بالا باشه مانند تصویر زیر را باید در تب design ببینید</p>
@@ -327,7 +363,9 @@ plugins{
                     اولی از NavHost خارج میشه و فرگمنت دومی برای نمایش داخل NavHost جایگزین میشه معمولا NavHost رو داخل
                     main_activity تعریف میکنند</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet XML">
 &lt;androidx.fragment.app.FragmentContainerView
     android:id="..."
     android:layout_width="match_parent"
@@ -335,6 +373,8 @@ plugins{
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:navGraph="..."
     app:defaultNavHost="true" /&gt;
+                        </div>
+                    </div>
                 </div>
 
 
@@ -356,7 +396,7 @@ plugins{
             </div>
 
             <div class="subsection" id="sub3">
-                <p class="h3">NavController</p>
+                <p class="title">NavController</p>
 
                 <p>
                     وظیفه ی مدیریت جا به جایی کاربر بین fragment ها رو داره وقتی بخوایم کاربر از یک فرگمنت به فرگمنت
@@ -372,7 +412,9 @@ plugins{
 
                 <p>برای اینکه بخوایم کاربر با زدن یک کلید از یک فرگمنت به فرگمنت دیگه ای بره مثل زیر عمل می کنیم</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 class FirstFragment: Fragment(){
 
     ...
@@ -396,6 +438,8 @@ class FirstFragment: Fragment(){
     ...
 
 }
+                        </div>
+                    </div>
                 </div>
 
 

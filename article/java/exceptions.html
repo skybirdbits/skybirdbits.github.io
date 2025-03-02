@@ -19,8 +19,8 @@
     <meta content="به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن در این مطلب با عملکرد و نحوه ی استفاده از اکسپشن ها در جاوا آشنا میشیم."
           name="og:description">
 
-    <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image">
-    <meta content="https://skybirdbits.github.io/article/java/exceptions.html" property="og:url">
+    <meta content="/resources/favicon.png" property="og:image">
+    <meta content="/article/java/exceptions.html" property="og:url">
 
     <meta content="article" property="og:type">
 
@@ -88,7 +88,9 @@
 
                 <p>در زیر یک آرایه به طول ۶ تعریف کردیم؛ برنامه از کاربر میخواد شماره ی یکی از خونه های ارایه رو وارد کنه تا برنامه مقدار اون خونه رو نمایش بده.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                    <div class="snippet Java">
 public static void main(String[] args){
     Scanner input = new Scanner(System.in);
 
@@ -98,10 +100,27 @@ public static void main(String[] args){
 
             System.out.print("Enter corresponding index: ")
             int index = input.nextInt();
-            System.out.println("The value of corresponding index is: "+ randomNumbers[index];
+            System.out.println("The value of corresponding index is: "+ randomNumbers[index]);
 
     }
 }
+                    </div>
+
+                        <div class="Kotlin snippet">
+fun main() {
+    val randomNumbers = Array&lt;Int&gt;(6){
+        (0 until 100).random()
+    }
+
+    val input = Scanner(System.`in`)
+
+    println("Enter corresponding index: ")
+    val index = input.nextInt()
+
+    println("The value of corresponding index is ${randomNumbers[index]}")
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>اگه شماره خارج از تعداد خونه های ارایه باشه برنامه دچار خطای IndexOutOfBoundsException شده و متوقف میشه.</p>
@@ -109,9 +128,13 @@ public static void main(String[] args){
                 <p>فرض کنید میخوایم یک عدد رو به عدد دیگه تقسیم کنیم:</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
     Scanner input = new Scanner(System.in);
+
+    System.out.println("Enter two numbers ")
 
     int number0 = input.nextInt();
     int number1 = input.nextInt();
@@ -122,34 +145,81 @@ public static void main(String[] args){
 public static int quotient(number0, number1){
     return number0 / number1;
 }
+                        </div>
+
+                        <div class="snippet Kotlin">
+fun main() {
+    val input = Scanner(System.`in`)
+
+    println("Enter two numbers ")
+
+    val number0 = input.nextInt()
+    val number1 = input.nextInt()
+    val result = quotient(number0, number1)
+
+    println("$number0 / $number1 = $result")
+}
+
+fun quotient(number0: Int, number1: Int): Int{
+    return number0 / number1
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>اگه در مثال بالا هنگام اجرای برنامه برای number1 عدد 0 رو وارد کنیم متد quotient یه اکسپشن میندازه بیرون، برنامه متوقف شده و پیغام ArithmeticException در کنسول نمایش داده میشه.</p>
 
                 <p>اگه عمل بالا رو داخل حلقه بزاریم و هر زمان به number1 مقدار 0 بدیم باز هم یه اکسپشن میوفته بیرون و با پیغام ArithmeticException از برنامه خارج میشیم.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
-    Scanner input = new Scanner(System.in);
+Scanner input = new Scanner(System.in);
 
     do{
-        int n0 = input.nextInt();
-        int n1 = input.nextInt();
+        System.out.println("Enter two numbers ")
+`       int number0 = input.nextInt();
+        int number1 = input.nextInt();
         int result = quotient(number0, number1);
         System.out.println("number0 /number1 = " + result);
-
     }while(true);
 }
 
 public static int quotient(number0, number1){
     return number0 / number1;
 }
+                        </div>
+                        <div class="snippet Kotlin">
+fun main() {
+
+    val input = Scanner(System.`in`)
+
+    do{
+        println("Enter two numbers ")
+
+        val number0 = input.nextInt()
+        val number1 = input.nextInt()
+        val result = quotient(number0, number1)
+
+        println("$number0 / $number1 = $result")
+
+    }while(true)
+}
+
+fun quotient(number0: Int, number1: Int): Int{
+    return number0 / number1
+}
+                        </div>
+                    </div>
                 </div>
 
 
                 <p>برای حل مشکل بالا یکی از راه حل ها اضافه کردن شرط بررسی صفر نبودن number1 است؛ این شرط از بیرون افتادن اکسپشن جلوگیری میکنه.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
     Scanner input = new Scanner(System.in);
     boolean continueLoop = true;
@@ -168,6 +238,30 @@ public static int quotient(number0, number1){
     if(number1 != 0) return number0 / number1;
     return Integer.MIN_VALUE;
 }
+                        </div>
+                        <div class="snippet Kotlin">
+fun main() {
+
+    val input = Scanner(System.`in`)
+
+    do{
+        println("Enter two numbers ")
+
+        val number0 = input.nextInt()
+        val number1 = input.nextInt()
+        val result = quotient(number0, number1)
+
+        println("$number0 / $number1 = $result")
+    }while(true)
+}
+
+fun quotient(number0: Int, number1: Int): Int{
+    //شرط صفر نبودن مخرج
+    if(number1 != 0) return number0 / number1;
+    return Int.MIN_VALUE
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>حالا اگه اکسپشن بیوفته بیرون باید چکار کنیم تا برنامه متوقف نشه؟</p>
@@ -182,14 +276,21 @@ public static int quotient(number0, number1){
 
                 <p class="piece">فرم کلی</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+
 try{
 
     ...
 
 }catch(Exception ex){
+
     ...
+
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>بلوک catch شبیه متد (تابع) عمل می کنه؛ کلاس های اکسپشن داخل پرانتز catch همون پارامتر های catch است که هنگام بیرون افتادن اکسپشن در try بلوک catch صدا زده میشه و اکسپشن انداخته شده در try توسط catch به عنوان مقدار پارامتر گرفته میشه.</p>
@@ -199,7 +300,9 @@ try{
                 <p>در مثال قبل میخوایم برنامه رو بعد از انداختن اکسپشن کنترل کنیم:</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
     Scanner input = new Scanner(System.in);
     boolean continueLoop = true;
@@ -225,19 +328,74 @@ public static int quotient(number0, number1){
         //if(number1 != 0) return number0 / number1;
         return number0 / number1;
 }
+                        </div>
+                        <div class="snippet Kotlin">
+fun main() {
+
+    val input = Scanner(System.`in`)
+
+    do{
+        println("Enter two numbers ")
+
+        val number0 = input.nextInt()
+        val number1 = input.nextInt()
+        try{
+            val result = quotient(number0, number1)
+
+            println("$number0 / $number1 = $result")
+        }catch(e: ArithmeticException){
+            println(e.message);
+        }
+    }while(true)
+}
+
+fun quotient(number0: Int, number1: Int): Int{
+    //شرط صفر نبودن مخرج
+    if(number1 != 0) return number0 / number1;
+    return Int.MIN_VALUE
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>بعد از بلوک catch یک بلوک دیگه داریم به اسم finally؛ استفاده از این بلوک اختیاریه؛ این بلوک ضمانت می کنه کد های داخلش بعد از try-catch اجرا بشه.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 try{
+
     ...
+
 }catch(Exception e){
+
     ...
+
 }finally{
+
     //اجرای کدهای داخل finally بعد از try-catch
+
 }
     //اجرای بقیه ی کد های برنامه...
+                        </div>
+                        <div class="snippet Kotlin">
+try{
+
+...
+
+}catch(e: Exception){
+
+...
+
+}finally{
+
+//اجرای کدهای داخل finally بعد از try-catch
+
+}
+
+//اجرای بقیه ی کد های برنامه...
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -251,15 +409,26 @@ try{
 
                 <p>با استفاده از کلیدواژه ی throw در جاوا می تونیم یک اکسپشن داخل متد بندازیم.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public void myMethod(){
-    throw ArithmeticException();
+    throw new ArithmeticException();
 }
+                        </div>
+                        <div class="snippet Kotlin">
+fun myMethod(){
+    throw ArithmeticException()
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>در مثال quotient (خارج قسمت) میخوایم در صورت برقرار بودن شرط، یک اکسپشن داخل متد quotient بندازیم.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
     Scanner input = new Scanner(System.in);
      boolean continueLoop = true;
@@ -286,6 +455,33 @@ public static int quotient(number0, number1){
 
     return number0 / number1;
 }
+                        </div>
+                        <div class="snippet Kotlin">
+fun main() {
+
+val input = Scanner(System.`in`)
+
+    do{
+        println("Enter two numbers ")
+
+        val number0 = input.nextInt()
+        val number1 = input.nextInt()
+        try{
+            val result = quotient(number0, number1)
+            println("$number0 / $number1 = $result")
+        }catch(e: ArithmeticException){
+            println(e.message);
+        }
+    }while(true)
+}
+
+fun quotient(number0: Int, number1: Int): Int{
+    //شرط صفر نبودن مخرج
+    if(number1 == 0) throw ArithmeticException("Can not divide by Zero")
+    return Int.MIN_VALUE
+}
+                        </div>
+                    </div>
                 </div>
 
                 <p>در بالا پارامتر کنسراکتور کلاس ArithmeticException رو با "Can not divide by Zero" مقدار دهی کردیم.</p>
@@ -349,7 +545,9 @@ public static int quotient(number0, number1){
 
                 <p>میخوایم یک کلاس اکسپشن برای دایره تعریف کنیم، در صورت منفی بودن شعاع دایره برنامه دچار خطا بشه و پیغام خطا بده</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class RadiusException extends IllegalArgumentException {
     private final double radius;
 
@@ -358,16 +556,22 @@ public class RadiusException extends IllegalArgumentException {
         this.radius = radius;
     }
 
-
     public double getRadius() {
-    return radius;
+        return radius;
     }
 }
+                        </div>
+                        <div class="snippet Kotlin">
+class RadiusException(var radius: Double): IllegalArgumentException("Radius is $radius and it can not be Negative")
+                        </div>
+                    </div>
                 </div>
 
                 <p>انداختن اکسپشن تعریف شده داخل متد و کنستراکتور های کلاس دایره:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public class CircleWithRadiusException {
     private double radius;
 
@@ -400,12 +604,40 @@ public class CircleWithRadiusException {
     }
 
 }
+                        </div>
+
+                        <div class="snippet Kotlin">
+class CircleWithRadiusException {
+    var radius: Double = 0.0
+        set(value) {
+            if (value < 0) throw RadiusException(value)
+            field = value
+        }
+
+    constructor(radius: Double) {
+        if (radius < 0) throw RadiusException(radius)
+    }
+
+    constructor() : this(radius = 1.0)
+
+    fun getArea(): Double {
+        return PI * radius * radius
+    }
+
+    fun getPerimeter(): Double {
+        return 2 * PI * radius
+    }
+}
+                        </div>
+                    </div>
                 </div>
 
 
                 <p>استفاده از کلاس دایره در متد main:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 CircleWithRadiusException c0  = new CircleWithRadiusException(23);
 System.out.println("Radius of circle c0: " + c0.getRadius());
 System.out.println("Area of circle c0: " + c0.getArea());
@@ -413,11 +645,27 @@ System.out.println("Perimeter of circle c0: " + c0.getPerimeter());
 
 System.out.println();
 
-//اختصاص دادن مقدار منفی به کانستراکتور Circle برای بیرون انداختن اکسپشن
+//اختصاص دادن عمدی مقدار منفی به کانستراکتور کلاس دایره برای بیرون انداختن اکسپشن
 CircleWithRadiusException c1 = new CircleWithRadiusException(-2);
 System.out.println("Radius of circle c1: " + c1.getRadius());
 System.out.println("Area of circle c1: " + c1.getArea());
 System.out.println("Perimeter of circle c1: " + c1.getPerimeter());
+                        </div>
+                        <div class="snippet Kotlin">
+val c0  = CircleWithRadiusException(23);
+println("Radius of circle c1: ${c0.getRadius()}");
+println("Area of circle c1: ${c0.getArea()}" + );
+println("Perimeter of circle c0: ${c0.getPerimeter()}");
+
+println();
+
+//اختصاص دادن عمدی مقدار منفی به کانستراکتور کلاس دایره برای بیرون انداختن اکسپشن
+val c1 = new CircleWithRadiusException(-2);
+println("Radius of circle c1: ${c1.getRadius()}");
+println("Area of circle c1: ${c1.getArea()}" + );
+println("Perimeter of circle c1: ${c1.getPerimeter()}");
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -434,7 +682,9 @@ System.out.println("Perimeter of circle c1: " + c1.getPerimeter());
                 <p>در این مواقع به‌جای استفاده از try-catch میتونیم با استفاده از کلید واژه ی throws اکسپشن رو بندازیم جایی که قراره متد رو صدا بزنیم.</p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public void firstMethod() throws IOException {
     FileInputStream fis = new FileInputStream("PATH");
         ...
@@ -447,14 +697,20 @@ public void secondMethod(){
         System.out.println(ioe.getMessage());
     }
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>میتونیم چندتا اکسپشن رو با throws بندازیم به متد بعدی</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public void readData() throws Exception0, Exception1, ... , ExceptionN{
     ...
 }
+                        </div>
+                    </div>
                 </div>
 
                 <div class="note">
@@ -467,12 +723,16 @@ public void readData() throws Exception0, Exception1, ... , ExceptionN{
                 </p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 @Throws(IOException::class)
 fun readData(){
     val fis = FileInputException("PathToFile")
     ...
 }
+                        </div>
+                    </div>
                 </div>
 
             </div>

@@ -64,7 +64,7 @@
       <article>
         <div class="subsection" id="sub0">
           <p class="title">توضیحات</p>
-          <p>متغیر ها در کاتلین به دو دسته ی متغیر های تغییرپذیر و متغیر های تغییرناپذیر تقسیم میشن وقتی یک متغیر تغییر پذیر مقداردهی میشه مقدارش در طول اجرای برنامه قابل تغییره اما متغیر های تغییرناپذیر یک بار مقداردهی میشن و در طول اجرای برنامه مقداری که بهشون اختصاص دادیم غیر قابل تغییر است.</p>
+          <p>متغیر ها در کاتلین به دو دسته ی متغیر های تغییرپذیر و متغیر های تغییرناپذیر تقسیم میشن وقتی یک متغیر تغییر پذیر مقداردهی میشه مقدارش در طول اجرای برنامه قابل تغییره اما متغیر های تغییرناپذیر یک بار مقداردهی میشن و در طول اجرای برنامه مقداری که بهشون اختصاص دادیم غیرقابل تغییر است.</p>
 
           <p>متغیر های تغییرپذیر رو با کلیدواژه ی var و متغیر های تغییر ناپذیر رو با کلیدواژه های val و const در کاتلین تعریف میکنیم.</p>
 
@@ -77,26 +77,34 @@
           <p>مثال:</p>
 
           <p>چند مقدار مختلف به mutable اختصاص میدیم و mutable رو چاپ میکنیم:</p>
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 var mutable = 44
 println(mutable)
 mutable = 56
 println(mutable)
 mutable = 100
 println(mutable)
+              </div>
+            </div>
           </div>
 
         </div>
 
         <div class="subsection" id="sub2">
           <p class="title">کلیدواژه ی val</p>
-          <p>با استفاده از کلیدواژه ی val متغیر های تغییرناپذیر در کاتلین ایجاد میکنیم، متغیر هایی که با این کلیدواژه تعریف میکنیم یک بار <strong>زمان اجرای برنامه</strong> مقداردهی میشن و مقدارشون در طول اجرای برنامه غیر قابل تغییره و اگه بخوایم تو کد دوباره مقداردهیشون کنیم دچار خطای کامپایل میشیم.</p>
+          <p>با استفاده از کلیدواژه ی val متغیر های تغییرناپذیر در کاتلین ایجاد میکنیم، متغیر هایی که با این کلیدواژه تعریف میکنیم یک بار <strong>زمان اجرای برنامه</strong> مقداردهی میشن و مقدارشون در طول اجرای برنامه غیرقابل تغییره و اگه بخوایم تو کد دوباره مقداردهیشون کنیم دچار خطای کامپایل میشیم.</p>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 val immutable = 3.14
 immutable = 6.28 //خطای کامپایل
+              </div>
+            </div>
           </div>
         </div>
 
@@ -114,26 +122,36 @@ immutable = 6.28 //خطای کامپایل
           <div class="note">
             <p class="h6">نکته:</p>
 
-            <p>برای تعریف متغیر با کلیدواژه ی const مقداری که به متغیر اختصاص میدیم باید نوع String یا Primitve باشه (Int، Long، Double، Short، ...)</p>
+            <p>برای تعریف متغیر با کلیدواژه ی const مقداری که به متغیر اختصاص میدیم باید نوع String یا Primitive باشه (Int، Long، Double، Short، ...)</p>
           </div>
 
           <p>چون این متغیر ها فقط زمان کامپایل مقداردهی میشن بنابراین نمیتونیم با توابع و پراپرتی هایی که زمان اجرا صدا زده میشن مقداردهیشون کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 // صحیح            
 const val DOMAIN: String = "https://skybirdbits.github.io"
 val currentTime: Long = System.currentTimeMillis()
+              </div>
+            </div>
           </div>
           
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 //غلط            
 const val DOMAIN: String = "https://skybirdbits.github.io"
 const val CURRENT_TIME: Long = System.currentTimeMillis()
+              </div>
+            </div>
           </div>
 
           <p>مثال</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 const val LABEL_NAME: String = "Name:"
 const val LABEL_AGE: String = "Age:"
 const val LABEL_BIRTHDAY: String = "Birthday:"
@@ -149,6 +167,8 @@ fun main(){
   println("$LABEL_NAME $name $LABEL_AGE $age $LABEL_BIRTHDAY $birthday")
 
 }
+              </div>
+            </div>
           </div>
 
 
@@ -163,7 +183,7 @@ fun main(){
 
           <p>- هنگام تعریف متغیر با کلیدواژه ی const متغیر زمان کامپایل مقداردهی میشه.</p>
 
-          <p>- متغیر های const رو میتونیم به عنوان تاپ لول، عضو object decleration و عضو companion object ایجاد کنیم.</p>
+          <p>- متغیر های const رو میتونیم به عنوان تاپ لول، عضو object declaration و عضو companion object ایجاد کنیم.</p>
           <p>- به متغیر هایی که با const ایجاد میکنیم فقط میتونیم مقادیر String و یا Primitive Type ها رو اختصاص بدیم.</p>
 
         </div>

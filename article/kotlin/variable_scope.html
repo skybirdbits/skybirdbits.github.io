@@ -73,19 +73,25 @@
 
           <p>وقتی یک متغیر یا تابع رو داخل فایل کاتالین تعریف کنیم بهش متغیر یا تابع تاپ لول (top level) میگیم. کل توابع و کلاس های داخل فایل میتونن به این متغیر دسترسی مستقیم داشته باشن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 var topLevel = "This is a top level variable"
 
 fun main(){
    println(topLevel)
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5"> محدوده ی داخل کلاس (member class)</p>
+          <p class="piece"> محدوده ی داخل کلاس (member class)</p>
           <p>متغیر یا توابعی که داخل کلاس تعریف میشن بهشون member میگیم.</p>
           <p>اعضای کلاس بجز اعضای companion object به متغیر یا تابع دسترسی مستقیم دارن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
   ...
 
@@ -93,14 +99,18 @@ class MyClass{
 
   ...
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5">محدوده ی companion object</p>
+          <p class="piece">محدوده ی companion object</p>
           <p>متغیر یا توابعی که داخل companion object تعریف میشن.</p>
 
           <p>اعضای companion object و اعضای کلاس به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
 
 ...
@@ -114,15 +124,19 @@ class MyClass{
 
   }
 }
+              </div>
+            </div>
           </div>
 
 
-          <p class="h5">محدوده ی داخل تابع (local)</p>
+          <p class="piece">محدوده ی داخل تابع (local)</p>
 
           <p>متغیر یا توابعی که داخل تابع تعریف میشن بهشون اعضای لوکال (local) میگیم.</p>
           <p>فقط اعضای داخل تابع به متغیر یا تابع تعریف شده دسترسی مستقیم دارن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 fun myFunction(){
 
   ...
@@ -131,7 +145,8 @@ fun myFunction(){
 
   ...
 }
-
+              </div>
+            </div>
           </div>
 
 

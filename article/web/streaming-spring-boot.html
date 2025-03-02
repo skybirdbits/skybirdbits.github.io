@@ -78,8 +78,12 @@
 
                 <p><strong>مثال:</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Content-Disposition: inline; filename="name_of_the_file.extension"
+                        </div>
+                    </div>
                 </div>
 
                 <h5 class="text-ltr">2-Content-Range:</h5>
@@ -90,38 +94,54 @@ Content-Disposition: inline; filename="name_of_the_file.extension"
                 <p><strong>مثال:</strong></p>
 
                 <div class="code-container">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Content-Range: bytes rangeEnd-rangeStart/fileSize
+                        </div>
+                    </div>
                 </div>
 
 
-                <h5 class="text-ltr">3-Accept-Range:</h5>
+                <p class="piece text-ltr">3-Accept-Range:</p>
 
                 <p>به کلاینت میگه واحد Range قابل قبول چیه (bytes, kilobytes...)</p>
 
                 <p><strong>مثال:</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Accept-Range: bytes
+                        </div>
+                    </div>
                 </div>
 
 
-                <h5 class="text-ltr">4-Content-Length:</h5>
+                <p class="piece text-ltr">4-Content-Length:</p>
                 <p>مقدار بایت هایی که سرور به کلاینت ارسال می‌کنه در این مورد طول رینج مقدار بایت ارسال شدست </p>
 
                 <p><strong>مثال:</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Content-Length: 2048
+                        </div>
+                    </div>
                 </div>
 
-                <h5 class="text-ltr">5-Content-Type:</h5>
+                <p class="piece text-ltr">5-Content-Type:</p>
 
                 <p>نوع و فرمت فایل رو به کلاینت میگه</p>
 
                 <p><strong>مثال:</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Content-Type: audio/mpeg
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -131,36 +151,46 @@ Content-Type: audio/mpeg
                 <blockquote>این هدر ها رو کلاینت به سرور ارسال می کنه و در این بخش مورد استفاده قرار میگیرن</blockquote>
 
 
-                <h5 class="text-ltr">1-Range:</h5>
+                <p class="piece text-ltr">1-Range:</p>
 
                 <p>به سرور میگه چه قسمت هایی از فایل رو می‌خواد و سرور باید دقیقا همون رو به کلاینت پس بده</p>
 
                 <p><strong>مثال:</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Range: bytes rangeEnd-rangeStart
+                        </div>
+                    </div>
                 </div>
 
                 <p>یا </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
 Range: bytes rangeStart-
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="sub2" class="subsection">
 
-                <h3>پیاده سازی header ها در کد</h3>
+                <h3>پیاده‌سازی header ها در کد</h3>
 
                 <p>حالا نوبت به استفاده از این هدر ها در کد است</p>
 
 
-                <h5>۱-ایجاد کلاس StreamingService</h5>
+                <p class="piece">۱-ایجاد کلاس StreamingService</p>
 
                 <p><strong>StreamingService.java</strong></p>
 
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 import org.springframework.http.*;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -290,14 +320,18 @@ public class StreamingService {
         }
     }
 }
-</div>
+                        </div>
+                    </div>
+                </div>
 
 
-                <h5>۲-صدا زدن و استفاده از کلاس ساخته شده در Controller</h5>
+                <p class="piece">۲-صدا زدن و استفاده از کلاس ساخته شده در Controller</p>
 
                 <p><strong>StreamingController.java</strong></p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -335,6 +369,8 @@ public class StreamingController {
 
 
 }
+                        </div>
+                    </div>
                 </div>
             </div>
 

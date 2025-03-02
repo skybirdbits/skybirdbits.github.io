@@ -79,9 +79,13 @@
           <p>متغیر boolean در کاتلین دارای دو مقدار true یا false است و به صورت زیر تعریف میشه:</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 var v0 = true
 var v1 = false
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -96,7 +100,9 @@ var v1 = false
 
           <p> فرم کلی:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition == true){
 
   ...
@@ -106,6 +112,8 @@ if(condition == true){
   ...
 
 }
+                  </div>
+              </div>
           </div>
 
 
@@ -115,7 +123,9 @@ if(condition == true){
 
           <p> برای کوتاهی میتونیم شرط داخل پرانتز رو به صورت زیر بنویسیم</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition){
 
   ...
@@ -125,12 +135,16 @@ if(condition){
   ...
 
 }
+                  </div>
+              </div>
           </div>
 
 
           <p>هچنین میتونیم چند شرط رو بررسی کنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition0){
 
   ...
@@ -152,10 +166,14 @@ if(condition0){
   ...
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>مثال:</p>
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val input = Scanner(System.in)
 
 println("Enter Weight in kg: ")
@@ -184,13 +202,17 @@ if(bmi &lt; 18.5){
   println("Obese")
 
 }
+                  </div>
+              </div>
           </div>
 
 
           <p>میتونیم داخل هر if یا else یک if دیگه بیان کنیم که به if های تو در تو یا nested if معروفن:
           </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition0){
 
   if(condition1){
@@ -204,13 +226,17 @@ if(condition0){
   }
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>میتونیم if-else در کاتلین به صورت یک عبارت بیان کنیم تا مقداری رو برگردونه</p>
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val input = Scanner(System.in)
 
 println("Enter first number: ")
@@ -223,6 +249,8 @@ var v1 = input.nextInt()
 var max = if(v0 &gt; v1) v0 else v1
 
 println("Maximum is: $max")
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -233,48 +261,64 @@ println("Maximum is: $max")
           <p>عملگر های منطقی برای تغییر مقدار boolean است</p>
 
 
-          <p class="h5">۱- عملگر ! :</p>
+          <p class="piece">۱- عملگر ! :</p>
           <p>مقدار عبارت boolean رو معکوس میکنه مثلا اگ مقدار یک عبارت true باشه با این عملگر false میشه </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val condition = true
 
 if(!condition){
   ...
 }
+                  </div>
+              </div>
           </div>
 
 
-          <p class="h5">۲- عملگر && :</p>
+          <p class="piece">۲- عملگر && :</p>
           <p>معنی and (و) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه همه true بودن عبارت داخل بدنه ی if
             اجرا بشه به صورت زیر عمل میکنیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition0 && condition1 && ... && conditionN) {
   ...
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">۳- عملگر || :</p>
+          <p class="piece">۳- عملگر || :</p>
           <p>معنی or (یا) میده، فرض کنید چندتا شرط داریم میخوایم بررسی کنیم اگه یکیشون true بود کد های داخل {}
             مربوط به if اجرا بشه به صورت زیر عمل میکنیم:</p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition0 || condition1 || ... || conditionN){
 ...
 }
+                  </div>
+              </div>
           </div>
 
-          <p class="h5">۴- عملگر xor:</p>
+          <p class="piece">۴- عملگر xor:</p>
           <p>معنی or اختصاصی میده فرض کنید دو عبارت شرطی داریم میخوایم بررسی کنیم فقط یکیش درست باشه و هردو نباید
             درست
             باشه :</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 if(condition0 xor condition1){
   ...
 }
+                  </div>
+              </div>
           </div>
 
           <div class="note">
@@ -285,7 +329,9 @@ if(condition0 xor condition1){
 
           <p>مثال:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val input = Scanner(System.in);
 
 println("Enter a number: ");
@@ -299,6 +345,8 @@ if (num % 2 == 0 || num % 3 == 0)
 
 if (num % 2 == 0 ^ num % 3 == 0)
   println("Number is divisible by 2 or 3 but not both");
+                  </div>
+              </div>
           </div>
 
         </div>
@@ -315,12 +363,16 @@ if (num % 2 == 0 ^ num % 3 == 0)
           </p>
 
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val v = 6
 
 val isNumberInRange = v in 0..10
 
 println("$v is between 0 to 10? $isNumberInRange")
+                  </div>
+              </div>
           </div>
 
           <div class="note">
@@ -330,8 +382,12 @@ println("$v is between 0 to 10? $isNumberInRange")
             </p>
           </div>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 val isNumberInRange = v in 0 until 10
+                  </div>
+              </div>
           </div>
 
 
@@ -343,13 +399,17 @@ val isNumberInRange = v in 0 until 10
 
             <p>مثال:</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val v = "Hello Condition!"
 val isString = v is String
 val isChar = v is Char
 
 println("Is v String? $isString")
 println("Is v Char? $isChar")
+                    </div>
+                </div>
             </div>
 
           </div>
@@ -363,20 +423,24 @@ println("Is v Char? $isChar")
 
             <p>مثال:</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val input = Scanner(System.in)
-println("Enter a day in week (between 1 to 7): ")
+println("Enter a day in week (between 1 and 7): ")
 val day = input.nextInt()
 when(day){
-  1 -&gt; println("Satuarday")
+  1 -&gt; println("Saturday")
   2 -&gt; println("Sunday")
   3 -&gt; println("Monday")
   4 -&gt; println("Tuesday")
-  5 -&gt; println("Wednsday")
+  5 -&gt; println("Wednesday")
   6 -&gt; println("Thursday")
   7 -&gt; println("Friday")
   else -&gt; println("Out of days not defined")
 }
+                    </div>
+                </div>
             </div>
 
             <p>با استفاده از when بررسی میکنیم مقدار day به کدوم عدد میخوره.
@@ -389,12 +453,16 @@ when(day){
 
             <p>میتونیم دوتا مقدارو به صورت or داخل when بررسی کنیم:</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val v = 0
 when(v){
   0 , 1 -&gt; println("Is a binary number")
   else -&gt; println("Not a binary number")
 }
+                    </div>
+                </div>
             </div>
 
             <p>
@@ -406,21 +474,27 @@ when(v){
               میتونیم متغیر رو هنگام استفاده از when مقداردهی کنیم
             </p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val input = Scanner(System.in)
 
 when(val v = input.nextInt()){
   0 -&gt; println("value is $v and equals to false")
   1 -&gt; println("value is $v and equals to true")
-              else -&gt; println("value is $v and not anounced in binary")
-              }
+  else -&gt; println("value is $v and not announced in binary")
+}
+                    </div>
+                </div>
             </div>
 
             <p>
               میتونیم از when به عنوان جایگزین if-else استفاده کنیم
             </p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val input = Scanner(System.in)
 
 println("Enter weight in kg")
@@ -439,20 +513,26 @@ when{
   bmi &lt; 35 -&gt; println("Overweight")
   else -&gt; println("obese")
  }
+                    </div>
+                </div>
             </div>
 
             <p><strong>مثال</strong></p>
             <p>استفاده از in در when</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val v = Scanner(System.in).nextInt()
 
 when(v){
   in 0 until 10 -&gt; println("Number has one digit")
   in 10 until 100 -&gt; println("Number has two digits")
   in 100 until 1000 -&gt; println("Number has three digits")
-  else -&gt; println("Number has more than three digits or it's negative")
+  else -&gt; println("Number has more than three digits, or it's negative")
 }
+                    </div>
+                </div>
         </div>
 
         <p>در مثال بالا یک عدد کاربر وارد میکنه و برنامه بررسی میکنه که این عدد چند رقمیه اگه عدد بیشتر از سه رقم
@@ -462,13 +542,17 @@ when(v){
 
         <p>استفاده از is در when</p>
 
-            <div class="code-container">
+            <div class="sample">
+                <div class="snippet-container">
+                    <div class="snippet Kotlin">
 val v = "This is an is example"
 
 when(v){
   is String -&gt; println("it's string type")
   is Int -&gt; println("v is type of Integer and its value is $v")
 }
+                    </div>
+                </div>
             </div>
 
           </div>

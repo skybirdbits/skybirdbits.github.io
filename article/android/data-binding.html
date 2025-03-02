@@ -2,7 +2,6 @@
 <html lang="fa">
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-    <meta content="برنامه نویسی، برنامه نویسی اندروید ، استفاده از data binding ، data binding در اندروید، دیتا بایندینگ" name="keywords"/>
     <meta content="آموزش افزودن و استفاده از کتابخانه ی data binding اندروید" name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
@@ -68,7 +67,9 @@
 
                 <p>Root Project -&gt; app -&gt; build.gradle</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Gradle">
 android{
 
     ...
@@ -78,6 +79,8 @@ android{
     }
 
 }
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -118,7 +121,9 @@ android{
                     سپس داخل متد onCreateView مربوط به کلاس Fragment مانند زیر اونا رو مقدار دهی میکنیم:
                 </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 override fun onCreateView(
 inflater: LayoutInflater,
 container: ViewGroup?,
@@ -131,6 +136,8 @@ savedInstanceState: Bundle?
 
     return binding.root
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>

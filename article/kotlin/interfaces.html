@@ -67,11 +67,13 @@
         <div class="subsection" id="sub0">
           <p class="title">توضیحات و ویژگی ها</p>
 
-          <p>در این مطلب به مقایسه و بررسی اینترفیس (interface) ها با کلاس های ابستراکت و ویژگی انها در کاتلین پرداختیم و همچنین اینترفیس های تابعی در کاتلین رو بررسی کردیم.</p>
+          <p>در این مطلب به مقایسه و بررسی اینترفیس (interface) ها با کلاس های ابستراکت و ویژگی آنها در کاتلین پرداختیم و همچنین اینترفیس های تابعی در کاتلین رو بررسی کردیم.</p>
 
           <p> مشابه کلاس های ابستراکت در اینترفیس (interface) ها، میتونیم توابع concrete (کامل) و توابع abstract تعریف کنیم.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 interface Foo {
 
  //Concrete Function Implementation
@@ -83,11 +85,15 @@ interface Foo {
  fun myAbstractFunction()
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>در اینترفیس ها نمیتونیم کانستراکتور تعریف کنیم؛ چون اینترفیس ها کانستراکتور ندارن پس پراپرتی ها باید abstract باشن مگه پراپرتی های val که تابع getter دارن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 interface Foo {
 
   abstract var prop0: String
@@ -95,11 +101,15 @@ interface Foo {
   val prop1: String get() = "Prop1"
 
 }
+                  </div>
+              </div>
           </div>
 
           <p>هر اینترفیس میتونه از یک یا چند اینترفیس ارث بری کنه.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 interface A {
   ... 
 }
@@ -111,13 +121,17 @@ interface B {
 interface C: A, B {
   ...
 }
+                  </div>
+              </div>
          </div>
 
           <p>همانند کلاس های ابستراکت از اینترفیس ها نیز نمیشه نمونه (شی) سازی کرد.</p>
 
           <p>هر کلاسی میتونه از یک کلاس و<strong>چند اینترفیس</strong> ارث بری کنه.</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 interface A {
   ...
 }
@@ -134,6 +148,8 @@ open class Foo {
 class Bar: Foo(), A, B{
   ...
 }
+                  </div>
+              </div>
           </div>
 
 
@@ -150,9 +166,11 @@ class Bar: Foo(), A, B{
 
           <p class="h4">۲- پیاده سازی مستقیم اینترفیس</p>
 
-          <p>میتونیم اینترفیس رو مانند زیر در کد پیاده سازی کنیم: </p>
+          <p>میتونیم اینترفیس رو مانند زیر در کد پیاده‌سازی کنیم: </p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 interface Player{
   fun play()
 
@@ -182,6 +200,8 @@ val player = object: Player{
 }
 
 }
+                  </div>
+              </div>
           </div>
         </div>
 
@@ -197,7 +217,9 @@ val player = object: Player{
 
           <p>در مثال زیر اینترفیس رو به دو روش معمولی و تابعی پیاده‌سازی کردیم:</p>
 
-          <div class="code-container">
+          <div class="sample">
+              <div class="snippet-container">
+                  <div class="snippet Kotlin">
 fun interface PredictableNumber{
   fun predict(v: Int): Boolean
 }
@@ -224,6 +246,8 @@ fun main(){
   println("is 53 prime? ${prime.predict(53)"}
 
   println("is 53 even? ${even.predict(53)"}
+                  </div>
+              </div>
           </div>
           
 

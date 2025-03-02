@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="keywords" content="کلیدواژه سطح دسترسی، سطح دسترسی توابع، سطح دسترسی متغیر، سطح دسترسی اعضای کلاس، کلیدواژه ی private، کلیدواژه ی protected، کلیدواژه ی internal، کلیدواژه ی public، access modifiers در کاتلین">
   <meta name="description" content="در این مطلب به کلیدواژه های سطح دسترسی می پردازیم و نحوه ی تعیبن سطح دسترسی، متغیر، توابع و کلاس رو در کاتلین بررسی میکنیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -94,7 +93,9 @@
 
           <p>با کلیدواژه ی private اعلام میکنیم عضو top level فقط برای اعضای داخل فایل در دسترس است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 private var v = ...
             
 private fun myFunction(){
@@ -106,13 +107,17 @@ private class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5">internal</p>
+          <p class="piece">internal</p>
 
           <p>با کلیدواژه ی internal میگیم عضو top level فقط برای اعضای داخل ماژول (module) در دسترس است.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 internal var v = ...
             
 internal fun myFunction(){
@@ -124,15 +129,19 @@ internal class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
 
 
-          <p class="h5">public</p>
+          <p class="piece">public</p>
 
           <p>با استفاده از کلیدواژه ی public اعلام میکنیم تمام کلاس ها و فایل های پروژه میتونن به عضو top level دسترسی داشته باشن.</p>
 
-           <div class="code-container">
+           <div class="sample">
+             <div class="snippet-container">
+               <div class="snippet Kotlin">
 public var v = ...
             
 public fun myFunction(){
@@ -142,6 +151,8 @@ public fun myFunction(){
 public class MyClass{
   ...
 }
+               </div>
+             </div>
           </div>
 
           <div class="note">
@@ -153,10 +164,12 @@ public class MyClass{
 
         <div class="subsection" id="sub2">
           <p class="title">سطح دسترسی اعضای کلاس</p>
-          <p class="h5">private</p>
+          <p class="piece">private</p>
           <p>با استفاده از کلیدواژه ی private برای یک عضو کلاس اعلام میکنیم فقط اعضای داخل کلاس میتونن بهش دسترسی داشته باشن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
   private var prop = ...
 
@@ -169,12 +182,16 @@ class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5">protected</p>
+          <p class="piece">protected</p>
           <p>اگه از کلاسی که عضوش با سطح دسترسی protected تعریف شده ارث بری نداشته باشیم مثل private عمل میکنه. در صورت ارث بری، اعضای کلاس فرزند به عضوی که در کلاس پدر با protected تعریف شده دسترسی دارند.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
 
   protected var prop = ...
@@ -188,13 +205,17 @@ class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5">internal</p>
+          <p class="piece">internal</p>
 
           <p>تمام اعضای module که به کلاس دسترسی دارن؛ به عضو کلاس که با سطح دسترسی internal تعریف شده نیز دسترسی دارن.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
   internal var prop = ...
 
@@ -207,13 +228,17 @@ class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
-          <p class="h5">public</p>
+          <p class="piece">public</p>
 
           <p>اعضای تمام کلاس ها و فایل های پروژه میتونن به عضوی که در کلاس با public تعریف شده، دسترسی داشته باشند.</p>
 
-          <div class="code-container">
+          <div class="sample">
+            <div class="snippet-container">
+              <div class="snippet Kotlin">
 class MyClass{
   public var prop = ...
 
@@ -228,6 +253,8 @@ class MyClass{
   ...
 
 }
+              </div>
+            </div>
           </div>
 
         </div>

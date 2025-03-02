@@ -69,10 +69,14 @@
 
                 <p>ابتدای این کلاس ها کلیدواژه ی <strong>sealed</strong> میزاریم و بقیشو مثل کلاس معمولی تعریف می کنیم: </p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 sealed class MyClass {
     ...
 }
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -89,7 +93,9 @@ sealed class MyClass {
 
                 <p>فرض کنید حیوون خونگی داریم و میخوایم بهشون غذا بدیم اما نمیخوایم این غذا رو به حیوونای دیگه این غذا رو بدیم بنابراین برای غذا کلاس sealed تعریف می کنیم:</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 fun main() {
 
     val myCat = PetFood.MyCat()
@@ -114,6 +120,8 @@ sealed class PetFood private constructor(){
         }
     }
 }
+                        </div>
+                    </div>
                 </div>
 
                 <p>در بالا سطح دسترسی کانستراکتور کلاس PetFood به صورت private تعریف شده بنابراین فقط کلاس های تودرتو میتونن از کلاس PetFood ارث بری داشته باشن که در مورد فوق دو کلاس MyDog و MyCat رو به صورت تو در تو تعریف کردیم.</p>
@@ -121,7 +129,9 @@ sealed class PetFood private constructor(){
 
                 <p>یکی از ویژگی کلاس های sealed کاربرد اونا در عبارت when است به این صورت وقتی که ساب کلاس هاشونو در when بررسی می کنیم در آخر عبارت نیاز به استفاده از else نداریم.</p>
 
-                <div class="code-container">
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Kotlin">
 fun main(){
     val myCat = PetFood.MyCat()
     val myDog = PetFood.MyDog()
@@ -139,6 +149,8 @@ fun printHungryPetVoice(petFood: PetFood){
         is PetFood.MyDog -> println("Barking")
     }
 }
+                        </div>
+                    </div>
                 </div>
 
             </div>
