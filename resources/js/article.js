@@ -10,7 +10,7 @@ const shellCommands = /(?<!([^\s,(}]{1}|\/\/.*))(ls|cd)(?![\w\d]|[^\s)\{\(;]{1})
 
 const codeContainerList = document.querySelectorAll('.sample');
 
-const languages = /(Java)|(Kotlin)/g;
+const languages = /(Java)|(Kotlin)|(Gradle)|(XML)|(Shell)/g;
 
 function createCodeViews() {
 
