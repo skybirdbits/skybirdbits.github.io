@@ -1,39 +1,121 @@
-import {createCodeViewHead, createCodeWrap, createCodeTableView} from './ui.js';
+import {createSampleHeader, createSnippetToggler, createSnippetToggleButton, createCodeWrap, createCodeTableView} from './ui.js';
 
 const keyword = /(?<!([^\s,(}]{1}|\/\/.*))(public|private|protected|void|return|static|instanceof|for|while|do|if|else|switch|case|override|fun|var|val|companion|data|in|infix|tailrec|inline|noinline|crossinline|reified|false|true|null|class|short|byte|int|long|double|float|boolean|throw|throws|try|catch|finally|final|static|interface|enum|abstract|import|this|super|new|package|yield|default)(?![\w\d]|[^\s)\{\(;]{1})/g;
 const string = /(?<!\/\/.*)(["']([^+]*)["'])|(["'](@\+.*)["'])/g;
 const className = /((?<![^\s./-<,(]|(\/\/.*))([A-Z]{1}[\w\d]*)(?!([^\s.,>:("]){1}))/g;
 const digit = /(?<![^\s,(]|(\w\s))\d+(?![\w\d]|[^\s),;]{1})/g;
-const annotation = /(?<![^\s]{1})@[A-Z]{1}[a-zA-Z\d]*/g
-const comment = /(?<!(http{1}.*))\/\/.*/g
+const annotation = /(?<![^\s]{1})@[A-Z]{1}[a-zA-Z\d]*/g;
+const comment = /(?<!(http{1}.*))\/\/.*/g;
 const shellCommands = /(?<!([^\s,(}]{1}|\/\/.*))(ls|cd)(?![\w\d]|[^\s)\{\(;]{1})/g;
 
-const elements = document.querySelectorAll('.code-container');
+const codeContainerList = document.querySelectorAll('.sample');
 
+const languages = /(Java)|(Kotlin)/g;
 
 function createCodeViews() {
 
-  for (var i = 0; i < elements.length; i++) {
+  for (var i = 0; i < codeContainerList.length; i++) {
+    let codeContainer = codeContainerList[i];
 
-    let codeLines = elements[i].innerHTML.split('\n');
-    elements[i].innerHTML = "";
+    let header = createSampleHeader();
+    let copyButton = header.firstChild;
 
-    let codeViewContents = createCodeViewContents(codeLines);
+    let snippetContainer = codeContainer.querySelector('.snippet-container');
 
-    let codeHead = createCodeViewHead(function () {
-      let text = collectTextCodes(codeViewContents);
-      navigator.clipboard.writeText(text);
-      $('.copy-message').animate({bottom: "0px"}, 512);
-      $('.copy-message').delay(3000).animate({bottom: "-128px"}, 512);
+    //intented to wrap codes for every languages.
+    let codeSnippetList = snippetContainer.querySelectorAll('.snippet');
+
+    hideAllSnippets(codeSnippetList);
+
+    let snippetToggler = createSnippetToggler((snippetToggler) =>{
+
+      //iterate through snippets to generate requirement code snippets for multiple languages.
+      for(var j = 0; j<codeSnippetList.length; j++){
+
+        let snippet = codeSnippetList[j];
+
+        let snippetLang = findSnippetLanguage(snippet);
+
+        //Parameters: name, id, lambda expression
+        createSnippetToggleButton( i, (snippetLang + i + "" + j), (snippetToggleButton, snippetToggleLabel) => {
+          //listen when syntax of language changed.
+          snippetToggleButton.addEventListener('change', function(event) {
+
+            if(this.checked){
+              hideAllSnippets(codeSnippetList);
+              //this.style.display = 'none';
+              showSnippet(snippet);
+
+              copyButton.onclick = function(){
+                let text = collectTextCodes(snippet.firstChild);
+                navigator.clipboard.writeText(text);
+                $('.copy-message').animate({bottom: "0px"}, 512);
+                $('.copy-message').delay(3000).animate({bottom: "-128px"}, 512);
+              }
+
+            }
+          });
+
+
+          if(codeSnippetList.length > 1) snippetToggler.appendChild(snippetToggleButton);
+
+
+          if(codeSnippetList.length <= 1)   snippetToggleLabel.style.color = '#fafafa';
+
+          snippetToggleLabel.innerHTML = snippetLang;
+          snippetToggler.appendChild(snippetToggleLabel);
+
+          snippet.id = snippetLang + i;
+
+          if(j === 0) {
+            showSnippet(snippet);
+            snippetToggleButton.checked = true;
+          }
+
+        });
+
+        let codeLines = snippet.innerHTML.split('\n');
+        let codeViewContents = createCodeViewContents(codeLines);
+        
+        snippet.innerHTML = '';
+        snippet.appendChild(codeViewContents);
+
+        if(j === 0){
+          copyButton.onclick = function(){
+            let text = collectTextCodes(snippet.firstChild);
+            navigator.clipboard.writeText(text);
+            $('.copy-message').animate({bottom: "0px"}, 512);
+            $('.copy-message').delay(3000).animate({bottom: "-128px"}, 512);
+          }
+        }
+
+      }
     });
 
-    elements[i].appendChild(codeHead);
-    elements[i].appendChild(codeViewContents);
+    codeContainer.insertBefore(snippetToggler, snippetContainer);
+
+    codeContainer.insertBefore(header, snippetToggler);
 
   }
 
 }
 
+function findSnippetLanguage(snippet){
+  let snippetClassNames = snippet.className.split(" ");
+  let languageIndex = snippetClassNames.findIndex(el => el.match(languages));
+
+  return snippetClassNames[languageIndex];
+}
+
+function showSnippet(syntaxWrapper){
+  syntaxWrapper.style.display = 'block';
+}
+
+function hideAllSnippets(syntaxWrapperList){
+  for(var i = 0; i<syntaxWrapperList.length; i++){
+    syntaxWrapperList[i].style.display = 'none';
+  }
+}
 
 function createCodeViewContents(codeLines) {
   var codeWrap = createCodeWrap();
@@ -107,6 +189,5 @@ function collectTextCodes(codeViewContents) {
 
   return text;
 }
-
 
 export {createCodeViews};

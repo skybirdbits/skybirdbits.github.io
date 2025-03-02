@@ -22,7 +22,7 @@
     padding: 4px 6px 4px 6px;
 }
 
-.code-container{
+.sample{
     border-radius: 4px;
     background: #eeeeee;
     margin-bottom: 16px;
@@ -30,21 +30,25 @@
     margin: 16px 4px;
 }
 
-.code-container .code-wrap{
+.sample .snippet{
+    display: block;
+}
+
+.snippet .code-wrap{
      padding-bottom: 12px;
      overflow-x: auto;
      overflow-y: hidden;
 }
 
-
-.code-container .code-wrap .code-body{
+.snippet .code-wrap .code-body{
     border-bottom: 2px solid #0277bd;
     background: white;
 }
 
-.code-container .code-wrap .code-body .code{
+.snippet .code-wrap .code-body .code{
    width: 100%;
    height: auto;
+   padding-top: 4px;
    white-space: pre;
    position:relative;
    padding-right: 10px;
@@ -55,8 +59,7 @@
    font-size: 0.9em;
 }
 
-
-.code-container .code-wrap .code-body .code-line-number{
+.snippet .code-wrap .code-body .code-line-number{
     background: #eeeeee;
     width: 1%;
     min-width: 50px;
@@ -66,12 +69,13 @@
     vertical-align: top;
     padding-right: 10px;
     padding-left: 10px;
+    padding-top: 4px;
     cursor: pointer;
     user-select: none;
     text-align: right;
 }
 
-.code-container .code-head{
+.sample .sample-head{
     position: relative;
     padding: 8px;
     background: #004c8c;

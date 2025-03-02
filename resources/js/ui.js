@@ -79,26 +79,44 @@ function createListItemView(link) {
   return item;
 }
 
-
 /*
   Views about code styling usable in article.js
 */
 
-function createCodeViewHead(onClickListener) {
+function createSampleHeader() {
   var codeHead = document.createElement('div');
-  codeHead.classList.add('code-head');
+  codeHead.classList.add('sample-head');
 
   var copyButton = document.createElement('button');
   copyButton.classList.add('md-bt', 'md-bt-light', 'material-icons');
   copyButton.innerHTML = "content_copy";
-
-  copyButton.addEventListener('click', onClickListener);
 
   codeHead.appendChild(copyButton);
 
   return codeHead;
 }
 
+function createSnippetToggler(buildToggleButtons){
+
+  var snippetToggler = document.createElement('div');
+  snippetToggler.classList.add('snippet-toggler');
+
+  buildToggleButtons(snippetToggler);
+
+  return snippetToggler;
+}
+
+function createSnippetToggleButton(name, id, appendable){
+  let snippetToggleButton = document.createElement('input');
+  snippetToggleButton.classList.add('snippet-toggle-button');
+  snippetToggleButton.type = 'radio';
+  snippetToggleButton.id = id;
+  snippetToggleButton.name = name;
+
+  let snippetToggleLabel = document.createElement('label');
+  snippetToggleLabel.htmlFor = snippetToggleButton.id;
+  appendable(snippetToggleButton, snippetToggleLabel);
+}
 
 function createCodeWrap() {
 
@@ -107,7 +125,6 @@ function createCodeWrap() {
 
   return codeWrap
 }
-
 
 function createCodeTableView(codeWrap, callback) {
   var table = document.createElement('table');
@@ -121,4 +138,4 @@ function createCodeTableView(codeWrap, callback) {
 }
 
 
-export {createCourseListView, createCodeViewHead, createCodeWrap, createCodeTableView}
+export {createCourseListView, createSampleHeader, createSnippetToggler, createSnippetToggleButton, createCodeWrap, createCodeTableView}
