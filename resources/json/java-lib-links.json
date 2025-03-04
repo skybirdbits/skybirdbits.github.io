@@ -1,0 +1,10 @@
+{
+  "id": "java_lib_chapters",
+  "title": "کتابخونه های جاوا",
+  "links": [
+    {
+      "subject": "کلاس File",
+      "href": "/article/java-lib/file.html"
+    }
+  ]
+}
