@@ -46,7 +46,7 @@
             </address>
 
             <figure class="figure figure-wrapper">
-                <img alt="کلاس فایل در جاوا" class="rounded figure-img" src="/resources/image/java-lib/cover_file.png"/>
+                <img alt="کلاس فایل در جاوا" class="rounded figure-img" src="/resources/image/java/cover_file.png"/>
             </figure>
 
             <div class="toc">
@@ -54,8 +54,8 @@
                 <div class="list-group">
 
                     <a class="list-group-item list-group-item-action" href="#sub0">بررسی کلاس File</a>
-                    <a class="list-group-item list-group-item-action" href="#sub1">خلاصه</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">تعریف مسیر برای فایل</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">تعریف مسیر تارگت</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">مورد مطالعه (مثال)</a>
                     <a class="list-group-item list-group-item-action" href="#sub3">خلاصه</a>
                 </div>
             </div>
@@ -129,8 +129,7 @@
 
                     <div class="tRow">
                         <div class="tDataLTR">+canWrite(): boolean</div>
-                        <div class="tDataRTL">بررسی میکنه آیا فایل قابل نوشتن هست یا خیر (برای انجام تغییرات در محتوای
-                            فایل)
+                        <div class="tDataRTL">بررسی میکنه آیا فایل قابل نوشتن هست یا خیر.
                         </div>
                     </div>
 
@@ -225,7 +224,7 @@
 
             </div>
             <div class="subsection" id="sub1">
-                <p class="title">تعریف مسیر برای File</p>
+                <p class="title">تعریف مسیر تارگت</p>
 
                 <p>برای کلاس File در جاوا و کاتلین به دو روش میتونیم مسیر تارگت (پوشه یا فایل مورد نظر) رو تعریف
                     کنیم.</p>
@@ -296,10 +295,10 @@ System.out.println("Can it be written? " + file.canWrite());
 System.out.println("Is it Hidden? " + file.isHidden());
 System.out.println("Is it File? " + file.isFile());
 System.out.println("Is it Directory? " + file.isDirectory());
-System.out.println("Last Modification date: " + java.util.Date(file.lastModified()));
+System.out.println("Last modification date: " + java.util.Date(file.lastModified()));
                         </div>
                         <div class="snippet Kotlin">
-val file = new File("Path_To_File");
+val file = File("Path_To_File");
 println("Does it exist? ${file.exists()}");
 println("Is it Absolute? ${file.isAbsolute()}");
 println("Absolute path: ${file.getAbsolutePath()}");
