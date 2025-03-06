@@ -27,6 +27,10 @@
       "href": "/article/java/file.html"
     },
     {
+      "subject": "نوشتن متن در فایل با PrintWriter",
+      "href": "/article/java/printwriter.html"
+    },
+    {
       "subject": "تغییرات switch تا jdk-17",
       "href": "https://skybirdbits.github.io/article/java/switch-statement-jdk-17.html"
     }

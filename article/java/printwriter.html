@@ -7,15 +7,15 @@
     <meta content="IE=7" http-equiv="X-UA-Compatible">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
-    <meta content="یکی از کلاس های io در جاوا کلاس PrintWriter است با کمک PrintWriter میتونیم محتوای رو به صورت متن در فایل بنویسیم در این مطلب به بررسی PrintWriter و try-with-resources پرداختیم."
+    <meta content="یکی از کلاس های io در جاوا کلاس PrintWriter است با کمک PrintWriter میتونیم محتوا رو به صورت متن در فایل بنویسیم در این مطلب به بررسی PrintWriter و try-with-resources پرداختیم."
           name="description">
 
     <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>کلاس PrintWriter در جاوا و کاتلین</title>
+    <title>نوشتن متن با PrintWriter در جاوا و کاتلین</title>
 
-    <meta content="کلاس PrintWriter در جاوا و کاتلین" name="og:title">
+    <meta content="نوشتن متن با PrintWriter در جاوا و کاتلین" name="og:title">
     <meta content="یکی از کلاس های io در جاوا کلاس PrintWriter است با کمک PrintWriter میتونیم محتوای رو به صورت متن در فایل بنویسیم در این مطلب به بررسی PrintWriter و try-with-resources پرداختیم."
           name="og:description">
 
@@ -38,7 +38,7 @@
 
         <div class="article-head">
             <h1>
-                کلاس PrintWriter در جاوا و کاتلین
+                نوشتن متن با PrintWriter در جاوا و کاتلین
             </h1>
 
             <address>
@@ -73,14 +73,22 @@
                 <blockquote>با استفاده از PrintWriter در جاوا و کاتلین میتونیم داده ها رو به صورت متن در فایل بنویسیم.</blockquote>
 
                 <p>همانطور که گفتیم کلاس <a class="text-decoration-none" href="file.html">File</a> در جاوا از خوندن و نوشتن داخل فایل پشتیبانی نمیکنه و برای این کار باید از کلاس های دیگه در پکیج io استفاده کنیم.</p>
-                <p>یکی از این کلاس ها PrintWriter در جاوا است؛ کلاس PrintWriter برای <strong>نوشتن متن</strong> در فایل مورد استفاده قرار میگیره.</p>
-                <p>برای فیلد استاتیک out مربوط به کلاس System متد های println ، print و printf تعریف شده و به وسیله ی این متد ها میتونیم داده ها رو در کنسول نوشته و نمایش بدیم؛ همین متد ها برای کلاس PrintWriter نیز تعریف شده و به وسیله ی این متد ها در PrintWriter میتونیم داده ها رو به صورت متن در فایل بنویسیم.</p>
 
-                <p>در زیر متد و کانستراکتور های پرکاربرد کلاس PrintWriter نوشته شده.</p>
+                <p>یکی از این کلاس ها PrintWriter در جاوا است؛ کلاس PrintWriter برای <strong>نوشتن متن</strong> در فایل مورد استفاده قرار میگیره.</p>
+
+                <p>تا الان برای نوشتن خروجی در کنسول از قطعه کد زیر استفاده میکردید:</p>
+
+                <p dir="ltr">System.out.println(...)</p>
+
+                <p>فیلد استاتیک out در واقع از نوع PrintStream است در کلاس PrintStream متدهای print، println و printf تعریف شده.</p>
+
+                <p>همین متد ها برای کلاس PrintWriter نیز تعریف شده و با استفاده از این متد ها در PrintWriter میتونیم داده ها رو به صورت متن در فایل بنویسیم.</p>
+
+                <p>در زیر کانستراکتور و متد های پرکاربرد کلاس PrintWriter بیان شده.</p>
 
                 <div class="tb">
                     <div class="tRow">
-                        <div class="tHead">PrintWriter</div>
+                        <div class="tHead">java.io.PrintWriter</div>
                     </div>
 
                     <div class="tRow">
@@ -158,6 +166,14 @@
                     </div>
                 </div>
 
+
+                <p>در کلاس هایی که مختص خوندن و نوشتن در جاوا هستند،<a class="text-decoration-none" href="/article/java/exceptions.html">checked-exception</a> انداخته شده و هنگام تعریفشون باید در بلوک try-catch قرار بگیرند.</p>
+
+                <div class="note">
+                    <p class="h6">راهنمایی</p>
+                    <p>برای اکثر کلاس های io کافیه IOException رو به عنوان پارامتر بلوک catch تعریف کنیم.</p>
+                </div>
+
                 <p>مثال</p>
 
                 <p>در مثال زیر ابتدا برنامه بررسی میکنه فایل وجود داره یا خیر اگه وجود داشته باشه برنامه متوقف میشه. سپس اگه فایل وجود نداشته باشه فایل به صورت خودکار توسط PrintWriter در روت پروژه (بخاطر مسیری که تعریف کردیم) ایجاد میشه و سپس داده ها رو داخل فایل می نویسه و بعد از پایان کار با متد close فایل رو میبنده.</p>
@@ -231,20 +247,24 @@ fun main(){
                 <p>با هر بار باز کردن فایل توسط PrintWriter، محتوای فایل پاک شده و محتوای جدید در فایل نوشته میشه؛ یکی از روش های جلوگیری از پاک شدن محتوای فایل هنگام باز شدن توسط PrintWriter استفاده از FileWriter به عنوان پارامتر PrintWriter است که در <a class="text-decoration-none" href="#sub2">بخش آخر</a> توضیح داده شده است.</p>
 
                 <p>فکر خوبیه برای بستن فایل، متد close رو داخل بدنه ی finally صدا بزنیم. اگر چه میتونیم داخل بدنه ی try متد close رو صدا بزنیم اما با صدا زدنش در finally مطمئن میشیم بعدش متدی برای خوندن و نوشتن صدا نزدیم.</p>
+
             </div>
 
 
             <div class="subsection" id="sub1">
                 <p class="title">معرفی try-with-resources</p>
 
-                <blockquote>استفاده از try-with-resources در جاوا اجباری نیست اما برای مرتب تر شدن کد ها و جلو گیری از اشتباه توصیه میشه.</blockquote>
+                <blockquote>استفاده از try-with-resources در جاوا اجباری نیست اما برای مرتب تر شدن کد ها و جلو گیری از فراموش کردن صدا زدن متد close توصیه میشه.</blockquote>
+
+
+
+                <p>گاهی اوقات برنامه نویسا فراموش میکنن متد close رو صدا بزنن برای همین از جاوا 7 به بعد try-with-resources معرفی شد با استفاده از try-with-resources کلاس هایی که از AutoClosable ارث بری میکنن به طور خودکار بدون نیاز به صدا زدن متد close بسته میشن.</p>
+
 
                 <div class="note">
                     <p class="h6">توجه</p>
-                    <p>کلاس Scanner یکی از ساب کلاس های AutoClosable است.</p>
+                    <p>کلاس Scanner در جاوا نیز از AutoClosable ارث میبره.</p>
                 </div>
-
-                <p>گاهی اوقات برنامه نویسا فراموش میکنن متد close رو صدا بزنن برای همین از جاوا ۷ به بعد try-with-resources معرفی شد با استفاده از try-with-resources کلاس هایی که از AutoClosable ارث بری میکنن به طور خودکار بدون نیاز به صدا زدن متد close بسته میشن.</p>
 
                 <p class="piece"></p>
 
@@ -293,7 +313,7 @@ output.use{
                 </div>
 
 
-                <p class="piece">مثال</p>
+                <p>مثال</p>
                 <p>در مثال زیر از try-with-resources در جاوا و تابع use در کاتلین استفاده کردیم.</p>
 
                 <div class="sample">
@@ -374,14 +394,11 @@ fun main(){
 
                 <p>به طور پیشفرض هنگام باز کردن فایل توسط PrintWriter محتوای فایل پاک شده و فایل برای نوشتن محتوای جدید مورد استفاده قرار میگیره.</p>
 
-                <p>با کمک FileWriter میتونیم داده های از قبل ذخیره شده در فایل رو حفظ کنیم و داده های جدید رو در امتداد داده های قبلی بنویسیم.</p>
+                <p>با کمک FileWriter میتونیم داده های از پیش ذخیره شده در فایل رو حفظ کرده و داده های جدید رو در ادامه ی داده های قبلی بنویسیم.</p>
 
-                <p>برای این کار باید مقدار appendable کانستراکتور FileWriter رو true قرار بدیم و به عنوان پارامتر به PrintWriter پاسش بدیم.</p>
+                <p>برای این کار باید مقدار پارامتر appendable کانستراکتور FileWriter رو true قرار بدیم و خود FileWriter رو به عنوان پارامتر به PrintWriter پاس بدیم.</p>
 
-                <div class="note">
-                    <p class="h6">توجه</p>
-                    <p>کلاس FileWriter یکی از کلاس های Output در جاوا است و مانند PrintWriter میتونیم مستقیم از متد های خودش استفاده کنیم.</p>
-                </div>
+
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -394,6 +411,12 @@ val output = PrintWriter(FileWriter(file, true))
                     </div>
 
                 </div>
+
+                <div class="note">
+                    <p class="h6">توجه</p>
+                    <p>کلاس FileWriter یکی از کلاس های Output در جاوا است و مانند PrintWriter میتونیم مستقیم از متد های خودش استفاده کنیم.</p>
+                </div>
+
             </div>
 
             <div class="subsection" id="sub3">
@@ -411,7 +434,7 @@ val output = PrintWriter(FileWriter(file, true))
 
             <div class="navigator-container">
 
-                <a class="md-bt md-bt-light" href="">
+                <a class="md-bt md-bt-light" href="#">
             <span class="material-icons">
               navigate_next
             </span>
@@ -420,7 +443,7 @@ val output = PrintWriter(FileWriter(file, true))
             </span>
                 </a>
 
-                <a class="md-bt md-bt-light" href="">
+                <a class="md-bt md-bt-light" href="file.html">
             <span class="hint">
               قبلی
             </span>
@@ -435,7 +458,21 @@ val output = PrintWriter(FileWriter(file, true))
                 <p>مطالب مرتبط</p>
                 <div>
                     <div>
-                        <a href="/article/kotlin/functions.html"></a>
+                        <a href="exceptions.html">اکسپشن ها</a>
+                    </div>
+                    <div>
+                        <a href="file.html">کلاس File</a>
+                    </div>
+
+                    <div>
+                        <a href="/article/kotlin/functions.html">توابع در کاتلین</a>
+                    </div>
+                    <div>
+                        <a href="/article/kotlin/inline-functions.html">تابع خطی در کاتلین</a>
+                    </div>
+
+                    <div>
+                        <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/PrintWriter.html">مطالعه در وبسایت رسمی</a>
                     </div>
                 </div>
             </div>
