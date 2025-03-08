@@ -31,6 +31,10 @@
       "href": "/article/java/printwriter.html"
     },
     {
+      "subject": "خوندن متن فایل با Scanner",
+      "href": "/article/java/scanner.html"
+    },
+    {
       "subject": "تغییرات switch تا jdk-17",
       "href": "https://skybirdbits.github.io/article/java/switch-statement-jdk-17.html"
     }

@@ -63,22 +63,15 @@
             <div class="subsection" id="sub0">
                 <p class="title">بررسی کلاس Scanner</p>
 
-                <blockquote>کلاس Scanner علاوه بر خوندن داده ها از کنسول برای خوندن داده ها از فایل هم مورد استفاده قرار میگیره.</blockquote>
+                <blockquote>کلاس Scanner علاوه بر خوندن داده ها از کنسول برای خوندن متن فایل هم مورد استفاده قرار میگیره.</blockquote>
 
                 <p>در <a class="text-decoration-none" href="printwriter.html">مطلب قبل</a> گفتیم با استفاده از PrintWriter میتونیم داده های متنی رو در فایل بنویسیم. در این مطلب به خوندن متن از فایل با استفاده از Scanner در جاوا و کاتلین میپردازیم.</p>
-                <p>احتمالا با کلاس Scanner آشنایی داشته باشید تا اینجا از Scanner برای خوندن ورودی از کنسول استفاده میکردیم؛ برای این کار نیاز داشتیم فیلد استاتیک in در کلاس System رو به عنوان پارامتر به کانستراکتور Scanner پاس بدیم.</p>
+                <p>احتمالا با کلاس Scanner آشنایی داشته باشید تا اینجا از Scanner برای خوندن ورودی از کنسول استفاده میکردیم؛ برای این کار نیاز داشتیم فیلد استاتیک in در کلاس System رو به عنوان پارامتر به کانستراکتور Scanner پاس بدیم. مقدار فیلد in از نوع InputStream است.</p>
 
-                <div class="note">
-                    <p class="h6">توجه</p>
-                    <p>مقدار فیلد in از نوع InputStream است.</p>
-                </div>
-
-                <p>کلاس Scanner در جاوا و کاتلین علاوه بر خوندن داده ها از کنسول برای خوندن متن و داده های Primitive از فایل نیز مورد استفاده قرار میگیره.</p>
+                <p>کلاس Scanner در جاوا و کاتلین علاوه بر خوندن داده ها از کنسول برای خوندن متن و داده های <a class="text-decoration-none" href="type-variables.html">Primitive</a> از فایل نیز مورد استفاده قرار میگیره.</p>
                 <p>این کلاس همانند سایر کلاس های خوندن و نوشتن از AutoClosable ارث بری میکنه بنابراین میتونیم داخل try-with-resources تعریفش کنیم.</p>
 
-
-
-                <p>کلاس Scanner برخلاف سایر کلاس های خوندن و نوشتن در فایل، که در پکیج io یا nio تعریف شدن، این کلاس در پکیج util تعریف شده است.</p>
+                <p>کلاس Scanner برخلاف سایر کلاس های خوندن و نوشتن در فایل، که در پکیج io یا nio تعریف شدن، در پکیج util تعریف شده است.</p>
 
 
                 <p>کانستراکتور و متد (توابع) کلاس Scanner در زیر بیان شده است.</p>
@@ -106,29 +99,29 @@
                     </div>
                     <div class="tRow">
                         <div class="tDataLTR">+nextLine()</div>
-                        <div class="tDataRTL">خط بعدی متن فایل رو میخونه.</div>
+                        <div class="tDataRTL">خط فعلی متن فایل رو میخونه و میره خط بعدی.</div>
                     </div>
                     <div class="tRow">
                         <div class="tDataLTR">+next()</div>
-                        <div class="tDataRTL">کلمه یا حرف بعدی متن رو تا جایی که اسپیس نباشه میخونه.</div>
+                        <div class="tDataRTL">کلمه ی فعلی متن رو تا جایی که اسپیس نباشه میخونه و میره سراغ بعدی.</div>
                     </div>
                     <div class="tRow">
                         <div class="tDataLTR">+nextInt()</div>
-                        <div class="tDataRTL">اگه کلمه ی بعدی از نوع int باشه میخونه و به عنوان int در برنامه میشه ازش استفاده کرد.</div>
+                        <div class="tDataRTL">اگه کلمه ی فعلی عدد باشه مانند next میخونه و به عنوان متغیر int در برنامه برمیگردونه.</div>
                     </div>
 
                     <div class="tRow">
                         <div class="tDataLTR">+nextLong()</div>
-                        <div class="tDataRTL">اگه کلمه ی بعدی از نوع long باشه میخونه و به عنوان long در برنامه میشه ازش استفاده کرد.</div>
+                        <div class="tDataRTL">اگه کلمه ی فعلی عدد باشه مانند next میخونه و به عنوان long در برنامه برمیگردونه.</div>
                     </div>
                     <div class="tRow">
                         <div class="tDataLTR">+nextFloat()</div>
-                        <div class="tDataRTL">اگه کلمه ی بعدی از نوع float باشه میخونه و به عنوان float در برنامه میشه ازش استفاده کرد.</div>
+                        <div class="tDataRTL">اگه کلمه ی بعدی عدد باشه مانند next میخونه و به عنوان float در برنامه برمیگردونه.</div>
                     </div>
 
                     <div class="tRow">
                         <div class="tDataLTR">+nextDouble()</div>
-                        <div class="tDataRTL">اگه کلمه ی بعدی از نوع double باشه میخونه و به عنوان double در برنامه میشه ازش استفاده کرد.</div>
+                        <div class="tDataRTL">اگه کلمه ی فعلی عدد باشه مانند next میخونه و به عنوان double در برنامه برمیگردونه.</div>
                     </div>
 
                     <div class="tRow">
@@ -139,6 +132,7 @@
                         <div class="tDataLTR">+hasNextLine()</div>
                         <div class="tDataRTL">بررسی میکنه آیا خط بعدی در متن وجود داره یا خیر</div>
                     </div>
+
                     <div class="tRow">
                         <div class="tDataLTR">+close()</div>
                         <div class="tDataRTL">فایل رو میبنده؛ استفاده نکردن از این متد بعد از پایان خوندن فایل یا try-with-resources ممکنه باعث رسیدن آسیب به فایل بشه.</div>
@@ -146,29 +140,51 @@
                 </div>
 
 
-                <p>در Scanner با هربار صدا زدن nextLine خط فعلی رو خونده و میره سراغ خط بعدی متن؛ و با صدا زدن next کلمه ی فعلی رو میخونه و سراغ کلمه ی بعدی میره و صدا زدن بقیه next ها مثل nextInt و ... همانند next عدد فعلی رو خونده و به سراغ عدد بعدی میره.</p>
+                <p>اگه جایی از متن عدد باشه علاوه بر next میتونیم با nextInt، nextDouble، nextLong و nextFloat بخونیم تفاوتشون تو نوعیه که بر میگردونن مثلا اگه عددی رو در متن با nextInt بخونیم نوع int برمیگردونه و...</p>
 
+                <div class="note">
+                    <p class="h6">توجه</p>
+                    <p>اگه بجای خوندن عدد با nextInt، nextLong، nextFloat و nextDouble کلمه ای رو بخونیم که عدد نیست دچار InputMismatchException میشیم.</p>
+                </div>
 
-                <p>در اولین مثال مطلب قبل با استفاده از PrintWriter نام و نام خانوادگی و سن یک فرد رو در فایل نوشتیم اکنون میخوایم محتوای فایل رو با Scanner بخونیم:</p>
+                <div class="note">
+                    <p class="h6">توجه</p>
+                    <p>اگه متن خالی باشه و یا با Scanner اخر متن باشیم و بخوایم کلمه فعلی رو بخونیم؛ چون کلمه ای برای خوندن وجود نداره دچار NoSuchElementException میشیم.</p>
+                </div>
+
+                <p>مثال</p>
+
+                <p>ابتدا با PrintWriter اطلاعات یک فرد رو در فایل ذخیره میکنیم و سپس با Scanner اطلاعات ذخیره شده در فایل رو میخونیم</p>
 
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
 public static void main(String[] args){
-    try(Scanner input = new Scanner(new File("user-info.txt"))){
-        if(input.hasNext()){
 
-            String date = input.nextLine();
+    File file = new File("user-info.txt");
+
+    if(!file.exists()){
+
+        try(PrintWriter output = new PrintWriter(file)){
+            output.print("John ");
+            output.print("Smith ");
+            output.println(24);
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    try(Scanner input = new Scanner(file)){
+
             String firstname = input.next();
             String lastname = input.next();
             int age = input.nextInt();
 
-            System.out.println(date);
             System.out.println(firstname);
             System.out.println(lastname);
             System.out.println(age);
 
-        }
     }catch(IOException e){
         System.out.println(e.getMessage());
     }
@@ -176,19 +192,32 @@ public static void main(String[] args){
                         </div>
                         <div class="snippet Kotlin">
 fun main(){
+
+    val file = File("user-info.txt")
+
+    if(!file.exists()){
+
+        val output = PrintWriter(file);
+        output.use{ it ->
+
+            it.print("John ");
+            it.print("Smith ");
+            it.println(24);
+
+        }
+
+    }
+
     val input = new Scanner(File("user-info.txt");
-    input.use{
-        if(it.hasNext()){
-            val date = it.nextLine()
+    input.use{ it ->
+
             val firstname = it.next()
             val lastname = it.next()
             val age = it.nextInt()
 
-            println(date)
             println(firstname)
             println(lastname)
             println(age)
-        }
     }
 }
                         </div>
@@ -196,20 +225,14 @@ fun main(){
                 </div>
 
 
-                <p>در بالا با متد nextLine خط اول فایل که تاریخه رو میخونیم و با next به ترتیب نام و نام خانوادگی رو خونده و در نهایت با nextInt سن فرد رو میخونیم و در نهایت با println داده ها رو در کنسول نمایش میدیم.</p>
-
-                <div class="note">
-                    <p class="h6">توجه</p>
-                    <p>اگه جایی از متن عدد باشه علاوه بر nextInt، nextDouble، nextLong و nextFloat میتونیم از next نیز برای خوندنش استفاده کنیم تفاوتشون تو نوع مقداریه که بر میگردونه مثلا اگه عدد فایل رو با nextInt بخونیم نوع int بر میگردونه و اگه با next بخونیم نوع String.</p>
-                </div>
-
+                <p>در بالا با next به ترتیب نام و نام خانوادگی رو خونده و سپس با nextInt سن فرد رو میخونیم و در نهایت با println داده ها رو در کنسول نمایش میدیم.</p>
 
                 <p>مثال</p>
 
                 <p>در مثال زیر میخوایم یک متن رو از فایل با Scanner بخونیم و کلمات sun رو با rain و sunny رو با rainy عوض کنیم و در آخر ذخیره کنیم.</p>
 
-                <p>متن زیر رو در یک فایل ذخیره کرده و در برنامه مسیر متن ذخیره شده رو به‌جای PATH_TO_FILE بدید.</p>
-                <p>
+                <p>متن زیر رو در یک فایل ذخیره کرده و در برنامه مسیر متن ذخیره شده رو به‌جای PATH_TO_SOURCE_FILE بدید.</p>
+                <p dir="ltr">
                     The weather is sunny it's a good idea to walk through a sunny day
                     The perfume of sweet plants is pleasurable in this sunny day.
                     Let's walk through this sunny day.
@@ -218,7 +241,7 @@ fun main(){
 
                 <div class="sample">
                     <div class="snippet-container">
-                        <div class="snippet">
+                        <div class="snippet Java">
 public static void main(String[] args) {
 
 File f = new File("PATH_TO_SOURCE_FILE");
@@ -281,18 +304,17 @@ fun main(){
                     </div>
                 </div>
 
-                <p>در بالا ابتدا فایل رو با Scanner خوندیم سپس در برنامه با کمک متد های StringBuilder کلمه ی sunny رو با rainy عوض کرده و در آخر با PrintWriter دوباره ذخیرش کردیم.</p>
-                <p>هنگام خوندن فایل با هربار تکرار حلقه ی while یک خط از متن خونده شده و در متغیر line ذخیره میشه در همونجا کلمه ی sunny با rainy عوض شده و در آخر کار هم با PrintWriter کل متن رو ذخیره میکنیم.</p>
-                <p>کلاس StringBuilder با جاوا کمی تفاوت داره که در مثال بالا همینطور که دیدید متد replaceAll در StringBuilder کاتلین وجود نداره و بجاش تابع replace در StringBuilder کاتلین به کار برده شده اما وجه مشترک هردو استفاده از Regular Expression برای جاگزینی کلمه ی rainy با sunny است.</p>
+                <p>هنگام خوندن فایل با Scanner در هربار تکرار حلقه ی while یک خط از متن خونده شده و در متغیر line ذخیره میشه در همونجا کلمه ی sunny با rainy عوض کرده و در آخر کار با PrintWriter کل متن رو ذخیره میکنیم.</p>
+                <p>کلاس StringBuilder با جاوا کمی تفاوت داره، در مثال بالا همینطور که دیدید متد replaceAll در StringBuilder کاتلین وجود نداره و بجاش تابع replace در StringBuilder کاتلین به کار برده شده اما وجه مشترک هردو استفاده از Regular Expression برای جاگزینی کلمه ی rainy با sunny است.</p>
 
             </div>
 
             <div class="subsection" id="sub1">
                 <p class="title">خلاصه</p>
-                <p>برای خوندن متن از فایل یا کسنول از کلاس Scanner استفاده میکنیم.</p>
-                <p>کلاس اسکنر مناسب برای خوندن داده های متنی و Primitive از فایل یا کنسول است.</p>
-                <p>از next برای خوندن کلمه ی بعدی تا جایی که اسپیس نباشه استفاده میکنیم و از nextLine برای خوندن خط بعدی متن.</p>
-                <p>اگه جایی از متن عدد باشه علاوه بر nextInt، nextDouble، nextLong و nextFloat میتونیم از next نیز برای خوندنش استفاده کنیم تفاوتشون تو نوعیه که بر میگردونه.</p>
+                <p>- برای خوندن متن از فایل یا کسنول از کلاس Scanner استفاده میکنیم.</p>
+                <p>- کلاس اسکنر مناسب خوندن داده های متنی و Primitive از فایل یا کنسول است.</p>
+                <p>- از next برای خوندن کلمه ی فعلی متن تا جایی که اسپیس نباشه استفاده میکنیم و از nextLine برای خوندن خط فعلی متن.</p>
+                <p>- اگه جایی از متن عدد باشه علاوه بر next میتونیم از nextInt، nextDouble، nextLong و nextFloat برای خوندنش استفاده کنیم تفاوتشون تو نوعیه که بر میگردونن.</p>
             </div>
 
         </article>
