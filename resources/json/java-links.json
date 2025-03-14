@@ -8,15 +8,19 @@
     },
     {
       "subject": "دستورات شرطی",
-      "href": "https://skybirdbits.github.io/article/java/selectors.html"
+      "href": "/article/java/selectors.html"
     },
     {
       "subject": "حلقه (loop) ها",
-      "href": "https://skybirdbits.github.io/article/java/loops.html"
+      "href": "/article/java/loops.html"
+    },
+    {
+      "subject": "متد (تابع)",
+      "href": "/article/java/methods.html"
     },
     {
       "subject": "کلیدواژه ی استاتیک در جاوا",
-      "href": "https://skybirdbits.github.io/article/java/static-keyword.html"
+      "href": "/article/java/static-keyword.html"
     },
     {
       "subject": "اکسپشن ها",
@@ -33,10 +37,6 @@
     {
       "subject": "خوندن متن فایل با Scanner",
       "href": "/article/java/scanner.html"
-    },
-    {
-      "subject": "تغییرات switch تا jdk-17",
-      "href": "https://skybirdbits.github.io/article/java/switch-statement-jdk-17.html"
     }
   ]
 }

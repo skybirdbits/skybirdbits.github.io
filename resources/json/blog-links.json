@@ -3,8 +3,8 @@
   "title": "بلاگ",
   "links": [
     {
-      "subject": "خالی",
-      "href": "#"
+      "subject": "تغییرات switch تا jdk-17",
+      "href": "/article/blog/switch-statement-jdk-17.html"
     }
   ]
 }
