@@ -3,6 +3,10 @@
   "title": "جاوا",
   "links": [
     {
+      "subject": "معرفی جاوا",
+      "href": "/article/java/introduction.html"
+    },
+    {
       "subject": "انواع متغیر",
       "href": "/article/java/type-variables.html"
     },
