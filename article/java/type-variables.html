@@ -55,7 +55,7 @@
 
                     <a class="list-group-item list-group-item-action" href="#sub0">توضیحات</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub1">بررسی متغیر های نوع اول</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">بررسی متغیر های Primitive</a>
 
                     <a class="list-group-item list-group-item-action" href="#sub2">عملگر های ریاضی</a>
 
@@ -74,12 +74,7 @@
             <div class="subsection" id="sub0">
                 <p class="title">توضیحات</p>
                 <p>متغیر ها در جاوا به دو دسته ی کلی تقسیم میشن؛ متغیر های نوع اول (Primitive Types) و متغیر های آبجکتی (Object Types).</p>
-                <p>متغیر های نوع اول (primitive types) در جاوا رو با کلید واژه های boolean، char ،byte ، short، int، float، long و double تعریف می کنیم.</p>
-
-                <div class="code-container">
-keyword name = value;
-                </div>
-                <p>به ترتیب از چپ کلیدواژه ی متغیر، اسم متغیر و مقدار متغیر.</p>
+                <p>متغیر های Primitive در جاوا رو با کلید واژه های boolean، char ،byte ، short، int، float، long و double تعریف می کنیم.</p>
 
                 <p> به تمام متغیر های جنس آبجکت (Object) متغیر های آبجکتی (Object types) در جاوا میگیم.</p>
 
@@ -87,14 +82,26 @@ keyword name = value;
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">بررسی متغیر های نوع اول (primitive types)</p>
+                <p class="title">بررسی متغیر های Primitive</p>
 
                 <blockquote>متغیر های Primitive مستقیم رو حافظه ایجاد میشن.</blockquote>
 
                 <p>هنگام ایجاد متغیر های primitive قسمتی از حافظه رو به این متغیر ها اختصاص میدیم.</p>
-                <p>این متغیر ها مستقیم روی حافظه ایجاد میشن و مقداری که بهشون میدیم رو تو خودشون ذخیره میکنن.</p>
+                <p>این متغیر ها مقداری که بهشون میدیم رو در خودشون ذخیره میکنن.</p>
 
-                <p>بجز boolean و char تمام متغیر های primitive در جاوا عددی هستند و تفاوتشون تو <strong>اعشاری بودن</strong> و <strong>میزان اشغال حافظه</strong> است.</p>
+                <p>فرم کلی:</p>
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet">
+keyword name = value;
+                        </div>
+                    </div>
+                </div>
+
+                <p>در بالا به ترتیب از چپ کلیدواژه ی متغیر، اسم متغیر و مقدار متغیر است.</p>
+
+                <p>بجز boolean تمام متغیر های primitive در جاوا عددی هستند و تفاوتشون در <strong>اعشاری بودن</strong> و <strong>میزان اشغال حافظه</strong> است.</p>
 
                 <p class="piece">متغیر boolean</p>
 
@@ -111,7 +118,7 @@ boolean v0 = false;
 
                 <p class="piece">متغیر char</p>
 
-                <p>این متغیر برای ذخیره کردن کاراکتر است.</p>
+                <p>این متغیر برای ذخیره کردن کاراکتر (حرف) است.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -134,6 +141,7 @@ char v = 'a';
                         <div class="snippet Java">
 byte v =  64;
                         </div>
+                    </div>
                 </div>
 
 
@@ -150,8 +158,8 @@ short v = 16234;
 
 
                 <p class="piece">متغیر integer</p>
-                <p>متغیر integer در جاوا میتونه اعداد بین -2,147,483,648 تا 2,147,483,647 رو پوشش بده.</p>
-                <p>متغیر های اینتیجر (integer) بیشترین استفاده رو در زبان برنامه نویسی جاوا دارن.</p>
+                <p>متغیر integer در جاوا میتونه اعداد صحیح بین -2,147,483,648 تا 2,147,483,647 رو پوشش بده.</p>
+
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
@@ -173,7 +181,7 @@ float v = 483848.232;
                 </div>
 
                 <p class="piece">متغیر long</p>
-                <p>متغیر های long در جاوا مثل متغیر های integer هستند با این تفاوت رنج گسترده تری از اعداد رو پوشش میدن.</p>
+                <p>متغیر های long در جاوا مثل متغیر های integer هستند با این تفاوت رنج گسترده تری از اعداد رو پوشش میدن و حافظه ی بیشتری اشغال میکنن.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -184,7 +192,7 @@ long v = 3843874872324;
                 </div>
 
                 <p class="piece">متغیر double</p>
-                <p>متغیر های double در جاوا مانند float برای اعداد اعشاری مورد استفاده قرار میگیرند با این تفاوت این متغیر ها اعداد طولانی تری رو پوشش میدن.</p>
+                <p>متغیر های double در جاوا مانند float برای اعداد اعشاری مورد استفاده قرار میگیرند با این تفاوت این متغیر ها اعداد طولانی تری رو پوشش میدن و حافظه ی بیشتری اشغال میکنن.</p>
 <div class="sample">
     <div class="snippet-container">
         <div class="snippet Java">
@@ -196,7 +204,7 @@ double v = 37488935322.3853875;
 
             <div class="subsection" id="sub2">
                 <p class="title">عملگر های ریاضی</p>
-                <p>زبان برنامه نویسی جاوا از چهار عمل اصلی ریاضی پشتیبانی میکنه و برای هرکدوم یک عملگر داره.</p>
+                <p>زبان برنامه نویسی جاوا از چهار عمل اصلی ریاضی (ضرب، تقسیم، جمع و تفریق) پشتیبانی میکنه و برای هرکدوم یک عملگر داره.</p>
                 <p>زبان جاوا از ترتیب انجام اعمال در ریاضی پشتیبانی میکنه یعنی در یک عمل ریاضی اولویت به ترتیب با عمل داخل پرانتز، ضرب و تقسیم و در اخر جمع و تفریق است.</p>
 
                 <p class="piece">عملگر ضرب</p>
@@ -311,7 +319,7 @@ public static void main(String[] args){
 
                 <p class="piece">عملگر =+</p>
 
-                <p>اگه بخوایم به مقدار متغیر اضافه کنیم از این عملگر استفاده می کنیم:</p>
+                <p>اگه بخوایم به مقدار متغیر اضافه و سپس نتیجه رو در خودش ذخیره کنیم از این عملگر استفاده میکنیم</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -324,7 +332,7 @@ i += 4
                 </div>
 
                 <p class="piece">عملگر =-</p>
-                <p>اگه بخوایم از متغیر کم کنیم از عملگر =- استفاده میکنیم:</p>
+                <p>اگه بخوایم مقداری از متغیر کم و سپس نتیجه رو در خودش ذخیره کنیم از این عملگر استفاده میکنیم:</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -338,7 +346,7 @@ i -= 4;
 
                 <p class="piece">عملگر =/</p>
 
-                <p>اگه بخوایم مقدار متغیر رو تقسیم بر عددی کنیم و سپس نتیجه رو در خودش ذخیره کنیم از =/ استفاده میکنیم.</p>
+                <p>اگه بخوایم متغیر رو تقسیم بر عددی کنیم و حاصل تقسیم رو در خودش ذخیره کنیم از این عملگر استفاده میکنیم:</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -352,7 +360,7 @@ i /= 2;
 
                 <p class="piece">عملگر =*</p>
 
-                <p>اگه بخوایم مقدار متغیر رو ضرب در عددی کنیم و سپس در خودش ذخیره کنیم از =* استفاده می کنیم.</p>
+                <p>اگه بخوایم متغیر رو در عددی ضرب و نتیجه رو در خود متغیر ذخیره کنیم از =* استفاده می کنیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -366,7 +374,7 @@ m *= 5;
 
                 <p class="piece">عملگر =%</p>
 
-                <p>اگه بخوایم باقی مانده ی تقسیم مقدار متغیر بر عددی رو در خود متغیر ذخیره کنیم از =% استفاده می کنیم.</p>
+                <p>اگه بخوایم حاصل باقی مانده ی تقسیم متغیر بر عددی رو در خود متغیر ذخیره کنیم از =% استفاده می کنیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -392,7 +400,7 @@ int j = i++; //j = 1 , i = 2
                     </div>
                 </div>
 
-                <p>اگه بخوایم ابتدا یک واحد به متغیر اضافه و سپس ازش استفاده کنیم عملگر رو در <strong>سمت چپ متغیر</strong> می نویسیم.</p>
+                <p>اگه بخوایم ابتدا یک واحد به متغیر اضافه و سپس از متغیر استفاده کنیم عملگر رو در <strong>سمت چپ متغیر</strong> می نویسیم.</p>
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
@@ -431,8 +439,8 @@ int j = --i;
 
             <div class="subsection" id="sub4">
                 <p class="title">متغیر های آبجکتی</p>
-                <p>این متغیر ها از نوع آبجکت هستند، اشاره به آبجکت ایجاد شده در حافظه میکنن و مستقیم چیزی رو ذخیره نمی کنن.</p>
-                <p>بارز ترینشون متغیر های نوع String است؛ اکثر برنامه نویس های جاوا از ابتدا با این متغیر اشنایی دارند.</p>
+                <p>این متغیر ها از نوع آبجکت هستند، اشاره به آبجکت ایجاد شده در حافظه میکنن و مانند Primitive ها مستقیم چیزی رو مستقیم در خودشون ذخیره نمی کنن.</p>
+                <p>بارز ترینشون متغیر های String است؛ اکثر برنامه نویس های جاوا از ابتدا با این متغیر اشنایی دارند.</p>
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
@@ -449,10 +457,10 @@ System.out.println("What's your name? " + name);
 
             <div class="subsection" id="sub5">
                 <p class="title">خلاصه</p>
-                <p>- متغیر ها در جاوا به دو دسته ی کلی primitive types و object types تقسیم میشن.</p>
+                <p>- متغیر ها در جاوا به دو دسته ی کلی Primitive Types و Object Types تقسیم میشن.</p>
                 <p>- متغیر های primitive types رو با کلید واژه های byte, short, int, float, long , double, boolean و char  تعریف میکنیم.</p>
                 <p>- زبان جاوا از چهار عمل اصلی ریاضی پشتیبانی می کنه.</p>
-                <p>- متغیر های object type برای اشاره به آبجکت در جاوا تعریف میشن.</p>
+                <p>- متغیر های Object Type مقداری رو در خودشون مستقیم ذخیره نمیکنن و به آبجکت ایجاد شده در حافظه اشاره میکنن.</p>
             </div>
 
         </article>
