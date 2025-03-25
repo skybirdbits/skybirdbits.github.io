@@ -23,8 +23,20 @@
       "href": "/article/java/methods.html"
     },
     {
+      "subject": "آبجکت و کلاس ها",
+      "href": "/article/java/objects-and-classes.html"
+    },
+    {
+      "subject": "کلیدواژه های سطح دسترسی",
+      "href": "/article/java/access-modifiers.html"
+    },
+    {
       "subject": "کلیدواژه ی استاتیک در جاوا",
       "href": "/article/java/static-keyword.html"
+    },
+    {
+      "subject": "آرایه ها",
+      "href": "/article/java/arrays.html"
     },
     {
       "subject": "اکسپشن ها",
