@@ -43,41 +43,58 @@
             <div class="toc">
                 <p class="p-2 mx-2 h5">دسترسی سریع</p>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#sub0">متغیر (فیلد) های استاتیک (static)</a>
-                    <a class="list-group-item list-group-item-action" href="#sub1">متد های استاتیک (static)</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">مثال از متد و فیلد استاتیک در
+                    <a class="list-group-item list-group-item-action" href="#sub0">تعریف استاتیک</a>
+
+                    <a class="list-group-item list-group-item-action" href="#sub1">متغیر (فیلد) های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">متد های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">مثال از متد و فیلد استاتیک در
                         جاوا</a>
-                    <a class="list-group-item list-group-item-action" href="#sub3">کلاس های استاتیک (static)</a>
-                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
+                    <a class="list-group-item list-group-item-action" href="#sub4">کلاس های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
                 </div>
             </div>
 
         </div>
         <article>
-            <blockquote>هنگامی که از کلید واژه ی استاتیک در جاوا برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
-                و ربطی به نمونه (آبجکت) های کلاس نداره و در طی زمان اجرای برنامه بدون نیاز به نمونه سازی در دسترسه.
-            </blockquote>
-
-
-            <p>از کلید واژه static برای تعریف Inner class ، فیلد و متد ها استفاده میشه</p>
-
 
             <div class="subsection" id="sub0">
+                <p class="title">تعریف استاتیک</p>
+                <blockquote>از کلید واژه static در جاوا میشه برای تعریف فیلد، متد و کلاس های داخلی (Inner class) استاتیک استفاده کرد.</blockquote>
+
+                <p>هنگامی که از کلید واژه ی <strong>static</strong> در جاوا برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
+                    و ربطی به نمونه (آبجکت) های کلاس نداره و در طی زمان اجرای برنامه مستقل از نمونه سازی در دسترسه.
+                </p>
+
+                <p>اعضای استاتیک یک کلاس در جاوا، بین تمام آبجکت های ایجاد شده از کلاس مشترک هستند. به عنوان مثال مقدار یک فیلد استاتیک برای تمام آبجکت های ایجاد شده از کلاس تا پایان برنامه یکی است.</p>
+
+                <p>برای صدا زدن اعضای استاتیک به‌جای نوشتن اسم متغیر آبجکتی کافیه اسم کلاسی که عضو رو داخلش تعریف کردیم بنویسیم، نقطه بزاریم و عضو رو صدا بزنیم.</p>
+
+                <div class="note">
+                    <p class="h6">نکته:</p>
+                    <p>تمام اعضای کلاس Math در جاوا استاتیک هستند.</p>
+                </div>
+
+            </div>
+
+            <div class="subsection" id="sub1">
                 <p class="title">فیلد های استاتیک (static)</p>
                 <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام آبجکت های
                     ایجاد شده از کلاس به اشتراک گذاشته بشه</p>
 
+                <p>زمانی که در کلاس میخوایم یک داده با مقدار یکسان و مشترک بین تمام اعضای کلاس تعریف کنیم، برای بهینه کردن برنامه دیتا فیلد رو استاتیک تعریف کنیم.</p>
 
-                <p>فرم کلی:</p>
+                <p>به عنوان مثال میتونیم فیلد <strong>PI</strong> رو در کلاس <strong>Math</strong> در نظر بگیریم، چون مقدار PI همیشه 3.14 است نیاز نیست در هر آبجکت این مقدار به طور مجزا ایجاد بشه بنابراین PI رو به صورت فیلد استاتیک در Math تعریف کرده اند.</p>
+
+                <p>تعریف دیتافیلد استاتیک در کلاس:</p>
 
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-public class ClassName{
+public class MyClass{
 
     ...
 
-    public static Type variableName = ...
+    public static Type myStaticField = ...;
 
     ...
 }
@@ -85,28 +102,51 @@ public class ClassName{
                     </div>
                 </div>
 
-                <p>صدا زدن متغیر:</p>
+                <p>صدا زدن فیلد:</p>
 
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-Type type = ClassName.variableName;
+Type type = MyClass.myStaticField;
                         </div>
                     </div>
                 </div>
 
-                <div class="note">
-                  <p class="h6">نکته:</p>
-                  <p> با در نظر گرفتن Modifier سطح دسترسی متغیر (public, protected, private) میشه متغیر رو
-                    در
-                    کلاس های دیگه نیز صدا زد </p></div>
+
+
+                <p>مثال</p>
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+public class Log{
+
+    public static String label = "Log";
+
+}
+                        </div>
+                    </div>
+                </div>
+
+<div class="sample">
+    <div class="snippet-container">
+        <div class="snippet Java">
+public static void main(String[] args){
+    System.out.println(label);
+}
+        </div>
+    </div>
+</div>
 
             </div>
 
-            <div class="subsection" id="sub1">
+            <div class="subsection" id="sub2">
                 <p class="title">متد های استاتیک (static)</p>
 
+                <blockquote>متد main که کد های جاوا رو داخلش اجرا میکنیم استاتیک است.</blockquote>
+
                 <p>این متد ها مانند فیلد های استاتیک وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم کلاس صداشون می زنیم.</p>
+
 
                 <p> فرم کلی:</p>
 
@@ -139,17 +179,86 @@ ClassName.methodName(type0, type1, … , typeN)
                 </div>
 
 
-                <div class="note">
-                  <p class="h6">نکته:</p>
-                  <p>تمام اعضای کلاس Math در جاوا استاتیکن Math.PI، Math.sin(p0, p1) و ...</p>
+                <p>مثال</p>
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+public class Log{
+    private static String label = "Log";
+
+    public static void e(String message){
+        System.err.println(label + " error message: " + message)
+    }
+
+    public static void d(String message){
+        System.out.println(label + " debug message: " + message);
+    }
+
+}
+                       </div>
+                    </div>
+                </div>
+
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+public static void main(String[] args){
+    Scanner input = newScanner(System.in);
+    System.out.println("Enter radius");
+    double radius = input.nextDouble();
+    if(radius < 0) Log.e("Radius must not be negative");
+    else Log.d("Radius is " + radius);
+}
+                        </div>
+                    </div>
+                </div>
+
+                <p> داخل کلاس یک متد استاتیک رو میتونیم داخل متد معمولی صدا بزنیم اما متد و فیلد های معمولی رو نمیتونیم داخل متد استاتیک صدا بزنیم؛ فیلد و متد هایی که میخوایم داخل متد استاتیک صدا بزنیم خودشون باید استاتیک باشن.</p>
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+class MyClass{
+
+    private Type myMemberField;
+
+    private Type1 myStaticField;
+
+    public myMemberMethod(){
+        //...
+    }
+
+    public static myStaticSecondMethod(){
+        ...
+    }
+
+    public static myStaticMethod(){
+        //خطای کامپایل
+        myMemberField = ...;
+
+        //خطای کامپایل
+        myMemberMethod();
+
+        //بدون خطا
+        myStaticField = ...;
+
+        //بدون خطا
+        myStaticSecondMethod();
+    }
+
+}
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="subsection" id="sub2">
-                <p class="title">مثال از متد و فیلد استاتیک در جاوا</p>
-                <p><strong> Circle.java </strong></p>
+            <div class="subsection" id="sub3">
+                <p class="title">مثال ها</p>
 
+                <p>در مثال زیر هربار یک آبجکت از کلاس دایره ایجاد بشه یک واحد به فیلد numberOfObjects اضافه میشه و با این کار تعداد آبجکت های ایجاد شده از کلاس Circle رو میشماریم.</p>
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
@@ -206,21 +315,15 @@ public class TestCircle {
                     </div>
                 </div>
 
-
-                <p>در مثال بالا یک فیلد استاتیک داریم به اسم numberOfObjects که تعداد نمونه های ایجاد شده از کلاس Circle
-                    رو
-                    میشماره و با متد استاتیک getNumberOfObjects این فیلد رو صدا میزنیم نمونه ها ی ساخته شده از کلاس
-                    Circle
-                    هرکدوم خصوصیات و ویژگی های مختص به خودشونو دارن اما متغیر numberOfObjects دارای مقداریست که بین هر
-                    دو
-                    نمونه از کلاس Circle به اشتراک وجود داره</p>
+                <p>در مثال بالا یک فیلد استاتیک داریم به اسم numberOfObjects که تعداد نمونه های ایجاد شده از کلاس Circle رو میشماره و با متد استاتیک getNumberOfObjects این فیلد رو صدا میزنیم.</p>
+                <p>نمونه های ایجاد شده از کلاس Circle هرکدوم ویژگی های مختص به خودشونو دارن اما مقدار فیلد numberOfObjects بین تمام نمونه ها مشترکه.</p>
 
             </div>
 
-            <div class="subsection" id="sub3">
+            <div class="subsection" id="sub4">
                 <p class="title">کلاس های استاتیک (static)</p>
 
-                <p> میشه از کلید واژه ی استاتیک برای inner class ها نیز استفاده کرد </p>
+                <p> میشه از کلید واژه ی استاتیک برای تعریف کلاس های داخلی (inner class ها) نیز استفاده کرد.</p>
 
                 <div class="note">
                 <p class="h6">نکته:</p>
@@ -257,7 +360,7 @@ ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
 
             </div>
 
-            <div class="subsection" id="sub4">
+            <div class="subsection" id="sub5">
             <p class="title">خلاصه:</p>
             <p>-کلید واژه ی استاتیک در جاوا برای اعضای داخل کلاس استفاده میشه</p>
 
