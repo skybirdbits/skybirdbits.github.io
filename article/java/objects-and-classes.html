@@ -83,7 +83,7 @@
 
                 <p>معمولا آبجکت یک ماهیت از دنیای واقعی رو شبیه سازی میکنه مثلا یک دانش آموز، یک تلویزیون، یک دایره ، یک مستطیل و هر شی تو دنیای واقعی میتونه با یک آبجکت (object) شبیه سازی بشه.</p>
 
-                <p>به نمونه هایی که از یک کلاس ایجاد میکنیم؛ آبجکت در جاوا میگیم.</p>
+                <p>به نمونه هایی که از یک کلاس ایجاد میکنیم؛ <strong>آبجکت</strong> میگیم.</p>
 
                 <p>به آبجکت ها، اشیا نیز گفته میشه اما کلمه ی آبجکت شناخته شده تر است.</p>
 
@@ -102,7 +102,7 @@ System.out.println(sb1);
                 </div>
 
 
-                <p>آبجکت ها مستقیم در حافظه ایجاد میشن و متغیر های آبجکتی، به‌جای آبجکت آدرس آبجکت رو در خودشون ذخیره میکنن و توسط آدرس به آبجکت ایجاد شده در حافظه اشاره میکنن.</p>
+                <p>آبجکت ها مستقیم در حافظه ایجاد میشن و متغیر های آبجکتی، به‌جای آبجکت، آدرس آبجکت رو در خودشون ذخیره میکنن و توسط آدرس به آبجکت ایجاد شده در حافظه اشاره میکنن.</p>
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
@@ -120,8 +120,8 @@ StringBuilder sb = new StringBuilder("Hello StringBuilder!");
 
                 <blockquote>آبجکت از روی کلاس ایجاد میشه.</blockquote>
 
-                <p>یک کلاس در جاوا رو با کلیدواژه ی class، اسم کلاس و بدنه ی کلاس تعریف میکنیم.</p>
-                <p>سطح دسترسی یک کلاس میتونه public یا default باشه.</p>
+                <p>یک کلاس رو در جاوا با کلیدواژه ی سطح دسترسی، کلیدواژه ی class، اسم کلاس و بدنه ی کلاس تعریف میکنیم.</p>
+
                 <p>فرم کلی:</p>
                 <div class="sample">
                     <div class="snippet-container">
@@ -158,16 +158,14 @@ public class Name{
 
 
                 <p> به متغیر هایی که داخل کلاس تعریف میکنیم دیتافیلد (data field) یا به اختصار فیلد میگیم.</p>
-                <p>کلاس های جاوا میتونن یک یا چند فیلد داشته باشن. فیلد های <strong>غیر استاتیک</strong> اطلاعات آبجکت رو در خودشون ذخیره میکنن.</p>
+                <p>به طور کلی دو نوع فیلد <a class="text-decoration-none" href="static-keyword.html">استاتیک</a> و غیر استاتیک (member) میتونیم داخل یک کلاس تعریف کنیم.</p>
+                <p> فیلد های <strong>غیر استاتیک</strong> اطلاعات آبجکت رو در خودشون ذخیره میکنن.</p>
+                <p>به فیلد های غیر استاتیک، فیلد های عضو (member) هم میگن.</p>
+                <p>داخل کلاس میتونیم یک یا چند فیلد تعریف کنیم.</p>
 
-                <p>به طور کلی میتونیم دو نوع فیلد غیر استاتیک و استاتیک در کلاس تعریف کنیم؛ فیلد های <strong>غیر استاتیک</strong> وابسته به آبجکت ایجاد شده از کلاس هستند.</p>
-                <p>فیلد های <strong>استاتیک</strong> وابسته به کلاس هستند و مقادیرشون بین تمام آبجکت ها مشترکه.</p>
+                <p class="piece">تعریف فیلد در کلاس</p>
 
-                <p>در مورد فیلد های استاتیک نیز میتونید به بخش <a class="text-decoration-none" href="static-keyword.html">کلیدواژه ی استاتیک</a> مراجعه کنید.</p>
-
-                <p>تعریف فیلد در کلاس</p>
-
-                <p>فیلد ها رو داخل کلاس تعریف میکنیم:</p>
+                <p>به صورت زیر فیلد ها رو داخل کلاس تعریف میکنیم:</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -193,7 +191,7 @@ public class Rectangle{
                     </div>
                 </div>
 
-                <p>میتونیم با گذاشتن نقطه بعد از اسم متغیر فیلد موردنظر رو صدا بزنیم.</p>
+                <p>میتونیم با گذاشتن نقطه بعد از اسم متغیر آبجکتی، فیلد موردنظر رو صدا بزنیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -220,7 +218,7 @@ public static void main(String[] args){
 
                 <p class="piece">استفاده از کلیدواژه ی this برای فیلد ها</p>
 
-                <p>اگه یک فیلد رو بخوایم داخل کلاس خودش صدا بزنیم و اسم فیلد با اسم پارامتر یا متغیر های داخل متد یکی باشه، با this مشخص میکنیم اسمی که داریم صدا میزنیم مربوط به فیلد است.</p>
+                <p>اگه یک فیلد رو بخوایم داخل کلاس خودش صدا بزنیم و اسم فیلد با اسم پارامتر یا متغیر های داخل متد یکی باشه، با this مشخص میکنیم متغیری که داریم صدا میزنیم مربوط به فیلد است.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -331,7 +329,7 @@ public class Rectangle{
 
                 <p class="piece">استفاده از کلیدواژه ی this برای کانستراکتور.</p>
 
-                <p>میتونیم با کلیدواژه ی در کلاس this یک کانستراکتور رو داخل کانستراکتور دیگه صدا بزنیم.</p>
+                <p>میتونیم با کلیدواژه ی this در کلاس یک کانستراکتور رو داخل کانستراکتور دیگه صدا بزنیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -384,15 +382,15 @@ public static void main(String[] args){
             <div class="subsection" id="sub4">
                 <p class="title">متدها</p>
 
-                <p>در بخش<a class="text-decoration-none" href="methods.html">متد ها در جاوا</a> به طور مفصل به این موضوع پرداختیم برای مطالعه در باره ی متد ها میتونید به این بخش مراجعه کنید.</p>
+                <p> در بخش<a class="text-decoration-none" href="methods.html">متد ها در جاوا</a> به طور مفصل به این موضوع پرداختیم برای مطالعه در باره ی متد ها میتونید به این بخش مراجعه کنید. </p>
 
 
 
                 <p class="piece">مفهوم کپسوله سازی</p>
 
                 <p>برای جلوگیری از دسترسی به فیلد توسط کلاس های دیگه در خارج از کلاس میتونیم با private تعریفش کنیم. به این کار کپسوله سازی دیتا فیلد میگیم.</p>
-                <p>اگه بخوایم به دیتافیلد کپسوله شده در خارج از کلاس دسترسی داشته باشیم، برای دسترسی بهش باید متد getter و برای تغییر در مقدار فیلد باید متد setter رو براش تعریف کنیم.</p>
-                <p>متد های getter و setter، متد های قراردادی هستند که توسط برنامه نویس ها شناخته شده اند.</p>
+                <p>اگه بخوایم به دیتافیلد کپسوله شده در خارج از کلاس دسترسی داشته باشیم، برای دسترسی به فیلد باید متد getter و برای تغییر در مقدار فیلد باید متد setter رو تعریف کنیم.</p>
+                <p>متد های getter و setter، متد های قراردادی هستند که توسط برنامه نویس ها شناخته شده اند. متناسب با اسم فیلد به صورت <strong>getMyField</strong> و <strong>setMyField</strong> تعریفشون میکنیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -455,14 +453,16 @@ public class Rectangle {
 
                 <p>کلمه ی null یعنی تهی؛ اگه از متغیر هایی که به null اشاره میکنن استفاده کنیم، زمان اجرای برنامه دچار <a class="text-decoration-none" href="exceptions.html">NullPointerException</a> میشه.</p>
                 <p>از کلیدواژه ی null زمانی استفاده میکنیم که در ابتدا قصد استفاده از متغیر رو نداشته باشیم و بعدا در برنامه بخوایم با متغیر به یک آبجکت اشاره کرده و ازش استفاده کنیم.</p>
-                <p>هنگام استفاده از متغیر آبجکتی که به آبجکت اشاره نمیکنه، اگه متغیر رو مقدار دهی نکرده باشیم در برنامه دچار خطای کامپایل میشیم.</p>
+                <p>، اگه یک متغیر آبجکتی نه به null اشاره کنه و نه مقداردهی شده باشه در پروژه دچار خطای کامپایل میشیم.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-Scanner input;
-//خطای کامپایل
-String name = input.next();
+public R myMethod(...){
+    Scanner input;
+    //خطای کامپایل
+    String name = input.next();
+}
                         </div>
                     </div>
                 </div>
@@ -472,9 +472,11 @@ String name = input.next();
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-Scanner input = null;
-//خطای زمان اجرا
-String name = input.next();
+public R myMethod(...){
+    Scanner input = null;
+    //خطای زمان اجرا
+    String name = input.next();
+}
                         </div>
                     </div>
                 </div>
@@ -486,11 +488,13 @@ String name = input.next();
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-MyObject myObject = null;
+public R myMethod(...){
+    MyObject myObject = null;
 
-while(myObject == null){
-    //Do some stuffs
-    ...
+    while(myObject == null){
+        //Do some stuffs
+        ...
+    }
 }
                         </div>
                     </div>
@@ -673,32 +677,57 @@ public class Main{
                         <div class="snippet Java">
 public class TV {
     private int channel = 1;
+    private int volume = 1;
     private boolean on;
 
+    public void turnOn(){
+        on = true;
+    }
+
+    public void turnOff(){
+        on = false;
+    }
+
     public void setChannel(int channel) {
-        if (channel >= 1 && channel <= 100)
+        if (on && channel >= 1 && channel <= 120)
             this.channel = channel;
+    }
+
+    public void setVolume(int volume) {
+        if (on && volume >= 0 && volume <= 10)
+            this.volume = volume;
     }
 
     public int getChannel() {
         return channel;
     }
 
+    public int getVolume() {
+        return volume;
+    }
+
     public void channelUp(){
-        if (channel < 100) channel++;
+        if (on && channel < 120) channel++;
     }
 
     public void channelDown(){
-        if (channel > 1 ) channel --;
+        if (on && channel > 1 ) channel --;
     }
 
-    public void setOn(boolean on) {
-        this.on = on;
+    public void volumeUp(){
+        if (on && volume < 10)
+            volume++;
+    }
+
+    public void volumeDown(){
+        if (on && volume > 1)
+            volume --;
     }
 
     public boolean isOn() {
         return on;
     }
+
 }
                         </div>
                     </div>
@@ -706,36 +735,23 @@ public class TV {
 
                 <p>استفاده از کلاس TV.</p>
 
-                <div>
-                    <div>
-                        <div>
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
 public static void main(String[] args){
-    Scanner input = new Scanner(System.in);
-    TV tv = new TV();
-    System.out.println("Turning tv on...");
-    tv.setOn(true);
 
-    System.out.println("Current channel is " + tv.getChannel());
+    TV tv1 = new TV();
+    tv1.turnOn();
+    tv1.setChannel(30);
+    tv1.setVolume(3);
+    TV tv2 = new TV();
+    tv2.turnOn();
+    tv2.channelUp();
+    tv2.channelUp();
+    tv2.volumeUp();
+    System.out.println("tv1's channel is " + tv1.getChannel() + " and volume level is " + tv1.getVolume());
+    System.out.println("tv2's channel is " + tv2.getChannel() + " and volume level is " + tv2.getVolume());
 
-    System.out.println("Increasing channel by 1");
-    tv.channelUp();
-
-    System.out.println("After increasing channel, Current channel is " + tv.getChannel());
-
-    System.out.println("Choose your channel (between 1 and 100):");
-
-    tv.setChannel(input.nextInt());
-
-    System.out.println("Channel is changed to " + tv.getChannel());
-
-    System.out.println("Do u wanna turn the tv off?(yes/no)");
-
-    String setTVOff = input.next();
-
-    if (setTVOff.equals("yes")) {
-        tv.setOn(false);
-        System.out.println("TV has been turned off...");
-    }
 }
                         </div>
                     </div>
