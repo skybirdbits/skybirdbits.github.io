@@ -46,7 +46,7 @@
             </address>
 
             <figure class="figure figure-wrapper">
-                <img alt="کلاس های تو در تو در جاوا" class="rounded figure-img" src="/article/java/nested-classes.html"/>
+                <img alt="کلاس های تو در تو در جاوا" class="rounded figure-img" src="/resources/image/java/cover_nested_classes.png"/>
             </figure>
 
             <div class="toc">
@@ -84,7 +84,7 @@
             </div>
 
 
-            <div class="subsection" id="sub2">
+            <div class="subsection" id="sub1">
                 <p class="title">کلاس داخلی غیر استاتیک</p>
                 <p>به کلاس های غیر استاتیک که داخل یک کلاس تعریف میکنیم کلاس داخلی عضو (member) میگیم.</p>
                 <p>این کلاس ها به تمام اعضای کلاس بیرونی دسترسی دارند. بنابراین نیاز نداریم برای دسترسی به اعضای کلاس بیرونی یک نمونه از کلاس بیرونی داخل کلاس داخلی ایجاد کنیم.</p>
@@ -114,8 +114,8 @@ public class MyOuterClass{
                         <div class="snippet Java">
 public static void main(String[] args){
     MyOuterClass outer = new MyOuterClass();
+    //A new instance of inner class by an object of outer class.
     MyInnerClass inner = outer.new MyInnerClass();
-    inner.displayOuterDataField();
 }
                         </div>
                     </div>
@@ -143,11 +143,11 @@ public class MyOuterClass{
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-                            public static void main(String[] args){
-                            MyOuterClass outer = new MyOuterClass();
-                            MyInnerClass inner = outer.new MyInnerClass();
-                            inner.displayOuterDataField();
-                            }
+public static void main(String[] args){
+    MyOuterClass outer = new MyOuterClass();
+    MyInnerClass inner = outer.new MyInnerClass();
+    inner.displayOuterDataField();
+}
                         </div>
                     </div>
                 </div>
@@ -196,26 +196,26 @@ public class StringArray {
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-                            public static void main(String[] args){
-                            String[] names  = {"Billie", "Jessy", "Jill", "Lura"};
-                            StringArray arr = new StringArray(names);
+public static void main(String[] args){
+    String[] names  = {"Billie", "Jessy", "Jill", "Lura"};
+    StringArray arr = new StringArray(names);
 
-                            System.out.println("There are " + arr.size() + " elements that array holds");
+    System.out.println("There are " + arr.size() + " elements that array holds");
 
-                            System.out.println("Here are contents of the array: ");
-                            StringArray.Iterator iterator = arr.getIterator();
+    System.out.println("Here are contents of the array: ");
+    StringArray.Iterator iterator = arr.getIterator();
 
-                            while (iterator.hasNext())
-                            System.out.print(iterator.next() + " ");
+    while (iterator.hasNext())
+        System.out.print(iterator.next() + " ");
 
-                            }
+}
                         </div>
                     </div>
                 </div>
                 
             </div>
             
-            <div class="subsection" id="sub1">
+            <div class="subsection" id="sub2">
                 <p class="title">کلاس داخلی استاتیک</p>
 
                 <p>این کلاس ها رو با کلیدواژه ی استاتیک داخل یک کلاس دیگه تعریف میکنیم.</p>
@@ -252,8 +252,10 @@ public class MyOuterClass{
     }
     
     public static class MyInnerClass{
-        System.out.println("An object created from Inner class.");
-        printMessage();
+        public MyInnerClass(){
+            System.out.println("An object created from Inner class.");
+            printMessage();
+        }
     }
 }
                         </div>
@@ -277,6 +279,12 @@ MyOuterClass.MyInnerClass myInnerObject = new MyOuterClass.MyInnerClass();
                     <div class="snippet-container">
                         <div class="snippet Java">
 public class TV {
+    public static final int MAXIMUM_VOLUME_LEVEL = 10;
+    public static final int MINIMUM_VOLUME_LEVEL = 0;
+
+    public static final int MAXIMUM_CHANNEL_NUMBER = 120;
+    public static final int MINIMUM_CHANNEL_NUMBER = 1;
+
     private String panel;
     private int channel = 1;
     private int volume = 1;
@@ -295,12 +303,12 @@ public class TV {
     }
     
     public void setChannel(int channel) {
-        if (channel >= 1 && channel <= 100) 
+        if (channel >= MINIMUM_CHANNEL_NUMBER && channel <= MAXIMUM_CHANNEL_NUMBER)
             this.channel = channel;
     }
     
     public void setVolume(int volume) {
-    if (on && volume >= 0 && volume <= 10)
+    if (on && volume >= MINIMUM_VOLUME_LEVEL && volume <= MAXIMUM_VOLUME_LEVEL)
         this.volume = volume;
     }
     
@@ -317,30 +325,34 @@ public class TV {
     }
     
     public void channelUp(){
-        if (on && channel < 100) channel++;
+        if (on && channel < MAXIMUM_CHANNEL_NUMBER) channel++;
     }
     
     public void channelDown(){
-        if (on && channel > 1 ) channel --;
+        if (on && channel > MINIMUM_CHANNEL_NUMBER ) channel --;
     }
     
     public void volumeUp(){
-        if (on && volume < 10)
+        if (on && volume < MAXIMUM_VOLUME_LEVEL)
             volume++;
     }
     
     public void volumeDown(){
-        if (on && volume > 1)
+        if (on && volume > MINIMUM_VOLUME_LEVEL)
             volume --;
     }
     
     public boolean isOn() {
         return on;
     }
+
+    public boolean isMuted(){
+        return volume == MINIMUM_VOLUME_LEVEL;
+    }
     
     public static class Factory{
     
-        private String panel;
+        private String panel = "FLATIRON";
         
         public Factory panel(String panel){
             this.panel = panel;
@@ -356,6 +368,7 @@ public class TV {
                     </div>
                 </div>
 
+                <p>ساخت نمونه و استفاده از TV.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -363,8 +376,8 @@ public class TV {
 public static void main(String[] args) {
     TV tv1 = TV.Factory().panel("TFT").build();
     tv1.turnOn();
-    tv1.setChannel(30);
-    tv1.setVolume(3);
+    tv1.setChannel(42);
+    tv1.setVolume(6);
     
     TV tv2 = TV.Factory().panel("IPS").build();
     tv2.turnOn();

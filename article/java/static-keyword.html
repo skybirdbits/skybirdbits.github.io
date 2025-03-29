@@ -3,13 +3,13 @@
 <head>
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
 
-    <meta content="بررسی کلید واژه ی استاتیک (static) و تعریف فیلد، متد و کلاس استاتیک در جاوا" name="description"/>
+    <meta content="با کلیدواژه ی استاتیک (static) در جاوا میتونیم فیلد، متد و کلاس های استاتیک تعریف کنیم. اعضای استاتیک وابسته به کلاس هستند در این مطلب به استفاده از کلیدواژه ی در جاوا میپردازیم." name="description"/>
     <meta charset="UTF-8"/>
     <meta content="width:device-width, initial-scale=1" name="viewport"/>
-    <title>کلید واژه ی استاتیک (static) در جاوا</title>
+    <title>کلید واژه ی استاتیک در جاوا</title>
 
     <meta content="کلید واژه ی استاتیک (static) در جاوا" property="og:title"/>
-    <meta content="بررسی کلید واژه ی استاتیک (static) و تعریف فیلد، متد و کلاس استاتیک در جاوا"
+    <meta content="با کلیدواژه ی استاتیک (static) در جاوا میتونیم فیلد، متد و کلاس های استاتیک تعریف کنیم. اعضای استاتیک وابسته به کلاس هستند در این مطلب به استفاده از کلیدواژه ی در جاوا میپردازیم."
           property="og:description"/>
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image"/>
     <meta content="https://skybirdbits.github.io/article/java/static-keyword.html" property="og:url"/>
@@ -29,7 +29,7 @@
 <main>
     <div class="page-wrap">
         <div class="article-head">
-            <h1>کلید واژه ی استاتیک (static) در جاوا</h1>
+            <h1>کلید واژه ی استاتیک در جاوا</h1>
             <address>
                 <a class="author text-muted text-decoration-none" rel="author">یونس سلیمانی</a>
             </address>
@@ -37,7 +37,6 @@
             <figure class="figure figure-wrapper">
                 <img alt="کلید واژه ی static در جاوا"
                      class="rounded figure-img" src="/resources/image/java/cover_static_keyword.png"/>
-
             </figure>
 
             <div class="toc">
@@ -45,11 +44,10 @@
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="#sub0">تعریف استاتیک</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub1">متغیر (فیلد) های استاتیک (static)</a>
-                    <a class="list-group-item list-group-item-action" href="#sub2">متد های استاتیک (static)</a>
-                    <a class="list-group-item list-group-item-action" href="#sub3">مثال از متد و فیلد استاتیک در
-                        جاوا</a>
-                    <a class="list-group-item list-group-item-action" href="#sub4">کلاس های استاتیک (static)</a>
+                    <a class="list-group-item list-group-item-action" href="#sub1">متغیر (فیلد) های استاتیک</a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">متد های استاتیک</a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">مثال از متد و فیلد استاتیک</a>
+                    <a class="list-group-item list-group-item-action" href="#sub4">کلاس های استاتیک</a>
                     <a class="list-group-item list-group-item-action" href="#sub5">خلاصه</a>
                 </div>
             </div>
@@ -62,10 +60,10 @@
                 <blockquote>از کلید واژه static در جاوا میشه برای تعریف فیلد، متد و کلاس های داخلی (Inner class) استاتیک استفاده کرد.</blockquote>
 
                 <p>هنگامی که از کلید واژه ی <strong>static</strong> در جاوا برای یک عضو از کلاس استفاده بشه عضو مورد نظر وابسته به کلاس میشه
-                    و ربطی به نمونه (آبجکت) های کلاس نداره و در طی زمان اجرای برنامه مستقل از نمونه سازی در دسترسه.
+                    و ربطی به نمونه (آبجکت) های ایجاد شده از کلاس نداره و در طی زمان اجرای برنامه بدون نیاز به نمونه سازی در دسترسه.
                 </p>
 
-                <p>اعضای استاتیک یک کلاس در جاوا، بین تمام آبجکت های ایجاد شده از کلاس مشترک هستند. به عنوان مثال مقدار یک فیلد استاتیک برای تمام آبجکت های ایجاد شده از کلاس تا پایان برنامه یکی است.</p>
+                <p>مقدار عضو استاتیک یک کلاس در جاوا، بین تمام آبجکت های ایجاد شده از کلاس مشترک است. و متغیر تا پایان زمان اجرای برنامه وجود دارد.</p>
 
                 <p>برای صدا زدن اعضای استاتیک به‌جای نوشتن اسم متغیر آبجکتی کافیه اسم کلاسی که عضو رو داخلش تعریف کردیم بنویسیم، نقطه بزاریم و عضو رو صدا بزنیم.</p>
 
@@ -77,12 +75,11 @@
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">فیلد های استاتیک (static)</p>
-                <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام آبجکت های
-                    ایجاد شده از کلاس به اشتراک گذاشته بشه</p>
+                <p class="title">فیلد های استاتیک</p>
+                <p> این متغیر ها وابسته به کلاس هستند و مقدار آنها تا پایان زمان اجرای برنامه میتونه بین تمام آبجکت های ایجاد شده از کلاس به اشتراک گذاشته بشه</p>
 
-                <p>زمانی که در کلاس میخوایم یک داده با مقدار یکسان و مشترک بین تمام اعضای کلاس تعریف کنیم، برای بهینه کردن برنامه دیتا فیلد رو استاتیک تعریف کنیم.</p>
-
+                <p>زمانی که در کلاس میخوایم یک داده با مقدار یکسان و مشترک بین تمام اعضای کلاس تعریف کنیم، برای بهینه‌سازی در حافظه ی برنامه دیتا فیلد رو استاتیک (static) تعریف میکنیم.</p>
+                <p>اینطوری با هربار ایجاد آبجکت از یک کلاس متغیر جدید با مقدار جدید ساخته نمیشه که بخواد حافظه رو اشغال کنه بنابراین تنها یک متغیر داریم که مقدار متغیر بین تمام آبجکت های ایجاد شده از کلاس مشترک است.</p>
                 <p>به عنوان مثال میتونیم فیلد <strong>PI</strong> رو در کلاس <strong>Math</strong> در نظر بگیریم، چون مقدار PI همیشه 3.14 است نیاز نیست در هر آبجکت این مقدار به طور مجزا ایجاد بشه بنابراین PI رو به صورت فیلد استاتیک در Math تعریف کرده اند.</p>
 
                 <p>تعریف دیتافیلد استاتیک در کلاس:</p>
@@ -112,8 +109,6 @@ Type type = MyClass.myStaticField;
                     </div>
                 </div>
 
-
-
                 <p>مثال</p>
 
                 <div class="sample">
@@ -141,11 +136,11 @@ public static void main(String[] args){
             </div>
 
             <div class="subsection" id="sub2">
-                <p class="title">متد های استاتیک (static)</p>
+                <p class="title">متد های استاتیک</p>
 
-                <blockquote>متد main که کد های جاوا رو داخلش اجرا میکنیم استاتیک است.</blockquote>
+                <blockquote>متد main که کد های جاوا رو داخلش اجرا میکنیم استاتیک (static) است.</blockquote>
 
-                <p>این متد ها مانند فیلد های استاتیک وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم کلاس صداشون می زنیم.</p>
+                <p>این متد ها مانند فیلد های استاتیک (static) وابسته به کلاس هستند و بدون نیاز به نمونه سازی با استفاده از اسم کلاس صداشون می زنیم.</p>
 
 
                 <p> فرم کلی:</p>
@@ -153,10 +148,10 @@ public static void main(String[] args){
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-public class ClassName {
+public class MyClass {
 
-    public static void methodName(Type0 p0, Type1 p1, …, TypeN pN){
-    ...
+    public static void myStaticMethod(Type0 p0, Type1 p1, …, TypeN pN){
+        ...
     }
 
 }
@@ -173,11 +168,10 @@ Type0 type0 = new Type0();
 Type1 type1 = new Type1();
 ...
 TypeN typeN = new TypeN();
-ClassName.methodName(type0, type1, … , typeN)
+MyClass.myStaticMethodName(type0, type1, … , typeN)
                         </div>
                     </div>
                 </div>
-
 
                 <p>مثال</p>
 
@@ -318,12 +312,127 @@ public class TestCircle {
                 <p>در مثال بالا یک فیلد استاتیک داریم به اسم numberOfObjects که تعداد نمونه های ایجاد شده از کلاس Circle رو میشماره و با متد استاتیک getNumberOfObjects این فیلد رو صدا میزنیم.</p>
                 <p>نمونه های ایجاد شده از کلاس Circle هرکدوم ویژگی های مختص به خودشونو دارن اما مقدار فیلد numberOfObjects بین تمام نمونه ها مشترکه.</p>
 
+
+                <p>مثال</p>
+                <p>در زیر متغیر های استاتیک رو با final تعریف کردیم، متغیر هایی که با final تعریف میشن مقدارشون <strong>غیرقابل تغییر</strong> است.</p>
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+public class TV {
+    public static final int MAXIMUM_VOLUME_LEVEL = 10;
+    public static final int MINIMUM_VOLUME_LEVEL = 0;
+
+    public static final int MAXIMUM_CHANNEL_NUMBER = 120;
+    public static final int MINIMUM_CHANNEL_NUMBER = 1;
+
+    private String panel;
+    private int channel = 1;
+    private int volume = 1;
+    private boolean on;
+
+    public TV(String panel){
+        this.panel = panel;
+    }
+
+    public TV(){
+        this("FLATIRON");
+    }
+
+    public void turnOn(){
+        on = true;
+    }
+
+    public void turnOff(){
+        on = false;
+    }
+
+    public void setChannel(int channel) {
+        if (on && channel >= MINIMUM_CHANNEL_NUMBER && channel <= MAXIMUM_CHANNEL_NUMBER)
+        this.channel = channel;
+    }
+
+    public void setVolume(int volume) {
+        if (on && volume >= MINIMUM_VOLUME_LEVEL && volume <= MAXIMUM_VOLUME_LEVEL)
+        this.volume = volume;
+    }
+
+    public String getPanel(){
+        return panel;
+    }
+
+    public int getChannel() {
+        return channel;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void channelUp(){
+        if (on && channel < MAXIMUM_CHANNEL_NUMBER) channel++;
+    }
+
+    public void channelDown(){
+        if (on && channel > MINIMUM_CHANNEL_NUMBER ) channel --;
+    }
+
+    public void volumeUp(){
+        if (on && volume < MAXIMUM_VOLUME_LEVEL)
+        volume++;
+    }
+
+    public void volumeDown(){
+        if (on && volume > MINIMUM_VOLUME_LEVEL)
+        volume --;
+    }
+
+    public boolean isOn() {
+        return on;
+    }
+
+    public boolean isMuted(){
+        return volume == MINIMUM_VOLUME_LEVEL;
+    }
+
+}
+                        </div>
+                    </div>
+                </div>
+
+                <p>ساخت نمونه و استفاده از TV.</p>
+
+                <div class="sample">
+                    <div class="snippet-container">
+                        <div class="snippet Java">
+public static void main(String[] args){
+
+    TV tv1 = new TV();
+    tv1.turnOn();
+    tv1.setChannel(21);
+    tv1.setVolume(4);
+    TV tv2 = new TV();
+    tv2.turnOn();
+    tv2.channelUp();
+    tv2.channelUp();
+    tv2.volumeUp();
+
+    System.out.println("tv1 has been built by " + tv1.getPanel() + " panel");
+    System.out.println("tv1's channel is " + tv1.getChannel() + " and volume level is " + tv1.getVolume());
+
+    System.out.println("tv2 has been built by " + tv2.getPanel() + " panel");
+    System.out.println("tv2's channel is " + tv2.getChannel() + " and volume level is " + tv2.getVolume());
+
+}
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="subsection" id="sub4">
-                <p class="title">کلاس های استاتیک (static)</p>
+                <p class="title">کلاس های استاتیک</p>
 
-                <p> میشه از کلید واژه ی استاتیک برای تعریف کلاس های داخلی (inner class ها) نیز استفاده کرد.</p>
+                <p> میشه از کلید واژه ی استاتیک (static) برای تعریف کلاس های داخلی (inner class ها) نیز استفاده کرد.</p>
 
                 <div class="note">
                 <p class="h6">نکته:</p>
@@ -335,10 +444,10 @@ public class TestCircle {
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-public class ClassName {
+public class MyOuterClass {
 ...
 
-    public static class InnerClassName {
+    public static class MyInnerClass {
         ...
     }
 
@@ -353,10 +462,12 @@ public class ClassName {
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
-ClassName.InnerClassName myInnerClass = new ClassName.InnerClassName();
+MyOuterClass.MyInnerClass inner = new MyOuterClass.MyInnerClass();
                         </div>
                     </div>
                 </div>
+
+                <p>در مورد کلاس های داخلی استاتیک در قسمت <a class="text-decoration-none" href="nested-classes.html">کلاس های تو در تو</a> بیشتر توضیح دادیم.</p>
 
             </div>
 
