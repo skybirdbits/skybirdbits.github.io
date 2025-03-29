@@ -676,9 +676,18 @@ public class Main{
                     <div class="snippet-container">
                         <div class="snippet Java">
 public class TV {
+    private String panel;
     private int channel = 1;
     private int volume = 1;
     private boolean on;
+
+    public TV(String panel){
+        this.panel = panel;
+    }
+
+    public TV(){
+        this("FLATIRON");
+    }
 
     public void turnOn(){
         on = true;
@@ -696,6 +705,10 @@ public class TV {
     public void setVolume(int volume) {
         if (on && volume >= 0 && volume <= 10)
             this.volume = volume;
+    }
+
+    public String getPanel(){
+        return panel;
     }
 
     public int getChannel() {
@@ -728,6 +741,9 @@ public class TV {
         return on;
     }
 
+    public boolean isMuted(){
+        return volume == 0;
+    }
 }
                         </div>
                     </div>
