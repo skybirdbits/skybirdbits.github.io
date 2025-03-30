@@ -57,13 +57,11 @@
 
                     <a class="list-group-item list-group-item-action" href="#sub1">روش های ایجاد آرایه</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub2"></a>
+                    <a class="list-group-item list-group-item-action" href="#sub2">کلاس Arrays</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub3"></a>
+                    <a class="list-group-item list-group-item-action" href="#sub3">آرایه های چند بعدی</a>
 
-                    <a class="list-group-item list-group-item-action" href="#sub4"></a>
-
-                    <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
+                    <a class="list-group-item list-group-item-action" href="#sub4">خلاصه</a>
                 </div>
             </div>
         </div>
@@ -76,7 +74,7 @@
                 <blockquote>از آرایه در جاوا برای نگهداری تعداد متناهی از متغیر های هم نوع استفاده میکنیم. و به متغیر های آرایه عنصر (element) میگیم.</blockquote>
 
                 <p>از آرایه در جاوا برای نگهداری n متغیر از نوع یکسان استفاده میکنیم.</p>
-                <p>متغیر های یک آرایه میتونن از نوع Primitive یا آبجکت باشن.</p>
+                <p>متغیر های یک آرایه میتونن از نوع Primitive یا Object باشن.</p>
                 <p>آرایه در جاوا یک آبجکت با ظاهری متفاوت است؛ وقتی یک آرایه به طول n ایجاد میکنیم در واقع n تا فیلد از نوع متغیر داخل آرایه به صورت خودکار ایجاد میشه.</p>
                 <p>به تعداد متغیر هایی که یک آرایه میتونه در خودش نگهداره طول آرایه میگیم؛ هنگامی که یک آرایه n تا متغیر در خودش نگهداری میکنه میگیم طول آرایه n است.</p>
                 <p>طول آرایه در جاوا ثابت است و هنگام ایجاد آرایه یک فیلد به اسم <strong>length</strong> به طور خودکار ایجاد میشه که مقدار این فیلد طول آرایه است.</p>
@@ -352,9 +350,9 @@ public static void main(String[] args){
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet">
-                            int[] numbers = { 2, 5, 6, 7, 1, 0, 4, 8};
-                            Arrays.sort(numbers);
-                            System.out.println(Arrays.toString(numbers));
+int[] numbers = { 2, 5, 6, 7, 1, 0, 4, 8};
+Arrays.sort(numbers);
+System.out.println(Arrays.toString(numbers));
                         </div>
                     </div>
                 </div>
@@ -366,7 +364,7 @@ public static void main(String[] args){
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet">
-                            List&lt;Integer&gt; numberList = Arrays.asList(33, 42, 76, 66, 99);
+List&lt;Integer&gt; numberList = Arrays.asList(33, 42, 76, 66, 99);
                         </div>
                     </div>
                 </div>
@@ -379,7 +377,7 @@ public static void main(String[] args){
                 <blockquote>عناصر یک آرایه میتونن آرایه باشند.</blockquote>
 
                 <p>آرایه هایی که تا اینجا باهاشون آشنا شدیم <strong>یک بعدی</strong> بودن این در حالیه که میتونیم آرایه های <strong>دو بعدی یا چند بعدی</strong> در جاوا ایجاد کنیم.</p>
-                <p>اگه آرایه رو آبجکت در نظر بگیریم میتونیم یک آرایه از نوع آرایه ایجاد کنیم به این آرایه دو بعدی میگیم.</p>
+                <p>گفتیم آرایه یک آبجکت است پس میتونیم یک آرایه از نوع آرایه ایجاد کنیم که به این آرایه دو بعدی میگیم.</p>
 
                 <p>در زیر طول آرایه اول ۳ است، این آرایه آبجکت فرض شده و آرایه ای به طول ۴ از نوع این آرایه به وجود آوردیم.</p>
                 <div class="sample">
@@ -411,7 +409,7 @@ int[][] matrix = { {2, 4, 1}, {7, 3, 6}, {12, 9, 5} , {0, 11, 8}};
                         <div class="snippet Java">
 int[][] matrix = { {2, 4, 1}, {7, 3, 6}, {12, 9, 5} , {0, 11, 8}};
 for(int i=0; i&lt;matrix.length; i++){
-    for(int j = 0; j&lt;matrix[0].length; j++){
+    for(int j = 0; j&lt;matrix[i].length; j++){
         System.out.println(matrix[i][j]);
     }
 }
@@ -419,9 +417,9 @@ for(int i=0; i&lt;matrix.length; i++){
                     </div>
                 </div>
 
-                <p>در بالا i در حلقه ی اولی عناصر آرایه به طول 4 رو بررسی میکنه که هر عنصر آرایه ای به طول 3 است. و سپس داخل حلقه ی دوم با j عناصر آرایه به طول 3 رو که اعداد هستند بررسی میکنیم.</p>
+                <p>در بالا i در حلقه ی اولی عناصر آرایه به طول 4 رو بررسی میکنه که هر عنصر آرایه ای به طول 3 است. و سپس داخل حلقه ی دوم با j عناصر آرایه به طول 3 رو که از نوع int هستند بررسی میکنیم.</p>
 
-                <p>هنگام تعریف آرایه دو بعدی از طریق مقداردهی عناصر، لزومی نداره طول عناصر آرایه یکسان باشن.</p>
+                <p>هنگام تعریف آرایه دو بعدی از طریق مقداردهی عناصر، لزومی نداره طول عناصر که خود یک آرایه هستند یکسان باشه.</p>
 
                 <div class="sample">
                     <div class="snippet-container">
