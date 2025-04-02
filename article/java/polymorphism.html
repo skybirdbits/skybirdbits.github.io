@@ -67,16 +67,14 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">مفهوم چندریختی (Polymorphism)</p>
+                <p class="title">مفهوم چندریختی</p>
 
-                <blockquote>چند ریختی (polymorphism) یعنی یک متغیر از نوع سوپرکلاس به آدرس یک آبجکت از نوع ساب کلاس اشاره کنه.</blockquote>
+                <blockquote>چند ریختی (polymorphism) در جاوا یعنی یک متغیر آبجکتی، به‌جای آبجکت از نوع خودش به یک آبجکت از کلاسی که ازش ارث بری کرده اشاره کنه.</blockquote>
 
                 <p>سه اصل شی گرایی عبارتند از کپسوله سازی <strong>(Encapsulation)، وراثت (Inheritance)</strong> و<strong> چند ریختی (Polymorphism)</strong>.</p>
                 <p>بعضیا <strong>Abstraction</strong> هم اصل چهارم شی گرایی میدونن که در اینجا موضوع قابل بحث ما نیست.</p>
 
                 <p>در مطالب قبل با دو اصل کپسوله سازی و وراثت اشنا شدیم؛ در این مطلب میخوایم به چند ریختی بپردازیم.</p>
-
-                <p>چند ریختی یعنی متغیر از جنس سوپرکلاس باشه و به جای آدرس آبجکت از نوع خودش، اشاره کنه به آدرس آبجکتی از نوع ساب کلاس در حافظه.</p>
 
                 <p>در قسمت مورد مطالعه ی <a class="text-decoration-none" href="inheritance.html">مطلب قبلی</a> یک مثال از کلاس های Circle، Rectangle و GeometricShape زده بودیم.</p>
 
@@ -102,7 +100,7 @@ public static void displayShapeInfo(GeometricShape shape){
                 </div>
 
 
-                <p>در بالا پارامتر متد displayShapeInfo از نوع GeometricShape است. این متغیر میتونه علاوه بر آبجکت هایی که از GeometricShape هستند به هر آبجکتی که از نوع ساب کلاس های GeometricShape است اشاره کنه.</p>
+                <p>در بالا پارامتر متد displayShapeInfo از نوع GeometricShape است. این متغیر میتونه علاوه بر آبجکت هایی که از GeometricShape هستند به هر آبجکتی که از GeometricShape ارث بری میکنه اشاره کنه.</p>
 
                 <div class="note">
                     <p class="h6">توجه</p>
@@ -146,7 +144,6 @@ class C extends B{
                         </div>
                     </div>
                 </div>
-
 
                 <div class="sample">
                     <div class="snippet-container">
