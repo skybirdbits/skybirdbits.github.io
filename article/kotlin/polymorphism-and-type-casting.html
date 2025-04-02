@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="description" content="چند ریختی رکن سوم شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
+  <meta name="description" content="چند ریختی یکی از اصول شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>چند ریختی (Polymorphism) و کست کردن (Type Casting) در کاتلین</title>
 
   <meta name="og:title" content="چند ریختی (Polymorphism) و کست کردن (Type Casting) در کاتلین">
-  <meta name="og:description" content="چند ریختی رکن سوم شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
+  <meta name="og:description" content="چند ریختی یکی از اصول شی گرایی است؛ در این مقاله به چند ریختی (polymorphism) و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) در کاتلین می پردازیم.">
 
   <meta property="og:image" content="https://skybirdbits.github.io/resources/favicon.png">
   <meta property="og:url" content="https://skybirdbits.github.io/article/kotlin/polymirphism-and-type-casting.html">
@@ -68,9 +68,11 @@
 
           <p class="title">توضیحات</p>
 
-          <p>سه رکن شی گرایی عبارتند از کپسوله کردن (encapsulation)، وراثت (inheritance) و چند ریختی (polymorphism).</p>
+            <p>سه رکن شی گرایی عبارتند از <strong>کپسوله کردن (encapsulation)</strong>،<strong> وراثت (inheritance)</strong> و <strong>چند ریختی (polymorphism)</strong>.</p>
 
-          <p>در دو بخش قبل با <a class="text-decoration-none" href="/article/kotlin/objects-and-classes.html">کپسوله کردن (encapsulation)</a> و <a class="text-decoration-none" href="/article/kotlin/inheritance.html">وراثت (inheritance)</a> آشنا شدیم در این بخش میخوایم با رکن سوم شی گرایی یعنی چند ریختی (polymirphism) آشنا بشیم. و سپس به پیوند پویا (dynamic binding) و کست کردن (type casting) که با چند ریختی مرتبط هستند می پردازیم.</p>
+            <p> بعضی از برنامه نویس ها <strong>abstraction</strong> هم به عنوان رکن چهارم شی گرایی در نظر میگیرن که اینجا موضوع بحث ما نیست.</p>
+
+          <p>در دو بخش قبل با <a class="text-decoration-none" href="/article/kotlin/objects-and-classes.html">کپسوله کردن (Encapsulation)</a> و <a class="text-decoration-none" href="/article/kotlin/inheritance.html">وراثت (inheritance)</a> آشنا شدیم در این بخش میخوایم با رکن سوم شی گرایی یعنی چند ریختی (Polymorphism) آشنا بشیم. و سپس به پیوند پویا (Dynamic Binding) و کست کردن (Type Casting) که با چند ریختی مرتبط هستند می پردازیم.</p>
 
 
           <p>برای پرداختن به پیوند پویا (dynamic binding) و کست کردن (type casting) ابتدا لازمه با چند ریختی (polymorphism) در کاتلین آشنا بشیم.</p>
@@ -80,17 +82,9 @@
 
           <p class="title">چند ریختی (Polymorphism)</p>
 
-          <blockquote>چند ریختی یعنی متغیر از جنس یکی از superclass ها اشاره کنه به آبجکت ایجاد شده از subclass
-          </blockquote>
+          <blockquote>چند ریختی یعنی متغیر از جنس یکی از superclass ها اشاره کنه به آبجکت ایجاد شده از subclass</blockquote>
 
           <p>همینطور که در قسمت قبل (وراثت) گفته شد subclass ویژگی های superclass رو به ارث میبره به علاوه ویژگی های جدید خودشو میتونه داشته باشه پس میشه گفت subclass یک کلاس اختصاصی از superclass است.</p>
-
-          <p>به تصویر زیر توجه کنید:</p>
-
-          <figure>
-            <img src="/resources/image/generic/inheritance_example_diagram.png" alt="ارث بری اشکال هندسی از کلاس GeometricShape" class="figure-img img-fluid">
-            <figcaption class="figure-caption text-end p-2 rtl">ارث بری دو کلاس Circle و Rectangle از GeometricShape</figcaption>
-          </figure>
 
           <p>هر دایره شکل هندسیه اما هر شکل هندسی دایره نیست (میتونه مستطیل باشه).</p>
 
@@ -164,7 +158,7 @@ fun main(){
         <div class="subsection" id="sub2">
           <p class="title">پیوند پویا (Dynamic Binding)</p>
 
-          <blockquote>یک تابع در طی ارث بری میتونه به چند روش پیاده سازی بشه زمان اجرای برنامه jvm تصمیم میگیره کدوم پیاده‌سازی به اجرا در بیاد.</blockquote>
+          <blockquote>یک تابع در طی ارث بری میتونه به چند روش پیاده‌سازی بشه زمان اجرای برنامه jvm تصمیم میگیره کدوم پیاده‌سازی به اجرا در بیاد.</blockquote>
 
           <p>یک تابع میتونه در superclass تعریف بشه و در subclass باز نویسی بشه به عنوان مثال تابع toString در کلاس Any تعریف شده و چون کلاس Any سوپر کلاس تمام کلاس هاست تابع toString میتونه در هر کلاسی بازنویسی و به طور اختصاصی پیاده‌سازی بشه.</p>
 

@@ -7,7 +7,7 @@
     <meta content="IE=7" http-equiv="X-UA-Compatible">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
-    <meta content="چند ریختی یکی از سه اصل شی گرایی است، با چند ریختی یک متغیر از نوع سوپر کلاس اشاره میکنه به یک آبجکت از نوع ساب کلاس در این مطلب به چند ریختی در جاوا می پردازیم."
+    <meta content="چند ریختی یکی از اصول شی گرایی است، با چند ریختی یک متغیر از نوع سوپر کلاس اشاره میکنه به یک آبجکت از نوع ساب کلاس در این مطلب به چند ریختی در جاوا می پردازیم."
           name="description">
 
     <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
@@ -16,7 +16,7 @@
     <title>چند ریختی (Polymorphism) و کست کردن جاوا</title>
 
     <meta content="چند ریختی (Polymorphism) و کست کردن در جاوا" name="og:title">
-    <meta content="چند ریختی یکی از سه اصل شی گرایی است، با چند ریختی یک متغیر از نوع سوپر کلاس اشاره میکنه به یک آبجکت از نوع ساب کلاس در این مطلب به چند ریختی در جاوا می پردازیم."
+    <meta content="چند ریختی یکی از اصول شی گرایی است، با چند ریختی یک متغیر از نوع سوپر کلاس اشاره میکنه به یک آبجکت از نوع ساب کلاس در این مطلب به چند ریختی در جاوا می پردازیم."
           name="og:description">
 
     <meta content="https://skybirdbits.github.io/resources/favicon.png" property="og:image">
@@ -69,15 +69,19 @@
             <div class="subsection" id="sub0">
                 <p class="title">مفهوم چندریختی (Polymorphism)</p>
 
-                <blockquote>چند ریختی (polymorphism) یعنی یک متغیر از سوپرکلاس به آدرس یک آبجکت از ساب کلاس در حافظه اشاره کنه.</blockquote>
+                <blockquote>چند ریختی (polymorphism) یعنی یک متغیر از نوع سوپرکلاس به آدرس یک آبجکت از نوع ساب کلاس اشاره کنه.</blockquote>
 
-                <p>سه اصل شی گرایی عبارتند از کپسوله سازی (Encapsulation)، وراثت (Inheritance) و چند ریختی (Polymorphism).</p>
+                <p>سه اصل شی گرایی عبارتند از کپسوله سازی <strong>(Encapsulation)، وراثت (Inheritance)</strong> و<strong> چند ریختی (Polymorphism)</strong>.</p>
+                <p>بعضیا <strong>Abstraction</strong> هم اصل چهارم شی گرایی میدونن که در اینجا موضوع قابل بحث ما نیست.</p>
 
                 <p>در مطالب قبل با دو اصل کپسوله سازی و وراثت اشنا شدیم؛ در این مطلب میخوایم به چند ریختی بپردازیم.</p>
 
                 <p>چند ریختی یعنی متغیر از جنس سوپرکلاس باشه و به جای آدرس آبجکت از نوع خودش، اشاره کنه به آدرس آبجکتی از نوع ساب کلاس در حافظه.</p>
 
                 <p>در قسمت مورد مطالعه ی <a class="text-decoration-none" href="inheritance.html">مطلب قبلی</a> یک مثال از کلاس های Circle، Rectangle و GeometricShape زده بودیم.</p>
+
+                <p>میتونیم بگیم هر دایره یک شکل هندسیه اما هر شکل هندسی قطعا دایره نیست؛ با این استدلال در مثال قسمت قبل یک متغیر از نوع GeometricShape میتونه به یک آبجکت از نوع Circle اشاره کنه.</p>
+
                 <p>حالا میخوایم یک متد عمومی درست کنیم تا اطلاعات هر کلاسی که از GeometricShape ارث میبره رو نمایش بده.</p>
 
                 <div class="sample">
@@ -115,7 +119,7 @@ public static void displayShapeInfo(GeometricShape shape){
 
             <div class="subsection" id="sub1">
                 <p class="title">پیوندپویا (Dynamic Binding)</p>
-                <blockquote>هنگامی که یک متد در طی وراثت چند بار بازنویسی و پیاده‌سازی بشه JVM تصمیم میگیره متد کدوم کلاس اجرا بشه.</blockquote>
+                <blockquote>هنگامی که یک متد طی وراثت، در چند کلاس بازنویسی بشه JVM تصمیم میگیره متد در کدوم کلاس اجرا بشه.</blockquote>
 
                 <p>یک متد طی وراثت میتونه در چند ساب کلاس پیاده‌سازی و بازنویسی بشه.</p>
 
@@ -210,7 +214,7 @@ class Person extends Object {
                 <blockquote>کست کردن یعنی تبدیل یک نوع به نوع دیگه.</blockquote>
 
 
-                <p>در مثال قسمت قبل متغیری از نوع Object به Person اشاره کرد و فقط متد های toString، hashCode و equals رو با متغیر میتونستیم صدا بزنیم.</p>
+                <p>در مثال قسمت قبل متغیری از نوع Object به Person اشاره کرد و فقط متد های toString، hashCode و equals رو با متغیر میتونستیم صدا بزنیم چون کلاس آبجکت فقط این متد ها داخلش تعریف شده.</p>
                 <div class="sample">
                     <div class="snippet-container">
                         <div class="snippet Java">
