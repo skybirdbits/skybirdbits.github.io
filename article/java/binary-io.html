@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="description" content="همه ی فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ در این مطلب کلاس های text-io رو با binary-io در جاوا مقایسه میکنیم؛ سپس چندتا از کلاس های پر کاربرد binary-io رو مورد بررسی قرار میدیم.">
+  <meta name="description" content="برای کامپیوتر فرقی نداره یک فایل از چه نوعی (متنی، تصویری یا...) باشه؛ تمام فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ تنها چیزی که یک فایل متنی رو با باینری در جاوا متمایز میکنه رمزنگاری و رمزگشایی کاراکترهای (حروف) فایل متنی است...">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,12 +50,12 @@
         <p class="p-2 mx-2 h5">دسترسی سریع</p>
         <div class="list-group">
 
-            <a class="list-group-item list-group-item-action" href="#sub0">مقایسه ی فایل های متنی (text) با فایل های باینری (binary)</a>
-            <a class="list-group-item list-group-item-action" href="#sub1">کلاس های Binary-io در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub2">کلاس FileInputStream و FileOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub3">کلاس DataInputStream و DataOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub4">کلاس ObjectInputStream و ObjectOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub5">کلاس BufferedInputStream و BufferedOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub0">مقایسه ی کلاس های Text-IO با Binary-IO</a>
+            <a class="list-group-item list-group-item-action" href="#sub1">کلاس های Binary-IO</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">کلاس FileInputStream و FileOutputStream</a>
+            <a class="list-group-item list-group-item-action" href="#sub3">کلاس DataInputStream و DataOutputStream</a>
+            <a class="list-group-item list-group-item-action" href="#sub4">کلاس ObjectInputStream و ObjectOutputStream</a>
+            <a class="list-group-item list-group-item-action" href="#sub5">کلاس BufferedInputStream و BufferedOutputStream</a>
             <a class="list-group-item list-group-item-action" href="#sub6">مورد مطالعه (مثال)</a>
             <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
         </div>
@@ -64,8 +64,13 @@
 
     <article>
       <div class="subsection" id="sub0">
-        <p class="title">مقایسه ی کلاس های text-io با binary-io</p>
+        <p class="title">مقایسه ی کلاس های Text-IO با Binary-IO</p>
         <blockquote>تمام فایل هایی که در حافظه ذخیره میشن از نوع باینری هستند.</blockquote>
+
+          <div class="note">
+              <p class="h6">توجه</p>
+              <p>مطالب این قسمت زبان کاتلین را نیز پوشش می دهند و مثال هایی که زده شده با هردو زبان جاوا و کاتلین است.</p>
+          </div>
         <p>برای کامپیوتر فرقی نداره یک فایل از چه نوعی (متنی، تصویری یا...) باشه؛ تمام فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ تنها چیزی که یک فایل متنی رو با باینری در جاوا متمایز میکنه رمزنگاری و رمزگشایی کاراکترهای (حروف) فایل متنی است.</p>
         <p>هنگامی که بخوایم یک کاراکتر رو داخل فایل ذخیره کنیم ابتدا کاراکتر به کد متناظر خودش تبدیل میشه و سپس این کد که یک عدد است توسط کلاس مربوطه در فایل نوشته میشه. به این فرایند رمزنگاری (encoding) کاراکتر میگیم.</p>
 
@@ -98,31 +103,28 @@ System.out.println("The character for code  " + code + " is " + ch);
         </div>
 
         <p>کلاس های binary-io سریع تر از کلاس های text-io هستند چون هنگام خوندن و نوشتن درگیر فرایند رمزگشایی و رمزنگاری نمیشن.</p>
-          <p>جاوا کلاس های مختلفی برای فرایند io تعریف شده در ادامه ی این مطلب به چندتا از کلاس باینری پکیج io در جاوا می پردازیم.</p>
+          <p>در جاوا کلاس های مختلفی برای عملیات io تعریف شده در ادامه ی این مطلب به چندتا از این کلاس ها می پردازیم.</p>
 
 
       </div>
 
       <div class="subsection" id="sub1">
-          <p class="title">کلاس های Binary-io در جاوا</p>
+          <p class="title">کلاس های Binary-IO</p>
 
-          <blockquote>کلاس های InputStream و OutputStream سوپرکلاس تمام کلاس های پکیج io در جاوا هستند.</blockquote>
+          <blockquote>کلاس های InputStream و OutputStream سوپرکلاس تمام کلاس های Stream در پکیج io در جاوا هستند.</blockquote>
 
-
-          <p>در جاوا برای عملیات io کلاس مختلفی طراحی شده که در این قسمت میخوایم به مهم ترین و پرکاربردترینشون که اساس یادگیری سایر کلاس های پکیج io در جاوا هستند بپردازیم.</p>
-
-          <p>در شکل زیر به رابطه ی بین کلاس هایی که قراره در این مطلب بهشون پرداخته بشه نشون دادیم.</p>
+          <p>در نمودار زیر رابطه ی بین کلاس هایی که قراره در این مطلب بهشون پرداخته بشه رو نشون دادیم.</p>
 
           <figure class="figure figure-wrapper">
               <img class="rounded figure-img" src="/resources/image/java/java_io_inheritance_hierarchy.png" alt="سلسله مراتب ارث بری کلاس های Binary IO در جاوا"/>
-              <figcaption class="figure-caption rtl">سلسله مراتب ارث بری کلاس های Binary IO در جاوا</figcaption>
+              <figcaption class="figure-caption rtl">سلسله مراتب ارث بری کلاس های Binary-IO در جاوا</figcaption>
           </figure>
 
-          <p>همونطور که مشاهده کردید تمام کلاس های استریم در تصویر از کلاس های InputStream و OutputStream ارث بری میکنن، این دو کلاس <a class="text-decoration-none" href="abstract-classes.html">ابسترکت</a> هستند و ازشون نمیتونیم شی سازی کنیم و فقط برای ارث بری سایر کلاس ها ساخته شده اند.</p>
+          <p>همونطور که مشاهده کردید تمام کلاس ها در تصویر از کلاس های InputStream و OutputStream ارث بری میکنن، این دو کلاس <a class="text-decoration-none" href="abstract-classes.html">ابسترکت</a> هستند و ازشون نمیتونیم شی سازی کنیم و فقط برای ارث بری سایر کلاس ها ساخته شده اند.</p>
           <p>کلاس InputStream سوپر کلاس تمام کلاس های Input و کلاس OutputStream سوپر کلاس تمام کلاسهای Output در پکیج io است.</p>
 
 
-          <p>دو نمودار uml زیر متد (تابع) های تعریف شده در این دو کلاس رو نشون میدن.</p>
+          <p>دو نمودار UML زیر متد (تابع) های تعریف شده در این دو کلاس رو نشون میدن.</p>
 
           <div class="tb" id="uml_input_stream">
               <div class="tRow">
@@ -158,7 +160,7 @@ System.out.println("The character for code  " + code + " is " + ch);
 
           <div class="tb" id="uml_output_stream">
               <div class="tRow">
-                  <div class="tHead">java.io.InputStream</div>
+                  <div class="tHead">java.io.OutputStream</div>
               </div>
 
               <div class="tRow">
@@ -184,11 +186,10 @@ System.out.println("The character for code  " + code + " is " + ch);
 
       </div>
 
-
         <div class="subsection" id="sub2">
-            <p class="title">کلاس های FileInputStream و FileOutputStream در جاوا</p>
+            <p class="title">کلاس FileInputStream و FileOutputStream</p>
 
-            <p>دو کلاس FileInputStream و FileOutputStream به ترتیب از کلاس های InputStream و OutputStream ارث بری کردن و فقط کانستراکتور براشون تعریف شده و سایر فیلد و متد ها رو از سوپر کلاس هاشون به ارث می برن.</p>
+            <p>دو کلاس FileInputStream و FileOutputStream به ترتیب از کلاس های InputStream و OutputStream ارث بری کردن در ادامه کانستراکتور های تعریف شده در این دو کلاس رو بررسی میکنیم.</p>
 
             <p>نمودار UML مربوط به FileInputStream در جاوا</p>
 
@@ -285,12 +286,12 @@ fun main() {
                 </div>
             </div>
             <p>برای جلوگیری از دست رفتن داده ها و اطمینان از نوشته شدن تمام داده ها در فایل ضروریه که در پایان کار متد close رو صدا بزنیم اما در قسمت جاوا در مثال بالا این کار رو نکردیم. چرا؟</p>
-            <p>تمام کلاس های io در جاوا از AutoClosable ارث بری میکنن این اینترفیس مشخص میکنه که کلاس یک io-stream است پس باید متد close در پایان کار صدا زده بشه. بنابراین میتونیم از کلاس های io-stream در try-catch مانند بالا داخل پرانتز یک نمونه ایجاد کنیم.</p>
+            <p>چون تمام کلاس های IO Stream در جاوا از AutoClosable ارث بری میکنن AutoCloseable مشخص میکنه که کلاس یک io-stream است پس باید متد close در پایان کار صدا زده بشه. بنابراین میتونیم از کلاس های io-stream در try-catch مانند بالا داخل پرانتز یک نمونه ایجاد کنیم.</p>
             <p>به این نوع از try-catch، در جاوا <strong>try-with-resources</strong> گفته میشه. در این حالت سیستم پس از پایان کار به طور خودکار stream ایجاد شده داخل پرانتز رو می بنده و نیازی به صدا زدن close نداریم. </p>
         </div>
 
         <div class="subsection" id="sub3">
-            <p class="title">کلاس های DataInputStream و DataOutputStream در جاوا</p>
+            <p class="title">کلاس DataInputStream و DataOutputStream</p>
             <p>وظیفه ی این کلاس ها نوشتن و خوندن مقادیر primitive و string داخل فایل است. در این دو کلاس به ترتیب <a class="text-decoration-none" href="interfaces.html">اینترفیس</a> های DataInput و DataOutput پیاده‌سازی شده است.</p>
 
             <p>تصویر زیر ارث بری دو کلاس DataInputStream و DataOutputStream رو نشان می دهد.</p>
@@ -300,14 +301,14 @@ fun main() {
                 <figcaption class="figure-caption rtl">ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا</figcaption>
             </figure>
 
-            <p>همانطور که در تصویر بالا مشاهده کردید برای این کلاس ها فقط یک کانستراکتور تعریف شده که اونم مقادیری از جنس InputStream و OutputStream رو میتونیم به صورت پارامتر بهشون پاس بدیم.</p>
+            <p>برای این کلاس های DataInputStream و DataOutputStream فقط یک کانستراکتور تعریف شده که به ترتیب مقادیری از جنس InputStream و OutputStream رو باید به صورت پارامتر بهشون پاس بدیم.</p>
 
 
             <p>بررسی متد های اینترفیس DataInput</p>
 
             <div class="tb" id="data_input_uml">
                 <div class="tRow">
-                    <div class="tHead">java.io.DataInput</div>
+                    <div class="tHead">&lt;&lt;java.io.DataInput&gt;&gt;</div>
                 </div>
 
                 <div class="tRow">
@@ -368,7 +369,7 @@ fun main() {
             <p>بررسی متد های اینترفیس DataOutput</p>
             <div class="tb" id="data_output_uml">
                 <div class="tRow">
-                    <div class="tHead">java.io.DataOutput</div>
+                    <div class="tHead">&lt;&lt;java.io.DataOutput&gt;&gt;</div>
                 </div>
 
                 <div class="tRow">
@@ -425,7 +426,7 @@ fun main() {
             </div>
 
 
-            <p>در مثال زیر میخوایم مقادیری رو با DataOutputStream در فایل بنویسیم و با DataInputStream همان مقادیر رو بخونیم.</p>
+            <p>در زیر میخوایم مقادیری رو با DataOutputStream در فایل بنویسیم و با DataInputStream همان مقادیر رو بخونیم.</p>
 
             <div class="sample">
                 <div class="snippet-container">
@@ -480,19 +481,17 @@ val file = File("temp.dat")
                 </div>
             </div>
 
-
-
         </div>
 
 
         <div class="subsection" id="sub4">
-            <p class="title">کلاس های ObjectInputStream و ObjectOutputStream در جاوا</p>
+            <p class="title">کلاس ObjectInputStream و ObjectOutputStream</p>
 
-            <blockquote>برای نوشتن آبجکت در فایل باید آبجکت اینترفیس Serializable رو پیاده‌سازی کرده باشه.</blockquote>
+            <blockquote>برای نوشتن آبجکت در فایل باید کلاس مربوط به آبجکت اینترفیس Serializable رو پیاده‌سازی کرده باشه.</blockquote>
 
             <p> این دو کلاس به ترتیب اینترفیس های ObjectInput و ObjectOutput رو پیاده‌سازی میکنن.</p>
 
-            <p>تصویر زیر نحوه ی ارث بری این دو کلاس رو نشان می دهد.</p>
+            <p>تصویر زیر نحوه ی ارث بری این دو کلاس رو نشون میده.</p>
 
             <figure class="figure figure-wrapper">
                 <img class="rounded figure-img" src="/resources/image/java/java_object_io_stream_inheritance.png" alt="نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا"/>
@@ -501,8 +500,9 @@ val file = File("temp.dat")
 
             <p>همانطور که در تصویر مشاهده میکنید برای هردو کلاس یک کانستراکتور تعریف شده که هنگام نمونه سازی از ObjectInputStream و ObjectOutputStream میتونیم به ترتیب مقادیری از جنس InputStream و OutputStream رو به کانستراکتور هاشون پاس بدیم.</p>
 
-            <p>اینترفیس های ObjectInput و ObjectOutput تمام متد های اینترفیس های DataInput و DataOutput رو به ارث می برند و دو متد readObject و writeObject هم داخلشون تعریف شده است.</p>
+            <p>اینترفیس های ObjectInput و ObjectOutput به ترتیب از اینترفیس های DataInput و DataOutput ارث بری میکنن و تمام متد های این دو اینترفیس رو به ارث می برن.
 
+            <p>در اینترفیس ObjectInput علاوه بر متد های اینترفیس <strong>DataInput</strong> که به ارث می بره یک متد به اسم readObject تعریف شده است.</p>
 
             <div class="tb" id="object-input-uml">
                 <div class="tRow">
@@ -515,7 +515,7 @@ val file = File("temp.dat")
                 </div>
             </div>
 
-            <p>همینطور که مشخصه در این اینترفیس علاوه بر متد های اینترفیس DataInput که به ارث می بره یک متد به اسم readObject تعریف شده است.</p>
+            <p>در اینترفیس ObjectOutput علاوه بر متد های اینترفیس <strong>DataOutput</strong> که به ارث می بره یک متد به اسم writeObject تعریف شده است.</p>
 
             <div class="tb" id="object_output_uml">
                 <div class="tRow">
@@ -528,10 +528,13 @@ val file = File("temp.dat")
                 </div>
             </div>
 
-            <p>در این اینترفیس علاوه بر متد های اینترفیس DataOutput که به ارث می بره یک متد به اسم writeObject تعریف شده است.</p>
 
-            <p>آبجکتی که میخوایم داخل فایل توسط ObjectOutputStream بنویسیم باید Serializable باشه در غیر این صورت دچار اکسپشن میشیم.</p>
-            <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت های کلاس مورد نظر قابل نوشتن در فایل است.</p>
+
+            <div class="note">
+                <p class="h6">توجه</p>
+                <p>آبجکتی که میخوایم داخل فایل بنویسیم باید <strong>Serializable</strong> باشه در غیر این صورت دچار اکسپشن میشیم.</p>
+                <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت های کلاس مورد نظر قابل نوشتن در فایل هستند.</p>
+            </div>
 
             <p>کلاس java.util.Date اینترفیس Serializable رو پیاده‌سازی کرده است. در مثال زیر آبجکت های کلاس Date رو داخل فایل می نویسیم و سپس با ObjectInputStream از فایل میخونیمشون.</p>
 
@@ -602,12 +605,11 @@ fun main() {
         </div>
 
         <div class="subsection" id="sub5">
-            <p class="title">کلاس BufferedInputStream و BufferedOutputStream در جاوا</p>
-            <blockquote>یاز BufferedInputStream و BufferedOutputStream برای خوندن یا نوشتن فایل هایی با حجم بیش از 100 یا 200 مگابایت استفاده میکنیم.</blockquote>
-            <p>هر بار که عملیات خوندن یا نوشتن انجام میشه، کلاس های IO کرنل سیستم عامل رو صدا میزنن و از طریق کرنل و سایر اجزای سیستم عامل عملیات خوندن یا نوشتن رو انجام میدن؛ بنابراین خوندن و نوشتن فایل سنگین و هزینه بره.</p>
-            <p>کلاس های BufferedInputStream و BufferedOutputStream دارای حافظه های موقتی به اسم buffer هستند که با هر عملیات خوندن یا نوشتن به‌جای اینکه مقادیر توسط سیستم عامل خونده یا نوشته بشه داخل حافظه ی buffer آبجکت این کلاس ها ذخیره میشه و زمانی که این حافظه پر شد داده ها توسط سیستم عامل خونده یا نوشته میشن.</p>
-            <p>بنابراین میتونیم با این کلاس ها برنامه رو بهینه تر کنیم.</p>
-            <p>حافظه ی پیشفرض buffer این کلاس ها ۵۱۲ بایت است که میتونیم داخل کد این حافظه رو تغییر داده و به مقدار دلخواه خود تنظیم کنیم.</p>
+            <p class="title">کلاس BufferedInputStream و BufferedOutputStream</p>
+            <blockquote>از BufferedInputStream و BufferedOutputStream برای خوندن یا نوشتن فایل هایی با حجم بیش از 100 مگابایت استفاده میکنیم.</blockquote>
+            <p>هر بار که عملیات خوندن یا نوشتن انجام میشه، کلاس های IO Stream برای خوندن یا نوشتن، کرنل سیستم عامل رو صدا میزنن و از طریق کرنل و سایر اجزای سیستم عامل عملیات خوندن یا نوشتن رو انجام میدن؛ برای همین این کار سنگین و هزینه بره.</p>
+            <p>کلاس های BufferedInputStream و BufferedOutputStream دارای حافظه های موقتی به اسم buffer هستند که با هر بار خوندن یا نوشتن به‌جای اینکه مقادیر مستقیم توسط اجزای سیستم عامل خونده یا نوشته بشه ابتدا داخل حافظه ی buffer این کلاس ها ذخیره میشه و زمانی که این حافظه پر شد داده ها یه جا توسط سیستم عامل خونده یا نوشته میشن، بنابراین با این کلاس ها میتونیم عملیات خوندن و نوشتن رو بهینه تر کنیم.</p>
+            <p>حافظه ی پیشفرض buffer در این کلاس ها ۵۱۲ بایت است؛ میتونیم داخل کد این حافظه رو تغییر داده و به مقدار دلخواه خود تنظیم کنیم.</p>
 
 
             <p>در نمودار uml زیر به بررسی BufferedInputStream پرداخته ایم:</p>
@@ -644,7 +646,7 @@ fun main() {
             </div>
 
 
-            <p>در مثال زیر با استفاده از BufferedInputStream یک صد عدد تصادفی ۰ - ۲۵۵ (یک بایت) رو در فایل ذخیره میکنیم و سپس با BufferedInputStream اونا رو میخونیم.</p>
+            <p>در زیر با استفاده از BufferedInputStream یک صد عدد تصادفی ۰ - ۲۵۵ (یک بایت) رو در فایل ذخیره میکنیم و سپس با BufferedInputStream اونا رو میخونیم.</p>
 
             <div class="sample">
                 <div class="snippet-container">
@@ -708,7 +710,7 @@ fun main() {
 
         <div class="subsection" id="sub6">
             <p class="title">مورد مطالعه (مثال)</p>
-            <p>در مثال یک برنامه ی کاربردی است که از طریق کنسول (terminal یا cmd) یک فایل رو کپی میکنه.</p>
+            <p>مثال زیر یک برنامه ی کاربردی است که از طریق کنسول (terminal یا cmd) یک فایل رو کپی میکنه.</p>
 
             <div class="sample">
                 <div class="snippet-container">
@@ -821,11 +823,11 @@ fun main(args: Array&lt;String&gt;) {
               navigate_next
             </span>
           <span class="hint">
-              قبلی
+              بعدی
             </span>
         </a>
 
-        <a href="#" class="md-bt md-bt-light">
+        <a href="scanner.html" class="md-bt md-bt-light">
             <span class="hint">
               قبلی
             </span>
@@ -838,7 +840,7 @@ fun main(args: Array&lt;String&gt;) {
 
       <div class="relative-articles-container">
         <p>مطالب مرتبط</p>
-        <div class="d-flex flex-wrap">
+        <div>
           <div>
             <a href="objects-and-classes.html">آبجکت و کلاس ها در جاوا</a>
           </div>
@@ -860,7 +862,7 @@ fun main(args: Array&lt;String&gt;) {
             </div>
 
           <div>
-            <a href="">مطالعه در وبسایت رسمی کاتلین</a>
+            <a href="https://docs.oracle.com/javase/tutorial/essential/io/streams.html">مطالعه در وبسایت رسمی اوراکل</a>
           </div>
         </div>
       </div>
