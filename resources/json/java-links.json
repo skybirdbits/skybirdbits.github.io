@@ -76,6 +76,10 @@
     {
       "subject": "خوندن متن فایل با Scanner",
       "href": "/article/java/scanner.html"
+    },
+    {
+      "subject": "خوندن و نوشتن مقادیر باینری در جاوا",
+      "href": "/article/java/binary-io.html"
     }
   ]
 }

@@ -11,7 +11,7 @@
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خوندن و نوشتن فایل های باینری در جاوا</title>
+  <title>خوندن و نوشتن مقادیر باینری در جاوا</title>
 
   <meta name="og:title" content="">
   <meta name="og:description" content="">
@@ -35,7 +35,7 @@
 
     <div class="article-head">
       <h1>
-        خوندن و نوشتن فایل های باینری در جاوا
+        خوندن و نوشتن مقادیر باینری در جاوا
       </h1>
 
       <address>
@@ -55,9 +55,9 @@
             <a class="list-group-item list-group-item-action" href="#sub2">کلاس FileInputStream و FileOutputStream در جاوا</a>
             <a class="list-group-item list-group-item-action" href="#sub3">کلاس DataInputStream و DataOutputStream در جاوا</a>
             <a class="list-group-item list-group-item-action" href="#sub4">کلاس ObjectInputStream و ObjectOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub6">کلاس BufferedInputStream و BufferedOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub7">مورد مطالعه</a>
-            <a class="list-group-item list-group-item-action" href="#sub8">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub5">کلاس BufferedInputStream و BufferedOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub6">مورد مطالعه (مثال)</a>
+            <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@ System.out.println("The character for code  " + code + " is " + ch);
 
           <figure class="figure figure-wrapper">
               <img class="rounded figure-img" src="/resources/image/java/java_io_inheritance_hierarchy.png" alt="سلسله مراتب ارث بری کلاس های Binary IO در جاوا"/>
-              <figcaption class="figure-caption">سلسله مراتب ارث بری کلاس های Binary IO در جاوا</figcaption>
+              <figcaption class="figure-caption rtl">سلسله مراتب ارث بری کلاس های Binary IO در جاوا</figcaption>
           </figure>
 
           <p>همونطور که مشاهده کردید تمام کلاس های استریم در تصویر از کلاس های InputStream و OutputStream ارث بری میکنن، این دو کلاس <a class="text-decoration-none" href="abstract-classes.html">ابسترکت</a> هستند و ازشون نمیتونیم شی سازی کنیم و فقط برای ارث بری سایر کلاس ها ساخته شده اند.</p>
@@ -496,7 +496,7 @@ val file = File("temp.dat")
 
             <figure class="figure figure-wrapper">
                 <img class="rounded figure-img" src="/resources/image/java/java_object_io_stream_inheritance.png" alt="نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا"/>
-                <figcaption class="figure-caption rtl">نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا</figcaption>
+                <figcaption class="figure-caption rtl">ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا</figcaption>
             </figure>
 
             <p>همانطور که در تصویر مشاهده میکنید برای هردو کلاس یک کانستراکتور تعریف شده که هنگام نمونه سازی از ObjectInputStream و ObjectOutputStream میتونیم به ترتیب مقادیری از جنس InputStream و OutputStream رو به کانستراکتور هاشون پاس بدیم.</p>
@@ -528,7 +528,7 @@ val file = File("temp.dat")
                 </div>
             </div>
 
-            <p>همینطور که مشخصه در این اینترفیس علاوه بر متد های اینترفیس DataOutput که به ارث می بره یک متد به اسم writeObject تعریف شده است.</p>
+            <p>در این اینترفیس علاوه بر متد های اینترفیس DataOutput که به ارث می بره یک متد به اسم writeObject تعریف شده است.</p>
 
             <p>آبجکتی که میخوایم داخل فایل توسط ObjectOutputStream بنویسیم باید Serializable باشه در غیر این صورت دچار اکسپشن میشیم.</p>
             <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت های کلاس مورد نظر قابل نوشتن در فایل است.</p>
