@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="description" content="همه ی فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ در این مطلب کلاس های text-io رو با binary-io در جاوا مقایسه میکنیم؛ سپس یه سری از کلاس های پر کاربرد binary-io رو مورد بررسی قرار میدیم.">
+  <meta name="description" content="همه ی فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ در این مطلب کلاس های text-io رو با binary-io در جاوا مقایسه میکنیم؛ سپس چندتا از کلاس های پر کاربرد binary-io رو مورد بررسی قرار میدیم.">
 
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,27 +50,24 @@
         <p class="p-2 mx-2 h5">دسترسی سریع</p>
         <div class="list-group">
 
-
-          <a class="list-group-item list-group-item-action" href="#sub0">مقایسه ی فایل های متنی (text) با فایل های باینری (binary)</a>
-
-          <a class="list-group-item list-group-item-action" href="#sub1">کلاس های Binary-io در جاوا</a>
-
-            <a class="list-group-item list-group-item-action" href="#sub2">کلاس های FileInputStream و FileOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub3">کلاس های DataInputStream و DataOutputStream در جاوا</a>
-            <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
-            <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
-
-            <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub0">مقایسه ی فایل های متنی (text) با فایل های باینری (binary)</a>
+            <a class="list-group-item list-group-item-action" href="#sub1">کلاس های Binary-io در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">کلاس FileInputStream و FileOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub3">کلاس DataInputStream و DataOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub4">کلاس ObjectInputStream و ObjectOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub6">کلاس BufferedInputStream و BufferedOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub7">مورد مطالعه</a>
+            <a class="list-group-item list-group-item-action" href="#sub8">خلاصه</a>
         </div>
       </div>
     </div>
 
     <article>
       <div class="subsection" id="sub0">
-        <p class="title">مقایسه ی فایل های متنی (text) با فایل های باینری (binary)</p>
+        <p class="title">مقایسه ی کلاس های text-io با binary-io</p>
         <blockquote>تمام فایل هایی که در حافظه ذخیره میشن از نوع باینری هستند.</blockquote>
-        <p>برای کامپیوتر فرقی نداره یک فایل از چه نوعی باشه، (متنی، تصویری یا...)؛ تمام فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ تنها چیزی که یک فایل متنی رو با باینری در جاوا متمایز میکنه رمزنگاری و رمزگشایی کاراکترهای (حروف) فایل متنی است.</p>
-        <p>هنگامی که بخوایم یک کاراکتر رو داخل فایل ذخیره کنیم ابتدا کاراکتر به کد متناظر خودش تبدیل میشه و سپس این کد که عدد است توسط برنامه در فایل ذخیره میشه. به این فرایند رمزنگاری (encoding) کاراکتر میگیم.</p>
+        <p>برای کامپیوتر فرقی نداره یک فایل از چه نوعی (متنی، تصویری یا...) باشه؛ تمام فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ تنها چیزی که یک فایل متنی رو با باینری در جاوا متمایز میکنه رمزنگاری و رمزگشایی کاراکترهای (حروف) فایل متنی است.</p>
+        <p>هنگامی که بخوایم یک کاراکتر رو داخل فایل ذخیره کنیم ابتدا کاراکتر به کد متناظر خودش تبدیل میشه و سپس این کد که یک عدد است توسط کلاس مربوطه در فایل نوشته میشه. به این فرایند رمزنگاری (encoding) کاراکتر میگیم.</p>
 
         <p>با هربار نوشتن کاراکتر در فایل توسط کلاس هایی مانند <a class="text-decoration-none" href="printwriter.html">PrintWriter</a> در جاوا مشابه عملیات زیر اتفاق میوفته.</p>
 
@@ -100,7 +97,9 @@ System.out.println("The character for code  " + code + " is " + ch);
           </div>
         </div>
 
-        <p>با توجه به توضیحات گفته شده میتونیم نتیجه بگیریم خوندن مقادیر باینری سریع تر از خوندن متن توسط برنامه است چون فایل های باینری رو مستقیم میخونیم و مستقیم مینویسیم و برنامه درگیر فرایند رمزگشایی و رمزنگاری نمیشه.</p>
+        <p>کلاس های binary-io سریع تر از کلاس های text-io هستند چون هنگام خوندن و نوشتن درگیر فرایند رمزگشایی و رمزنگاری نمیشن.</p>
+          <p>جاوا کلاس های مختلفی برای فرایند io تعریف شده در ادامه ی این مطلب به چندتا از کلاس باینری پکیج io در جاوا می پردازیم.</p>
+
 
       </div>
 
@@ -298,7 +297,7 @@ fun main() {
 
             <figure class="figure figure-wrapper">
                 <img class="rounded figure-img" src="/resources/image/java/java_data_io_stream_inheritance.png" alt="ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا"/>
-                <figcaption class="figure-caption">ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا</figcaption>
+                <figcaption class="figure-caption rtl">ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا</figcaption>
             </figure>
 
             <p>همانطور که در تصویر بالا مشاهده کردید برای این کلاس ها فقط یک کانستراکتور تعریف شده که اونم مقادیری از جنس InputStream و OutputStream رو میتونیم به صورت پارامتر بهشون پاس بدیم.</p>
@@ -497,16 +496,17 @@ val file = File("temp.dat")
 
             <figure class="figure figure-wrapper">
                 <img class="rounded figure-img" src="/resources/image/java/java_object_io_stream_inheritance.png" alt="نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا"/>
-                <figcaption class="figure-caption">نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا</figcaption>
+                <figcaption class="figure-caption rtl">نمودار uml نحوه ی ارث بری دو کلاس ObjectInputStream و ObjectOutputStream در جاوا</figcaption>
             </figure>
 
             <p>همانطور که در تصویر مشاهده میکنید برای هردو کلاس یک کانستراکتور تعریف شده که هنگام نمونه سازی از ObjectInputStream و ObjectOutputStream میتونیم به ترتیب مقادیری از جنس InputStream و OutputStream رو به کانستراکتور هاشون پاس بدیم.</p>
 
             <p>اینترفیس های ObjectInput و ObjectOutput تمام متد های اینترفیس های DataInput و DataOutput رو به ارث می برند و دو متد readObject و writeObject هم داخلشون تعریف شده است.</p>
 
+
             <div class="tb" id="object-input-uml">
                 <div class="tRow">
-                    <div class="tHead">java.io.ObjectInput</div>
+                    <div class="tHead">&lt;&lt;java.io.ObjectInput&gt;&gt;</div>
                 </div>
 
                 <div class="tRow">
@@ -515,6 +515,8 @@ val file = File("temp.dat")
                 </div>
             </div>
 
+            <p>همینطور که مشخصه در این اینترفیس علاوه بر متد های اینترفیس DataInput که به ارث می بره یک متد به اسم readObject تعریف شده است.</p>
+
             <div class="tb" id="object_output_uml">
                 <div class="tRow">
                     <div class="tHead">&lt;&lt;java.io.ObjectOutput&gt;&gt;</div>
@@ -522,15 +524,16 @@ val file = File("temp.dat")
 
                 <div class="tRow">
                     <div class="tDataLTR">writeObject(object: Object): void</div>
-                    <div class="tDataRTL">یک آبجکت رو داخل فایل می نویسه و کلاس آبجکتی که قراره در فایل نوشته بشه باید اینترفیس Serializable رو پیاده کرده باشه.</div>
+                    <div class="tDataRTL">یک آبجکت رو داخل فایل می نویسه.</div>
                 </div>
             </div>
 
+            <p>همینطور که مشخصه در این اینترفیس علاوه بر متد های اینترفیس DataOutput که به ارث می بره یک متد به اسم writeObject تعریف شده است.</p>
 
-            <p>همانطور که گفتیم نمونه ای که میخوایم داخل فایل توسط ObjectOutputStream بنویسیم باید کلاسش Serializable رو پیاده کرده باشه در غیر این صورت دچار اکسپشن میشیم.</p>
-            <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت مورد نظر قابل نوشتن در فایل است.</p>
+            <p>آبجکتی که میخوایم داخل فایل توسط ObjectOutputStream بنویسیم باید Serializable باشه در غیر این صورت دچار اکسپشن میشیم.</p>
+            <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت های کلاس مورد نظر قابل نوشتن در فایل است.</p>
 
-            <p>کلاس java.util.Date اینترفیس Serializable رو پیاده‌سازی کرده است. پس در مثال زیر داخل فایل آبجکت هاشو می نویسیم.</p>
+            <p>کلاس java.util.Date اینترفیس Serializable رو پیاده‌سازی کرده است. در مثال زیر آبجکت های کلاس Date رو داخل فایل می نویسیم و سپس با ObjectInputStream از فایل میخونیمشون.</p>
 
             <div class="sample">
                 <div class="snippet-container">
