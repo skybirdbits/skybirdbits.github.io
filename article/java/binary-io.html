@@ -43,7 +43,7 @@
       </address>
 
       <figure class="figure figure-wrapper">
-        <img alt="" class="rounded figure-img" src="" />
+        <img alt="" class="rounded figure-img" src="/resources/image/java/cover_binary_io.png" />
       </figure>
 
       <div class="toc">
@@ -51,11 +51,16 @@
         <div class="list-group">
 
 
-          <a class="list-group-item list-group-item-action" href="#sub0"></a>
+          <a class="list-group-item list-group-item-action" href="#sub0">مقایسه ی فایل های متنی (text) با فایل های باینری (binary)</a>
 
-          <a class="list-group-item list-group-item-action" href="#sub1"></a>
+          <a class="list-group-item list-group-item-action" href="#sub1">کلاس های Binary-io در جاوا</a>
 
-          <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub2">کلاس های FileInputStream و FileOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub3">کلاس های DataInputStream و DataOutputStream در جاوا</a>
+            <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
+            <a class="list-group-item list-group-item-action" href="#sub6">خلاصه</a>
+
+            <a class="list-group-item list-group-item-action" href="#sub7">خلاصه</a>
         </div>
       </div>
     </div>
@@ -71,7 +76,7 @@
 
         <div class="sample">
           <div class="snippet-container">
-            <div class="snippet java">
+            <div class="snippet Java">
 char ch = 'A';
 //encoding A
 int code = (int) ch;
@@ -87,7 +92,7 @@ System.out.println("The code for character A is " + code);
 
         <div class="sample">
           <div class="snippet-container">
-            <div class="snippet java">
+            <div class="snippet Java">
 int code = 66;
 char ch = (char) code;
 System.out.println("The character for code  " + code + " is " + ch);
@@ -182,7 +187,7 @@ System.out.println("The character for code  " + code + " is " + ch);
 
 
         <div class="subsection" id="sub2">
-            <p class="title">بررسی کلاس های FileInputStream و FileOutputStream</p>
+            <p class="title">کلاس های FileInputStream و FileOutputStream در جاوا</p>
 
             <p>دو کلاس FileInputStream و FileOutputStream به ترتیب از کلاس های InputStream و OutputStream ارث بری کردن و فقط کانستراکتور براشون تعریف شده و سایر فیلد و متد ها رو از سوپر کلاس هاشون به ارث می برن.</p>
 
@@ -241,7 +246,7 @@ System.out.println("The character for code  " + code + " is " + ch);
 
             <div class="sample">
                 <div class="snippet-container">
-                    <div class="snippet java">
+                    <div class="snippet Java">
 public static void main(String[] args) throws IOException{
 
     try(FileOutputStream output = new FileOutputStream("temp.dat")) {
@@ -258,7 +263,7 @@ public static void main(String[] args) throws IOException{
 }
                     </div>
 
-                    <div class="snippet kotlin">
+                    <div class="snippet Kotlin">
 fun main() {
 
     val file = File("temp.dat")
@@ -292,8 +297,8 @@ fun main() {
             <p>تصویر زیر ارث بری دو کلاس DataInputStream و DataOutputStream رو نشان می دهد.</p>
 
             <figure class="figure figure-wrapper">
-                <img class="rounded figure-img" src="/resources/image/java/java_data_io_stream_inheritance.png" alt="ارث بری دو کلاس DataInputStream و DataOutputStream"/>
-                <figcaption class="figure-caption">ارث بری دو کلاس DataInputStream و DataOutputStream</figcaption>
+                <img class="rounded figure-img" src="/resources/image/java/java_data_io_stream_inheritance.png" alt="ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا"/>
+                <figcaption class="figure-caption">ارث بری دو کلاس DataInputStream و DataOutputStream در جاوا</figcaption>
             </figure>
 
             <p>همانطور که در تصویر بالا مشاهده کردید برای این کلاس ها فقط یک کانستراکتور تعریف شده که اونم مقادیری از جنس InputStream و OutputStream رو میتونیم به صورت پارامتر بهشون پاس بدیم.</p>
@@ -425,7 +430,7 @@ fun main() {
 
             <div class="sample">
                 <div class="snippet-container">
-                    <div class="snippet java">
+                    <div class="snippet Java">
 public static void main(String[] args) throws IOException{
 
     try(DataOutputStream output = new DataOutputStream(new FileOutputStream("temp.dat"))){
@@ -444,7 +449,7 @@ public static void main(String[] args) throws IOException{
     }
 }
                     </div>
-                    <div class="snippet kotlin">
+                    <div class="snippet Kotlin">
 fun main() {
 
 val file = File("temp.dat")
@@ -482,7 +487,7 @@ val file = File("temp.dat")
 
 
         <div class="subsection" id="sub4">
-            <p class="title">کلاس های ObjectInputStream و ObjectOutputStream</p>
+            <p class="title">کلاس های ObjectInputStream و ObjectOutputStream در جاوا</p>
 
             <blockquote>برای نوشتن آبجکت در فایل باید آبجکت اینترفیس Serializable رو پیاده‌سازی کرده باشه.</blockquote>
 
@@ -529,7 +534,7 @@ val file = File("temp.dat")
 
             <div class="sample">
                 <div class="snippet-container">
-                    <div class="snippet java">
+                    <div class="snippet Java">
 public static void main(String[] args) throws IOException, ClassNotFoundException{
 
     //نوشتن داده ها
@@ -555,7 +560,7 @@ public static void main(String[] args) throws IOException, ClassNotFoundExceptio
 }
                     </div>
 
-                    <div class="snippet kotlin">
+                    <div class="snippet Kotlin">
 fun main() {
 
     val file = File("temp.dat")
@@ -640,7 +645,7 @@ fun main() {
 
             <div class="sample">
                 <div class="snippet-container">
-                    <div class="snippet java">
+                    <div class="snippet Java">
 public static void main(String[] args) throws IOException {
 
     try(BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream("temp.dat"))){
@@ -663,7 +668,7 @@ public static void main(String[] args) throws IOException {
 }
                     </div>
 
-                    <div class="snippet kotlin">
+                    <div class="snippet Kotlin">
 fun main() {
 
     val file = File("temp.dat")
@@ -704,7 +709,7 @@ fun main() {
 
             <div class="sample">
                 <div class="snippet-container">
-                    <div class="snippet java">
+                    <div class="snippet Java">
 public static void main(String[] args) {
 
     if (args.length != 2) {
@@ -743,7 +748,7 @@ public static void main(String[] args) {
     }
 }
                     </div>
-                    <div class="snippet kotlin">
+                    <div class="snippet Kotlin">
 fun main(args: Array&lt;String&gt;) {
 
     if (args.size != 2){
