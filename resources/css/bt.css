@@ -26,6 +26,15 @@
      background-color: #212121;
 }
 
+.md-bt.md-bt-dark-blue{
+    color: #fafafa;
+    background-color: #0D47A1;
+}
+
+.md-bt-dark-blue:hover{
+    background-color: #1565C0;
+}
+
 .md-bt.md-bt-light{
     color: #212121;
     background-color: #fafafa;
