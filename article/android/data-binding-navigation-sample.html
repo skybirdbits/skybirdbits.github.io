@@ -27,7 +27,6 @@
 
 <header></header>
 
-
 <main>
     <div class="page-wrap">
         <div class="article-head">
@@ -55,7 +54,7 @@
         </div>
         <article>
             <div class="subsection" id="sub0">
-                <p class="title">درباره ی پروژه</p>
+                <h2>درباره ی پروژه</h2>
                 <p>در این قسمت میخوایم از databinding و navigation به صورت عملی در یک پروژه استفاده کنیم.</p>
 
                 <p>این پروژه دارای دو Fragment و یک Activity است نقطه ی شروع LoginFragment است کاربر با وارد کردن نام
@@ -68,7 +67,7 @@
                 </figure>
 
                 <div class="note">
-                  <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
                     <p> برای فعالسازی و اضافه کردن DataBinding و Navigation در پروژه به لینک های زیر
                         برید.
                     </p>
@@ -107,7 +106,8 @@
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="h3">ایجاد فایل های پروژه و ویرایش آنها</p>
+                <h2>ایجاد فایل های پروژه و ویرایش آنها</h2>
+
                 <p>در پروژه فایل های زیر را ایجاد و ویرایش میکنیم</p>
 
                 <p><strong>Activity:</strong></p>
@@ -117,7 +117,7 @@
                 <p>activity_main.xml</p>
 
                 <div class="note">
-                  <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
                     <p>هنگام ایجاد پروژه اگه گزینه ی EmptyActivity رو بزنید فایل های Activity به صورت خودکارساخته میشن پس از این قسمت عبور میکنیم.</p>
                 </div>
 
@@ -137,7 +137,7 @@
 
                 <p>main_navgraph.xml</p>
 
-                <p class="piece">۱- ایجاد ویو های فرگمنت :</p>
+                <h3>۱- ایجاد ویو های فرگمنت :</h3>
 
                 <p> در مسیر زیر فایل های xml مورد نظر رو ایجاد کنید:</p>
 
@@ -322,7 +322,7 @@
 
                 <p>@{userId}</p>
 
-                <p class="h5">۲-ایجاد کلاس های فرگمنت</p>
+                <h3>۲-ایجاد کلاس های فرگمنت</h3>
 
                 <p> در مسیر زیر دو کلاس زیر رو ایجاد کنید:</p>
 
@@ -360,7 +360,7 @@ class ProfileFragment: Fragment() {
                     </div>
                 </div>
 
-                <p class="piece">۳- ایجاد فایل NavGraph :</p>
+                <h3>۳- ایجاد فایل NavGraph :</h3>
 
                 <p>در مسیر زیر فایل navgraph رو ایجاد کنید و کد هاشو به صورت زیر تغییر بدید:</p>
 
@@ -446,7 +446,7 @@ class ProfileFragment: Fragment() {
                     فرگمنت A رو به عنوان popUpTo تعریف میکنیم</p>
 
 
-                <p class="piece">۴-تعریف عنصر FragmentContainerView به عنوان NavHost در activity_main</p>
+                <h3>۴-تعریف عنصر FragmentContainerView به عنوان NavHost در activity_main</h3>
 
                 <p>فایل activity_main رو به صورت زیر ویرایش کنید:</p>
 
@@ -492,8 +492,7 @@ class ProfileFragment: Fragment() {
                     پیشفرض در نظر گرفته بشه</p>
 
 
-                <p class="h5">۵- وصل کردن view ها به کلاس های فرگمنت و استفاده از NavController برای جابه جایی کاربر بین دو
-                    فرگمنت:</p>
+                <h3>۵- وصل کردن view ها به کلاس های فرگمنت و استفاده از NavController برای جابه جایی کاربر بین دو فرگمنت:</h3>
 
 
                 <p>کلاس LoginFragment رو به صورت زیر ویرایش کنید:</p>

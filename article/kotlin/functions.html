@@ -84,7 +84,7 @@
 
         <div class="subsection" id="sub0">
 
-          <p class="title">تعریف تابع</p>
+                <h2>تعریف تابع</h2>
 
           <blockquote>برای جلو گیری از باز نویسی کد ها از توابع استفاده میکنیم همینطور تابع به مرتب شدن و خوانا تر شدن کد های برنامه کمک میکنه.</blockquote>
           <p>به طور کلی تابع یه سری داده رو به عنوان ورودی میگیره و بعد از انجام محاسبات لازم نتیجه رو به صورت خروجی نمایش میده، برمیگردونه و یا داده های ورودی رو دستخوش تغییر میکنه.</p>
@@ -101,7 +101,7 @@
 
         <div class="subsection" id="sub1">
 
-          <p class="title">ساختار تابع</p>
+                <h2>ساختار تابع</h2>
 
           <p>فرم کلی:</p>
 
@@ -115,7 +115,7 @@
           <p>۱-بیان کننده ی <a class="text-decoration-none" href="/article/kotlin/access-modifiers.html">سطح دسترسی</a> به تابع در پروژه است. سطح دسترسی میتونه private، protected، internal و public باشه. به این کلیدواژه ها کلیدواژه های سطح دسترسی یا access modifier گفته میشه.</p>
 
           <div class="note">
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
             <p>
 سطح دسترسی توابع در کاتلین به صورت پیشفرض public است و نیازی به نوشتن نداره.
             </p>
@@ -130,7 +130,7 @@
 
           <div class="note">
 
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
             <p>هنگام استفاده از پارامتر داخل فانکشن در کاتلین، پارامتر val است.</p>
 
@@ -143,7 +143,7 @@
 
           <div class="note">
 
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
             <p>
    تابع حتما باید مقداری از جنس R برگردونه در غیر این صورت دچار خطای کامپایل میشیم، مگه اینکه R از نوع Unit باشه، در اینصورت نیاری نیست چیزی برگردونده بشه.
@@ -155,7 +155,7 @@
 
           <div class="note">
 
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
             <p>
             علاوه بر اخرین عبارت میتونیم از return هرجای تابع که خواستیم استفاده کنیم، در اینصورت بعد از اجرای return تابع متوقف میشه و کد های بعد از return اجرا نمیشه.
             </p>
@@ -225,7 +225,7 @@ fun max(a: Int, b: Int): Int {
               </div>
           </div>
 
-          <p class="piece">تعریف overloading</p>
+                <h3>تعریف overloading</h3>
           <p>وقتی دو یا چند تابع هم نام با پارامتر های متفاوت تعریف کنیم بهش میگیم overloading</p>
 
           <p>مثال</p>
@@ -254,9 +254,9 @@ fun max(a: Long, b: Long): Long {
 
         <div class="subsection" id="sub2">
 
-          <p class="title">ویژگی پارامتر ها در توابع</p>
+                <h2>ویژگی پارامتر ها در توابع</h2>
 
-          <p class="h5">۱- اختصاص دادن مقدار پیشفرض به پارامتر:</p>
+                <h3>۱- اختصاص دادن مقدار پیشفرض به پارامتر:</h3>
 
           <p>هر پارامتری که برای تابع تعریف میکنید میتونید بهش مقدار پیشفرض اختصاص بدید. در اینصورت هنگام صدا زدن تابع اگه مقداری به پارامتر اختصاص نداده باشید ، کامپایلر به صورت خودکار مقدار پیشفرض رو برای پارامتر در نظر میگیره.</p>
 
@@ -292,7 +292,7 @@ fun main(){
               </div>
           </div>
 
-          <p class="piece">نوشتن اسم پارامتر به صورت آشکار هنگام صدا زدن تابع:</p>
+                <h3>نوشتن اسم پارامتر به صورت آشکار هنگام صدا زدن تابع:</h3>
 
           <p>بعد از صدا زدن تابع هنگامی که بخوایم مقداری به پارامتر اختصاص بدیم، میتونیم اسم پارامتر رو به صورت آشکار بنویسیم.</p>
 
@@ -322,7 +322,7 @@ println("Multiplication of 78.3 and 36 is $mult")
               </div>
           </div>
 
-          <p class="h5">۳- استفاده از کلیدواژه ی vararg هنگام تعریف پارامتر:</p>
+                <h3>۳- استفاده از کلیدواژه ی vararg هنگام تعریف پارامتر:</h3>
 
           <p><strong>توابع arrayOf ، listOf ، asList و ... با این روش پیاده‌سازی شدن.</strong></p>
 
@@ -333,7 +333,7 @@ println("Multiplication of 78.3 and 36 is $mult")
 
           <div class="note">
 
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
             <p>
   از این کلید واژه فقط برای یک پارامتر میتونید استفاده کنید.
@@ -343,7 +343,7 @@ println("Multiplication of 78.3 and 36 is $mult")
 
           <div class="note">
 
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
             <p>
           معمولا از این کلیدواژه در اخرین پارامتر استفاده میکنن. اگه از این کلیدواژه در اخرین پارامتر استفاده نشه هنگام صدا زدن تابع و اختصاص دادن مقدار به پارامتر باید اسم پارامتر به صورت آشکار نوشته بشه.
@@ -426,7 +426,7 @@ println("ASCII code $asciiCode has occurrences")
 
         <div class="subsection" id="sub3">
 
-          <p class="title">تابع تک عبارتی</p>
+                <h2>تابع تک عبارتی</h2>
 
           <p>اگه داخل تابع فقط یک عبارت داشته باشیم و اون عبارتو میخوایم برگردونیم، به این تابع تک عبارتی یا تابع single expression در کاتلین میگیم.</p>
 
@@ -469,7 +469,7 @@ fun max(a: Double, b: Double) = if(a &gt; b) a else b
 
         <div class="subsection" id="sub4">
           
-          <p class="title">تابع Void</p>
+                <h2>تابع Void</h2>
 
           <blockquote>تابع main که برای run کردن پروژه تعریف میکنیم void است.</blockquote>
 
@@ -568,7 +568,7 @@ fun printGrade(score: Double){
 
         <div class="subsection" id="sub5">
           
-          <p class="title">تابع Infix</p>
+                <h2>تابع Infix</h2>
 
           <blockquote>توابع until، downTo و step که در حلقه ی for به کار میبریم به صورت infix تعریف شدن.</blockquote>
 
@@ -617,7 +617,7 @@ a.myInfixFunction(b)
           <p>متغیر a رسیور (receiver) و متغیر b مقدار اختصاصی به پارامتر است.</p>
 
           <div class="note">
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
             <p>
           متغیر a باید یک آبجکت از کلاسی باشه که براش تابع رو تعریف کردیم.
@@ -641,7 +641,7 @@ infix fun String.chain(other: String): String {
 
           <div class="note">
 
-            <p class="h6">توجه:</p> 
+                    <p class="note-head">توجه: </p>
 
             <p>
           کلیدواژه ی this اشاره به آبجکت همون کلاسی داره که تابع رو براش تعریف کردیم.
@@ -708,7 +708,7 @@ for(i in 100 downUntil 0) println(i)
 
           <div class="note">
 
-              <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
               <p>
               اجرای تابع infix نسبت به عمل ریاضی، rangeTo و کست کردن اولویت پایین تری داره.</p>
@@ -720,7 +720,7 @@ for(i in 100 downUntil 0) println(i)
           </div>
 
           <div class="note">
-              <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
               
               <p>
               اجرای تابع نسبت به عملگر های منطقی و in اولویت بالاتری داره.</p>
@@ -731,7 +731,7 @@ for(i in 100 downUntil 0) println(i)
         </div>
 
         <div class="subsection" id="sub6">
-          <p class="title">تابع Generic</p>
+                <h2>تابع Generic</h2>
 
           <p>به توابعی که پارامتر های جنریک دارن تابع جنریک میگیم.</p>
 
@@ -784,12 +784,12 @@ val myFriendList = myList&lt;String&gt;("Joe", "Rose", "Kate", "Jane")
 
         <div class="subsection" id="sub7">
 
-          <p class="title">تابع Tail Recursive</p>
+                <h2>تابع Tail Recursive</h2>
 
           <p>با استفاده از کلیدواژه ی tailrec میتونید به صورت native تابع tail recursive در کاتلین تعریف کنید. tail recursion نوع خاصی از توابع بازگشتی است که صدا زدن تابع داخل خودش باید اخرین عبارت داخل تابع باشه.</p>
 
           <div class="note">
-              <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
               <p>
               در تابع tail recursive پس از صدا کردن تابع در داخل خود تابع، هیچ کدی نباید نوشته بشه در غیر این صورت دچار خطای کامپایل میشیم.</p>
@@ -832,7 +832,7 @@ tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(
 
         <div class="subsection" id="sub8">
 
-          <p class="title">محدوده ی تعریف توابع</p>
+                <h2>محدوده ی تعریف توابع</h2>
 
           <p>یک تابع رو میتونیم:</p>
 
@@ -844,7 +844,7 @@ tailrec fun fact(n: Int, result: Int = 1): Int = if(n &lt;= 1) result else fact(
 
           <p>میتونیم داخل یک تابع دیگه تعریف کنیم که بهش میگیم لوکال فانکشن (Local Function).</p>
 
-          <p class="piece">تاپ لول فانکشن:</p>
+                <h3>تاپ لول فانکشن:</h3>
 
           <div class="sample">
               <div class="snippet-container">
@@ -856,7 +856,7 @@ fun myFunction(){
               </div>
           </div>
 
-          <p class="piece">ممبر فانکشن:</p>
+                <h3>ممبر فانکشن:</h3>
           <div class="code-container">
 class MyClass{
   fun myFunction(){
@@ -865,7 +865,7 @@ class MyClass{
 }
           </div>
 
-          <p class="piece">لوکال فانکشن:</p>
+                <h3>لوکال فانکشن:</h3>
 
 
           <p>لوکال فانکشن (تابع داخلی) رو فقط داخل تابعی که تعریف کردیم میشه صدا زد.</p>
@@ -953,7 +953,7 @@ tailrec fun printFib(n: Int, p0: Int = 0, p1: Int = 1){
           </div>
 
         <div class="subsection" id="sub9">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
 
           <p>-از توابع برای جلوگیری از دوباره نویسی استفاده میشه. همونطور به مرتب و خوانا کردن کد ها کمک میکنه.</p>
 

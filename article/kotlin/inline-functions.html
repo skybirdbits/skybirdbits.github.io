@@ -71,11 +71,11 @@
 
       <article>
         <div class="subsection" id="sub0">
-          <p class="title">تابع خطی</p>
+                <h2>تابع خطی</h2>
 
           <blockquote>از توابع خطی برای بهبود کیفیت برنامه و یا تعریف پارامتر های جنریک نوع reified استفاده میشه.</blockquote>
 
-          <p class="h5">فرایند اجرای کد های کاتلین در jvm</p>
+                <h3>فرایند اجرای کد های کاتلین در jvm</h3>
 
           <p>هنگام کامپایل کد های کاتلین ابتدا تبدیل به کد های جاوا شده و سپس با کامپایلر جاوا به کد های خوانا توسط jvm تبدیل میشن.</p>
 
@@ -85,7 +85,7 @@
             src="/resources/image/kotlin/process_of_running_kotlin_in_jvm.png">
         </figure>
 
-        <p class="h5">تعریف تابع خطی</p>
+                <h3>تعریف تابع خطی</h3>
           
           <p>
           هنگامی که یک <a class="text-decoration-none" href="/article/kotlin/higher-order-functions.html">تابع مرتبه بالا</a> تعریف میکنیم لامبدا هایی که به عنوان پارامتر تابع تعریف کردیم هرکدوم یک Object هستند که میتونن فضای حافظه رو اشغال کنن.
@@ -183,7 +183,7 @@ System.out.println("After");
           <p>دیگه خبری از Function نیست و عبارت block به صورت تابع ایجاد شد؛ همین در بهبود کیفیت مخصوصا زمانی که حافظه رو با آبجکت های زیادی اشغال کرده باشیم میتونه کمک کنه.</p>
 
 
-          <p class="piece">نکات قابل توجه هنگام تعریف تابع خطی</p>
+                <h3>نکات قابل توجه هنگام تعریف تابع خطی</h3>
 
           <p>۱- از تعریف توابع بزرگ (به لحاظ زیاد بودن کد های داخل تابع) باید خودداری کرد.</p>
 
@@ -197,7 +197,7 @@ System.out.println("After");
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">کلیدواژه ی noinline</p>
+                <h2>کلیدواژه ی noinline</h2>
 
           <p>هنگامی که یک تابع مرتبه ی بالا رو به صورت خطی تعریف میکنیم، تمام پارمتر ها خطی میشن، اگه بخوایم بعضی از پارامتر ها خطی نباشن از کلیدواژه ی noinline استفاده میکنیم.</p>
 
@@ -220,7 +220,7 @@ inline fun foo(bar: (String) -&gt; Unit, noinline baz: (Int) -&gt; Unit){
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="title">استفاده از return غیر محلی</p>
+                <h2>استفاده از return غیر محلی</h2>
 
           <p>هنگام تعریف عبارت لامبدا به طور اشکار از return نمیشه استفاده کرد مگه با تعریف برچسب برای عبارت اما اگه لامبدا خطی باشه میتونیم داخل لامبدا مستقیم از return (فقط برای متوقف کردن تابع) استفاده کنیم.</p>
 
@@ -267,7 +267,7 @@ inline fun operateSquareNumbers(a: Double, b: Double, operator: (Double, Double)
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="title">کلیدواژه ی crossinline</p>
+                <h2>کلیدواژه ی crossinline</h2>
           <p>بعضی از پارامتر های لامبدایی که برای تابع خطی تعریف میکنیم، ممکنه به صورت مستقیم داخل تابع صدا زده نشن و در یک تابع یا ابجکت داخل تابع خطی صداشون کنیم؛ اما اجازه نداریم از خطی داخل <strong>غیر خطی</strong> استفاه کنیم چون نمیشه داخل تابع غیر خطی از return غیر محلی استفاده کرد. در اینجا باید پارامتر تابعو با کلیدواژه ی crossinline تعریف کنیم.</p>
 
 
@@ -315,7 +315,7 @@ inline fun foo(crossinline body: () -&gt; Unit) {
 
           <div class="subsection" id="sub4">
 
-          <p class="title">پارامتر های Reified Type</p>
+                <h2>پارامتر های Reified Type</h2>
 
           <blockquote>توابعی که پارامتر های نوع جنریکشون reified است باید خطی باشن.</blockquote>
 
@@ -364,7 +364,7 @@ fun main(){
           <p>در بالا یک پارامتر جنریک نوع T با reified تعریف کردیم.</p>
 
         <div class="subsection" id="sub5">
-          <p class="title">پراپرتی (property) های خطی</p>
+                <h2>پراپرتی (property) های خطی</h2>
 
           <p>کلیدواژه ی inline میتونه برای getter و setter های property که backing field ندارن استفاده بشه.</p>
 
@@ -399,7 +399,7 @@ inline val foo: Foo
         </div>
 
         <div class="subsection" id="sub6">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
 
           <p>- از توابع خطی برای بهبود کیفیت برنامه و تعریف پارامتر reified استفاده میشه.</p>
 

@@ -66,7 +66,7 @@
             </blockquote>
 
             <div class="note">
-                <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
 
                 <p>
                      هنگام استفاده از navigation توصیه میشه سیاست تک activity و چند فرگمنتی رو به کار ببرید
@@ -76,13 +76,13 @@
 
 
             <div class="note">
-              <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
               <p>
                      در این مقاله فرض بر این شده با Fragment, Activity و مباحث پایه ای اندروید آشنایی دارید.
               </p>
             </div>
 
-            <p class="h5">مزایای استفاده از Navigation</p>
+                <h3>مزایای استفاده از Navigation</h3>
 
             <p>۱-کنترل تراکنش بین fragment ها</p>
             <p>۲-کنترل عملگر های Up و Back در برنامه</p>
@@ -96,9 +96,9 @@
             </p>
 
             <div class="subsection" id="sub0">
-                <p class="title">پلاگین ها و کتابخونه های مورد نیاز</p>
+                <h2>پلاگین ها و کتابخونه های مورد نیاز</h2>
 
-                <p class="piece">افزودن Navigation به پروژه</p>
+                <h3>افزودن Navigation به پروژه</h3>
                 <p>RootProject -&gt; app -&gt; build.gradle</p>
 
                 <div class="sample">
@@ -174,7 +174,7 @@ plugins{
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">Navigation Graph</p>
+                <h2>Navigation Graph</h2>
 
                 <p>یک فایل xml که تمامی مقصد ها و مسیر های بین فرگمنت ها رو داخلش ترسیم میکنیم این فایل باید در مسیر زیر
                     ایجاد بشه:</p>
@@ -182,7 +182,7 @@ plugins{
 
                 <p>فایل Navigation Graph دارای عناصر زیر است: </p>
 
-                <p class="piece">1- navigation</p>
+                <h3>1- navigation</h3>
 
                 <p>عنصر navigation ریشه ی Navigation Graph است بقیه ی عناصر فرزندان این عنصر هستند این عنصر باید دارای
                     دو فیلد id و startDestination باشه</p>
@@ -208,7 +208,7 @@ plugins{
                 <p>فیلد startDestination شامل آی دی فرگمنتیه که به عنوان نقطه ی شروع در نظر گرفته میشه.</p>
 
 
-                <p class="piece">2- fragment</p>
+                <h3>2- fragment</h3>
                 <p>با استفاده از این عنصر destination ها رو تعریف میکنیم</p>
                 <p><strong>به این عنصر destination هم گفته میشه.</strong></p>
 
@@ -231,7 +231,7 @@ plugins{
                 <p>فیلد label شامل اسم برچسب برای destination است.</p>
                 <p>در فیلد layout که اختیاریه ادرس فایل xml مربوط به Fragment در layout رو میدیم.</p>
 
-                <p class="piece">3- action:</p>
+                <h3>3- action:</h3>
 
                 <p> زمانی که میخوایم یک مسیر بین fragment ها تعریف کنیم این عنصر رو به عنوان فرزند fragment اولی تعریف
                     میکنیم.</p>
@@ -256,12 +256,12 @@ plugins{
                 <p>فیلد destination شامل آی دی fragment دومی است.</p>
 
                 <div class="note">
-                <p class="h6">نکته:</p>
+                    <p class="note-head">نکته:</p>
                 <p>برای این عنصر فیلد های انیمیشنی ام وجود داره که هنگام جا به جایی بین فرگمنت ها میشه از
                     انیمیشن استفاده کرد ولی ما برای اختصار ازشون صرف نظر کردیم</p>
                 </div>
 
-                <p class="h5">4- argument:</p>
+                <h3>4- argument:</h3>
                 <p> زمانی که کاربر میخواد بین فرگمنت ها جا به جا بشه با این عنصر میتونیم داده های primary, string و
                     object هایی از جنس parcelable رو از فرگمنت اولی به فرگمنت دومی منتقل کنیم
                     این عنصرو باید به عنوان فرزند action تعریف کنیم</p>
@@ -350,7 +350,7 @@ plugins{
                 </p>
 
                 <div class="note">
-                  <p class="h6">نکته:</p>
+                    <p class="note-head">نکته:</p>
                     <p>میتونید به‌جای نوشتن کد های xml به صورت ویژوال هم در قسمت design این کارا رو بکنید اما
                         برای درک درست تر بهتره که با xml مسیر ها و destination ها رو تعریف کنید.</p>
             </div>
@@ -395,7 +395,7 @@ plugins{
             </div>
 
             <div class="subsection" id="sub3">
-                <p class="title">NavController</p>
+                <h2>NavController</h2>
 
                 <p>
                     وظیفه ی مدیریت جا به جایی کاربر بین fragment ها رو داره وقتی بخوایم کاربر از یک فرگمنت به فرگمنت

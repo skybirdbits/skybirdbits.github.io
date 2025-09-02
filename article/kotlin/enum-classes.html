@@ -63,7 +63,7 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">توضیحات</p>
+                <h2>توضیحات</h2>
 
 
                 <p>از کلاس های enum برای نگهداری تعداد متناهی از آبجکت های ثابت استفاده می کنیم.</p>
@@ -87,7 +87,7 @@ enum class Status{
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">بررسی و ویژگی کلاس های enum</p>
+                <h2>بررسی و ویژگی کلاس های enum</h2>
 
                 <p>همینطور که گفتیم بعد از تعریف کلاس enum میتونیم یک یا چند آبجکت ثابت داخلش تعریف کنیم و هرکدوم گویای وضعیت خاصی از برنامه میتونن باشن.</p>
                 <p>مقادیر آبجکت ها ثابت و غیرقابل تغییر هستند برای همین بهشون آبجکت های ثابت کلاس enum میگیم.</p>
@@ -128,7 +128,7 @@ enum class PowerStatus{
                 </div>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>در کلاس های enum یک تابع پیشفرض نیز وجود داره به اسم values، این تابع کاربرد مشابه پراپرتی entries داره اما استفاده ازش توصیه نمیشه چون با هر بار صدا زدن تابع یک نمونه ی جدید از کلاس arrays ایجاد میشه و این کار کیفیت برنامه رو پایین میاره.</p>
                 </div>
 
@@ -145,7 +145,7 @@ fun main(){
                 </div>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>در صورت نبود آبجکت هم نام با استرینگ تابع valueOf برنامه دچار illegalArgumentException میشه.</p>
                 </div>
 
@@ -256,13 +256,13 @@ enum class PowerStatus(val statusCode: Int){
                 <p> میتونیم <a class="text-decoration-none" href="interfaces.html">اینترفیس ها</a> رو داخل کلاس enum پیاده‌سازی کنیم و کلاس های enum به طور پیشفرض اینترفیس Comparable&lt;T&gt; رو پیاده‌سازی کردن.</p>
 
                 <div class="note">
-                    <p class="h6">نکته</p>
+                    <p class="note-head">نکته</p>
                     <p>نمیتونیم از کلاس های دیگه توسط کلاس enum ارث ببریم.</p>
                 </div>
             </div>
 
             <div class="subsection" id="sub2">
-                <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
                 <p>- کلاس های enum مجموعه ی متناهی از آبجکت های ثابت هستند.</p>
                 <p>از این کلاس ها برای تعیین کردن وضعیت به خصوصی در برنامه استفاده میکنیم.</p>
                 <p>برای هر وضعیت یک آبجکت تعریف میکنیم.</p>

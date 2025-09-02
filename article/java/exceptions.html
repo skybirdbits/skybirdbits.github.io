@@ -74,14 +74,14 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">آشنایی با اکسپشن ها در جاوا</p>
+                <h2>آشنایی با اکسپشن ها در جاوا</h2>
 
                 <p>به خطاهای برنامه در جاوا اکسپشن میگیم؛ اکسپشن (exception) ها در جاوا برای اعلام باگ های برنامه مورد استفاده قرار میگیرن.</p>
 
                 <p>اکسپشن ها انواع مختلفی دارن که در ادامه با عملکرد و نحوه ی استفاده ازشون آشنا میشیم.</p>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>این مطلب برای کسایی که با کاتلین سروکار دارند نیز قابل مطالعه است.</p>
                 </div>
 
@@ -269,12 +269,12 @@ fun quotient(number0: Int, number1: Int): Int{
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">کنترل کردن اکسپشن</p>
+                <h2>کنترل کردن اکسپشن</h2>
                 <blockquote>با استفاده از بلوک try-catch میتونیم یک اکسپشن رو کنترل و از متوقف شدن برنامه جلو گیری کنیم.</blockquote>
 
                 <p>اگه جایی از کد های برنامه یه اکسپشن بیوفته بیرون؛ میتونیم اونو داخل بلوک try-catch قرار بدیم با این کار اکسپشن رو میگیریم و برنامه ادامه پیدا میکنه.</p>
 
-                <p class="piece">فرم کلی</p>
+                <h3>فرم کلی</h3>
 
                 <div class="sample">
                     <div class="snippet-container">
@@ -402,7 +402,7 @@ try{
 
 
             <div class="subsection" id="sub2">
-                <p class="title">کلیدواژه ی throw</p>
+                <h2>کلیدواژه ی throw</h2>
 
                 <blockquote>اکسپشن ها یه کلاسن؛ هنگامی که یک آبجکت از این کلاس ها با کلیدواژه ی throw ایجاد میشه برنامه رو از اجرای عادی خارج کرده و اصطلاحا میگیم برنامه دچار اکسپشن شده.</blockquote>
 
@@ -487,14 +487,14 @@ fun quotient(number0: Int, number1: Int): Int{
                 <p>در بالا پارامتر کنسراکتور کلاس ArithmeticException رو با "Can not divide by Zero" مقدار دهی کردیم.</p>
 
                 <div class="note">
-                    <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
                     <p>در صورت امکان بهتره به‌جای کنترل کردن اکسپشن، با استفاده از if جلوی انداختنشو بگیریم؛ این کار، برنامه رو بهینه تر میکنه چون هر اکسپشن یک کلاس است و با هربار انداختنش، یک آبجکت جدید ایجاد میشه.</p>
                 </div>
 
             </div>
 
             <div class="subsection" id="sub3">
-                <p class="title">بررسی کلاس های اکسپشن</p>
+                <h2>بررسی کلاس های اکسپشن</h2>
 
                 <p>شکل زیر مراتب ارث بری کلاس های اکسپشن رو نشون میده:</p>
 
@@ -517,10 +517,10 @@ fun quotient(number0: Int, number1: Int): Int{
 
                 <p>ساب کلاس های کلاس Exception از نظر نوع اکسپشن به دو دسته ی کلی تقسیم میشن:</p>
 
-                <p class="h5">1-اکسپشن های checked</p>
+                <h3>1-اکسپشن های checked</h3>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>در کاتلین چیزی به اسم checked-exception نداریم و تمام اکسپشن ها unchecked هستند.</p>
                 </div>
 
@@ -530,7 +530,7 @@ fun quotient(number0: Int, number1: Int): Int{
 
 
 
-                <p class="h5">2-اکسپشن های unchecked</p>
+                <h3>2-اکسپشن های unchecked</h3>
                 <p>کلاس های unchecked-exception توسط کامپایلر قابل شناسایی نیستند و زمان اجرای برنامه در صورت بروز خطا اجرا میشن.</p>
                 <p>بر خلاف دسته ی اول، این کلاس ها به صورت آشکار نیازی به بلوک try-catch ندارن مگه اینکه خودمون از قبل بدونیم خطایی در کار است.</p>
                 <p>ساب کلاس های RuntimeException در این دسته قرار دارن.</p>
@@ -538,7 +538,7 @@ fun quotient(number0: Int, number1: Int): Int{
             </div>
 
             <div class="subsection" id="sub4">
-                <p class="title">تعریف کلاس اختصاصی اکسپشن</p>
+                <h2>تعریف کلاس اختصاصی اکسپشن</h2>
                 <p>میتونیم مانند سایر کلاس ها برای برنامه ی خود یک کلاس اکسپشن اختصاصی تعریف کنیم.</p>
 
                 <p>بزارید با یک مثال به کارمون در این قسمت خاتمه بدیم</p>
@@ -671,7 +671,7 @@ println("Perimeter of circle c1: ${c1.getPerimeter()}");
             </div>
 
             <div class="subsection" id="sub5">
-                <p class="title">استفاده از کلیدواژه ی throws</p>
+                <h2>استفاده از کلیدواژه ی throws</h2>
 
                 <blockquote>از کلیدواژه ی throws معمولا زمانی که نوع اکسپشن checked است استفاده میشه.</blockquote>
 
@@ -714,7 +714,7 @@ public void readData() throws Exception0, Exception1, ... , ExceptionN{
                 </div>
 
                 <div class="note">
-                    <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
                     <p>در ارث بری؛ اگه متد سوپر کلاس از throws استفاده نکرده باشه نمی تونیم در ساب کلاس برای استفاده از throws متد رو بازنویسی کنیم.</p>
                 </div>
 
@@ -738,7 +738,7 @@ fun readData(){
             </div>
 
             <div class="subsection" id="sub6">
-                <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
                 <p>- تو جاوا به باگ های برنامه اکسپشن میگیم.</p>
                 <p>- کلاس های اکسپشن، برنامه رو از اجرای عادی خارج میکنن.</p>
                 <p>- به اجرای اکسپشن داخل متد، انداختن اکسپشن میگیم.</p>

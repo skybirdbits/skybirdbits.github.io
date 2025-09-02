@@ -64,11 +64,11 @@
 
     <article>
       <div class="subsection" id="sub0">
-        <p class="title">مقایسه ی کلاس های Text-IO با Binary-IO</p>
+                        <h2>مقایسه ی کلاس های Text-IO با Binary-IO</h2>
         <blockquote>تمام فایل هایی که در حافظه ذخیره میشن از نوع باینری هستند.</blockquote>
 
           <div class="note">
-              <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
               <p>مطالب این قسمت زبان کاتلین را نیز پوشش می دهند و مثال هایی که زده شده با هردو زبان جاوا و کاتلین است.</p>
           </div>
         <p>برای کامپیوتر فرقی نداره یک فایل از چه نوعی (متنی، تصویری یا...) باشه؛ تمام فایل ها در کامپیوتر به صورت باینری ذخیره میشن؛ تنها چیزی که یک فایل متنی رو با باینری در جاوا متمایز میکنه رمزنگاری و رمزگشایی کاراکترهای (حروف) فایل متنی است.</p>
@@ -109,7 +109,7 @@ System.out.println("The character for code  " + code + " is " + ch);
       </div>
 
       <div class="subsection" id="sub1">
-          <p class="title">کلاس های Binary-IO</p>
+                          <h2>کلاس های Binary-IO</h2>
 
           <blockquote>کلاس های InputStream و OutputStream سوپرکلاس تمام کلاس های Stream در پکیج io در جاوا هستند.</blockquote>
 
@@ -187,7 +187,7 @@ System.out.println("The character for code  " + code + " is " + ch);
       </div>
 
         <div class="subsection" id="sub2">
-            <p class="title">کلاس FileInputStream و FileOutputStream</p>
+                            <h2>کلاس FileInputStream و FileOutputStream</h2>
 
             <p>دو کلاس FileInputStream و FileOutputStream به ترتیب از کلاس های InputStream و OutputStream ارث بری کردن در ادامه کانستراکتور های تعریف شده در این دو کلاس رو بررسی میکنیم.</p>
 
@@ -240,7 +240,7 @@ System.out.println("The character for code  " + code + " is " + ch);
 
 
             <div class="note">
-                <p class="h6">نکته</p>
+                <p class="note-head">نکته</p>
                 <p>تمام کلاس های io-stream در جاوا حامل <a class="text-decoration-none" href="exceptions.html">checked-exception</a> هستند یعنی باید حتما اکسپشن هاشون رو هندل کنیم اما در کاتلین checked-exception وجود نداره. </p>
             </div>
 
@@ -291,7 +291,7 @@ fun main() {
         </div>
 
         <div class="subsection" id="sub3">
-            <p class="title">کلاس DataInputStream و DataOutputStream</p>
+                            <h2>کلاس DataInputStream و DataOutputStream</h2>
             <p>وظیفه ی این کلاس ها نوشتن و خوندن مقادیر primitive و string داخل فایل است. در این دو کلاس به ترتیب <a class="text-decoration-none" href="interfaces.html">اینترفیس</a> های DataInput و DataOutput پیاده‌سازی شده است.</p>
 
             <p>تصویر زیر ارث بری دو کلاس DataInputStream و DataOutputStream رو نشان می دهد.</p>
@@ -485,7 +485,7 @@ val file = File("temp.dat")
 
 
         <div class="subsection" id="sub4">
-            <p class="title">کلاس ObjectInputStream و ObjectOutputStream</p>
+                <h2>کلاس ObjectInputStream و ObjectOutputStream</h2>
 
             <blockquote>برای نوشتن آبجکت در فایل باید کلاس مربوط به آبجکت اینترفیس Serializable رو پیاده‌سازی کرده باشه.</blockquote>
 
@@ -531,7 +531,7 @@ val file = File("temp.dat")
 
 
             <div class="note">
-                <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                 <p>آبجکتی که میخوایم داخل فایل بنویسیم باید <strong>Serializable</strong> باشه در غیر این صورت دچار اکسپشن میشیم.</p>
                 <p>اینترفیس Serializable متدی برای پیاده‌سازی نداره و صرفا یک برچسبه که به جاوا میگیم آبجکت های کلاس مورد نظر قابل نوشتن در فایل هستند.</p>
             </div>
@@ -605,7 +605,7 @@ fun main() {
         </div>
 
         <div class="subsection" id="sub5">
-            <p class="title">کلاس BufferedInputStream و BufferedOutputStream</p>
+                <h2>کلاس BufferedInputStream و BufferedOutputStream</h2>
             <blockquote>از BufferedInputStream و BufferedOutputStream برای خوندن یا نوشتن فایل هایی با حجم بیش از 100 مگابایت استفاده میکنیم.</blockquote>
             <p>هر بار که عملیات خوندن یا نوشتن انجام میشه، کلاس های IO Stream برای خوندن یا نوشتن، کرنل سیستم عامل رو صدا میزنن و از طریق کرنل و سایر اجزای سیستم عامل عملیات خوندن یا نوشتن رو انجام میدن؛ برای همین این کار سنگین و هزینه بره.</p>
             <p>کلاس های BufferedInputStream و BufferedOutputStream دارای حافظه های موقتی به اسم buffer هستند که با هر بار خوندن یا نوشتن به‌جای اینکه مقادیر مستقیم توسط اجزای سیستم عامل خونده یا نوشته بشه ابتدا داخل حافظه ی buffer این کلاس ها ذخیره میشه و زمانی که این حافظه پر شد داده ها یه جا توسط سیستم عامل خونده یا نوشته میشن، بنابراین با این کلاس ها میتونیم عملیات خوندن و نوشتن رو بهینه تر کنیم.</p>
@@ -709,7 +709,7 @@ fun main() {
 
 
         <div class="subsection" id="sub6">
-            <p class="title">مورد مطالعه (مثال)</p>
+                <h2>مورد مطالعه (مثال)</h2>
             <p>مثال زیر یک برنامه ی کاربردی است که از طریق کنسول (terminal یا cmd) یک فایل رو کپی میکنه.</p>
 
             <div class="sample">
@@ -798,7 +798,7 @@ fun main(args: Array&lt;String&gt;) {
         </div>
 
         <div class="subsection" id="sub7">
-            <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
             <p>- تمام فایل ها به صورت باینری در کامپیوتر ذخیره میشن.</p>
             <p>- فایل های متنی کدگذاری شده هستند که هر کد مختص به یک حرف است.</p>
             <p>- به فرایند تبدیل کاراکتر (حرف) به کد متناظر خودش رمزنگاری (encoding) میگیم</p>

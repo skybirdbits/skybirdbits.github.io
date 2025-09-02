@@ -68,7 +68,7 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">بررسی PrintWriter</p>
+                <h2>بررسی PrintWriter</h2>
 
                 <blockquote>با استفاده از PrintWriter در جاوا و کاتلین میتونیم داده ها رو به صورت متن در فایل بنویسیم.</blockquote>
 
@@ -170,7 +170,7 @@
                 <p>در کلاس هایی که مختص خوندن و نوشتن در جاوا هستند،<a class="text-decoration-none" href="/article/java/exceptions.html">checked-exception</a> انداخته شده و هنگام تعریفشون باید در بلوک try-catch قرار بگیرند.</p>
 
                 <div class="note">
-                    <p class="h6">راهنمایی</p>
+                    <p class="note-head">راهنمایی</p>
                     <p>برای اکثر کلاس های io کافیه IOException رو به عنوان پارامتر بلوک catch تعریف کنیم.</p>
                 </div>
 
@@ -252,7 +252,7 @@ fun main(){
 
 
             <div class="subsection" id="sub1">
-                <p class="title">معرفی try-with-resources</p>
+                <h2>معرفی try-with-resources</h2>
 
                 <blockquote>استفاده از try-with-resources در جاوا اجباری نیست اما برای مرتب تر شدن کد ها و جلو گیری از فراموش کردن صدا زدن متد close توصیه میشه.</blockquote>
 
@@ -262,11 +262,11 @@ fun main(){
 
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>کلاس Scanner در جاوا نیز از AutoClosable ارث میبره.</p>
                 </div>
 
-                <p class="piece"></p>
+                <h3></h3>
 
                 <p>فرم کلی:</p>
 
@@ -390,7 +390,7 @@ fun main(){
 
 
             <div class="subsection" id="sub2">
-                <p class="title">نوشتن داده ها در امتداد محتوای فایل</p>
+                <h2>نوشتن داده ها در امتداد محتوای فایل</h2>
 
                 <p>به طور پیشفرض هنگام باز کردن فایل توسط PrintWriter محتوای فایل پاک شده و فایل برای نوشتن محتوای جدید مورد استفاده قرار میگیره.</p>
 
@@ -413,14 +413,14 @@ val output = PrintWriter(FileWriter(file, true))
                 </div>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>کلاس FileWriter یکی از کلاس های Output در جاوا است و مانند PrintWriter میتونیم مستقیم از متد های خودش استفاده کنیم.</p>
                 </div>
 
             </div>
 
             <div class="subsection" id="sub3">
-                <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
                 <p>- کلاس PrintWriter در جاوا برای نوشتن داده های متنی در فایل است.</p>
                 <p>- بعد از انجام عملیات خوندن و نوشتن باید با استفاده از متد close فایل رو ببندیم.</p>
                 <p>- با try-with-resources در جاوا کلاس هایی که از AutoClosable ارث بری میکنن بدون نیاز به صدا زدن متد close به طور خودکار در آخر کار بسته میشن.</p>

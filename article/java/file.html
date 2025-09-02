@@ -64,7 +64,7 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">بررسی کلاس File</p>
+                                <h2>بررسی کلاس File</h2>
 
                 <blockquote>جاوا علاوه بر پکیج io یک پکیج دیگه ای به اسم nio نیز برای کار با فایل ها داره.</blockquote>
 
@@ -120,7 +120,6 @@
                         <div class="tDataLTR">+exists(): boolean</div>
                         <div class="tDataRTL">بررسی میکنه آیا فایل در مسیر تعریف شده وجود داره یا خیر</div>
                     </div>
-
 
                     <div class="tRow">
                         <div class="tDataLTR">+canRead(): boolean</div>
@@ -224,7 +223,7 @@
 
             </div>
             <div class="subsection" id="sub1">
-                <p class="title">تعریف مسیر</p>
+                <h2>تعریف مسیر</h2>
 
                 <p>برای کلاس File در جاوا و کاتلین به دو روش میتونیم مسیر پوشه یا فایل مورد نظر رو تعریف
                     کنیم.</p>
@@ -232,7 +231,7 @@
                 <p>۱- تعریف مسیر کامل که بهش (Absolute Path) میگیم.</p>
                 <p>۲- تعریف مسیر کوتاه یا خلاصه که بهش (Abstract Path) میگیم.</p>
 
-                <p class="piece">۱- تعریف مسیر absolute برای File</p>
+                <h3>۱- تعریف مسیر absolute برای File</h3>
                 <p>اگه مسیر تارگت رو به صورت کامل (از روت) تعریف کنیم، بهش مسیر کامل (absolute) میگیم.</p>
 
                 <p>فرض کنید در ویندوز داخل درایو c یک پوشه داریم به اسم Music و داخل پوشه یک آهنگ داریم به اسم
@@ -261,7 +260,7 @@ new File("/home/username/Music/Haydeh.mp3");
                 </div>
 
 
-                <p class="piece">۲- تعریف مسیر خلاصه (abstract)</p>
+                <h3>۲- تعریف مسیر خلاصه (abstract)</h3>
 
                 <p>اگه شروع مسیر از پوشه ای باشه که برنامه اجرا شده، بهش مسیر abstract میگیم.</p>
                 <p>نحوه ی تعریف مسیر abstract در جاوا بین ویندوز و لینوکس مشابه یکدیگر است.</p>
@@ -280,7 +279,7 @@ new File("Music/Haydeh.mp3");
             </div>
 
             <div class="subsection" id="sub2">
-                <p class="title">مورد مطالعه (مثال)</p>
+                <h2>مورد مطالعه (مثال)</h2>
                 <p>در زیر هرکس میتونه مسیر مورد نظر خودشو به‌جای پارامتر کانستراکتور قرار بده.</p>
 
                 <div class="sample">
@@ -319,7 +318,7 @@ println("Last modification date: ${java.util.Date(file.lastModified())}");
             </div>
 
             <div class="subsection" id="sub3">
-                <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
                 <p>برای خوندن و نوشتن داده ها رو حافظه ی دائمی از پکیج io در جاوا استفاده میکنیم.</p>
                 <p>کلاس File اساس همه ی عملیات های io در جاواست از این کلاس برای عملیاتی از جمله تغییر نام، حذف، گرفتن
                     اطلاعات فایل و یا ایجاد پوشه ی جدید استفاده میکنیم.</p>

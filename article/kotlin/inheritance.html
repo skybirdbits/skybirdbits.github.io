@@ -73,7 +73,7 @@
 
       <article>
         <div class="subsection" id="sub0">
-          <p class="title">توضیحات</p>
+                <h2>توضیحات</h2>
 
           <blockquote>شی گرایی در برنامه نویسی به شما این امکان رو میده ویژگی ها و توابع یک کلاس رو به کلاس جدید منتقل کنید به این قابلیت وراثت یا ارث بری (inheritance) گفته میشه</blockquote>
 
@@ -94,7 +94,7 @@
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">نحوه ی ارث بردن از یک کلاس</p>
+                <h2>نحوه ی ارث بردن از یک کلاس</h2>
 
           <p>برای ارث بردن از سوپر کلاس (superclass) باید سوپر کلاس با کلیدواژه ی open تعریف بشه.</p>
 
@@ -169,23 +169,21 @@ class Child(b: Boolean, s: String): Parent(s){
               </div>
           </div>
 
-          <p class="piece">استفاده از کلیدواژه ی super برای صدا زدن کانستراکتور های superclass</p>
+                <h3>استفاده از کلیدواژه ی super برای صدا زدن کانستراکتور های superclass</h3>
 
           <p>اگه در subclass کانستراکتور اولیه نداشته باشیم، نمیتونیم پارامتر های کانستراکتور superclass رو هنگام ارث بری مقداردهی کنیم؛ بنابراین با استفاده از کلیدواژه ی super بعد از کانستراکتور های ثانویه subclass کانستراکتور های superclass رو مقداردهی میکنیم.</p>
 
           <div class="note">
-            <p class="h6">نکته</p>
+                    <p class="note-head">نکته</p>
             <p>در این حالت باید از کلیدواژه ی super بعد از تمام کانستراکتور های ثانویه استفاده بشه.</p>
           </div>
 
           <div class="note">
-            <p class="h6">نکته</p>
+                    <p class="note-head">نکته</p>
             <p>اگه کانستراکتور ثانویه در ساب کلاس (subclass) با this رجوع کنه به کانستراکتوری که از super استفاده کرده در این حالت نیاری به استفاده از کلیدواژه ی super نیست.</p>
           </div>
 
-          <p class="h6">مثال</p>
-
-          <p>در زیر کلیدواژه ی this رجوع میکنه به کانستراکتور های خود کلاس و کلیدواژه ی super رجوع میکنه به کانستراکتور های superclass</p>
+          <p>در مثال زیر کلیدواژه ی this رجوع میکنه به کانستراکتور های خود کلاس و کلیدواژه ی super رجوع میکنه به کانستراکتور های superclass</p>
 
           <div class="sample">
               <div class="snippet-container">
@@ -216,7 +214,7 @@ class Child: Parent{
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="title">باز نویسی (override) کردن توابع</p>
+                <h2>باز نویسی (override) کردن توابع</h2>
 
           <p>میتونیم توابع superclass رو در subclass بازنویسی کنیم در اینصورت میگیم تابع رو override کردیم.</p>
 
@@ -240,11 +238,11 @@ class Child{
               </div>
           </div>
 
-          <p class="h5">استفاده از کلیدواژه ی super برای صدا زدن کد های تابع در superclass</p>
+                <h3>استفاده از کلیدواژه ی super برای صدا زدن کد های تابع در superclass</h3>
 
           <p>هنگام override کردن تابع (متد) اگه بخوایم کد های superclass رو در subclass داشته باشیم با استفاده از کلیدواژه ی super، نقطه و اسم تابع کد ها رو صدا میزنیم.</p>
 
-          <p class="h6">مثال</p>
+                    <p>مثال</p>
 
           <div class="sample">
               <div class="snippet-container">
@@ -273,12 +271,12 @@ class Child: Parent{
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="title">بازنویسی (override) کردن پراپرتی ها</p>
+                <h2>بازنویسی (override) کردن پراپرتی ها</h2>
 
           <p>مانند توابع، پراپرتی ها باید در سوپر کلاس با کلیدواژه ی open تعریف بشن؛ سپس در subclass با کلیدواژه ی override میتونیم بازنویسیشون کنیم.</p>
 
           <div class="note">
-            <p class="h6">نکته:</p>
+                    <p class="note-head">نکته</p>
             <p>هنگام override کردن یک پراپرتی (property) اگه پراپرتی با val تعریف شده بود میتونیم با var بازنویسیش کنیم اما برعکس ممکن نیست.</p>
           </div>
 
@@ -300,7 +298,7 @@ class Circle: FilledCircle{
         </div>
 
         <div class="subsection" id="sub4">
-          <p class="title">معرفی کلاس Any</p>
+                <h2>معرفی کلاس Any</h2>
           <p>کلاس Any در کاتلین مانند کلاس Object در جاواست، این کلاس دارای سه تابع (متد) hashcode، equals و toString است.</p>
           <p>هر کلاسی که superclass نداشته باشه به طور پیشفرض از این کلاس ارث بری میکنه بنابراین میشه نتیجه گرفت کلاس Any سوپر کلاس تمام کلاس ها به طور مستقیم یا غیر مستقیم است.</p>
 
@@ -346,7 +344,7 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub5">
-          <p class="title">مورد مطالعه (مثال ها)</p>
+                <h2>مورد مطالعه (مثال ها)</h2>
           <p>یک کلاس تعریف میکنیم به اسم Shape که ویژگی های عمومی یک شکل رو به همراه داره سپس با کلاس GeometricShape این ویزگی ها رو به ارث می بریم و به علاوه ویژگی های جدید به GeometricShape اضافه میکنیم و در نهایت با دو کلاس Rectangle و Circle از کلاس GeometricShape ارث بری میکنیم و کلاس های اختصاصی دایره و مستطیل رو به وجود میاریم.</p>
 
 
@@ -484,7 +482,7 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub6">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
 
           <p>- از وراثت برای جلوگیری از دوباره نویسی کد های یک کلاس در کلاس دیگه استفاده میشه.</p>
 

@@ -65,7 +65,7 @@
 
       <article>
         <div class="subsection" id="sub0">
-          <p class="title">تعریف آرایه</p>
+                <h2>تعریف آرایه</h2>
 
           <blockquote>از آرایه برای نگهداشتن تعداد متناهی از متغیر های هم نوع استفاده میکنیم. که بهشون عنصر (element) یا عضو میگیم.</blockquote>
 
@@ -133,7 +133,7 @@ println(myArray[5])
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">روش های ایجاد آرایه در کاتلین</p>
+                <h2>روش های ایجاد آرایه در کاتلین</h2>
 
           <p>به یک آرایه، آرایه یک بعدی گفته میشه.</p>
 
@@ -144,7 +144,7 @@ println(myArray[5])
           <p>۲- با ایجاد آبجکت از کلاس Array</p>
 
 
-          <p class="piece">ایجاد آرایه با تابع arrayOf</p>
+                <h3>ایجاد آرایه با تابع arrayOf</h3>
 
           <p>پارامتر تابع arrayOf در کاتلین از نوع <a class="text-decoration-none" href="/article/kotlin/functions.html">vararg</a> است.</p>
 
@@ -172,7 +172,7 @@ val names = arrayOf&lt;String&gt;("James", "Tom", "Joy", "Issuable")
 println(names.joinToString())
           </div>
 
-          <p class="piece">ایجاد آرایه با تابع arrayOfNulls</p>
+                <h3>ایجاد آرایه با تابع arrayOfNulls</h3>
 
           <p>تابع arrayOfNulls در کاتلین یک آرایه به طول n و با عناصر null ایجاد میکنه.</p>
 
@@ -203,12 +203,12 @@ val v = arrayOfNulls&lt;Double&gt;(100)
           </div>
 
 
-          <p class="piece">ایجاد آرایه با استفاده از تابع emptyArray</p>
+                <h3>ایجاد آرایه با استفاده از تابع emptyArray</h3>
 
           <p>با استفاده از این تابع یک آرایه با طول 0 ایجاد میکنیم.</p>
 
           <div class="note">
-            <p class="h6">توجه:</p>
+                    <p class="note-head">توجه:</p>
             <p> با استفاده از += میشه یک آرایه جدید از قبلی با طول بیشتر ایجاد کرد، در مجموع این کار بیهوده است. چون Collection ها برای حذف و اضافه ی عناصر وجود دارن.</p>
           </div>
 
@@ -230,7 +230,7 @@ println("After adding value(s) length is ${lastNames.size}")
               </div>
           </div>
 
-          <p class="piece">ایجاد آرایه با استفاده از کلاس Array</p>
+                <h3>ایجاد آرایه با استفاده از کلاس Array</h3>
 
           <p>در این روش با ایجاد یک نمونه (آبجکت) از کلاس Array در کاتلین میتونیم یک آرایه ایجاد کنیم.</p>
           
@@ -299,7 +299,7 @@ println(primeIndices.joinToString())
               </div>
           </div>
 
-          <p class="piece">صدا زدن عناصر داخل آرایه</p>
+                <h3>صدا زدن عناصر داخل آرایه</h3>
           <blockquote>برای استفاده از آرایه داخل حلقه ها به قسمت <a class="text-decoration-none" href="/article/kotlin/loops.html">حلقه ها</a>مراجعه کنید.</blockquote>
 
           <p>برای صدا زدن متغیر های داخل آرایه مانند زیر عمل میکنیم:</p>
@@ -321,9 +321,9 @@ println("Index is 2 name is $name")
 
         <div class="subsection" id="sub2">
 
-          <p class="title">توابع رایج در آرایه</p>
+                <h2>توابع رایج در آرایه</h2>
 
-          <p class="h5">تابع isEmpty</p>
+                <h3>تابع isEmpty</h3>
 
           <p>این تابع معلوم میکنه یک آرایه خالی است یا خیر.</p>
 
@@ -338,7 +338,7 @@ println(arr.isEmpty())
 
 
 
-          <p class="piece">تابع shuffle</p>
+                <h3>تابع shuffle</h3>
 
           <p>این تابع جایگاه عناصر داخل آرایه رو با همدیگه عوض میکنه اصطلاحا عناصر داخل آرایه رو قاطی پاتی میکنه.</p>
 
@@ -358,7 +358,7 @@ println("After shuffling: ${numbers.joinToString()}")
               </div>
           </div>
 
-          <p class="piece">تابع contentEquals</p>
+                <h3>تابع contentEquals</h3>
 
           <p>تایع contentEquals در کاتلین یک تابع <a class="text-decoration-none" href="/article/kotlin/functions.html#sub5">infix</a> است.</p>
 
@@ -381,7 +381,7 @@ println(arr0 contentEquals arr1)
               </div>
           </div>
 
-          <p class="h5">توابع toList و toSet</p>
+                <h3>توابع toList و toSet</h3>
 
           <p>تابع toList برای تبدیل آرایه به List و تابع toSet برای تبدیل آرایه به Set به کار برده میشه.</p>
 
@@ -399,7 +399,7 @@ val list: List&lt;String&gt; = arr.toList()
 
         <div class="subsection" id="sub3">
 
-          <p class="title">آرایه های دو بعدی</p>
+                <h2>آرایه های دو بعدی</h2>
 
           <blockquote>
             عناصر یک آرایه خود میتونن آرایه باشن.
@@ -509,7 +509,7 @@ for(row in matrix.indices){
         </div>
        
         <div class="subsection" id="sub4">
-          <p class="title">آرایه های چند بعدی</p>
+                <h2>آرایه های چند بعدی</h2>
 
           <p>در آرایه دو بعدی اگه عناصر آرایه های داخل آرایه اول نیز یک آرایه باشن آرایه سه بعدی میشه.</p>
 
@@ -553,7 +553,7 @@ for(i in threeD.indices){
         </div>
 
         <div class="subsection" id="sub5">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
 
           <p>آرایه ها برای نگهداری تعداد متناهی از متغیر های یک نوع به کار میروند.</p>
           <p>به متغیر های داخل آرایه عنصر یا عضو میگیم.</p>

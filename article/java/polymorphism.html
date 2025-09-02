@@ -67,7 +67,7 @@
         <article>
 
             <div class="subsection" id="sub0">
-                <p class="title">مفهوم چندریختی</p>
+                <h2>مفهوم چندریختی</h2>
 
                 <blockquote>چند ریختی (polymorphism) در جاوا یعنی یک متغیر آبجکتی، به‌جای آبجکت از نوع خودش به یک آبجکت از کلاسی که ازش ارث بری کرده اشاره کنه.</blockquote>
 
@@ -103,20 +103,20 @@ public static void displayShapeInfo(GeometricShape shape){
                 <p>در بالا پارامتر متد displayShapeInfo از نوع GeometricShape است. این متغیر میتونه علاوه بر آبجکت هایی که از GeometricShape هستند به هر آبجکتی که از GeometricShape ارث بری میکنه اشاره کنه.</p>
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>هنگامی که با یک متغیر از سوپرکلاس داریم به آدرس یک آبجکت از ساب کلاس اشاره میکنیم، فقط فیلد ها و متد های تعریف شده در سوپرکلاس رو میتونیم صدا بزنیم.</p>
                 </div>
 
 
                 <div class="note">
-                    <p class="h6">توجه</p>
+                    <p class="note-head">توجه</p>
                     <p>هر متغیر از نوع سوپرکلاس میتونه به یک آبجکت از ساب کلاس اشاره کنه اما برعکسش ممکن نیست به زبان ساده در مثال بخوایم بیان کنیم هر Circle یک GeometricShape است اما هر GeometricShape همیشه Circle نیست مثلا در بالا میتونه Rectangle باشه.</p>
                 </div>
 
             </div>
 
             <div class="subsection" id="sub1">
-                <p class="title">پیوندپویا (Dynamic Binding)</p>
+                <h2>پیوندپویا (Dynamic Binding)</h2>
                 <blockquote>هنگامی که یک متد طی وراثت، در چند کلاس بازنویسی بشه JVM تصمیم میگیره متد در کدوم کلاس اجرا بشه.</blockquote>
 
                 <p>یک متد طی وراثت میتونه در چند ساب کلاس پیاده‌سازی و بازنویسی بشه.</p>
@@ -207,7 +207,7 @@ class Person extends Object {
 
 
             <div class="subsection" id="sub2">
-                <p class="title">کست کردن (Casting)</p>
+                <h2>کست کردن (Casting)</h2>
                 <blockquote>کست کردن یعنی تبدیل یک نوع به نوع دیگه.</blockquote>
 
 
@@ -234,7 +234,7 @@ Student student = (Student) declared;
                 </div>
 
 
-                <p class="piece">کلیدواژه ی instanceof</p>
+                <h3>کلیدواژه ی instanceof</h3>
 
                 <p>کلیدواژه ی instanceof بررسی میکنه مقدار واقعی (actual type) یک متغیر، چه کلاسی است.</p>
 
@@ -297,7 +297,7 @@ class Rectangle extends GeometricShape{
 
 
             <div class="subsection" id="sub3">
-                <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
                 <p>- سه رکن شی گرایی عبارتند از کپسوله سازی، وراثت و چند ریختی.</p>
                 <p>- چند ریختی یعنی یک متغیر از نوع سوپرکلاس اشاره کنه به آدرس آبجکت ایجاد شده از ساب کلاس.</p>
                 <p>- اگه متغیر از نوع سوپر کلاس باشه و به یک آبجکت از نوع ساب کلاس اشاره کنه به متغیر مقدار بیان شده (declared type) و به آبجکتی که بهش اشاره میکنه مقدار واقعی (actual type) میگیم.</p>

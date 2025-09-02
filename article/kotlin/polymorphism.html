@@ -66,7 +66,7 @@
       <article>
         <div class="subsection" id="sub0">
 
-          <p class="title">توضیحات</p>
+                <h2>توضیحات</h2>
 
             <p>سه رکن شی گرایی عبارتند از <strong>کپسوله کردن (encapsulation)</strong>،<strong> وراثت (inheritance)</strong> و <strong>چند ریختی (polymorphism)</strong>.</p>
 
@@ -80,7 +80,7 @@
         </div>
         <div class="subsection" id="sub1">
 
-          <p class="title">چند ریختی (Polymorphism)</p>
+                <h2>چند ریختی (Polymorphism)</h2>
 
           <blockquote>چند ریختی یعنی متغیر از جنس یکی از superclass ها اشاره کنه به آبجکت ایجاد شده از subclass</blockquote>
 
@@ -120,9 +120,8 @@ fun main(){
               </div>
           </div>
           
-          <p class="h6">مثال</p>
 
-          <p>در زیر کلاس Person سوپر کلاس Student و Citizen است.</p>
+          <p>در مثال زیر کلاس Person سوپر کلاس Student و Citizen است.</p>
 
           <div class="sample">
               <div class="snippet-container">
@@ -156,7 +155,7 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="title">پیوند پویا (Dynamic Binding)</p>
+                <h2>پیوند پویا (Dynamic Binding)</h2>
 
           <blockquote>یک تابع در طی ارث بری میتونه به چند روش پیاده‌سازی بشه زمان اجرای برنامه jvm تصمیم میگیره کدوم پیاده‌سازی به اجرا در بیاد.</blockquote>
 
@@ -177,11 +176,11 @@ println(shape.toString())
           
           <p>برای پاسخ به این سؤال ابتدا با دو مفهوم نوع تعریف شده (declared type) و نوع واقعی (actual type) باید اشنا بشیم.</p>
 
-          <p class="piece">نوع تعریف شده (declared type)</p>
+                <h3>نوع تعریف شده (declared type)</h3>
 
           <p>هنگام تعریف متغیر اگه نوع متغیر رو مشخص کنیم بهش declared type میگیم در بالا declared type کلاس Any است.</p>
 
-          <p class="piece">نوع واقعی (actual type)</p>
+                <h3>نوع واقعی (actual type)</h3>
           <p>به آبجکتی که ایجاد میکنیم نوع واقعی (actual type) میگیم. actual type میتونه نوعش با declared type یکی باشه یا یکی از subclass های <strong>declared type</strong> باشه. در بالا actual type کلاس Shape است.</p>
 
           <p>بهتره برگردیم به سوالمون اینکه کدوم toString اجرا میشه؟ </p>
@@ -190,7 +189,7 @@ println(shape.toString())
 
           <p>زمان اجرا JVM از actual type شروع میکنه به بررسی تا به declared type برسه و به اولین پیاده‌سازی تابع که رسید بررسی رو متوقف و تابع رو اجرا میکنه. در بالا چون اولین پیاده‌سازی toString داخل Shape اتفاق افتاده همونو اجرا میکنه.</p>
 
-          <p class="h6">مثال:</p>
+                    <p>مثال</p>
 
           <div class="sample">
               <div class="snippet-container">
@@ -228,7 +227,7 @@ fun main(){
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="title">کست کردن (Type Casting)</p>
+                <h2>کست کردن (Type Casting)</h2>
           <blockquote>
             تبدیل آبجکت به یک آبجکت از نوع دیگه رو کست کردن (type casting) میگیم.
           </blockquote>
@@ -243,7 +242,7 @@ fun main(){
 
           <p>برای کست کردن (type casting) از کلیدواژه ی <strong>as</strong> در کاتلین استفاده میکنیم.</p>
 
-          <p class="h6">مثال</p>
+                    <p>مثال</p>
 
           <div class="sample">
               <div class="snippet-container">
@@ -344,7 +343,7 @@ fun displayData(object: Any){
         </div>
 
         <div class="subsection" id="sub4">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
           <p>- سه رکن شی گرایی عبارتند از encapsulation، inheritance، polymorphism</p>
 
           <p>- چند ریختی یعنی یک متغیر از جنس superclass اشاره کنه به آبجکتی از جنس subclass</p>

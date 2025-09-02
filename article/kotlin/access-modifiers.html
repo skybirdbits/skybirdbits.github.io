@@ -65,14 +65,14 @@
 
       <article>
         <div class="subsection" id="sub0">
-          <p class="title">توضیحات</p>
+                <h2>توضیحات</h2>
 
           <blockquote>سطح دسترسی پیشفرض تمام اعضا در کاتلین public است.</blockquote>
 
           <p>با استفاده از کلیدواژه های سطح دسترسی (access modifiers) در کاتلین میتونیم مشخص کنیم متغیرها، توابع، کلاس ها و اینترفیس ها کجاها قابل دسترسی باشن.</p>
 
           <div class="note">
-            <p class="h6">نکته</p>
+                    <p class="note-head">نکته</p>
           <p>کلیدواژه های سطح دسترسی برای متغیر ها، توابع و کلاس های محلی (local) قابل استفاده نیستند.</p>
           </div>
 
@@ -85,11 +85,11 @@
         </div>
 
         <div class="subsection" id="sub1">
-          <p class="title">سطح دسترسی اعضای تاپ لول (top level)</p>
+                <h2>سطح دسترسی اعضای تاپ لول (top level)</h2>
 
           <p>متغیر ها، توابع، کلاس ها، آبجکت های اعلامی و اینترفیس ها میتونن به صورت <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top level</a> تعریف بشن.</p>
           
-          <p class="h5">private</p>
+                <h3>private</h3>
 
           <p>با کلیدواژه ی private اعلام میکنیم عضو top level فقط برای اعضای داخل فایل در دسترس است.</p>
 
@@ -111,7 +111,7 @@ private class MyClass{
             </div>
           </div>
 
-          <p class="piece">internal</p>
+                <h3>internal</h3>
 
           <p>با کلیدواژه ی internal میگیم عضو top level فقط برای اعضای داخل ماژول (module) در دسترس است.</p>
 
@@ -135,7 +135,7 @@ internal class MyClass{
 
 
 
-          <p class="piece">public</p>
+                <h3>public</h3>
 
           <p>با استفاده از کلیدواژه ی public اعلام میکنیم تمام کلاس ها و فایل های پروژه میتونن به عضو top level دسترسی داشته باشن.</p>
 
@@ -156,15 +156,15 @@ public class MyClass{
           </div>
 
           <div class="note">
-            <p class="h6">نکته</p>
+                    <p class="note-head">نکته</p>
             <p>کلیدواژه ی protected برای اعضای <a class="text-decoration-none" href="/article/kotlin/variable_scope.html">top-level</a> قابل استفاده نیست.</p>
           </div>
 
         </div>
 
         <div class="subsection" id="sub2">
-          <p class="title">سطح دسترسی اعضای کلاس</p>
-          <p class="piece">private</p>
+                <h2>سطح دسترسی اعضای کلاس</h2>
+                <h3>private</h3>
           <p>با استفاده از کلیدواژه ی private برای یک عضو کلاس اعلام میکنیم فقط اعضای داخل کلاس میتونن بهش دسترسی داشته باشن.</p>
 
           <div class="sample">
@@ -186,7 +186,7 @@ class MyClass{
             </div>
           </div>
 
-          <p class="piece">protected</p>
+                <h3>protected</h3>
           <p>اگه از کلاسی که عضوش با سطح دسترسی protected تعریف شده ارث بری نداشته باشیم مثل private عمل میکنه. در صورت ارث بری، اعضای کلاس فرزند به عضوی که در کلاس پدر با protected تعریف شده دسترسی دارند.</p>
 
           <div class="sample">
@@ -209,7 +209,7 @@ class MyClass{
             </div>
           </div>
 
-          <p class="piece">internal</p>
+                <h3>internal</h3>
 
           <p>تمام اعضای module که به کلاس دسترسی دارن؛ به عضو کلاس که با سطح دسترسی internal تعریف شده نیز دسترسی دارن.</p>
 
@@ -232,7 +232,7 @@ class MyClass{
             </div>
           </div>
 
-          <p class="piece">public</p>
+                <h3>public</h3>
 
           <p>اعضای تمام کلاس ها و فایل های پروژه میتونن به عضوی که در کلاس با public تعریف شده، دسترسی داشته باشند.</p>
 
@@ -260,7 +260,7 @@ class MyClass{
         </div>
 
         <div class="subsection" id="sub3">
-          <p class="title">خلاصه</p>
+                <h2>خلاصه</h2>
           <p>- کلیدواژه های سطح دسترسی تعیبن میکنن یک تابع متغیر، کلاس و ... در کجا قابل دسترسی هستند.</p>
           
           <p>- در کاتلین چهارتا کلیدواژه ی سطح دسترسی داریم که عبارتند از private، protected، internal و public.</p>
