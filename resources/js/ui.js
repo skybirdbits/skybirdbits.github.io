@@ -40,7 +40,7 @@ function createExpandableButton(courseData) {
   icon.classList.add('material-icons');
   icon.innerHTML = 'arrow_drop_down'
   icon.style.transform = 'rotate(90deg)';
-
+  icon.style.transition = 'transform 0.2s ease-in-out'
   const text = document.createElement('span');
   text.innerText = courseData.title;
 

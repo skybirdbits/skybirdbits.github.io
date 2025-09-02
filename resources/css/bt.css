@@ -28,11 +28,11 @@
 
 .md-bt.md-bt-dark-blue{
     color: #fafafa;
-    background-color: #0D47A1;
+    background-color: #01579B;
 }
 
 .md-bt-dark-blue:hover{
-    background-color: #1565C0;
+    background-color: #0277BD;
 }
 
 .md-bt.md-bt-light{
@@ -56,16 +56,15 @@
     border: none;
     text-align: start;
     font-size: 1.1em;
-    color: rgba(249,249,249, 0.80);
+    font-weight: bold;
+    color: #212121;
     padding: 8px;
-    margin: 0;
-    border-radius: 4px;
-
+    margin-bottom: 4px;
 }
 
 .md-bt-expandable:focus{
-     background-color: #004c8c;
-     color: rgba(249,249,249, 1);
+     background-color: #01579B;
+     color: #fafafa;
 }
 
 .md-bt.md-bt-navbar-toggle{

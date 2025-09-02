@@ -1,27 +1,33 @@
+.sidebar-content{
+    background-color: #fafafa;
+    padding: 0 !important;
+}
+
 .list-container{
-    background-color: #0277bd;
-    border-radius: 8px;
+    width: 100vw;
     height: auto;
-    padding: 16px;
+    background-color: transparent;
+    padding-bottom: 8px;
 }
 
 .list-container .list{
     padding: 8px;
+    margin-right: 42px;
 }
 
-.list-container .list .list-item {
-    margin-right: 24px;
-    color: rgba(249,249,249, 0.90);
+.list .list-item {
+    color: #212121;
 }
 
-.list-container .list .list-item .list-item-link{
+.list .list-item .list-item-link{
     display: block;
     text-decoration: none;
-    color: rgba(249,249,249, 0.9);
+    padding: 8px;
+    color: #212121;
 }
 
-.list-container .list .list-item .list-item-link:hover{
-    color: rgba(249,249,249, 1);
+.list .list-item .list-item-link:hover{
+    color: #424242;
 }
 
 footer{
@@ -30,7 +36,6 @@ footer{
     flex-wrap: wrap;
 
 }
-
 
 footer .footer-content{
     display: flex;
