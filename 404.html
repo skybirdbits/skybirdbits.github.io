@@ -6,10 +6,13 @@
 
     <script type="text/javascript">
 
-        var path = window.location.pathname;
-        var newURL = "https://kodedevel.github.io" + path;
-
+        var absolutePath = window.location.pathname;
+        var paths = absolutePath.split("/article/");
+        
+        var newURL = "https://kodedevel.github.io/post/" + paths[paths.length - 1];
+        
         window.location.replace(newURL);
+        
     </script>
 </head>
 <body dir="rtl">
