@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>انتقال دائمی به آدرس جدید</title>
+
+    <script type="text/javascript">
+
+        var path = window.location.pathname;
+
+        var newPath = "";
+        if (path.startsWith("/article/")) {
+            newPath = "/post/" + path.substring("/article/".length);
+        } else {
+
+            newPath = "/";
+        }
+
+        var newURL = "https://kodedevel.github.io" + newPath;
+
+
+        window.location.replace(newURL);
+    </script>
+
+
+    <meta http-equiv="refresh" content="0; url=https://kodedevel.github.io/">
+
+
+    <link rel="canonical" href="https://kodedevel.github.io/">
+</head>
+<body dir="rtl" style="font-family: Tahoma, sans-serif; padding: 40px; text-align: center;">
+    <h2>صفحه به آدرس جدید منتقل شده است</h2>
+    <p>در حال انتقال خودکار به سایت جدید...</p>
+    <p>اگر به صورت خودکار منتقل نشدید، <a href="https://kodedevel.github.io/">اینجا کلیک کنید</a>.</p>
+</body>
+</html>
